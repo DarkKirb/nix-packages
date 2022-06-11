@@ -1,8 +1,8 @@
-{ stdenvNoCC, python3, python3Packages, inputs }: rec {
-  clean-s3-cache-env = python3.buildEnv.override {
-    extraLibs = with python3Packages; [ boto3 ];
+{ pkgs, inputs }: rec {
+  clean-s3-cache-env = pkgs.python3.buildEnv.override {
+    extraLibs = with pkgs.python3Packages; [ boto3 ];
   };
-  clean-s3-cache = stdenvNoCC.mkDerivation {
+  clean-s3-cache = pkgs.stdenvNoCC.mkDerivation {
     pname = "clean-s3-cache";
     version = inputs.clean-s3-cache.lastModifiedDate;
     srcs = inputs.clean-s3-cache;

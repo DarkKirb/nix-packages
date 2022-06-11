@@ -31,7 +31,7 @@
         };
 
         packages = pkgs.lib.lists.foldl (a: b: a // b) { } [
-          (pkgs.callPackage ./scripts/clean-s3-cache.nix { inherit inputs; })
+          (import ./scripts/clean-s3-cache.nix { inherit pkgs inputs; })
         ];
 
         hydraJobs = {
