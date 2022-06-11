@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "clean-s3-cache": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1654951411,
+        "narHash": "sha256-Om6LZGjdrhsIL2K8VwzyRrX3+fOHJ1Bct4pI7/ijDP4=",
+        "ref": "refs/heads/main",
+        "rev": "e4bef52b5b8b8427d7027c681c96ac52ea007421",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://gist.github.com/DarkKirb/533e9e8b9b6dd1badf9b103b4285dc4e"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gist.github.com/DarkKirb/533e9e8b9b6dd1badf9b103b4285dc4e"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1653893745,
@@ -32,6 +48,7 @@
     },
     "root": {
       "inputs": {
+        "clean-s3-cache": "clean-s3-cache",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       }
