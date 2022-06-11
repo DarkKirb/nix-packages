@@ -31,6 +31,22 @@
         "type": "github"
       }
     },
+    "miifox-net": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648216492,
+        "narHash": "sha256-OKGPwQZjZXbXziJLSOE8K/0fCWCnvU/I2Lm3Vc8KD/o=",
+        "ref": "refs/heads/master",
+        "rev": "7826b9a3bec5dddd4b8a879c3396a1406fc37370",
+        "revCount": 5,
+        "type": "git",
+        "url": "https://git.chir.rs/CarolineHusky/MiiFox.net"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.chir.rs/CarolineHusky/MiiFox.net"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1654953433,
@@ -50,6 +66,7 @@
       "inputs": {
         "clean-s3-cache": "clean-s3-cache",
         "flake-utils": "flake-utils",
+        "miifox-net": "miifox-net",
         "nixpkgs": "nixpkgs"
       }
     }

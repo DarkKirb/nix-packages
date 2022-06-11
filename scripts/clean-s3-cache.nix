@@ -1,6 +1,9 @@
-{ pkgs, inputs }: rec {
+{
+  pkgs,
+  inputs,
+}: rec {
   clean-s3-cache-env = pkgs.python3.buildEnv.override {
-    extraLibs = with pkgs.python3Packages; [ boto3 ];
+    extraLibs = with pkgs.python3Packages; [boto3];
   };
   clean-s3-cache = pkgs.stdenvNoCC.mkDerivation {
     pname = "clean-s3-cache";
