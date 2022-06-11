@@ -6,8 +6,9 @@
     pname = "clean-s3-cache";
     version = inputs.clean-s3-cache.lastModifiedDate;
     srcs = inputs.clean-s3-cache;
+    python = clean-s3-cache-env;
     buildPhase = ''
-      sed -i 's|#SHEBANG#|${clean-s3-cache-env}|' clean-s3-cache.py
+      substituteAllInPlace clean-s3-cache.py
     '';
     installPhase = ''
       mkdir -p $out/bin

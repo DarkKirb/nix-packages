@@ -3,11 +3,11 @@
     "clean-s3-cache": {
       "flake": false,
       "locked": {
-        "lastModified": 1654951411,
-        "narHash": "sha256-Om6LZGjdrhsIL2K8VwzyRrX3+fOHJ1Bct4pI7/ijDP4=",
+        "lastModified": 1654955107,
+        "narHash": "sha256-eOT9UWpp75gchFDhgnwj1UpVBAZZG5nJUl6N+JAIkT8=",
         "ref": "refs/heads/main",
-        "rev": "e4bef52b5b8b8427d7027c681c96ac52ea007421",
-        "revCount": 1,
+        "rev": "1a4dc9cc727b1f824507f28d35cbc93008d7de76",
+        "revCount": 2,
         "type": "git",
         "url": "https://gist.github.com/DarkKirb/533e9e8b9b6dd1badf9b103b4285dc4e"
       },
@@ -33,11 +33,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1654948247,
-        "narHash": "sha256-QCrcW0H15lwGf7xrk2N+Oj9Bw/5YE2/JL2fWUdWRXf8=",
+        "lastModified": 1654953433,
+        "narHash": "sha256-TwEeh4r50NdWHFAHQSyjCk2cZxgwUfcCCAJOhPdXB28=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f8284756368b763e7e765f35b6305322c3d14599",
+        "rev": "90cd5459a1fd707819b9a3fb9c852beaaac3b79a",
         "type": "github"
       },
       "original": {
