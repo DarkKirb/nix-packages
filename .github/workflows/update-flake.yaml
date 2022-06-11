@@ -2,7 +2,7 @@ name: update-flake-lock
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: "31 3 * * 3"
+    - cron: "16 20 * * *"
 jobs:
   lockfile:
     runs-on: ubuntu-latest
@@ -14,11 +14,15 @@ jobs:
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v9
+      - name: Update flake.lockfile
+        run: nix flake update
+      - name: Run update script for minecraft
+        run: ./minecraft/update.sh
+      - name: Commit and push
+        uses: technote-space/create-pr-action@v2
         with:
-          pr-title: "Update flake.lock" # Title of PR to be created
-          pr-labels: | # Labels to be set on the PR
-            dependencies
-            automated
-          token: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_MESSAGE: "Update everything"
+          COMMIT_NAME: "GitHub Actions[bot]"
+          COMMIT_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
+          PR_BRANCH_NAME: 'chore-update-${PR_ID}'
+          PR_TITLE: 'chore: update everything'

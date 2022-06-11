@@ -12,16 +12,18 @@
     miifox-net.flake = false;
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    ...
-  } @ inputs:
-    flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux"] (
-      system: let
-        pkgs = import nixpkgs {inherit system;};
-      in rec {
+  outputs =
+    { self
+    , nixpkgs
+    , flake-utils
+    , ...
+    } @ inputs:
+    flake-utils.lib.eachSystem [ "aarch64-linux" "x86_64-linux" ] (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      rec {
         formatter = pkgs.alejandra;
 
         devShells.default = pkgs.mkShell {
@@ -30,10 +32,11 @@
           ];
         };
 
-        packages = pkgs.lib.lists.foldl (a: b: a // b) {} (map (f: import f {inherit pkgs inputs;}) [
+        packages = pkgs.lib.lists.foldl (a: b: a // b) { } (map (f: import f { inherit pkgs inputs; }) [
           ./scripts/clean-s3-cache.nix
           ./web/old-homepage.nix
           ./web/miifox-net.nix
+          ./minecraft/paper.nix
         ]);
 
         hydraJobs = {
