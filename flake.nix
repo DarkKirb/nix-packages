@@ -30,9 +30,10 @@
           ];
         };
 
-        packages = pkgs.lib.lists.foldl (a: b: a // b) { } [
-          (import ./scripts/clean-s3-cache.nix { inherit pkgs inputs; })
-        ];
+        packages = pkgs.lib.lists.foldl (a: b: a // b) { } (map (f: import f { inherit pkgs inputs; }) [
+          ./scripts/clean-s3-cache.nix
+          ./web/old-homepage.nix
+        ]);
 
         hydraJobs = {
           inherit packages devShells;
