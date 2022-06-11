@@ -14,13 +14,19 @@
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {inherit system;};
-      in {
+      in rec {
         formatter = pkgs.alejandra;
 
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
             statix
           ];
+        };
+
+        packages = {};
+
+        hydraJobs = {
+          inherit packages devShells;
         };
       }
     );
