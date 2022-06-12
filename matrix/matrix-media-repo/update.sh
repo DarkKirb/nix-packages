@@ -21,7 +21,7 @@ SOURCE_DIR=$(grep '^path is' $WORK_DIR/nix-prefetch-git.out | sed 's/^path is //
 cat > source.nix << EOF
 { fetchgit }: fetchgit { 
     url = "$URL";
-    revision = "$REVISION";
+    rev = "$REVISION";
     sha256 = "$SHA";
 }
 EOF
