@@ -12,6 +12,10 @@
     miifox-net.flake = false;
     mastodon.url = "github:glitch-soc/mastodon";
     mastodon.flake = false;
+    nixpkgs-go116.url = "github:NixOS/nixpkgs/dab5668f6be905a7f0de39a7d67fd8f78a13d600";
+    matrix-media-repo.url = "github:turt2live/matrix-media-repo";
+    matrix-media-repo.flake = false;
+    gomod2nix.url = "github:tweag/gomod2nix";
   };
 
   outputs = {
@@ -38,6 +42,7 @@
           ./web/miifox-net.nix
           ./minecraft/paper.nix
           ./mastodon
+          ./matrix/matrix-media-repo
         ]);
 
         hydraJobs = {

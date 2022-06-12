@@ -17,9 +17,11 @@ jobs:
       - name: Update flake.lockfile
         run: nix flake update
       - name: Run update script for minecraft
-        run: ./minecraft/update.sh
+        run: cd minecraft && ./update.sh
       - name: Run update script for mastodon
-        run: ./mastodon/update.sh
+        run: cd mastodon && ./update.sh
+      - name: Run update script for matrix-media-repo
+        run: cd matrix/matrix-media-repo && ./update.sh
       - name: Run nix formatter
         run: nix fmt
       - name: Commit and push
