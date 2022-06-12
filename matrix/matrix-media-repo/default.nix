@@ -5,7 +5,7 @@ in {
   matrix-media-repo = buildGoApplication rec {
     pname = "matrix-media-repo";
     version = inputs.matrix-media-repo.lastModifiedDate;
-    src = inputs.matrix-media-repo;
+    src = pkgs.callPackage ./source.nix {};
     patches = [
       ./async-media.patch
     ];

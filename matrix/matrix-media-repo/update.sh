@@ -18,5 +18,13 @@ JSON=$(nix-prefetch-git --url "$URL" --rev "$REVISION"  2> $WORK_DIR/nix-prefetc
 SHA=$(echo $JSON | jq -r .sha256)
 SOURCE_DIR=$(grep '^path is' $WORK_DIR/nix-prefetch-git.out | sed 's/^path is //')
 
+cat > source.nix << EOF
+{ fetchgit }: fetchgit { 
+    url = "$URL";
+    revision = "$REVISION";
+    sha256 = "$SHA";
+}
+EOF
+
 echo "Creating gomod2nix.toml"
 nix run github:tweag/gomod2nix -- -dir $SOURCE_DIR -outdir $TARGET_DIR
