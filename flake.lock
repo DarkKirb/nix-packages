@@ -82,6 +82,22 @@
         "type": "github"
       }
     },
+    "mautrix-whatsapp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1654374800,
+        "narHash": "sha256-8Jm1Z4pCmHBIZ+TNy2DFX/vQwYqeH4k2XtIoYkeoF3Y=",
+        "owner": "mautrix",
+        "repo": "whatsapp",
+        "rev": "0796d14133c19d5e18223b6f138835229b7acf10",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mautrix",
+        "repo": "whatsapp",
+        "type": "github"
+      }
+    },
     "miifox-net": {
       "flake": false,
       "locked": {
@@ -152,6 +168,7 @@
         "gomod2nix": "gomod2nix",
         "mastodon": "mastodon",
         "matrix-media-repo": "matrix-media-repo",
+        "mautrix-whatsapp": "mautrix-whatsapp",
         "miifox-net": "miifox-net",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-go116": "nixpkgs-go116"

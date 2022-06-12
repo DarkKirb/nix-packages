@@ -15,19 +15,23 @@
     nixpkgs-go116.url = "github:NixOS/nixpkgs/dab5668f6be905a7f0de39a7d67fd8f78a13d600";
     matrix-media-repo.url = "github:turt2live/matrix-media-repo";
     matrix-media-repo.flake = false;
+    mautrix-whatsapp.url = "github:mautrix/whatsapp";
+    mautrix-whatsapp.flake = false;
     gomod2nix.url = "github:tweag/gomod2nix";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    ...
-  } @ inputs:
-    flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux"] (
-      system: let
-        pkgs = import nixpkgs {inherit system;};
-      in rec {
+  outputs =
+    { self
+    , nixpkgs
+    , flake-utils
+    , ...
+    } @ inputs:
+    flake-utils.lib.eachSystem [ "aarch64-linux" "x86_64-linux" ] (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      rec {
         formatter = pkgs.alejandra;
 
         devShells.default = pkgs.mkShell {
@@ -36,13 +40,14 @@
           ];
         };
 
-        packages = pkgs.lib.lists.foldl (a: b: a // b) {} (map (f: import f {inherit pkgs inputs;}) [
+        packages = pkgs.lib.lists.foldl (a: b: a // b) { } (map (f: import f { inherit pkgs inputs; }) [
           ./scripts/clean-s3-cache.nix
           ./web/old-homepage.nix
           ./web/miifox-net.nix
           ./minecraft/paper.nix
           ./mastodon
           ./matrix/matrix-media-repo
+          ./matrix/mautrix-whatsapp
         ]);
 
         hydraJobs = {
