@@ -18,6 +18,10 @@ jobs:
         run: nix flake update
       - name: Run update script for minecraft
         run: ./minecraft/update.sh
+      - name: Run update script for mastodon
+        run: ./mastodon/update.sh
+      - name: Run nix formatter
+        run: nix fmt
       - name: Commit and push
         uses: technote-space/create-pr-action@v2
         with:

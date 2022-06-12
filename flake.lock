@@ -31,6 +31,22 @@
         "type": "github"
       }
     },
+    "mastodon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1654881571,
+        "narHash": "sha256-ASSrCM0jHMI04U7fFPQdaeDvt/sHzpiWKHSy6+/FW0M=",
+        "owner": "glitch-soc",
+        "repo": "mastodon",
+        "rev": "970f06331bc7e482226e974c468b559a9e2f3fa3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glitch-soc",
+        "repo": "mastodon",
+        "type": "github"
+      }
+    },
     "miifox-net": {
       "flake": false,
       "locked": {
@@ -66,6 +82,7 @@
       "inputs": {
         "clean-s3-cache": "clean-s3-cache",
         "flake-utils": "flake-utils",
+        "mastodon": "mastodon",
         "miifox-net": "miifox-net",
         "nixpkgs": "nixpkgs"
       }

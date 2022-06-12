@@ -1,11 +1,9 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   version-info = builtins.fromJSON (builtins.readFile ./paper.json);
   pname = "paper";
   mcVersion = version-info.version;
   buildNum = toString version-info.build;
-in
-rec {
+in rec {
   paper-jar = pkgs.fetchurl {
     url = "https://papermc.io/api/v2/projects/paper/versions/${mcVersion}/builds/${buildNum}/downloads/${version-info.name}";
     inherit (version-info) sha256;
