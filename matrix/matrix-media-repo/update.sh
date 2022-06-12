@@ -14,15 +14,17 @@ function cleanup {
 trap cleanup EXIT
 
 echo "Fetching source code $REVISION from $URL"
-JSON=$(nix-prefetch-git --url "$URL" --rev "$REVISION"  2> $WORK_DIR/nix-prefetch-git.out)
+JSON=$(nix-prefetch-git --url "$URL" --rev "$REVISION" --leave-dotGit 2> $WORK_DIR/nix-prefetch-git.out)
 SHA=$(echo $JSON | jq -r .sha256)
 SOURCE_DIR=$(grep '^path is' $WORK_DIR/nix-prefetch-git.out | sed 's/^path is //')
 
 cat > source.nix << EOF
-{ fetchgit }: fetchgit { 
-    url = "$URL";
-    rev = "$REVISION";
-    sha256 = "$SHA";
+{fetchgit}:
+fetchgit { 
+  url = "$URL";
+  rev = "$REVISION";
+  sha256 = "$SHA";
+  leaveDotGit = true;
 }
 EOF
 
