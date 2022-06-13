@@ -12,6 +12,7 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v17
         with:
+          nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
       - name: Update flake.lockfile
@@ -24,6 +25,7 @@ jobs:
         run: cd matrix/matrix-media-repo && ./update.sh
       - name: Run nix formatter
         run: nix fmt
+      - run: git add .
       - name: Commit and push
         uses: technote-space/create-pr-action@v2
         with:
