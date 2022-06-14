@@ -20,6 +20,8 @@
     gomod2nix.url = "github:tweag/gomod2nix";
     kreative-open-relay.url = "github:kreativekorp/open-relay";
     kreative-open-relay.flake = false;
+    nasin-nanpa.url = "github:ETBCOR/nasin-nanpa";
+    nasin-nanpa.flake = false;
   };
 
   outputs = {
@@ -49,6 +51,7 @@
           ./matrix/matrix-media-repo
           ./matrix/mautrix-whatsapp
           ./fonts/kreative.nix
+          ./fonts/nasin-nanpa.nix
         ]);
 
         hydraJobs = {

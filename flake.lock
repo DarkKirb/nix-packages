@@ -130,6 +130,22 @@
         "url": "https://git.chir.rs/CarolineHusky/MiiFox.net"
       }
     },
+    "nasin-nanpa": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1653261911,
+        "narHash": "sha256-f92PUd4pIS7wK5W0vJ79Qvtw1d8VVW0gquBWW1XWSpw=",
+        "owner": "ETBCOR",
+        "repo": "nasin-nanpa",
+        "rev": "4cf4a762576d8ca2818683139ab1d04d149c9bec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ETBCOR",
+        "repo": "nasin-nanpa",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1653581809,
@@ -187,6 +203,7 @@
         "matrix-media-repo": "matrix-media-repo",
         "mautrix-whatsapp": "mautrix-whatsapp",
         "miifox-net": "miifox-net",
+        "nasin-nanpa": "nasin-nanpa",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-go116": "nixpkgs-go116"
       }
