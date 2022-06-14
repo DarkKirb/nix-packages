@@ -18,6 +18,8 @@
     mautrix-whatsapp.url = "github:mautrix/whatsapp";
     mautrix-whatsapp.flake = false;
     gomod2nix.url = "github:tweag/gomod2nix";
+    kreative-open-relay.url = "github:kreativekorp/open-relay";
+    kreative-open-relay.flake = false;
   };
 
   outputs = {
@@ -46,6 +48,7 @@
           ./mastodon
           ./matrix/matrix-media-repo
           ./matrix/mautrix-whatsapp
+          ./fonts/kreative.nix
         ]);
 
         hydraJobs = {

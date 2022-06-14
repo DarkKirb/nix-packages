@@ -50,6 +50,22 @@
         "type": "github"
       }
     },
+    "kreative-open-relay": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1654747996,
+        "narHash": "sha256-DNDlm91TyBszla1f9Mn0kxo1FwYTut3zc5u0g8EJlDI=",
+        "owner": "kreativekorp",
+        "repo": "open-relay",
+        "rev": "27b79e4131377be9019dfb9645e0d632241fb0a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kreativekorp",
+        "repo": "open-relay",
+        "type": "github"
+      }
+    },
     "mastodon": {
       "flake": false,
       "locked": {
@@ -166,6 +182,7 @@
         "clean-s3-cache": "clean-s3-cache",
         "flake-utils": "flake-utils",
         "gomod2nix": "gomod2nix",
+        "kreative-open-relay": "kreative-open-relay",
         "mastodon": "mastodon",
         "matrix-media-repo": "matrix-media-repo",
         "mautrix-whatsapp": "mautrix-whatsapp",
