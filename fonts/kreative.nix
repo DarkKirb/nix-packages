@@ -20,10 +20,6 @@
         path = "FairfaxHD/FairfaxHD";
       }
       {
-        name = "fairfax-hd-bold";
-        path = "FairfaxHD/FairfaxHDBold";
-      }
-      {
         name = "fairfax-hax-hd";
         path = "FairfaxHD/FairfaxHaxHD";
       }
