@@ -45,7 +45,7 @@ in
         src = open-relay;
         buildPhase = "true";
         installPhase = ''
-          install -m444 $out/share/truetype/${v.name} ${v.path}.ttf
+          install -m444 -Dt $out/share/truetype/${v.name} ${v.path}.ttf
         '';
       };
     })
