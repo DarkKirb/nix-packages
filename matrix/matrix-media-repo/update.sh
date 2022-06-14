@@ -29,4 +29,4 @@ fetchgit {
 EOF
 
 echo "Creating gomod2nix.toml"
-nix run github:tweag/gomod2nix -- -dir $SOURCE_DIR -outdir $TARGET_DIR
+nix run github:tweag/gomod2nix -- --dir $SOURCE_DIR --outdir $TARGET_DIR
