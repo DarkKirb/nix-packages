@@ -3,7 +3,7 @@
   inputs,
   ...
 } @ args: let
-  buildGoApplication = pkgs.callPackage "${inputs.gomod2nix}/builder" {};
+  inherit ((pkgs.callPackage "${inputs.gomod2nix}/builder" {})) buildGoApplication;
 in {
   mautrix-whatsapp = buildGoApplication rec {
     pname = "mautrix-whatsapp";

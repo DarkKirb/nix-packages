@@ -1,6 +1,6 @@
 {inputs, ...} @ args: let
   pkgs = import inputs.nixpkgs-go116 {inherit (args.pkgs) system;};
-  buildGoApplication = pkgs.callPackage "${inputs.gomod2nix}/builder" {};
+  inherit ((pkgs.callPackage "${inputs.gomod2nix}/builder" {})) buildGoApplication;
 in {
   matrix-media-repo = buildGoApplication rec {
     pname = "matrix-media-repo";
