@@ -38,14 +38,15 @@
     }) ["" "Bold" "Italic" "SM" "SMBold" "SMItalic" "Serif" "SerifSM"]);
 in
   builtins.listToAttrs (map (v: {
-    inherit (v) name;
-    value = pkgs.stdenvNoCC.mkDerivation {
-      pname = v.name;
-      version = open-relay.lastModifiedDate;
-      src = open-relay;
-      buildPhase = "true";
-      installPhase = ''
-        install -m444 $out/share/truetype/${v.name} ${v.path}.ttf
-      '';
-    };
-  }) fonts)
+      inherit (v) name;
+      value = pkgs.stdenvNoCC.mkDerivation {
+        pname = v.name;
+        version = open-relay.lastModifiedDate;
+        src = open-relay;
+        buildPhase = "true";
+        installPhase = ''
+          install -m444 $out/share/truetype/${v.name} ${v.path}.ttf
+        '';
+      };
+    })
+    fonts)
