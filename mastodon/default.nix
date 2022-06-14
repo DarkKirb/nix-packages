@@ -6,6 +6,7 @@
   version = inputs.mastodon.lastModifiedDate;
   src = inputs.mastodon;
   nasin-nanpa = import ../fonts/nasin-nanpa.nix args;
+  patches = [./toki.patch];
 in rec {
   mastodon-yarn = (pkgs.callPackage ./yarn.nix {}).offline_cache;
   mastodon-gems = pkgs.bundlerEnv {
@@ -26,7 +27,7 @@ in rec {
   };
   mastodon-modules = pkgs.stdenv.mkDerivation {
     pname = "${pname}-modules";
-    inherit src version;
+    inherit src version patches;
 
     nativeBuildInputs = with pkgs; [fixup_yarn_lock nodejs-slim yarn mastodon-gems mastodon-gems.wrappedRuby];
 
@@ -60,7 +61,7 @@ in rec {
   };
 
   mastodon = pkgs.stdenv.mkDerivation rec {
-    inherit pname version src;
+    inherit pname version src patches;
 
     propagatedBuildInputs = with pkgs; [imagemagick ffmpeg file mastodon-gems.wrappedRuby];
     buildInputs = with pkgs; [mastodon-gems nodejs-slim];
