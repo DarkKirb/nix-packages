@@ -1,4 +1,8 @@
-{ inputs, pkgs, ...}: rec {
+{
+  inputs,
+  pkgs,
+  ...
+}: rec {
   nasin-nanpa = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "nasin-nanpa";
     version = "2.5.25";

@@ -1,10 +1,11 @@
 {
   inputs,
   pkgs,
-}: let
+} @ args: let
   pname = "mastodon-glitch";
   version = inputs.mastodon.lastModifiedDate;
   src = inputs.mastodon;
+  nasin-nanpa = import ../fonts/nasin-nanpa.nix args;
 in rec {
   mastodon-yarn = (pkgs.callPackage ./yarn.nix {}).offline_cache;
   mastodon-gems = pkgs.bundlerEnv {
@@ -90,6 +91,7 @@ in rec {
     in ''
       mkdir -p $out
       cp -r * $out/
+      ln -s ${nasin-nanpa.nasin-nanpa-woff2} $out/public/nasin-nanpa.woff2
       ln -s ${run-streaming} $out/run-streaming.sh
     '';
   };
