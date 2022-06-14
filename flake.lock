@@ -37,11 +37,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1655171313,
-        "narHash": "sha256-uNu+gOe/Boa11ZsV/+dgRUJfbrFTY43fEohuUJkQH5c=",
+        "lastModified": 1655211795,
+        "narHash": "sha256-9c9m+i65x6ToXkV1doN/pxLEt5lUZ1fRJjtfLNZjek0=",
         "owner": "tweag",
         "repo": "gomod2nix",
-        "rev": "9a14682b8b81f896661f5db09daf5fcdbf278e5b",
+        "rev": "197bc13f6a0e5a5adac3b7b4c01811ddd796039a",
         "type": "github"
       },
       "original": {
@@ -180,11 +180,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1655177799,
-        "narHash": "sha256-DrSYqguHb8GQNTrybNqFU/cozz8c/7ot+WllDEtpuE8=",
+        "lastModified": 1655238126,
+        "narHash": "sha256-Tnnjsg2EqixlSfS4cBNshO5jMPFXdNS4Q7YJn0+9Oz0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d8916eaeaf7080aa0642122d34d04f683ccf1f17",
+        "rev": "aa0ed785a2ecfe10efb99f0d3be3ca16b31a42a5",
         "type": "github"
       },
       "original": {
