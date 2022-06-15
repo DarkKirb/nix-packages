@@ -37,11 +37,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1655211795,
-        "narHash": "sha256-9c9m+i65x6ToXkV1doN/pxLEt5lUZ1fRJjtfLNZjek0=",
+        "lastModified": 1655245309,
+        "narHash": "sha256-d/YPoQ/vFn1+GTmSdvbSBSTOai61FONxB4+Lt6w/IVI=",
         "owner": "tweag",
         "repo": "gomod2nix",
-        "rev": "197bc13f6a0e5a5adac3b7b4c01811ddd796039a",
+        "rev": "40d32f82fc60d66402eb0972e6e368aeab3faf58",
         "type": "github"
       },
       "original": {
@@ -101,11 +101,11 @@
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
-        "lastModified": 1655139699,
-        "narHash": "sha256-XtG7V6J2KoYOPvzUAk7Cco2xswsV9FA8d3J33BlsyTE=",
+        "lastModified": 1655222292,
+        "narHash": "sha256-QH9qrAGYl1hnq/h+zemYbt7xRTTvtRDzc7K8gb/uhI8=",
         "owner": "mautrix",
         "repo": "whatsapp",
-        "rev": "43d8fc5d2bb22b6cbc90bbf102087f0929f110b8",
+        "rev": "30c5be305a631b1ffc94f0e7c3b20ac25dcc4482",
         "type": "github"
       },
       "original": {
@@ -180,11 +180,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1655238126,
-        "narHash": "sha256-Tnnjsg2EqixlSfS4cBNshO5jMPFXdNS4Q7YJn0+9Oz0=",
+        "lastModified": 1655323865,
+        "narHash": "sha256-c/vkPAKtbuHkbMA09SdXyt4CGjP7+1Qon4NYjEZfsZg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "aa0ed785a2ecfe10efb99f0d3be3ca16b31a42a5",
+        "rev": "e75e32d873d4b843247bb645261376c03cf7e6c3",
         "type": "github"
       },
       "original": {
