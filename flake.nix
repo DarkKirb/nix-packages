@@ -22,6 +22,8 @@
     kreative-open-relay.flake = false;
     nasin-nanpa.url = "github:ETBCOR/nasin-nanpa";
     nasin-nanpa.flake = false;
+    plover.url = "github:openstenoproject/plover";
+    plover.flake = false;
   };
 
   outputs = {
@@ -52,6 +54,7 @@
           ./matrix/mautrix-whatsapp
           ./fonts/kreative.nix
           ./fonts/nasin-nanpa.nix
+          ./misc/plover.nix
         ]);
 
         hydraJobs = {
