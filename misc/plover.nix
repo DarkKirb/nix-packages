@@ -15,6 +15,30 @@ with pkgs; rec {
       };
       propagatedBuildInputs = [plover setuptools];
     };
+  plover-stroke = with python3Packages;
+    buildPythonPackage rec {
+      pname = "plover-stroke";
+      version = "1.1.0";
+      src = fetchFromGitHub {
+        owner = "benoit-pierre";
+        repo = "plover_plugin_manager";
+        rev = "1.1.0";
+        sha256 = "sha256-A75OMzmEn0VmDAvmQCp6/7uptxzwWJTwsih3kWlYioA=";
+      };
+      checkInputs = [pytest];
+    };
+  rtf-tokenize = with python3Packages;
+    buildPythonPackage rec {
+      pname = "rtf-tokenize";
+      version = "1.0.0";
+      src = fetchFromGitHub {
+        owner = "benoit-pierre";
+        repo = "rtf_tokenize";
+        rev = "1.0.0";
+        sha256 = "sha256-zwD2sRYTY1Kmm/Ag2hps9VRdUyQoi4zKtDPR+F52t9A=";
+      };
+      checkInputs = [pytest];
+    };
   plover = with python3Packages;
     qt5.mkDerivationWith buildPythonPackage rec {
       pname = "plover";
@@ -27,7 +51,7 @@ with pkgs; rec {
       postPatch = "sed -i /PyQt5/d setup.cfg";
 
       checkInputs = [pytest mock];
-      propagatedBuildInputs = [babel pyqt5 xlib pyserial appdirs wcwidth setuptools];
+      propagatedBuildInputs = [babel pyqt5 xlib pyserial appdirs wcwidth setuptools plover-stroke rtf-tokenize];
 
       dontWrapQtApps = true;
 
