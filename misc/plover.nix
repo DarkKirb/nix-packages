@@ -53,6 +53,8 @@ with pkgs; rec {
       checkInputs = [pytest mock];
       propagatedBuildInputs = [babel pyqt5 xlib pyserial appdirs wcwidth setuptools plover-stroke rtf-tokenize];
 
+      installCheckPhase = "true";
+
       dontWrapQtApps = true;
 
       preFixup = ''
