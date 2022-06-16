@@ -13,7 +13,7 @@ with pkgs; rec {
         rev = "0.7.0";
         sha256 = "sha256-+ASEFxjIeqOwwIwojOltA4nAG/HMz+px+wMXuCOc+Dw=";
       };
-      propagatedBuildInputs = [plover setuptools];
+      propagatedBuildInputs = [pip pkginfo plover pygments readme_renderer requests requests-cache requests-futures setuptools wheel];
     };
   plover-stroke = with python3Packages;
     buildPythonPackage rec {
