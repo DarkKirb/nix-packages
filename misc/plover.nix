@@ -15,6 +15,7 @@ with pkgs; rec {
       };
       propagatedBuildInputs = [pip pkginfo plover pygments readme_renderer requests requests-cache requests-futures setuptools wheel];
       installCheckPhase = "true";
+      setuptoolsCheckPhase = "true";
     };
   plover-stroke = with python3Packages;
     buildPythonPackage rec {
