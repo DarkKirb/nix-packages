@@ -14,6 +14,7 @@ with pkgs; rec {
         sha256 = "sha256-+ASEFxjIeqOwwIwojOltA4nAG/HMz+px+wMXuCOc+Dw=";
       };
       propagatedBuildInputs = [pip pkginfo plover pygments readme_renderer requests requests-cache requests-futures setuptools wheel];
+      installCheckPhase = "true";
     };
   plover-stroke = with python3Packages;
     buildPythonPackage rec {
