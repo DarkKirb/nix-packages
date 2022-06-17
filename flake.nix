@@ -24,6 +24,10 @@
     nasin-nanpa.flake = false;
     plover.url = "github:openstenoproject/plover";
     plover.flake = false;
+    regenpfeifer.url = "github:mkrnr/regenpfeifer";
+    regenpfeifer.flake = false;
+    wortformliste.url = "github:mkrnr/wortformliste";
+    wortformliste.flake = false;
   };
 
   outputs = {

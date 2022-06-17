@@ -41,6 +41,39 @@ with pkgs; rec {
       };
       checkInputs = [pytest];
     };
+  plover-regenpfeifer = with python3Packages;
+    buildPythonPackage rec {
+      pname = "plover_regenpfeifer";
+      version = "0.0.3";
+      src = fetchFromGitHub {
+        owner = "mkrnr";
+        repo = pname;
+        rev = "v${version}";
+        sha256 = "sha256-2KzVz8zsrRPU4zjlzyPYfBCWppfy73+nrT5RUKU/670=";
+      };
+      propagatedBuildInputs = [plover];
+    };
+  regenpfeifer-env = python3.buildEnv.override {
+    extraLibs = with pkgs.python3Packages; [marisa-trie];
+  };
+  wortformliste = pkgs.stdenvNoCC.mkDerivation {
+    pname = "wortformliste";
+    version = inputs.wortformliste.lastModifiedDate;
+    src = inputs.wortformliste;
+
+    buildPhase = "true";
+    installPhase = "cp wortformliste.csv $out";
+  };
+  regenpfeifer = pkgs.stdenvNoCC.mkDerivation {
+    pname = "regenpfeifer";
+    version = inputs.regenpfeifer.lastModifiedDate;
+    src = inputs.regenpfeifer;
+    nativeBuildInputs = [regenpfeifer-env];
+    buildPhase = ''
+      python -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 300000 300000
+    '';
+    installPhase = "cat unmatched.log";
+  };
   plover = with python3Packages;
     qt5.mkDerivationWith buildPythonPackage rec {
       pname = "plover";
