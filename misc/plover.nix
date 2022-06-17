@@ -68,9 +68,12 @@ in rec {
     pname = "regenpfeifer";
     version = inputs.regenpfeifer.lastModifiedDate;
     src = inputs.regenpfeifer;
+    patches = [
+      ./regenpfeifer.patch
+    ];
     nativeBuildInputs = [regenpfeifer-env];
     buildPhase = ''
-      PYTHONPATH=${regenpfeifer-env}/site-packages LC_ALL=C.UTF-8 pypy3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 25000 100000
+      PYTHONPATH=${regenpfeifer-env}/site-packages LC_ALL=C.UTF-8 pypy3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 0 0
     '';
     installPhase = "cat unmatched.log";
   };
