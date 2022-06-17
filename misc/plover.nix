@@ -55,7 +55,7 @@ in rec {
       };
       propagatedBuildInputs = [plover];
     };
-  regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);
+  regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie ps.pyphen]);
   wortformliste = pkgs.stdenvNoCC.mkDerivation {
     pname = "wortformliste";
     version = inputs.wortformliste.lastModifiedDate;
