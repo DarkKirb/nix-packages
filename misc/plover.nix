@@ -55,7 +55,7 @@ in rec {
       };
       propagatedBuildInputs = [plover];
     };
-  regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie ps.pyphen]);
+  regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);
   wortformliste = pkgs.stdenvNoCC.mkDerivation {
     pname = "wortformliste";
     version = inputs.wortformliste.lastModifiedDate;
@@ -75,7 +75,7 @@ in rec {
     buildPhase = ''
       PYTHONPATH=${regenpfeifer-env}/site-packages LC_ALL=C.UTF-8 pypy3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 0 0
     '';
-    installPhase = "cat unmatched.log";
+    installPhase = "true";
   };
   plover = with python3Packages;
     qt5.mkDerivationWith buildPythonPackage rec {
