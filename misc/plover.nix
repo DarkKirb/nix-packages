@@ -53,7 +53,7 @@ with pkgs; rec {
       };
       propagatedBuildInputs = [plover];
     };
-  regenpfeifer-env = python3.buildEnv.override {
+  regenpfeifer-env = pypy3.buildEnv.override {
     extraLibs = with pkgs.python3Packages; [marisa-trie];
   };
   wortformliste = pkgs.stdenvNoCC.mkDerivation {
