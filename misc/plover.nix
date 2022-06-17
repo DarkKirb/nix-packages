@@ -70,7 +70,7 @@ with pkgs; rec {
     src = inputs.regenpfeifer;
     nativeBuildInputs = [regenpfeifer-env];
     buildPhase = ''
-      python -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 300000 300000
+      pypy3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 300000 300000
     '';
     installPhase = "cat unmatched.log";
   };
