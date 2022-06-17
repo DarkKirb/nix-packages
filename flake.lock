@@ -178,6 +178,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1655415671,
+        "narHash": "sha256-WD7HxxW1m8D/fkV1QlCYlZvnE5gQdg7ckq3myI4gPtE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f96729212602f15a6a226d2f27f5de70492ad095",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1655409759,
@@ -238,6 +254,7 @@
         "nasin-nanpa": "nasin-nanpa",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-go116": "nixpkgs-go116",
+        "nixpkgs-stable": "nixpkgs-stable",
         "plover": "plover",
         "regenpfeifer": "regenpfeifer",
         "wortformliste": "wortformliste"

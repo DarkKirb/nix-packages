@@ -2,7 +2,9 @@
   inputs,
   pkgs,
 }:
-with pkgs; rec {
+with pkgs; let
+  inherit (inputs.nixpkgs-stable.legacyPackages.${system}) pypy3;
+in rec {
   plover-plugins-manager = with python3Packages;
     buildPythonPackage rec {
       pname = "plover-plugins-manager";
@@ -53,7 +55,7 @@ with pkgs; rec {
       };
       propagatedBuildInputs = [plover];
     };
-    regenpfeifer-env = python3.withPackages(ps: [ps.marisa-trie]);
+  regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);
   wortformliste = pkgs.stdenvNoCC.mkDerivation {
     pname = "wortformliste";
     version = inputs.wortformliste.lastModifiedDate;
@@ -68,7 +70,7 @@ with pkgs; rec {
     src = inputs.regenpfeifer;
     nativeBuildInputs = [regenpfeifer-env];
     buildPhase = ''
-      python3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 300000 300000
+      pypy3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 300000 300000
     '';
     installPhase = "cat unmatched.log";
   };
