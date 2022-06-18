@@ -64,9 +64,10 @@ in rec {
     buildPhase = "true";
     installPhase = "cp wortformliste.csv $out";
   };
-  regenpfeifer = pkgs.stdenvNoCC.mkDerivation {
+  regenpfeifer = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "regenpfeifer";
     version = inputs.regenpfeifer.lastModifiedDate;
+    name = "${pname}-${version}.json";
     src = inputs.regenpfeifer;
     patches = [
       ./regenpfeifer.patch
