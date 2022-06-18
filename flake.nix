@@ -37,7 +37,7 @@
     flake-utils,
     ...
   } @ inputs:
-    flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux"] (
+    flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {inherit system;};
       in rec {
@@ -62,9 +62,12 @@
           ./misc/plover.nix
         ]);
 
-        hydraJobs = {
-          inherit packages devShells;
-        };
+        hydraJobs =
+          if system == "x86_64-linux"
+          then {
+            inherit packages devShells;
+          }
+          else {};
       }
     );
 }
