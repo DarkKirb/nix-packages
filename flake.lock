@@ -105,11 +105,11 @@
     "kreative-open-relay": {
       "flake": false,
       "locked": {
-        "lastModified": 1655363357,
-        "narHash": "sha256-FLRnQsEfSuVBN3zBrmi0BfKd9kxvwo0UgW0QTZDbh5g=",
+        "lastModified": 1655649565,
+        "narHash": "sha256-iVMfgWrdzPCkKUt1op1o27Gb5hH3dpQLibJPajySPdA=",
         "owner": "kreativekorp",
         "repo": "open-relay",
-        "rev": "fcab8101cc7ff1339411f46d5b16e9a355cb5eac",
+        "rev": "b975edfcf65e498e4e4cd1d075fbfa51e0fd7010",
         "type": "github"
       },
       "original": {
@@ -264,11 +264,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1655641096,
-        "narHash": "sha256-VwjhpSJ/m+4TqoDobYcwRC1iJXqEg30GbdTif9pkahE=",
+        "lastModified": 1655668881,
+        "narHash": "sha256-G9WbZnlHQ3Ouk4eS5/LqJFwNJFt6GPkm6jeZzP6W0Eg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ce505a39845b93e48f125ededeaaec6f597df43f",
+        "rev": "4d34139ab5e609bc2bd2dd2b891876d486df19bd",
         "type": "github"
       },
       "original": {
