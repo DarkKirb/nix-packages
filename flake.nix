@@ -29,6 +29,7 @@
     regenpfeifer.flake = false;
     wortformliste.url = "github:mkrnr/wortformliste";
     wortformliste.flake = false;
+    cargo2nix.url = "github:cargo2nix/cargo2nix";
   };
 
   outputs = {
@@ -66,6 +67,7 @@
           if system == "x86_64-linux"
           then {
             inherit packages devShells;
+            inherit (inputs.cargo2nix.packages.${system}) cargo2nix;
           }
           else {};
       }
