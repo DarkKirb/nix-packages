@@ -61,6 +61,7 @@
           ./fonts/kreative.nix
           ./fonts/nasin-nanpa.nix
           ./misc/plover.nix
+          ./art
         ]);
 
         hydraJobs =

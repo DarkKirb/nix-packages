@@ -23,6 +23,8 @@ jobs:
         run: cd mastodon && ./update.sh
       - name: Run update script for matrix-media-repo
         run: cd matrix/matrix-media-repo && ./update.sh
+      - name: Run update script for lotte-art
+        run: cd art && ./update.sh
       - name: Run nix formatter
         run: nix fmt
       - name: Commit and push
