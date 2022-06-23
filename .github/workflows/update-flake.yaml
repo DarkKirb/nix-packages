@@ -25,6 +25,8 @@ jobs:
         run: cd matrix/matrix-media-repo && ./update.sh
       - name: Run update script for lotte-art
         run: cd art && ./update.sh
+      - name: Run update script for drone-runner-docker
+        run: cd ci/drone-runner-docker && ./update.sh
       - name: Run nix formatter
         run: nix fmt
       - name: Commit and push

@@ -37,6 +37,22 @@
         "url": "https://gist.github.com/DarkKirb/533e9e8b9b6dd1badf9b103b4285dc4e"
       }
     },
+    "drone-runner-docker": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1655209621,
+        "narHash": "sha256-ZpkVfzqeltZSYrKYB6dXtlVjl1uFpQdl2fa+c5ApiW4=",
+        "owner": "drone-runners",
+        "repo": "drone-runner-docker",
+        "rev": "47ee73d829ac4796415b8ccb6c96bbbf43da8d18",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drone-runners",
+        "repo": "drone-runner-docker",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -313,6 +329,7 @@
       "inputs": {
         "cargo2nix": "cargo2nix",
         "clean-s3-cache": "clean-s3-cache",
+        "drone-runner-docker": "drone-runner-docker",
         "flake-utils": "flake-utils_2",
         "gomod2nix": "gomod2nix",
         "kreative-open-relay": "kreative-open-relay",

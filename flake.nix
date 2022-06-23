@@ -30,6 +30,8 @@
     wortformliste.url = "github:mkrnr/wortformliste";
     wortformliste.flake = false;
     cargo2nix.url = "github:cargo2nix/cargo2nix";
+    drone-runner-docker.url = "github:drone-runners/drone-runner-docker";
+    drone-runner-docker.flake = false;
   };
 
   outputs = {
@@ -62,6 +64,7 @@
           ./fonts/nasin-nanpa.nix
           ./misc/plover.nix
           ./art
+          ./ci/drone-runner-docker
         ]);
 
         hydraJobs =
