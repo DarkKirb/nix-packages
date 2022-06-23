@@ -50,4 +50,4 @@ steps:
   - name: Notify hydra
     image: curlimages/curl:latest
     commands:
-      - curl --get --data-urlencode "jobsets=nixos-config:nixos-config" https://hydra.chir.rs/api/push
+      - curl --get --data-urlencode "jobsets=darkkirb:nix-packages" https://hydra.chir.rs/api/push
