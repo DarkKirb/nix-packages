@@ -1,0 +1,53 @@
+---
+kind: pipeline
+type: docker
+name: update-script
+
+steps:
+  - name: Update flake
+    image: nixos/nix
+    commands:
+      - echo "substituters = https://cache.nixos.org/ https://f000.backblazeb2.com/file/cache-chir-rs/" >> /etc/nix/nix.conf
+      - echo "trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixcache:8KKuGz95Pk4UJ5W/Ni+pN+v+LDTkMMFV4yrGmAYgkDg= hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs=" >> /etc/nix/nix.conf
+      - nix flake update
+      - (cd minecraft && ./update.sh)
+      - (cd mastodon && ./update.sh)
+      - (cd matrix/matrix-media-repo && ./update.sh)
+      - (cd art && ./update.sh)
+      - nix fmt    
+  - name: Push git
+    image: appleboy/drone-git-push
+    settings:
+      ssh_key:
+        from_secret: SSH_KEY
+      remote: gitea@git.chir.rs:darkkirb/nixos-config.git
+      branch: update-package
+      force: true
+      commit: true
+      commit_message: Update packages
+      author_name: Gitea Bot
+      author_email: gitea-bot@chir.rs
+  - name: Create pull request
+    image: alpine:latest
+    commands:
+      - apk add jq curl
+      - |
+        echo '{ "assignee": "DarkKirb", "base": "main", "head": "update-packages", "title": "Update packages" }' | jq '.body = $body' --arg body "$(cat ../pr-message.txt)" | curl -XPOST  'https://git.chir.rs/api/v1/repos/DarkKirb/nix-packages/pulls' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $AUTHORISATION" -d-
+    environment:
+      AUTHORISATION:
+        from_secret: GITEA_KEY
+trigger:
+  event:
+    - cron
+  cron:
+    - updater
+---
+kind: pipeline
+type: docker
+name: notify-hydra
+
+steps:
+  - name: Notify hydra
+    image: curlimages/curl:latest
+    commands:
+      - curl --get --data-urlencode "jobsets=nixos-config:nixos-config" https://hydra.chir.rs/api/push
