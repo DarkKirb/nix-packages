@@ -9,6 +9,7 @@ steps:
     commands:
       - echo "substituters = https://cache.nixos.org/ https://f000.backblazeb2.com/file/cache-chir-rs/" >> /etc/nix/nix.conf
       - echo "trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixcache:8KKuGz95Pk4UJ5W/Ni+pN+v+LDTkMMFV4yrGmAYgkDg= hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs=" >> /etc/nix/nix.conf
+      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - nix flake update
       - (cd minecraft && ./update.sh)
       - (cd mastodon && ./update.sh)
@@ -51,3 +52,6 @@ steps:
     image: curlimages/curl:latest
     commands:
       - curl --get --data-urlencode "jobsets=darkkirb:nix-packages" https://hydra.chir.rs/api/push
+trigger:
+  branch:
+    - main
