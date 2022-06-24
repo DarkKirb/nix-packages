@@ -19,7 +19,7 @@ steps:
   - name: Push git
     image: alpine:latest
     commands:
-      - apk add git openssh
+      - apk add git openssh git-lfs
       - mkdir ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
