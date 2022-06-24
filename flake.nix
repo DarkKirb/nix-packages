@@ -32,6 +32,10 @@
     cargo2nix.url = "github:cargo2nix/cargo2nix";
     drone-runner-docker.url = "github:drone-runners/drone-runner-docker";
     drone-runner-docker.flake = false;
+    copilot-lua.url = "github:zbirenbaum/copilot.lua";
+    copilot-lua.flake = false;
+    copilot-cmp.url = "github:zbirenbaum/copilot-cmp";
+    copilot-cmp.flake = false;
   };
 
   outputs = {
@@ -65,6 +69,7 @@
           ./misc/plover.nix
           ./art
           ./ci/drone-runner-docker
+          ./vim
         ]);
 
         hydraJobs =
