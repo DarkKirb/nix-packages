@@ -30,7 +30,7 @@ steps:
       - git config 'user.name' 'Gitea Bot'
       - git add .
       - git commit -am "Update packages"
-      - git push --force origin update-package
+      - git push --force origin main:update-package
   - name: Create pull request
     image: alpine:latest
     commands:
