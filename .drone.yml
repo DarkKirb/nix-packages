@@ -37,11 +37,14 @@ steps:
     environment:
       AUTHORISATION:
         from_secret: GITEA_KEY
+#trigger:
+  #  event:
+  #    - cron
+  #  cron:
+  #    - updater
 trigger:
-  event:
-    - cron
-  cron:
-    - updater
+  branch:
+    - main
 ---
 kind: pipeline
 type: docker
