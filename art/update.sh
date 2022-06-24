@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p nix-prefetch-git jq
+#! nix-shell -i bash -p nix-prefetch-git jq git git-lfs
 
 WORK_DIR=$(mktemp -d)
 URL=https://git.chir.rs/darkkirb/lotte-art
