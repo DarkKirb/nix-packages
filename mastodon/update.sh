@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p bundix yarn2nix yarn nix-prefetch-git
+#! nix-shell -i bash -p bundix yarn2nix yarn nix-prefetch-git jq
 set -e
 
 URL=https://github.com/glitch-soc/mastodon.git
