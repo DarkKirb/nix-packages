@@ -59,5 +59,7 @@ steps:
     commands:
       - curl --get --data-urlencode "jobsets=darkkirb:nix-packages" https://hydra.chir.rs/api/push
 trigger:
+  event:
+    - push
   branch:
     - main
