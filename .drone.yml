@@ -16,7 +16,7 @@ steps:
     depends_on:
       - Update flake
   - name: Update mastodon-glitch
-    image: nixery.dev/shell/bundix/yarn2nix/yarn/nix-prefetch-git/jq
+    image: nixery.dev/shell/bundix/yarn2nix/yarn/nix-prefetch-git/jq/gnugrep/gnused
     commands:
       - (cd mastodon && bash ./update.sh)
     environment:
@@ -24,7 +24,7 @@ steps:
     depends_on:
       - Update flake
   - name: Update matrix-media-repo
-    image: nixery.dev/shell/nix-prefetch-git/jq
+    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep/gnused
     commands:
       - (cd matrix/matrix-media-repo && bash ./update.sh)
     environment:
@@ -32,7 +32,7 @@ steps:
     depends_on:
       - Update flake
   - name: Update mautrix-whatsapp
-    image: nixery.dev/shell/nix-prefetch-git/jq
+    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep/gnused
     commands:
       - (cd matrix/mautrix-whatsapp && bash ./update.sh)
     environment:
@@ -40,7 +40,7 @@ steps:
     depends_on:
       - Update flake
   - name: Update art
-    image: nixery.dev/shell/nix-prefetch-git/jq
+    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep
     commands:
       - (cd art && bash ./update.sh)
     environment:
