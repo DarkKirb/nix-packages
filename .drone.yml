@@ -7,19 +7,59 @@ steps:
   - name: Update flake
     image: nixos/nix
     commands:
-      - echo "substituters = https://cache.nixos.org/ https://f000.backblazeb2.com/file/cache-chir-rs/" >> /etc/nix/nix.conf
-      - echo "trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixcache:8KKuGz95Pk4UJ5W/Ni+pN+v+LDTkMMFV4yrGmAYgkDg= hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs=" >> /etc/nix/nix.conf
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - nix flake update
-      - (cd minecraft && ./update.sh)
-      - (cd mastodon && ./update.sh)
-      - (cd matrix/matrix-media-repo && ./update.sh)
-      - (cd art && ./update.sh)
-      - nix fmt
-  - name: Push git
-    image: alpine:latest
+  - name: Update minecraft
+    image: nixery.dev/shell/curl/jq
     commands:
-      - apk add git openssh git-lfs
+      - (cd minecraft && ./update.sh)
+    depends_on:
+      - Update flake
+  - name: Update mastodon-glitch
+    image: nixery.dev/shell/bundix/yarn2nix/yarn/nix-prefetch-git/jq
+    commands:
+      - (cd mastodon && ./update.sh)
+    environment:
+      USER: nobody
+    depends_on:
+      - Update flake
+  - name: Update matrix-media-repo
+    image: nixery.dev/shell/nix-prefetch-git/jq
+    commands:
+      - (cd matrix/matrix-media-repo && ./update.sh)
+    environment:
+      USER: nobody
+    depends_on:
+      - Update flake
+  - name: Update mautrix-whatsapp
+    image: nixery.dev/shell/nix-prefetch-git/jq
+    commands:
+      - (cd matrix/mautrix-whatsapp && ./update.sh)
+    environment:
+      USER: nobody
+    depends_on:
+      - Update flake
+  - name: Update art
+    image: nixery.dev/shell/nix-prefetch-git/jq
+    commands:
+      - (cd art && ./update.sh)
+    environment:
+      USER: nobody
+    depends_on:
+      - Update flake
+  - name: Format nix
+    image: nixery.dev/shell/alejandra
+    commands:
+      - alejandra .
+    depends_on:
+      - Update minecraft
+      - Update mastodon-glitch
+      - Update matrix-media-repo
+      - Update mautrix-whatsapp
+      - Update art
+  - name: Push git
+    image: nixery.dev/shell/gitFull
+    commands:
       - mkdir ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
@@ -34,20 +74,26 @@ steps:
     environment:
       SSH_KEY:
         from_secret: SSH_KEY
+    depends_on: Format nix
   - name: Create pull request
-    image: alpine:latest
+    image: nixery.dev/shell/curl
     commands:
-      - apk add jq curl
       - |
-        echo '{ "assignee": "DarkKirb", "base": "main", "head": "update-package", "title": "Update packages" }' | jq '.body = $body' --arg body "$(cat ../pr-message.txt)" | curl -XPOST  'https://git.chir.rs/api/v1/repos/DarkKirb/nix-packages/pulls' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $AUTHORISATION" --data-binary @-
+        echo '{ "assignee": "DarkKirb", "base": "main", "head": "update-package", "title": "Update packages", "body": "" }' | curl -XPOST  'https://git.chir.rs/api/v1/repos/DarkKirb/nix-packages/pulls' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $AUTHORISATION" --data-binary @-
     environment:
       AUTHORISATION:
         from_secret: GITEA_KEY
+    depends_on: Push git
+#trigger:
+#  event:
+#    - cron
+#  cron:
+#    - updater
 trigger:
   event:
-    - cron
-  cron:
-    - updater
+    - push
+  branch:
+    - main
 ---
 kind: pipeline
 type: docker
@@ -55,7 +101,7 @@ name: notify-hydra
 
 steps:
   - name: Notify hydra
-    image: curlimages/curl:latest
+    image: nixery.dev/shell/curl
     commands:
       - curl --get --data-urlencode "jobsets=darkkirb:nix-packages" https://hydra.chir.rs/api/push
 trigger:

@@ -12,7 +12,7 @@ function cleanup {
 trap cleanup EXIT
 
 echo "Fetching source code $REVISION from $URL"
-JSON=$(nix-prefetch-git --url "$URL" --fetch-lfs 2> $WORK_DIR/nix-prefetch-git.out | grep -v "Git" | sed 's/"deepClone": false,/"deepClone": false/' )
+JSON=$(nix-prefetch-git --url "$URL" --fetch-lfs 2> $WORK_DIR/nix-prefetch-git.out | grep -v "Git")
 REVISION=$(echo $JSON | jq -r .rev)
 SHA=$(echo $JSON | jq -r .sha256)
 
