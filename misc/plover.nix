@@ -25,7 +25,7 @@ in rec {
       version = "1.1.0";
       src = fetchFromGitHub {
         owner = "benoit-pierre";
-        repo = "plover_plugin_manager";
+        repo = "plover_stroke";
         rev = "1.1.0";
         sha256 = "sha256-A75OMzmEn0VmDAvmQCp6/7uptxzwWJTwsih3kWlYioA=";
       };
