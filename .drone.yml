@@ -26,7 +26,7 @@ steps:
   - name: Update matrix-media-repo
     image: nixos/nix
     commands:
-      - mkdir /etc/nix
+      - mkdir -p /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - (cd matrix/matrix-media-repo && ./update.sh)
     environment:
@@ -36,7 +36,7 @@ steps:
   - name: Update mautrix-whatsapp
     image: nixos/nix
     commands:
-      - mkdir /etc/nix
+      - mkdir -p /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - (cd matrix/mautrix-whatsapp && ./update.sh)
     environment:
