@@ -18,7 +18,7 @@ steps:
   - name: Update mastodon-glitch
     image: nixery.dev/shell/bundix/yarn2nix/yarn/nix-prefetch-git/jq/gnugrep/gnused/nix
     commands:
-      - nix-shell --add https://nixos.org/channels/unstable-small nixpkgs
+      - nix-channel --add https://nixos.org/channels/unstable-small nixpkgs
       - (cd mastodon && bash ./update.sh)
     environment:
       USER: nobody
@@ -27,7 +27,8 @@ steps:
   - name: Update matrix-media-repo
     image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep/gnused/nix
     commands:
-      - nix-shell --add https://nixos.org/channels/unstable-small nixpkgs
+      - nix-channel --add https://nixos.org/channels/unstable-small nixpkgs
+      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - (cd matrix/matrix-media-repo && bash ./update.sh)
     environment:
       USER: nobody
@@ -36,7 +37,8 @@ steps:
   - name: Update mautrix-whatsapp
     image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep/gnused/nix
     commands:
-      - nix-shell --add https://nixos.org/channels/unstable-small nixpkgs
+      - nix-channel --add https://nixos.org/channels/unstable-small nixpkgs
+      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - (cd matrix/mautrix-whatsapp && bash ./update.sh)
     environment:
       USER: nobody
