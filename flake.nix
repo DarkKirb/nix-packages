@@ -23,7 +23,7 @@
     kreative-open-relay.flake = false;
     nasin-nanpa.url = "github:ETBCOR/nasin-nanpa";
     nasin-nanpa.flake = false;
-    plover.url = "github:openstenoproject/plover";
+    plover.url = "github:benoit-pierre/plover/wayland-sway";
     plover.flake = false;
     regenpfeifer.url = "github:mkrnr/regenpfeifer";
     regenpfeifer.flake = false;

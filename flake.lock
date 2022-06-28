@@ -328,15 +328,16 @@
     "plover": {
       "flake": false,
       "locked": {
-        "lastModified": 1652639506,
-        "narHash": "sha256-2sS5jnpIHV2j23vDMS4ka2neRTcEyLH+zs7Og+Ysjvg=",
-        "owner": "openstenoproject",
+        "lastModified": 1648942277,
+        "narHash": "sha256-SiGt8tgB3haT+NsU7BOZZRSZ6FkrkHlabDPOoiCPoNw=",
+        "owner": "benoit-pierre",
         "repo": "plover",
-        "rev": "486a032f7bd50d1df3ddff47f407e77a4cfe0bc6",
+        "rev": "9aa7c562ba8c6cf8fdd56b0a8304865cc58bc322",
         "type": "github"
       },
       "original": {
-        "owner": "openstenoproject",
+        "owner": "benoit-pierre",
+        "ref": "wayland-sway",
         "repo": "plover",
         "type": "github"
       }
