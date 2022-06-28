@@ -18,7 +18,7 @@ steps:
   - name: Update mastodon-glitch
     image: nixos/nix
     commands:
-      - (cd mastodon && bash ./update.sh)
+      - (cd mastodon && ./update.sh)
     environment:
       USER: nobody
     depends_on:
@@ -28,7 +28,7 @@ steps:
     commands:
       - mkdir /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-      - (cd matrix/matrix-media-repo && bash ./update.sh)
+      - (cd matrix/matrix-media-repo && ./update.sh)
     environment:
       USER: nobody
     depends_on:
@@ -38,7 +38,7 @@ steps:
     commands:
       - mkdir /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-      - (cd matrix/mautrix-whatsapp && bash ./update.sh)
+      - (cd matrix/mautrix-whatsapp && ./update.sh)
     environment:
       USER: nobody
     depends_on:
