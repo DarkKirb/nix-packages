@@ -62,7 +62,7 @@ steps:
       - Update mautrix-whatsapp
       - Update art
   - name: Push git
-    image: nixery.dev/shell/gitfull
+    image: nixery.dev/shell/gitfull/git-lfs
     commands:
       - mkdir ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
