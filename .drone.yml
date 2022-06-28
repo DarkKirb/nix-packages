@@ -16,16 +16,15 @@ steps:
     depends_on:
       - Update flake
   - name: Update mastodon-glitch
-    image: nixery.dev/shell/bundix/yarn2nix/yarn/nix-prefetch-git/jq/gnugrep/gnused/nix
+    image: nixos/nix
     commands:
-      - nix-channel --add https://nixos.org/channels/nixpkgs-unstable-small nixpkgs
       - (cd mastodon && bash ./update.sh)
     environment:
       USER: nobody
     depends_on:
       - Update flake
   - name: Update matrix-media-repo
-    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep/gnused/nix
+    image: nixos/nix
     commands:
       - mkdir /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
@@ -35,7 +34,7 @@ steps:
     depends_on:
       - Update flake
   - name: Update mautrix-whatsapp
-    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep/gnused/nix
+    image: nixos/nix
     commands:
       - mkdir /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
