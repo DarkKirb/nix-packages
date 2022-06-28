@@ -1,7 +1,7 @@
 {fetchgit}:
 fetchgit {
   url = "https://github.com/mautrix/whatsapp";
-  rev = "0796d14133c19d5e18223b6f138835229b7acf10";
-  sha256 = "1a8d3rn9xsmxc8sd4iwfsrgia49nygc9va2n8v1ja2smn560pyq1";
+  rev = "f0e93bd9387c85dcfdce68cd00453dcb9cdb9518";
+  sha256 = "1cs54rhgb9c9n8ys59sssn4g3csxjl07lzz7qzkcrsk1vgp8kvxa";
   leaveDotGit = true;
 }
