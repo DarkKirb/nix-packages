@@ -65,7 +65,7 @@ steps:
     image: nixery.dev/shell/gitfull/git-lfs/shadow
     commands:
       - groupadd -g 0 root
-      - useradd -D -u 0 -G root -b $HOME root
+      - useradd -u 0 -G root -b $HOME root
       - mkdir ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
