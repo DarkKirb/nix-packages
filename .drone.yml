@@ -65,7 +65,7 @@ steps:
     image: nixery.dev/shell/gitfull/git-lfs/shadow
     commands:
       - groupadd -g 0 root
-      - useradd -u 0 -G root -b $HOME root
+      - useradd -u 0 -g root -b $HOME root
       - mkdir ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
@@ -92,11 +92,16 @@ steps:
         from_secret: GITEA_KEY
     depends_on:
       - Push git
+#trigger:
+#  event:
+#    - cron
+#  cron:
+#    - updater
 trigger:
   event:
-    - cron
-  cron:
-    - updater
+    - push
+  branch:
+    - main
 ---
 kind: pipeline
 type: docker
