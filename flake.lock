@@ -201,11 +201,11 @@
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
-        "lastModified": 1656662863,
-        "narHash": "sha256-FdNSyQmGf8PsJW5Uu7jlQppYsIXgcELtCbvgMuaky4M=",
+        "lastModified": 1656703267,
+        "narHash": "sha256-07j417GuEWcDvzBHtLAidDaqU6W3NM7ffQMN5LBKDQo=",
         "owner": "mautrix",
         "repo": "whatsapp",
-        "rev": "1e8fb6459de6c795bd151c38b2846d643680c8bb",
+        "rev": "7247e9b2e6d70a71505ac3d160dc8ae3f4e3fe25",
         "type": "github"
       },
       "original": {
