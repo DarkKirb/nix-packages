@@ -102,18 +102,3 @@ trigger:
     - push
   branch:
     - main
----
-kind: pipeline
-type: docker
-name: notify-hydra
-
-steps:
-  - name: Notify hydra
-    image: nixery.dev/shell/curl
-    commands:
-      - curl --get --data-urlencode "jobsets=darkkirb:nix-packages" https://hydra.chir.rs/api/push
-trigger:
-  event:
-    - push
-  branch:
-    - main
