@@ -46,7 +46,10 @@
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
       system: let
-        pkgs = import nixpkgs {inherit system;};
+        pkgs = import nixpkgs {
+          inherit system;
+          config.contentAddressedByDefault = true;
+        };
       in rec {
         formatter = pkgs.alejandra;
 
@@ -75,7 +78,7 @@
         hydraJobs =
           if system == "x86_64-linux"
           then {
-            inherit packages devShells;
+            inherit packages devShells formatter;
             inherit (inputs.cargo2nix.packages.${system}) cargo2nix;
           }
           else {};
