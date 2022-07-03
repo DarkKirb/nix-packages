@@ -36,6 +36,9 @@
     copilot-lua.flake = false;
     copilot-cmp.url = "github:zbirenbaum/copilot-cmp";
     copilot-cmp.flake = false;
+    hydra.url = "github:mlabs-haskell/hydra/aciceri/ca-derivations";
+    hydra-patched.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack";
+    hydra-base.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack&rev=3fdc9e491dc7d33bc09ef4f33984f87c8f478aa2";
   };
 
   outputs = {
@@ -73,6 +76,7 @@
           ./art
           ./ci/drone-runner-docker
           ./vim
+          ./hydra
         ]);
 
         hydraJobs =
