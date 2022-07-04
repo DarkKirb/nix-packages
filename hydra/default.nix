@@ -1,8 +1,11 @@
-{ pkgs, inputs }: rec {
+{
+  pkgs,
+  inputs,
+}: rec {
   hydra-patch = pkgs.stdenvNoCC.mkDerivation {
     name = "hydra.patch";
     srcs = inputs.hydra-patched;
-    nativeBuildInputs = [ pkgs.diffutils ];
+    nativeBuildInputs = [pkgs.diffutils];
     buildPhase = ''
       diff -r -u ${inputs.hydra-base} . > $out || true
     '';

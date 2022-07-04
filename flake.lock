@@ -293,11 +293,11 @@
     "mastodon": {
       "flake": false,
       "locked": {
-        "lastModified": 1656520054,
-        "narHash": "sha256-mNz7s3AYS6cl4U5QM817/pbBwa8847B16LMUHpH88t0=",
+        "lastModified": 1656882325,
+        "narHash": "sha256-TAJx1cGL7yooI7e7H8wFQc3SV5Ay8oneS+J82f5RLws=",
         "owner": "glitch-soc",
         "repo": "mastodon",
-        "rev": "54ed35f57c55fff639c8192b99fc60ab69c54f06",
+        "rev": "299c9021eb3c1ec57325052a5da11f613d5e1bf0",
         "type": "github"
       },
       "original": {
