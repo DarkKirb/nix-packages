@@ -8,12 +8,12 @@ in rec {
   plover-plugins-manager = with python3Packages;
     buildPythonPackage rec {
       pname = "plover-plugins-manager";
-      version = "0.7.0";
+      version = "0.7.1";
       src = fetchFromGitHub {
         owner = "benoit-pierre";
         repo = "plover_plugins_manager";
-        rev = "0.7.0";
-        sha256 = "sha256-+ASEFxjIeqOwwIwojOltA4nAG/HMz+px+wMXuCOc+Dw=";
+        rev = version;
+        sha256 = "165zvhgdykvml44cv15dwm1w94jsrgll15628gd6v21d4932dml3";
       };
       propagatedBuildInputs = [pip pkginfo plover pygments readme_renderer requests requests-cache requests-futures setuptools wheel];
       installCheckPhase = "true";
@@ -26,7 +26,7 @@ in rec {
       src = fetchFromGitHub {
         owner = "benoit-pierre";
         repo = "plover_stroke";
-        rev = "1.1.0";
+        rev = version;
         sha256 = "sha256-A75OMzmEn0VmDAvmQCp6/7uptxzwWJTwsih3kWlYioA=";
       };
       checkInputs = [pytest];
@@ -38,7 +38,7 @@ in rec {
       src = fetchFromGitHub {
         owner = "benoit-pierre";
         repo = "rtf_tokenize";
-        rev = "1.0.0";
+        rev = version;
         sha256 = "sha256-zwD2sRYTY1Kmm/Ag2hps9VRdUyQoi4zKtDPR+F52t9A=";
       };
       checkInputs = [pytest];
