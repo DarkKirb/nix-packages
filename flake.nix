@@ -77,6 +77,7 @@
           ./ci/drone-runner-docker
           ./vim
           ./hydra
+          ./python/tarballs.nix
         ]);
 
         hydraJobs =

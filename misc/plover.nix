@@ -4,55 +4,50 @@
 }:
 with pkgs; let
   inherit (inputs.nixpkgs-stable.legacyPackages.${system}) pypy3;
+  tarballs = import ../python/tarballs.nix {inherit inputs pkgs;};
 in rec {
   plover-plugins-manager = with python3Packages;
     buildPythonPackage rec {
-      pname = "plover-plugins-manager";
-      version = "0.7.1";
-      src = fetchFromGitHub {
-        owner = "benoit-pierre";
-        repo = "plover_plugins_manager";
-        rev = version;
-        sha256 = "165zvhgdykvml44cv15dwm1w94jsrgll15628gd6v21d4932dml3";
-      };
+      inherit (tarballs.plover-plugins-manager-src.passthru) pname version;
+      src = tarballs.plover-plugins-manager-src;
       propagatedBuildInputs = [pip pkginfo plover pygments readme_renderer requests requests-cache requests-futures setuptools wheel];
       installCheckPhase = "true";
       setuptoolsCheckPhase = "true";
     };
   plover-stroke = with python3Packages;
     buildPythonPackage rec {
-      pname = "plover-stroke";
-      version = "1.1.0";
-      src = fetchFromGitHub {
-        owner = "benoit-pierre";
-        repo = "plover_stroke";
-        rev = version;
-        sha256 = "sha256-A75OMzmEn0VmDAvmQCp6/7uptxzwWJTwsih3kWlYioA=";
-      };
+      inherit (tarballs.plover-stroke-src.passthru) pname version;
+      src = tarballs.plover-stroke-src;
       checkInputs = [pytest];
     };
   rtf-tokenize = with python3Packages;
     buildPythonPackage rec {
-      pname = "rtf-tokenize";
-      version = "1.0.0";
-      src = fetchFromGitHub {
-        owner = "benoit-pierre";
-        repo = "rtf_tokenize";
-        rev = version;
-        sha256 = "sha256-zwD2sRYTY1Kmm/Ag2hps9VRdUyQoi4zKtDPR+F52t9A=";
-      };
+      inherit (tarballs.rtf-tokenize-src.passthru) pname version;
+      src = tarballs.rtf-tokenize-src;
       checkInputs = [pytest];
     };
   plover-regenpfeifer = with python3Packages;
     buildPythonPackage rec {
-      pname = "plover_regenpfeifer";
-      version = "0.0.3";
-      src = fetchFromGitHub {
-        owner = "mkrnr";
-        repo = pname;
-        rev = "v${version}";
-        sha256 = "sha256-2KzVz8zsrRPU4zjlzyPYfBCWppfy73+nrT5RUKU/670=";
-      };
+      inherit (tarballs.plover-regenpfeifer-src.passthru) pname version;
+      src = tarballs.plover-regenpfeifer-src;
+      propagatedBuildInputs = [plover];
+    };
+  plover-emoji = with python3Packages;
+    buildPythonPackage rec {
+      inherit (tarballs.plover-emoji-src.passthru) pname version;
+      src = tarballs.plover-emoji-src;
+      propagatedBuildInputs = [plover];
+    };
+  plover-tapey-tape = with python3Packages;
+    buildPythonPackage rec {
+      inherit (tarballs.plover-tapey-tape-src.passthru) pname version;
+      src = tarballs.plover-tapey-tape-src;
+      propagatedBuildInputs = [plover];
+    };
+  plover-yaml-dictionary = with python3Packages;
+    buildPythonPackage rec {
+      inherit (tarballs.plover-yaml-dictionary-src.passthru) pname version;
+      src = tarballs.plover-yaml-dictionary-src;
       propagatedBuildInputs = [plover];
     };
   regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);

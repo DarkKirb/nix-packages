@@ -51,6 +51,12 @@ steps:
       USER: nobody
     depends_on:
       - Update flake
+  - name: Update pypi
+    image: nixery.dev/shell/curl/jq
+    commands:
+      - (cd python && bash ./update.sh)
+    depends_on:
+      - Update flake
   - name: Format nix
     image: nixery.dev/shell/alejandra
     commands:
@@ -61,6 +67,7 @@ steps:
       - Update matrix-media-repo
       - Update mautrix-whatsapp
       - Update art
+      - Update pypi
   - name: Push git
     image: nixery.dev/shell/gitfull/git-lfs/shadow
     commands:
