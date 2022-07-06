@@ -46,4 +46,10 @@ in rec {
     passthru.pname = "plover-yaml-dictionary";
     passthru.version = "0.0.1";
   };
+  simplefuzzyset-src = fetchurl {
+    url = "https://files.pythonhosted.org/packages/ce/bc/7e5d5eaa5566ade033cda9ff0eb51b0942ab2138288b445c469d2814cd2f/simplefuzzyset-0.0.12.tar.gz";
+    sha256 = "9a1b30c38b6afb76c6600bdd66c1c1dc3d8505b082e9e3d466f60f40e8b7e1f2";
+    passthru.pname = "simplefuzzyset";
+    passthru.version = "0.0.12";
+  };
 }

@@ -36,7 +36,13 @@ in rec {
     buildPythonPackage rec {
       inherit (tarballs.plover-emoji-src.passthru) pname version;
       src = tarballs.plover-emoji-src;
-      propagatedBuildInputs = [plover];
+      propagatedBuildInputs = [plover simplefuzzyset];
+      checkInputs = [pytest];
+    };
+  simplefuzzyset = with python3Packages;
+    buildPythonPackage rec {
+      inherit (tarballs.simplefuzzyset-src.passthru) pname version;
+      src = tarballs.simplefuzzyset-src;
     };
   plover-tapey-tape = with python3Packages;
     buildPythonPackage rec {
