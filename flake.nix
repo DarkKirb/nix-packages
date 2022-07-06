@@ -39,6 +39,8 @@
     hydra.url = "github:mlabs-haskell/hydra/aciceri/ca-derivations";
     hydra-patched.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack";
     hydra-base.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack&rev=3fdc9e491dc7d33bc09ef4f33984f87c8f478aa2";
+    steno-dictionaries.url = "github:didoesdigital/steno-dictionaries";
+    steno-dictionaries.flake = false;
   };
 
   outputs = {
@@ -73,6 +75,7 @@
           ./fonts/kreative.nix
           ./fonts/nasin-nanpa.nix
           ./plover
+          ./plover/dicts.nix
           ./art
           ./ci/drone-runner-docker
           ./vim

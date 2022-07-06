@@ -707,6 +707,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "plover": "plover",
         "regenpfeifer": "regenpfeifer",
+        "steno-dictionaries": "steno-dictionaries",
         "wortformliste": "wortformliste"
       }
     },
@@ -732,6 +733,22 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "steno-dictionaries": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1655010543,
+        "narHash": "sha256-CkxtDyzB5XZpYyEQDbzspN9VYkXNUJzM7CvfD+tLmcg=",
+        "owner": "didoesdigital",
+        "repo": "steno-dictionaries",
+        "rev": "0dbbd849cdb62ef1195bb511b9062cbe4a826f8f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "didoesdigital",
+        "repo": "steno-dictionaries",
         "type": "github"
       }
     },
