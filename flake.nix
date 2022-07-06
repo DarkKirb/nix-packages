@@ -72,7 +72,7 @@
           ./matrix/mautrix-whatsapp
           ./fonts/kreative.nix
           ./fonts/nasin-nanpa.nix
-          ./misc/plover.nix
+          ./plover
           ./art
           ./ci/drone-runner-docker
           ./vim
