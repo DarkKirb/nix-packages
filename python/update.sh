@@ -1,7 +1,7 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash -p curl jq 
 set -e
-PACKAGES="plover-plugins-manager plover-stroke rtf-tokenize plover-regenpfeifer plover-emoji plover-tapey-tape plover-yaml-dictionary simplefuzzyset"
+PACKAGES="plover-plugins-manager plover-stroke rtf-tokenize plover-regenpfeifer plover-emoji plover-tapey-tape plover-yaml-dictionary simplefuzzyset ruamel.yaml"
 
 cat > tarballs.nix << EOF
 { inputs, pkgs }: let
@@ -15,8 +15,9 @@ for package in $PACKAGES; do
   VERSION=$(echo -E "$JSON" | jq -r '.info.version')
   URL=$(echo "$FILE_INFO" | jq -r '.url')
   SHA256=$(echo "$FILE_INFO" | jq -r '.digests.sha256')
+  sanitized_package=$(echo $package | sed 's/\./-/g')
   cat >> tarballs.nix << EOF
-  $package-src = fetchurl {
+  $sanitized_package-src = fetchurl {
     url = "$URL";
     sha256 = "$SHA256";
     passthru.pname = "$package";

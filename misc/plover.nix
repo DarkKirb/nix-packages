@@ -54,7 +54,12 @@ in rec {
     buildPythonPackage rec {
       inherit (tarballs.plover-yaml-dictionary-src.passthru) pname version;
       src = tarballs.plover-yaml-dictionary-src;
-      propagatedBuildInputs = [plover];
+      propagatedBuildInputs = [plover ruamel-yaml];
+    };
+  ruamel-yaml = with python3Packages;
+    buildPythonPackage rec {
+      inherit (tarballs.ruamel-yaml-src.passthru) pname version;
+      src = tarballs.ruamel-yaml-src;
     };
   regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);
   wortformliste = pkgs.stdenvNoCC.mkDerivation {
