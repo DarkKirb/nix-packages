@@ -66,7 +66,7 @@ in rec {
     buildPythonPackage rec {
       inherit (tarballs.ruamel-yaml-clib-src.passthru) pname version;
       src = tarballs.ruamel-yaml-clib-src;
-      setuptoolsCheckPhase " true";
+      setuptoolsCheckPhase = "true";
     };
   regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);
   wortformliste = pkgs.stdenvNoCC.mkDerivation {
