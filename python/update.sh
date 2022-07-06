@@ -1,7 +1,7 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash -p curl jq 
 set -e
-PACKAGES="plover-plugins-manager plover-stroke rtf-tokenize plover-regenpfeifer plover-emoji plover-tapey-tape plover-yaml-dictionary simplefuzzyset ruamel.yaml"
+PACKAGES="plover-plugins-manager plover-stroke rtf-tokenize plover-regenpfeifer plover-emoji plover-tapey-tape plover-yaml-dictionary simplefuzzyset ruamel.yaml ruamel.yaml.clib"
 
 cat > tarballs.nix << EOF
 { inputs, pkgs }: let
