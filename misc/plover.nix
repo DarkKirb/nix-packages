@@ -61,6 +61,7 @@ in rec {
       inherit (tarballs.ruamel-yaml-src.passthru) pname version;
       src = tarballs.ruamel-yaml-src;
       propagatedBuildInputs = [ruamel-yaml-clib];
+      setuptoolsCheckPhase = "true";
     };
   ruamel-yaml-clib = with python3Packages;
     buildPythonPackage rec {
