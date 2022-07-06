@@ -1,4 +1,4 @@
-#!%python%/bin/python
+#!@python@/bin/python
 import json
 import ruamel.yaml
 import sys
