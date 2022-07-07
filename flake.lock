@@ -325,11 +325,11 @@
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
-        "lastModified": 1657028488,
-        "narHash": "sha256-tPpvvwaLhN6IwPR+rYol4mj4aQbjMbd2/n6Sbke4+tY=",
+        "lastModified": 1657122510,
+        "narHash": "sha256-m27hD3hk82KFMTQ+wgsG5Aw3XVS6I+n7k+cg3HwbrrQ=",
         "owner": "mautrix",
         "repo": "whatsapp",
-        "rev": "2bc5c32d48173e1837c15fd4be698694ffd81627",
+        "rev": "a548fd717462bed82eaf2e7d67fda22c15b3dfb5",
         "type": "github"
       },
       "original": {
@@ -637,11 +637,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1656835607,
-        "narHash": "sha256-zONMAG6JSfGyW20AsVWGnlZwNWws6Q/7IT0oDNGc1xY=",
+        "lastModified": 1657020478,
+        "narHash": "sha256-sU5hXEGcOcvz2xoPAuNLBQJLXjwvPpTkoddyXE8gw20=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "18b14a254dca6b68ca0ce2ce885ce2b550065799",
+        "rev": "71a4f0dc3d80ba76f437c888c1c3d59f1df98163",
         "type": "github"
       },
       "original": {

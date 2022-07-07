@@ -1,6 +1,8 @@
-{ inputs, pkgs }:
-let
-  plover = import ./. { inherit inputs pkgs; };
+{
+  inputs,
+  pkgs,
+}: let
+  plover = import ./. {inherit inputs pkgs;};
   dict_list = [
     "abbreviations"
     "apps"
@@ -94,16 +96,18 @@ let
       chmod +x $out/bin/json-to-yaml.py
     '';
   };
-in builtins.listToAttrs (builtins.map (name: {
-  name = "plover-dict-${name}";
-  value = pkgs.stdenvNoCC.mkDerivation {
-    name = "plover-dict-${name}-${inputs.steno-dictionaries.lastModifiedDate}.yaml";
-    pname = "plover-dict-${name}";
-    version = inputs.steno-dictionaries.lastModifiedDate;
-    srcs = inputs.steno-dictionaries;
-    buildPhase = ''
-      ${json-to-yaml}/bin/json-to-yaml.py dictionaries/${name}.json $out
-    '';
-    installPhase = "true";
-  };
-}) dict_list)
+in
+  builtins.listToAttrs (builtins.map (name: {
+      name = "plover-dict-${name}";
+      value = pkgs.stdenvNoCC.mkDerivation {
+        name = "plover-dict-${name}-${inputs.steno-dictionaries.lastModifiedDate}.yaml";
+        pname = "plover-dict-${name}";
+        version = inputs.steno-dictionaries.lastModifiedDate;
+        srcs = inputs.steno-dictionaries;
+        buildPhase = ''
+          ${json-to-yaml}/bin/json-to-yaml.py dictionaries/${name}.json $out
+        '';
+        installPhase = "true";
+      };
+    })
+    dict_list)
