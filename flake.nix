@@ -88,6 +88,7 @@
           then {
             inherit packages devShells formatter;
             inherit (inputs.cargo2nix.packages.${system}) cargo2nix;
+            gomod2nix = inputs.gomod2nix.packages.${system}.default;
           }
           else {};
       }
