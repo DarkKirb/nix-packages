@@ -52,7 +52,7 @@ steps:
     depends_on:
       - Update flake
   - name: Update pypi
-    image: nixery.dev/shell/curl/jq
+    image: nixery.dev/shell/curl/jq/gnused
     commands:
       - (cd python && bash ./update.sh)
     depends_on:
@@ -99,8 +99,13 @@ steps:
         from_secret: GITEA_KEY
     depends_on:
       - Push git
+#trigger:
+#  event:
+#    - cron
+#  cron:
+#    - updater
 trigger:
   event:
-    - cron
-  cron:
-    - updater
+    - push
+  branch:
+    - main
