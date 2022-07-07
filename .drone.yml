@@ -99,13 +99,8 @@ steps:
         from_secret: GITEA_KEY
     depends_on:
       - Push git
-#trigger:
-#  event:
-#    - cron
-#  cron:
-#    - updater
 trigger:
   event:
-    - push
-  branch:
-    - main
+    - cron
+  cron:
+    - updater
