@@ -100,7 +100,7 @@ in
   builtins.listToAttrs (builtins.map (name: {
       name = "plover-dict-${name}";
       value = pkgs.stdenvNoCC.mkDerivation {
-        name = "plover-dict-${name}-${inputs.steno-dictionaries.lastModifiedDate}.yaml";
+        name = "plover-dict-${name}.yaml";
         pname = "plover-dict-${name}";
         version = inputs.steno-dictionaries.lastModifiedDate;
         srcs = inputs.steno-dictionaries;
