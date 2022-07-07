@@ -22,6 +22,7 @@ in rec {
     '';
 
     installPhase = ''
+      mkdir -p $out/share/papermc
       ln -s ${paper-jar} $out/share/papermc/papermc.jar
       install -Dm555 -t $out/bin minecraft-server
     '';
