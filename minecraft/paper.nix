@@ -22,7 +22,7 @@ in rec {
     '';
 
     installPhase = ''
-      install -Dm444 ${paper-jar} $out/share/papermc/papermc.jar
+      ln -s ${paper-jar} $out/share/papermc/papermc.jar
       install -Dm555 -t $out/bin minecraft-server
     '';
   };
