@@ -2,11 +2,12 @@
   inputs,
   pkgs,
   ...
-}: {
+}: rec {
+  miifox-net-source = pkgs.callPackage ./miifox-source.nix {};
   miifox-net = pkgs.stdenvNoCC.mkDerivation {
     pname = "miifox.net";
     version = inputs.miifox-net.lastModifiedDate;
-    srcs = inputs.miifox-net;
+    srcs = miifox-net-source;
     nativeBuildInputs = with pkgs; [
       python3Packages.chevron
       xorg.lndir
