@@ -26,12 +26,6 @@ in rec {
       src = tarballs.rtf-tokenize-src;
       checkInputs = [pytest];
     };
-  plover-regenpfeifer = with python3Packages;
-    buildPythonPackage rec {
-      inherit (tarballs.plover-regenpfeifer-src.passthru) pname version;
-      src = tarballs.plover-regenpfeifer-src;
-      propagatedBuildInputs = [plover];
-    };
   plover-emoji = with python3Packages;
     buildPythonPackage rec {
       inherit (tarballs.plover-emoji-src.passthru) pname version;
@@ -69,29 +63,6 @@ in rec {
       src = tarballs.ruamel-yaml-clib-src;
       setuptoolsCheckPhase = "true";
     };
-  regenpfeifer-env = pypy3.withPackages (ps: [ps.marisa-trie]);
-  wortformliste = pkgs.stdenvNoCC.mkDerivation {
-    pname = "wortformliste";
-    version = inputs.wortformliste.lastModifiedDate;
-    src = inputs.wortformliste;
-
-    buildPhase = "true";
-    installPhase = "cp wortformliste.csv $out";
-  };
-  regenpfeifer = pkgs.stdenvNoCC.mkDerivation rec {
-    pname = "regenpfeifer";
-    version = inputs.regenpfeifer.lastModifiedDate;
-    name = "${pname}-${version}.json";
-    src = inputs.regenpfeifer;
-    patches = [
-      ./regenpfeifer.patch
-    ];
-    nativeBuildInputs = [regenpfeifer-env];
-    buildPhase = ''
-      PYTHONPATH=${regenpfeifer-env}/site-packages LC_ALL=C.UTF-8 pypy3 -m regenpfeifer.dictionary_generator ${wortformliste} $out unmatched.log 0 0
-    '';
-    installPhase = "true";
-  };
   plover = with python3Packages;
     qt5.mkDerivationWith buildPythonPackage rec {
       pname = "plover";

@@ -25,10 +25,6 @@
     nasin-nanpa.flake = false;
     plover.url = "github:benoit-pierre/plover/wayland-sway";
     plover.flake = false;
-    regenpfeifer.url = "github:mkrnr/regenpfeifer";
-    regenpfeifer.flake = false;
-    wortformliste.url = "github:mkrnr/wortformliste";
-    wortformliste.flake = false;
     cargo2nix.url = "github:cargo2nix/cargo2nix";
     drone-runner-docker.url = "github:drone-runners/drone-runner-docker";
     drone-runner-docker.flake = false;
