@@ -22,12 +22,6 @@ in rec {
     passthru.pname = "rtf-tokenize";
     passthru.version = "1.0.0";
   };
-  plover-regenpfeifer-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/ec/2f/08609500b624e74821bfd6b4eef4dffc656b7e044e2e8dd1413d08cde570/plover_regenpfeifer-0.0.3.tar.gz";
-    sha256 = "6bea850c722ec83a2c99b6b715cdda3c104eac79f903533ea8cb421bc95cd07d";
-    passthru.pname = "plover-regenpfeifer";
-    passthru.version = "0.0.3";
-  };
   plover-emoji-src = fetchurl {
     url = "https://files.pythonhosted.org/packages/44/b0/1e8e677ee942a5817245731493c3541705aad5424a4a21ae4e3bea6a57b6/plover_emoji-0.0.4.tar.gz";
     sha256 = "db6611cd2a094859844b63f6ba2037df7929c4719457556586e9f6ab4f0b57ea";
