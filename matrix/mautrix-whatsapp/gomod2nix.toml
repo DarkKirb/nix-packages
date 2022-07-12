@@ -44,8 +44,8 @@ schema = 3
     version = "v1.10.6"
     hash = "sha256-8EhFwY/9YH5L/fd6l2beOnC3VvpegRAmCCsnDVJBqBM="
   [mod."github.com/mattn/go-sqlite3"]
-    version = "v1.14.13"
-    hash = "sha256-S5Zyy5BQaEguEM5irmLhVUK0Vx1o/4BKRTtZXcgI3PQ="
+    version = "v1.14.14"
+    hash = "sha256-9ih+l+JbwfjfpJEjFyO996rJIFFMg7Tfb0SAinp/01I="
   [mod."github.com/matttproud/golang_protobuf_extensions"]
     version = "v1.0.1"
     hash = "sha256-ystDNStxR90j4CK+AMcEQ5oyYFRgWoGdvWlS0XQMDLQ="
@@ -77,8 +77,8 @@ schema = 3
     version = "v0.0.0-20200617195104-da1b6568686e"
     hash = "sha256-ST9t4/b7WFXUb8wra4ZYVDNZJGrEykw8dkWhLrxp8F0="
   [mod."github.com/stretchr/testify"]
-    version = "v1.7.5"
-    hash = "sha256-XLXQfoP1BQPOHsewXV8VNRWeb0275PlFRSL906eUxnI="
+    version = "v1.8.0"
+    hash = "sha256-LDxBAebK+A06y4vbH7cd1sVBOameIY81Xm8/9OPZh7o="
   [mod."github.com/tidwall/gjson"]
     version = "v1.14.1"
     hash = "sha256-v8zb6n6ReFE9hmiwT7tu4avTgLCrelD9lDMMg2My/AI="
@@ -98,8 +98,8 @@ schema = 3
     version = "v0.0.0-20220628090436-4d18b66b087e"
     hash = "sha256-H601DPysjRRWn12zM1NRozGCkLkWriR/VviVPfpd5vY="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20220629192020-6e4a9fb4bbe6"
-    hash = "sha256-VbChIeVJyYEllrEVaTdNyzramsU+LG60GcJpT6yKMtw="
+    version = "v0.0.0-20220711111122-6340068d67de"
+    hash = "sha256-Oy8m04wa9zEBejjvavUsQ+m7Ja9ZPzDm873NSZxfEM8="
   [mod."golang.org/x/crypto"]
     version = "v0.0.0-20220622213112-05595931fe9d"
     hash = "sha256-2c4wvwiQ0DJSJsApfmNoxCxx1siRCiJvW9hhrGlcvds="
@@ -152,5 +152,5 @@ schema = 3
     version = "v2.3.2"
     hash = "sha256-FlrO1bogPrIzzVzDtIovYyr+1mNk0YaO5hEVv5zovM8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.11.1-0.20220705131441-28320db1cc9c"
-    hash = "sha256-sI+hx0MHOfs7jiumapYTPKsJQsjfTPU6SwlIVNNWtDI="
+    version = "v0.11.1-0.20220711120626-546455a7c0ef"
+    hash = "sha256-cqke2ZTeMGzZN5rh45zdilOCT3N/BMp1wSy87Q6ZrVY="
