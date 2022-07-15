@@ -1,7 +1,7 @@
 {fetchgit}:
 fetchgit {
   url = "https://git.chir.rs/darkkirb/lotte-art";
-  rev = "980fedd7acfe1ddd362a3387ea24fe7d1d2f2653";
-  sha256 = "16b37ap1vm0i9k3q7r5pkxf5hrakfyrdzxsrpx630kv5z9ha18iv";
+  rev = "3310f3db58562548ab756371537c289287680c2e";
+  sha256 = "1wqzaiwnzxm2scfdzpmp3wwdsxlfyiy7p5b88iii2s32h57hdslk";
   fetchLFS = true;
 }
