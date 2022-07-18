@@ -1124,10 +1124,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1nxak6q0m0nd3m5a7vp9xqww9w5fqx97viv5g6pg3q62q9binm0j";
+      sha256 = "0lqizfap12ica5c6q74ldarzmbpmhgl156bap9xhamrlm4za4i7a";
       type = "gem";
     };
-    version = "0.9.1";
+    version = "0.10.0";
   };
   globalid = {
     dependencies = ["activesupport"];
@@ -1794,10 +1794,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0bbbncvkqxbbi608vq2v7b3zzgrqac3syk403zhhbwrg352mv88q";
+      sha256 = "1i8yrwnf5mzixl8a4h3cfx93gkzcs7q6grpyv0zng1vga9cmk28n";
       type = "gem";
     };
-    version = "3.13.14";
+    version = "3.13.16";
   };
   omniauth = {
     dependencies = ["hashie" "rack"];
@@ -2099,10 +2099,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1b1qsg0yfargdhmpapp2d3mlxj82wyygs9nj74w0r03diyi8swlc";
+      sha256 = "0axc6w0rs4yj0pksfll1hjgw1k6a5q0xi2lckh91knfb72v348pa";
       type = "gem";
     };
-    version = "2.2.3.1";
+    version = "2.2.4";
   };
   rack-attack = {
     dependencies = ["rack"];
@@ -2602,10 +2602,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0b06kw7frd8hrb7373pvfd39qap00ykkvipgymgwxfjzrgz0ag0d";
+      sha256 = "1lb0i44nksb251739jaszpv71908aj627zr1jfddnj8jk2slmzvl";
       type = "gem";
     };
-    version = "6.4.2";
+    version = "6.5.1";
   };
   sidekiq-bulk = {
     dependencies = ["sidekiq"];
@@ -2994,10 +2994,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1bwj34rz7961rrl545f006m2jdz1nrc0m72gfqmnb41xwsvpagbk";
+      sha256 = "0lblym140w5n88ijyfgcvkxvpfj8m6z00rxxf2ckmmhk0x61dzkj";
       type = "gem";
     };
-    version = "1.0.13";
+    version = "1.0.15";
   };
   warden = {
     dependencies = ["rack"];
