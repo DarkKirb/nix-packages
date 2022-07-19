@@ -94,6 +94,9 @@ schema = 3
   [mod."github.com/VividCortex/gohistogram"]
     version = "v1.0.0"
     hash = "sha256-zubR+TIR7DgyESAOLM/DC0DqR1K7zXM+YL+OmGfed/o="
+  [mod."github.com/adrium/goheif"]
+    version = "v0.0.0-20210309200126-b184a7b446fa"
+    hash = "sha256-R8cAZMJneeAs2akDOPmWE1Wp1yx2p94WmqOszAVbDVQ="
   [mod."github.com/aead/siphash"]
     version = "v1.0.1"
     hash = "sha256-zP7VoPA7YHxa+lMwnOXRJo3rfVZFsCTtgJYwLdAPbQY="
@@ -889,9 +892,6 @@ schema = 3
   [mod."github.com/jbenet/goprocess"]
     version = "v0.1.4"
     hash = "sha256-U8K2bPDD8xkc+EcDMRpTaCcHN/jfsHvEYQLO1Kcuivw="
-  [mod."github.com/jdeng/goheif"]
-    version = "v0.0.0-20200323230657-a0d6a8b3e68f"
-    hash = "sha256-qUqGMyzaz9sF2+ri7qgeVqGuuUeZMPHg1GED9w9JDOk="
   [mod."github.com/jehiah/go-strftime"]
     version = "v0.0.0-20171201141054-1d33003b3869"
     hash = "sha256-+4WOjV+F2BXgKmdfYvuSkfQAKOZlFo8eZrnCT+xT3xQ="
