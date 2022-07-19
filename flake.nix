@@ -60,11 +60,10 @@
           ];
         };
 
-        packages = pkgs.lib.lists.foldl (a: b: a // b) {} (map (f: import f {inherit pkgs inputs;}) [
+        packages = pkgs.lib.lists.foldl (a: b: a // b) {} (map (f: import f {inherit pkgs inputs;}) ([
           ./scripts/clean-s3-cache.nix
           ./web/old-homepage.nix
           ./web/miifox-net.nix
-          ./minecraft/paper.nix
           ./mastodon
           ./matrix/matrix-media-repo
           ./matrix/mautrix-whatsapp
@@ -75,12 +74,12 @@
           ./art
           ./ci/drone-runner-docker
           ./vim
-          ./hydra
           ./python/tarballs.nix
-        ]);
+        ] ++ (if system == "x86_64-linux" then [./hydra] else [])
+          ++ (if system != "i686-linux" then [./minecraft/paper.nix] else [])));
 
         hydraJobs =
-          if (pkgs.lib.strings.hasSuffix "-linux" system) && (system != "i686-linux")
+          if pkgs.lib.strings.hasSuffix "-linux" system
           then {
             inherit packages devShells formatter;
             inherit (inputs.cargo2nix.packages.${system}) cargo2nix;
