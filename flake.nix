@@ -80,7 +80,7 @@
         ]);
 
         hydraJobs =
-          if system == "x86_64-linux"
+          if pkgs.lib.strings.hasSuffix "-linux" system
           then {
             inherit packages devShells formatter;
             inherit (inputs.cargo2nix.packages.${system}) cargo2nix;
