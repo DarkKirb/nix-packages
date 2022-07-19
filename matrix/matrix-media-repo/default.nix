@@ -6,9 +6,6 @@ in {
     pname = "matrix-media-repo";
     version = inputs.matrix-media-repo.lastModifiedDate;
     src = pkgs.callPackage ./source.nix {};
-    patches = [
-      ./async-media.patch
-    ];
     go = pkgs.go_1_16;
     proxyVendor = true;
     modules = ./gomod2nix.toml;

@@ -19,12 +19,18 @@ SHA=$(echo $JSON | jq -r .sha256)
 SOURCE_DIR=$(grep '^path is' $WORK_DIR/nix-prefetch-git.out | sed 's/^path is //')
 
 cat > source.nix << EOF
-{fetchgit}:
-fetchgit { 
-  url = "$URL";
-  rev = "$REVISION";
-  sha256 = "$SHA";
-  leaveDotGit = true;
+{applyPatches, fetchgit}:
+applyPatches {
+  src = fetchgit {
+    url = "$URL";
+    rev = "$REVISION";
+    sha256 = "$SHA";
+    leaveDotGit = true;
+  };
+  patches = [
+    ./async-media.patch
+    ./support-aarch64.patch
+  ];
 }
 EOF
 
