@@ -39,6 +39,12 @@ steps:
       - mkdir -p /etc/nix
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - (cd matrix/mautrix-whatsapp && ./update.sh)
+  - name: Update mautrix-discord
+    image: nixos/nix
+    commands:
+      - mkdir -p /etc/nix
+      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+      - (cd matrix/mautrix-discord && ./update.sh)
     environment:
       USER: nobody
     depends_on:
@@ -74,6 +80,7 @@ steps:
       - Update mastodon-glitch
       - Update matrix-media-repo
       - Update mautrix-whatsapp
+      - Update mautrix-discord
       - Update art
       - Update pypi
       - Update miifox

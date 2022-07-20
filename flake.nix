@@ -18,6 +18,8 @@
     matrix-media-repo.flake = false;
     mautrix-whatsapp.url = "github:mautrix/whatsapp";
     mautrix-whatsapp.flake = false;
+    mautrix-discord.url = "github:mautrix/discord";
+    mautrix-discord.flake = false;
     gomod2nix.url = "github:tweag/gomod2nix";
     kreative-open-relay.url = "github:kreativekorp/open-relay";
     kreative-open-relay.flake = false;
@@ -61,22 +63,32 @@
         };
 
         packages = pkgs.lib.lists.foldl (a: b: a // b) {} (map (f: import f {inherit pkgs inputs;}) ([
-          ./scripts/clean-s3-cache.nix
-          ./web/old-homepage.nix
-          ./web/miifox-net.nix
-          ./mastodon
-          ./matrix/matrix-media-repo
-          ./matrix/mautrix-whatsapp
-          ./fonts/kreative.nix
-          ./fonts/nasin-nanpa.nix
-          ./plover
-          ./plover/dicts.nix
-          ./art
-          ./ci/drone-runner-docker
-          ./vim
-          ./python/tarballs.nix
-        ] ++ (if system == "x86_64-linux" then [./hydra] else [])
-          ++ (if system != "i686-linux" then [./minecraft/paper.nix] else [])));
+            ./scripts/clean-s3-cache.nix
+            ./web/old-homepage.nix
+            ./web/miifox-net.nix
+            ./mastodon
+            ./matrix/matrix-media-repo
+            ./matrix/mautrix-whatsapp
+            ./matrix/mautrix-discord
+            ./fonts/kreative.nix
+            ./fonts/nasin-nanpa.nix
+            ./plover
+            ./plover/dicts.nix
+            ./art
+            ./ci/drone-runner-docker
+            ./vim
+            ./python/tarballs.nix
+          ]
+          ++ (
+            if system == "x86_64-linux"
+            then [./hydra]
+            else []
+          )
+          ++ (
+            if system != "i686-linux"
+            then [./minecraft/paper.nix]
+            else []
+          )));
 
         hydraJobs =
           if pkgs.lib.strings.hasSuffix "-linux" system

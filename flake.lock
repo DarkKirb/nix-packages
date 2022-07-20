@@ -322,6 +322,22 @@
         "type": "github"
       }
     },
+    "mautrix-discord": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1657375847,
+        "narHash": "sha256-3oFWMP/xMKdbA3CPlpyY7s4axUC+CGSEzt9prm/oC0A=",
+        "owner": "mautrix",
+        "repo": "discord",
+        "rev": "11efa4996186656dee186ba519d1f6893873ab5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mautrix",
+        "repo": "discord",
+        "type": "github"
+      }
+    },
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
@@ -682,6 +698,7 @@
         "kreative-open-relay": "kreative-open-relay",
         "mastodon": "mastodon",
         "matrix-media-repo": "matrix-media-repo",
+        "mautrix-discord": "mautrix-discord",
         "mautrix-whatsapp": "mautrix-whatsapp",
         "miifox-net": "miifox-net",
         "nasin-nanpa": "nasin-nanpa",
