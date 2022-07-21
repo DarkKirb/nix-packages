@@ -51,7 +51,6 @@
       system: let
         pkgs = import nixpkgs {
           inherit system;
-          config.contentAddressedByDefault = true;
         };
       in rec {
         formatter = pkgs.alejandra;
