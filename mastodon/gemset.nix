@@ -1773,10 +1773,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "11w59ga9324yx6339dgsflz3dsqq2mky1qqdwcg6wi5s1bf2yldi";
+      sha256 = "0lhhnqch8r9n1835p6pvmg4m2r4hb98nkfxrpr4yf6246d9xg8bc";
       type = "gem";
     };
-    version = "1.13.6";
+    version = "1.13.7";
   };
   nsa = {
     dependencies = ["activesupport" "concurrent-ruby" "sidekiq" "statsd-ruby"];
@@ -1794,10 +1794,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1i8yrwnf5mzixl8a4h3cfx93gkzcs7q6grpyv0zng1vga9cmk28n";
+      sha256 = "1hngcv7bz8dzkcymhhy71xh0fv0dzzrk0ynmfy8ivccxmkg4axbi";
       type = "gem";
     };
-    version = "3.13.16";
+    version = "3.13.17";
   };
   omniauth = {
     dependencies = ["hashie" "rack"];
