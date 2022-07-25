@@ -293,11 +293,11 @@
     "mastodon": {
       "flake": false,
       "locked": {
-        "lastModified": 1658515794,
-        "narHash": "sha256-wl4fXVQYjbahGu6dptV8lQnZk92QAsdX1mP2hjlviK0=",
+        "lastModified": 1658663311,
+        "narHash": "sha256-dESyJD15ME7Z5cNiuO0lQoUxJjGRkkYRZo9cTyGDCtE=",
         "owner": "glitch-soc",
         "repo": "mastodon",
-        "rev": "85d0e3474574d82fc653925560d2905cee43287e",
+        "rev": "82f1e0945eed6e80a4e626580df45f7f73427755",
         "type": "github"
       },
       "original": {
@@ -653,11 +653,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1658621608,
-        "narHash": "sha256-tx6/lH3qK33tGJeroHb9OT78VJqqkqWKCINwb14iCWk=",
+        "lastModified": 1658705145,
+        "narHash": "sha256-H/nZuqNsXsT3A3dPV4zjrjo3rhgugyd0Pg0zoOhX3/4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "93d0c584539e039e7c21579c5b1f849dd9472c72",
+        "rev": "6cce09ce7f12e039318168ccfb0344426e17eec8",
         "type": "github"
       },
       "original": {
