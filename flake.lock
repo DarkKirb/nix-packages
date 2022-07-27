@@ -686,11 +686,11 @@
     "plover-machine-hid": {
       "flake": false,
       "locked": {
-        "lastModified": 1658953972,
-        "narHash": "sha256-PS0gtKJTDh8ZfG+OvwMqk4Z8Sj4zLokWVZDXOFt+/64=",
+        "lastModified": 1658954470,
+        "narHash": "sha256-iuu32Q5pdgyRybaBv8NQajgziicdwWwqvZV7DwIO64s=",
         "ref": "refs/heads/main",
-        "rev": "80f98167f206bc268852aa491f56c451ee522e91",
-        "revCount": 15,
+        "rev": "f11d7586a993522832efed78cfa5e3654bb48258",
+        "revCount": 16,
         "type": "git",
         "url": "https://git.chir.rs/darkkirb/plover-machine-hid"
       },
