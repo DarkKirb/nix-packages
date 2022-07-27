@@ -39,6 +39,8 @@
     hydra-base.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack&rev=3fdc9e491dc7d33bc09ef4f33984f87c8f478aa2";
     steno-dictionaries.url = "github:didoesdigital/steno-dictionaries";
     steno-dictionaries.flake = false;
+    plover-machine-hid.url = "git+https://git.chir.rs/darkkirb/plover-machine-hid";
+    plover-machine-hid.flake = false;
   };
 
   outputs = {

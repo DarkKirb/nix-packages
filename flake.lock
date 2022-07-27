@@ -683,6 +683,22 @@
         "type": "github"
       }
     },
+    "plover-machine-hid": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1658949572,
+        "narHash": "sha256-AinW7UcCDM5W0uJmyCV7FnZjTlwlBzD+VF+Y2cKlSK8=",
+        "ref": "refs/heads/main",
+        "rev": "06ed7f5db7bc4b5ca0bb0ddc8ec02fffaf254028",
+        "revCount": 13,
+        "type": "git",
+        "url": "https://git.chir.rs/darkkirb/plover-machine-hid"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.chir.rs/darkkirb/plover-machine-hid"
+      }
+    },
     "root": {
       "inputs": {
         "cargo2nix": "cargo2nix",
@@ -706,6 +722,7 @@
         "nixpkgs-go116": "nixpkgs-go116",
         "nixpkgs-stable": "nixpkgs-stable",
         "plover": "plover",
+        "plover-machine-hid": "plover-machine-hid",
         "steno-dictionaries": "steno-dictionaries"
       }
     },

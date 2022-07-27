@@ -50,6 +50,13 @@ in rec {
       src = tarballs.plover-yaml-dictionary-src;
       propagatedBuildInputs = [plover ruamel-yaml];
     };
+  plover-machine-hid = with python3Packages;
+    buildPythonPackage rec {
+      pname = "plover-machine-hid";
+      version = inputs.plover-machine-hid.lastModifiedDate;
+      src = inputs.plover-machine-hid;
+      propagatedBuildInputs = [plover hid bitstring];
+    };
   ruamel-yaml = with python3Packages;
     buildPythonPackage rec {
       inherit (tarballs.ruamel-yaml-src.passthru) pname version;
