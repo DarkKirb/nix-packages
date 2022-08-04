@@ -2512,11 +2512,11 @@
       };
     }
     {
-      name = "axe_core___axe_core_4.4.2.tgz";
+      name = "axe_core___axe_core_4.4.3.tgz";
       path = fetchurl {
-        name = "axe_core___axe_core_4.4.2.tgz";
-        url = "https://registry.yarnpkg.com/axe-core/-/axe-core-4.4.2.tgz";
-        sha512 = "LVAaGp/wkkgYJcjmHsoKx4juT1aQvJyPcW09MLCjVTh3V2cc6PnyempiLMNH5iMdfIX/zdbjUx2KDjMLCTdPeA==";
+        name = "axe_core___axe_core_4.4.3.tgz";
+        url = "https://registry.yarnpkg.com/axe-core/-/axe-core-4.4.3.tgz";
+        sha512 = "32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==";
       };
     }
     {
@@ -4696,11 +4696,11 @@
       };
     }
     {
-      name = "eslint_plugin_jsx_a11y___eslint_plugin_jsx_a11y_6.6.0.tgz";
+      name = "eslint_plugin_jsx_a11y___eslint_plugin_jsx_a11y_6.6.1.tgz";
       path = fetchurl {
-        name = "eslint_plugin_jsx_a11y___eslint_plugin_jsx_a11y_6.6.0.tgz";
-        url = "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.6.0.tgz";
-        sha512 = "kTeLuIzpNhXL2CwLlc8AHI0aFRwWHcg483yepO9VQiHzM9bZwJdzTkzBszbuPrbgGmq2rlX/FaT2fJQsjUSHsw==";
+        name = "eslint_plugin_jsx_a11y___eslint_plugin_jsx_a11y_6.6.1.tgz";
+        url = "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.6.1.tgz";
+        sha512 = "sXgFVNHiWffBq23uiS/JaP6eVR622DqwB4yTzKvGZGcPq6/yZ3WmOZfuBks/vHWo9GaFOqC2ZK4i6+C35knx7Q==";
       };
     }
     {
@@ -7216,11 +7216,11 @@
       };
     }
     {
-      name = "jsx_ast_utils___jsx_ast_utils_3.3.1.tgz";
+      name = "jsx_ast_utils___jsx_ast_utils_3.3.2.tgz";
       path = fetchurl {
-        name = "jsx_ast_utils___jsx_ast_utils_3.3.1.tgz";
-        url = "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-3.3.1.tgz";
-        sha512 = "pxrjmNpeRw5wwVeWyEAk7QJu2GnBO3uzPFmHCKJJFPKK2Cy0cWL23krGtLdnMmbIi6/FjlrQpPyfQI19ByPOhQ==";
+        name = "jsx_ast_utils___jsx_ast_utils_3.3.2.tgz";
+        url = "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-3.3.2.tgz";
+        sha512 = "4ZCADZHRkno244xlNnn4AOG6sRQ7iBZ5BbgZ4vW4y5IZw7cVUD1PPeblm1xx/nfmMxPdt/LHsXZW8z/j58+l9Q==";
       };
     }
     {
@@ -10416,11 +10416,11 @@
       };
     }
     {
-      name = "sass___sass_1.53.0.tgz";
+      name = "sass___sass_1.54.0.tgz";
       path = fetchurl {
-        name = "sass___sass_1.53.0.tgz";
-        url = "https://registry.yarnpkg.com/sass/-/sass-1.53.0.tgz";
-        sha512 = "zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==";
+        name = "sass___sass_1.54.0.tgz";
+        url = "https://registry.yarnpkg.com/sass/-/sass-1.54.0.tgz";
+        sha512 = "C4zp79GCXZfK0yoHZg+GxF818/aclhp9F48XBu/+bm9vXEVAYov9iU3FBVRMq3Hx3OA4jfKL+p2K9180mEh0xQ==";
       };
     }
     {
