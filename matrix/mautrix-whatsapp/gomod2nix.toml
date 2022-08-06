@@ -98,8 +98,8 @@ schema = 3
     version = "v0.0.0-20220628090436-4d18b66b087e"
     hash = "sha256-H601DPysjRRWn12zM1NRozGCkLkWriR/VviVPfpd5vY="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20220715134127-5e6b9804193a"
-    hash = "sha256-zpgkvM7Ny+RL9l3ZIg5Uh3Wsyzawrj/E3b7VwrWNrtg="
+    version = "v0.0.0-20220730081540-aaaedc8d029a"
+    hash = "sha256-0l0NgWn1TJlOtDue2ix/astP+ksTW+DZ1zqdIhEw2eA="
   [mod."golang.org/x/crypto"]
     version = "v0.0.0-20220622213112-05595931fe9d"
     hash = "sha256-2c4wvwiQ0DJSJsApfmNoxCxx1siRCiJvW9hhrGlcvds="
