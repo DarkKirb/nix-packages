@@ -46,16 +46,4 @@ in rec {
     passthru.pname = "simplefuzzyset";
     passthru.version = "0.0.12";
   };
-  ruamel-yaml-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz";
-    sha256 = "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af";
-    passthru.pname = "ruamel.yaml";
-    passthru.version = "0.17.21";
-  };
-  ruamel-yaml-clib-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/8b/25/08e5ad2431a028d0723ca5540b3af6a32f58f25e83c6dda4d0fcef7288a3/ruamel.yaml.clib-0.2.6.tar.gz";
-    sha256 = "4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd";
-    passthru.pname = "ruamel.yaml.clib";
-    passthru.version = "0.2.6";
-  };
 }

@@ -57,19 +57,6 @@ in rec {
       src = inputs.plover-machine-hid;
       propagatedBuildInputs = [plover hid bitstring];
     };
-  ruamel-yaml = with python3Packages;
-    buildPythonPackage rec {
-      inherit (tarballs.ruamel-yaml-src.passthru) pname version;
-      src = tarballs.ruamel-yaml-src;
-      propagatedBuildInputs = [ruamel-yaml-clib];
-      setuptoolsCheckPhase = "true";
-    };
-  ruamel-yaml-clib = with python3Packages;
-    buildPythonPackage rec {
-      inherit (tarballs.ruamel-yaml-clib-src.passthru) pname version;
-      src = tarballs.ruamel-yaml-clib-src;
-      setuptoolsCheckPhase = "true";
-    };
   plover = with python3Packages;
     qt5.mkDerivationWith buildPythonPackage rec {
       pname = "plover";
