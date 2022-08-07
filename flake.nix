@@ -20,6 +20,10 @@
     mautrix-whatsapp.flake = false;
     mautrix-discord.url = "github:mautrix/discord";
     mautrix-discord.flake = false;
+    mautrix-telegram.url = "github:mautrix/telegram";
+    mautrix-telegram.flake = false;
+    mautrix-signal.url = "github:mautrix/signal";
+    mautrix-signal.flake = false;
     gomod2nix.url = "github:tweag/gomod2nix";
     kreative-open-relay.url = "github:kreativekorp/open-relay";
     kreative-open-relay.flake = false;
@@ -71,6 +75,8 @@
             ./matrix/matrix-media-repo
             ./matrix/mautrix-whatsapp
             ./matrix/mautrix-discord
+            ./matrix/mautrix-telegram.nix
+            ./matrix/mautrix-signal.nix
             ./fonts/kreative.nix
             ./fonts/nasin-nanpa.nix
             ./plover
