@@ -85,6 +85,7 @@
             ./ci/drone-runner-docker
             ./vim
             ./python/tarballs.nix
+            ./python/packages.nix
           ]
           ++ (
             if system == "x86_64-linux"

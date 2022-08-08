@@ -46,4 +46,16 @@ in rec {
     passthru.pname = "simplefuzzyset";
     passthru.version = "0.0.12";
   };
+  mautrix-src = fetchurl {
+    url = "https://files.pythonhosted.org/packages/f0/0b/a758146ad08ea92eade2b2c5a75886c23329a78276d401590358120b8f17/mautrix-0.17.4.tar.gz";
+    sha256 = "2505f1bda4fd8e374b98cff761b8cacee10a70fb23b2ed09106973c843a51b33";
+    passthru.pname = "mautrix";
+    passthru.version = "0.17.4";
+  };
+  tulir-telethon-src = fetchurl {
+    url = "https://files.pythonhosted.org/packages/38/f0/8236f11154532dc0d4e2c161c5c1cff63517fe7d9c05131e92240c11f37c/tulir-telethon-1.25.0a20.tar.gz";
+    sha256 = "5fda28f9808d32a42b26f41afcf222f5d16069e4316eb967c14267c2345be897";
+    passthru.pname = "tulir-telethon";
+    passthru.version = "1.25.0a20";
+  };
 }
