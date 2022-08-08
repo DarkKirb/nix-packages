@@ -13,7 +13,7 @@ in {
       propagatedBuildInputs = [
         CommonMark
         aiohttp
-        asyncpg
+        inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.python310Packages.asyncpg
         attrs
         python-packages.mautrix
         phonenumbers
