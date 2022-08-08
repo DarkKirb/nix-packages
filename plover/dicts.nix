@@ -81,7 +81,7 @@
     "voiceover"
   ];
   json-to-yaml-env = pkgs.python3.buildEnv.override {
-    extraLibs = with plover; [ruamel-yaml];
+    extraLibs = with plover; with pkgs.python3Packages; [ruamel-yaml];
   };
   json-to-yaml = pkgs.stdenvNoCC.mkDerivation {
     name = "json-to-yaml";
