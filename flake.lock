@@ -698,6 +698,22 @@
         "type": "github"
       }
     },
+    "nvim-telescope-file-browser": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659376895,
+        "narHash": "sha256-LYkyvjv6LO39c49s5fjzfdzRVRHrtTI1dweaZMFPLVc=",
+        "owner": "nvim-telescope",
+        "repo": "telescope-file-browser.nvim",
+        "rev": "4272c52078cc457dfaabce6fa3545e7495651d04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-telescope",
+        "repo": "telescope-file-browser.nvim",
+        "type": "github"
+      }
+    },
     "plover": {
       "flake": false,
       "locked": {
@@ -755,6 +771,7 @@
         "nixpkgs": "nixpkgs_6",
         "nixpkgs-go116": "nixpkgs-go116",
         "nixpkgs-stable": "nixpkgs-stable",
+        "nvim-telescope-file-browser": "nvim-telescope-file-browser",
         "plover": "plover",
         "plover-machine-hid": "plover-machine-hid",
         "steno-dictionaries": "steno-dictionaries"

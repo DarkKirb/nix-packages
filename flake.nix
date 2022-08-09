@@ -45,6 +45,8 @@
     steno-dictionaries.flake = false;
     plover-machine-hid.url = "git+https://git.chir.rs/darkkirb/plover-machine-hid";
     plover-machine-hid.flake = false;
+    nvim-telescope-file-browser.url = "github:nvim-telescope/telescope-file-browser.nvim";
+    nvim-telescope-file-browser.flake = false;
   };
 
   outputs = {
