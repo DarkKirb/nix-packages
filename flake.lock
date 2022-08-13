@@ -40,11 +40,11 @@
     "copilot-cmp": {
       "flake": false,
       "locked": {
-        "lastModified": 1659742591,
-        "narHash": "sha256-7e+G4y9Dv48vGigXnQxKQtKuP+n9eIfDZ+ZYsW1OoPc=",
+        "lastModified": 1660186814,
+        "narHash": "sha256-9w4WpU+8tk+2CTWwdzBbhHa5igVGSM5g0318lkBNfT0=",
         "owner": "zbirenbaum",
         "repo": "copilot-cmp",
-        "rev": "1d1f6137035be0da8268a04e3d7aa6921962a2d6",
+        "rev": "e93c7c8eab2e98c0fe34619cfb7487d13fb756a4",
         "type": "github"
       },
       "original": {
@@ -137,11 +137,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1659105894,
-        "narHash": "sha256-6+SyORQjTsYGZHWg1TbcpD+4CBi8aBA2rNxmtwu1JtY=",
+        "lastModified": 1660214580,
+        "narHash": "sha256-80HOMh3TImw/fDTc5KlvMQcIRo6Zx0IOfzHgV97o3mI=",
         "owner": "tweag",
         "repo": "gomod2nix",
-        "rev": "d1e95112bd2dc1359330c808154a194c999b7886",
+        "rev": "78068d481c10f4b4a21e62a0d8cca812933498fe",
         "type": "github"
       },
       "original": {
@@ -229,11 +229,11 @@
     "kreative-open-relay": {
       "flake": false,
       "locked": {
-        "lastModified": 1657522286,
-        "narHash": "sha256-10Qx+EOxU1YQ+cp8E/SyQbUPPBC1m2zunyktcTNKUeU=",
+        "lastModified": 1660121291,
+        "narHash": "sha256-w0/u8d/yxrhHpoekiGk4NlaybN4NGtmCTHn6qXK1PUc=",
         "owner": "kreativekorp",
         "repo": "open-relay",
-        "rev": "38ecb6007388f91f0f41a95aa75c059a2d43ae71",
+        "rev": "455ee65019674e82768cbb478656730cbbf11fa1",
         "type": "github"
       },
       "original": {
@@ -357,11 +357,11 @@
     "mautrix-telegram": {
       "flake": false,
       "locked": {
-        "lastModified": 1659437166,
-        "narHash": "sha256-H2UFSRPq4lsJPBKtztdUXbT/VnB6jg/uR8QCi/2z/GI=",
+        "lastModified": 1660333552,
+        "narHash": "sha256-QJ59EzUtI65WjHiL2DxDAXX6ii2WSRo0K/srWF5Jqwg=",
         "owner": "mautrix",
         "repo": "telegram",
-        "rev": "473ab17fe79385b2117e981d514c33a6a0b543bf",
+        "rev": "121660776310d5909c416c38be61f2b9b07db475",
         "type": "github"
       },
       "original": {
@@ -608,11 +608,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1659907814,
-        "narHash": "sha256-JEYCjAFJQK0JGe2ApyGu/+doxzTraT+g1LP3npXnuBI=",
+        "lastModified": 1660318005,
+        "narHash": "sha256-g9WCa9lVUmOV6dYRbEPjv/TLOR5hamjeCcKExVGS3OQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "92fe622fdfe477a85662bb77678e39fa70373f13",
+        "rev": "5c211b47aeadcc178c5320afd4e74c7eed5c389f",
         "type": "github"
       },
       "original": {
@@ -624,16 +624,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1653581809,
-        "narHash": "sha256-Uvka0V5MTGbeOfWte25+tfRL3moECDh1VwokWSZUdoY=",
+        "lastModified": 1658285632,
+        "narHash": "sha256-zRS5S/hoeDGUbO+L95wXG9vJNwsSYcl93XiD0HQBXLk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "83658b28fe638a170a19b8933aa008b30640fbd1",
+        "rev": "5342fc6fb59d0595d26883c3cadff16ce58e44f3",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -685,11 +685,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1660003230,
-        "narHash": "sha256-Dlf+Baq4Sw2tiRHRiH9PP1vjVEFFx537WDwJ4mUGIhc=",
+        "lastModified": 1660358575,
+        "narHash": "sha256-EMIn5yM/fDorK5C+DLaxz4/ysP0lpj9xEwbN6gKIkWM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d210469dd730ae4355fb176357b416df1a3594f8",
+        "rev": "71d9ee04f44051acbca335b6c5f583902e329987",
         "type": "github"
       },
       "original": {
@@ -805,11 +805,11 @@
     "steno-dictionaries": {
       "flake": false,
       "locked": {
-        "lastModified": 1658745253,
-        "narHash": "sha256-gQn3oWLzW9c4+fLfS6dB0lGOKj4n/D/cIhrJ3V4pE3U=",
+        "lastModified": 1660107729,
+        "narHash": "sha256-suHQGwMgcc3ZALGhleF8uwiqcj87YcLv/K8+VIsk6MM=",
         "owner": "didoesdigital",
         "repo": "steno-dictionaries",
-        "rev": "62e3c35ef4ee5508dd625acac3b036e4a4c20ed7",
+        "rev": "151d99a7c36674228aff14e80d76104b6c45ec74",
         "type": "github"
       },
       "original": {
