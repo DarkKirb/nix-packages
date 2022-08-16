@@ -2,7 +2,7 @@
 #! nix-shell -i bash -p bundix yarn2nix yarn nix-prefetch-git jq
 set -e
 
-URL=https://github.com/glitch-soc/mastodon.git
+URL=$(jq -r '.nodes.mastodon.locked.url' ../flake.lock)
 REVISION=$(jq -r '.nodes.mastodon.locked.rev' ../flake.lock)
 
 rm -f gemset.nix yarn.nix

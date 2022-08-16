@@ -293,17 +293,18 @@
     "mastodon": {
       "flake": false,
       "locked": {
-        "lastModified": 1660574115,
-        "narHash": "sha256-zkpHNTyguNg1VObQFehjUCmsEb4LQ+X1nxGm+/UH7JE=",
-        "owner": "glitch-soc",
-        "repo": "mastodon",
-        "rev": "aba0032f540407d88144ac637a59fce69625546f",
-        "type": "github"
+        "lastModified": 1660591183,
+        "narHash": "sha256-ST+JDz0efEmjdiSYUwDAdU2gIqvxwQCRBVZKrDM+uUk=",
+        "ref": "develop",
+        "rev": "1591adb62384f511436e94131c7553197ff5000d",
+        "revCount": 15730,
+        "type": "git",
+        "url": "https://git.kescher.at/kescher/catstodon"
       },
       "original": {
-        "owner": "glitch-soc",
-        "repo": "mastodon",
-        "type": "github"
+        "ref": "develop",
+        "type": "git",
+        "url": "https://git.kescher.at/kescher/catstodon"
       }
     },
     "matrix-media-repo": {

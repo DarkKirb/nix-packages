@@ -11,7 +11,7 @@
     clean-s3-cache.flake = false;
     miifox-net.url = "git+https://git.chir.rs/CarolineHusky/MiiFox.net";
     miifox-net.flake = false;
-    mastodon.url = "github:glitch-soc/mastodon";
+    mastodon.url = "git+https://git.kescher.at/kescher/catstodon?ref=develop";
     mastodon.flake = false;
     nixpkgs-go116.url = "github:NixOS/nixpkgs/dab5668f6be905a7f0de39a7d67fd8f78a13d600";
     matrix-media-repo.url = "github:turt2live/matrix-media-repo";
