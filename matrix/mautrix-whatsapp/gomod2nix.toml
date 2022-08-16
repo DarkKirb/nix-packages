@@ -22,6 +22,12 @@ schema = 3
   [mod."github.com/lib/pq"]
     version = "v1.10.6"
     hash = "sha256-8EhFwY/9YH5L/fd6l2beOnC3VvpegRAmCCsnDVJBqBM="
+  [mod."github.com/mattn/go-colorable"]
+    version = "v0.1.12"
+    hash = "sha256-Y1vCt0ShrCz4wSmwsppCfeLPLKrWusc2zM2lUFwDMyI="
+  [mod."github.com/mattn/go-isatty"]
+    version = "v0.0.14"
+    hash = "sha256-e8zn5eCVh/B1HOP1PGXeXH0bGkIV0vKYP9KLwZni5as="
   [mod."github.com/mattn/go-sqlite3"]
     version = "v1.14.14"
     hash = "sha256-9ih+l+JbwfjfpJEjFyO996rJIFFMg7Tfb0SAinp/01I="
@@ -40,6 +46,9 @@ schema = 3
   [mod."github.com/prometheus/procfs"]
     version = "v0.7.3"
     hash = "sha256-ik0WpnpSjMwifPYfQTfu/eb5ilNj+eLJF0d5Dftp8A8="
+  [mod."github.com/rs/zerolog"]
+    version = "v1.27.0"
+    hash = "sha256-BxQtP2TROeSSpj9l1irocuSfxn55UL4ugzB/og7r8eE="
   [mod."github.com/skip2/go-qrcode"]
     version = "v0.0.0-20200617195104-da1b6568686e"
     hash = "sha256-ST9t4/b7WFXUb8wra4ZYVDNZJGrEykw8dkWhLrxp8F0="
@@ -62,8 +71,8 @@ schema = 3
     version = "v0.0.0-20220628090436-4d18b66b087e"
     hash = "sha256-H601DPysjRRWn12zM1NRozGCkLkWriR/VviVPfpd5vY="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20220804175245-31c5af44cb82"
-    hash = "sha256-KHBIXfojUBphlwR6LaaxQpJfVuNq8Bfg++xTxTpZO+A="
+    version = "v0.0.0-20220811191500-f650c10b0068"
+    hash = "sha256-PvAj1B3DprRdJVmPfWxkZqAyS1jJ16b3MN/SpMvKrn8="
   [mod."golang.org/x/crypto"]
     version = "v0.0.0-20220622213112-05595931fe9d"
     hash = "sha256-2c4wvwiQ0DJSJsApfmNoxCxx1siRCiJvW9hhrGlcvds="
@@ -92,5 +101,5 @@ schema = 3
     version = "v2.3.2"
     hash = "sha256-FlrO1bogPrIzzVzDtIovYyr+1mNk0YaO5hEVv5zovM8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.11.1-0.20220804164655-0cd3fcce0ca1"
-    hash = "sha256-KSwjs4UjTGwVLoyXlQuA6a2Ddq2vvz7kzRO6BraAmmw="
+    version = "v0.11.1-0.20220814160431-6f13ea458647"
+    hash = "sha256-Y1zdB/Twhj2KqtLFz4P7Nb/v6PnzYvhE0gTXp8uYIgw="

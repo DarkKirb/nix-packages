@@ -47,10 +47,10 @@ in rec {
     passthru.version = "0.0.12";
   };
   mautrix-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/f0/0b/a758146ad08ea92eade2b2c5a75886c23329a78276d401590358120b8f17/mautrix-0.17.4.tar.gz";
-    sha256 = "2505f1bda4fd8e374b98cff761b8cacee10a70fb23b2ed09106973c843a51b33";
+    url = "https://files.pythonhosted.org/packages/d7/5b/6f449e9b3813353416004f4db9cc81ea11353f4c743956de4934988da603/mautrix-0.17.5.tar.gz";
+    sha256 = "954062ff053965585e4899426963fee61ba62b4b448faefcaf61bfdf8dd42489";
     passthru.pname = "mautrix";
-    passthru.version = "0.17.4";
+    passthru.version = "0.17.5";
   };
   tulir-telethon-src = fetchurl {
     url = "https://files.pythonhosted.org/packages/38/f0/8236f11154532dc0d4e2c161c5c1cff63517fe7d9c05131e92240c11f37c/tulir-telethon-1.25.0a20.tar.gz";

@@ -14,9 +14,18 @@ schema = 3
   [mod."github.com/lib/pq"]
     version = "v1.10.6"
     hash = "sha256-8EhFwY/9YH5L/fd6l2beOnC3VvpegRAmCCsnDVJBqBM="
+  [mod."github.com/mattn/go-colorable"]
+    version = "v0.1.12"
+    hash = "sha256-Y1vCt0ShrCz4wSmwsppCfeLPLKrWusc2zM2lUFwDMyI="
+  [mod."github.com/mattn/go-isatty"]
+    version = "v0.0.14"
+    hash = "sha256-e8zn5eCVh/B1HOP1PGXeXH0bGkIV0vKYP9KLwZni5as="
   [mod."github.com/mattn/go-sqlite3"]
     version = "v1.14.14"
     hash = "sha256-9ih+l+JbwfjfpJEjFyO996rJIFFMg7Tfb0SAinp/01I="
+  [mod."github.com/rs/zerolog"]
+    version = "v1.27.0"
+    hash = "sha256-BxQtP2TROeSSpj9l1irocuSfxn55UL4ugzB/og7r8eE="
   [mod."github.com/skip2/go-qrcode"]
     version = "v0.0.0-20200617195104-da1b6568686e"
     hash = "sha256-ST9t4/b7WFXUb8wra4ZYVDNZJGrEykw8dkWhLrxp8F0="
@@ -54,5 +63,5 @@ schema = 3
     version = "v2.3.2"
     hash = "sha256-FlrO1bogPrIzzVzDtIovYyr+1mNk0YaO5hEVv5zovM8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.11.1-0.20220708142125-1f795238d635"
-    hash = "sha256-dQ6ItIw3Gr+Dq7gIhMOjpTV8YNYV3H93jx1CXfYEyUA="
+    version = "v0.11.1-0.20220815133425-ba1fce8fce24"
+    hash = "sha256-Az36Ojiv353gsI00hdQHmLX4OPOk3BmBDRMXZz1dA5o="
