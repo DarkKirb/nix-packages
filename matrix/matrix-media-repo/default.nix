@@ -1,4 +1,4 @@
-{inputs, ...} @ args: let
+{pkgs, inputs, ...} @ args: let
   inherit ((pkgs.callPackage "${inputs.gomod2nix}/builder" {})) buildGoApplication;
 in {
   matrix-media-repo = buildGoApplication rec {
