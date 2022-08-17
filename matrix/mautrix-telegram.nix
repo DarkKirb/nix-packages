@@ -10,7 +10,7 @@ in {
       pname = "mautrix-telegram";
       version = inputs.mautrix-telegram.lastModifiedDate;
       src = inputs.mautrix-telegram;
-      patches = ["${inputs.nixpkgs}/pkgs/servers/mautrix-telegram/0001-Re-add-entrypoint.patch"];
+      patches = ["${inputs.nixpkgs}/pkgs/servers/mautrix-telegram/0001-Re-add-entrypoint.patch" ./mautrix-telegram-sticker.patch];
       propagatedBuildInputs = [
         Mako
         aiohttp
