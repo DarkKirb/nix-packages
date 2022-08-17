@@ -137,11 +137,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1660214580,
-        "narHash": "sha256-80HOMh3TImw/fDTc5KlvMQcIRo6Zx0IOfzHgV97o3mI=",
+        "lastModified": 1660721781,
+        "narHash": "sha256-7skn4VUVzxqgH6kU7juBlARQ4Ts+qQ4Lq48xU87x8xI=",
         "owner": "tweag",
         "repo": "gomod2nix",
-        "rev": "78068d481c10f4b4a21e62a0d8cca812933498fe",
+        "rev": "b8c2216317cd23e4f49f1235c27522604be60349",
         "type": "github"
       },
       "original": {
@@ -310,11 +310,11 @@
     "matrix-media-repo": {
       "flake": false,
       "locked": {
-        "lastModified": 1648768263,
-        "narHash": "sha256-H1S9l5S4gcVU482qYCpDW+Ki0r8VkwBgkbUCk6k63sg=",
+        "lastModified": 1660710533,
+        "narHash": "sha256-6brtTyWmkYhHiaT/sRIKy6L1LHH27BZBQBWk+o1j42E=",
         "owner": "turt2live",
         "repo": "matrix-media-repo",
-        "rev": "3184dbc7720fc103aaf4704be894eac69535e887",
+        "rev": "b821ac0a9e2bb152fc3f572e6d502c3266e99ea5",
         "type": "github"
       },
       "original": {
@@ -326,11 +326,11 @@
     "mautrix-discord": {
       "flake": false,
       "locked": {
-        "lastModified": 1660571455,
-        "narHash": "sha256-KYhfQIZLOq4yNkKLIOFeg54qRkz62KWNtjjUnc0tCF4=",
+        "lastModified": 1660659194,
+        "narHash": "sha256-lv/YnU+VSt3h6jOnd9qrR11d9cN5sh6kGBCT8bE/Dek=",
         "owner": "mautrix",
         "repo": "discord",
-        "rev": "2055d32da813f0166ae62b310e0bff29b6c38cd5",
+        "rev": "2d1e8baf1caf74e0c6cf117a4108ca5cb9fe4312",
         "type": "github"
       },
       "original": {
@@ -374,11 +374,11 @@
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
-        "lastModified": 1660570588,
-        "narHash": "sha256-MWVvvvH1/06EztWWSG8VY1bcTlI829vR8StkBfOtlKA=",
+        "lastModified": 1660670624,
+        "narHash": "sha256-1AcjcE57ttjypnLU/+qpPsvApiuJfSX0qbPEQKOWfIM=",
         "owner": "mautrix",
         "repo": "whatsapp",
-        "rev": "52072d96509126e8cfe95d966b4a764d0301d93b",
+        "rev": "a87bb67be9ab314ad8e3788044ca2e6e3d42fe03",
         "type": "github"
       },
       "original": {
@@ -546,22 +546,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-go116": {
-      "locked": {
-        "lastModified": 1653232931,
-        "narHash": "sha256-t9cmSEy9HRkQ3kO560qI75sDijkWk1k2U7DFa5C7uNY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "dab5668f6be905a7f0de39a7d67fd8f78a13d600",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "dab5668f6be905a7f0de39a7d67fd8f78a13d600",
-        "type": "github"
-      }
-    },
     "nixpkgs-regression": {
       "locked": {
         "lastModified": 1643052045,
@@ -609,11 +593,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1660496378,
-        "narHash": "sha256-sgAhmrC1iSnl5T2VPPiMpciH1aRw5c7PYEdXX6jd6Gk=",
+        "lastModified": 1660581366,
+        "narHash": "sha256-et+bi9/jlSF/pHx5AYB9ZP2XDdZEQ0vnF7xlvs4503Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "879121648fe522b38cc1cf75aef160a14a1f2e7b",
+        "rev": "3d47bbaa26e7a771059d828eecf3bd8bf28a8b0f",
         "type": "github"
       },
       "original": {
@@ -686,11 +670,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1660607161,
-        "narHash": "sha256-wFM5Jcu+y2Rd07b4D9xwiVG/9snF64es8uu82MAysqs=",
+        "lastModified": 1660722407,
+        "narHash": "sha256-ERp5KP2dbnMWNWlVtUm594xernNNvpZx7uKOe2ips7M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a093c35beee0a64ad68312d747a4c49eaa5b1105",
+        "rev": "cd8bbdd4fdb15f7758fd3c8df531e9d42bee239d",
         "type": "github"
       },
       "original": {
@@ -770,7 +754,6 @@
         "miifox-net": "miifox-net",
         "nasin-nanpa": "nasin-nanpa",
         "nixpkgs": "nixpkgs_6",
-        "nixpkgs-go116": "nixpkgs-go116",
         "nixpkgs-stable": "nixpkgs-stable",
         "nvim-telescope-file-browser": "nvim-telescope-file-browser",
         "plover": "plover",

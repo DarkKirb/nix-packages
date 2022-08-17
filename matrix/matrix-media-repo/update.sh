@@ -29,7 +29,6 @@ applyPatches {
   };
   patches = [
     ./async-media.patch
-    ./support-aarch64.patch
   ];
 }
 EOF

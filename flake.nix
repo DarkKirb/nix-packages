@@ -13,7 +13,6 @@
     miifox-net.flake = false;
     mastodon.url = "git+https://git.kescher.at/kescher/catstodon?ref=develop";
     mastodon.flake = false;
-    nixpkgs-go116.url = "github:NixOS/nixpkgs/dab5668f6be905a7f0de39a7d67fd8f78a13d600";
     matrix-media-repo.url = "github:turt2live/matrix-media-repo";
     matrix-media-repo.flake = false;
     mautrix-whatsapp.url = "github:mautrix/whatsapp";

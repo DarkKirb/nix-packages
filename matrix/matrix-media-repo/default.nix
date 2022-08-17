@@ -1,12 +1,10 @@
 {inputs, ...} @ args: let
-  pkgs = import inputs.nixpkgs-go116 {inherit (args.pkgs) system;};
   inherit ((pkgs.callPackage "${inputs.gomod2nix}/builder" {})) buildGoApplication;
 in {
   matrix-media-repo = buildGoApplication rec {
     pname = "matrix-media-repo";
     version = inputs.matrix-media-repo.lastModifiedDate;
     src = pkgs.callPackage ./source.nix {};
-    go = pkgs.go_1_16;
     proxyVendor = true;
     modules = ./gomod2nix.toml;
     nativeBuildInputs = [
