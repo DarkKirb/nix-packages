@@ -11,6 +11,7 @@
     nativeBuildInputs = [
       pkgs.git
     ];
+    buildInputs = [ pkgs.libde265 ];
     CGO_ENABLED = "1";
     buildPhase = ''
       GOBIN=$PWD/bin go install -v ./cmd/compile_assets
