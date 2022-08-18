@@ -137,17 +137,17 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1660721781,
-        "narHash": "sha256-7skn4VUVzxqgH6kU7juBlARQ4Ts+qQ4Lq48xU87x8xI=",
-        "owner": "tweag",
-        "repo": "gomod2nix",
-        "rev": "b8c2216317cd23e4f49f1235c27522604be60349",
-        "type": "github"
+        "lastModified": 1660809738,
+        "narHash": "sha256-/yM36JkONdmYsQAW3F2YAXse2cgEb3QffOjBn8sqEXw=",
+        "ref": "refs/heads/master",
+        "rev": "10983293d08a6e3d6fa277eba417b8e399e361a5",
+        "revCount": 171,
+        "type": "git",
+        "url": "https://git.chir.rs/darkkirb/gomod2nix"
       },
       "original": {
-        "owner": "tweag",
-        "repo": "gomod2nix",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.chir.rs/darkkirb/gomod2nix"
       }
     },
     "hydra": {

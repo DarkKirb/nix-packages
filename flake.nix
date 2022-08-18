@@ -23,7 +23,7 @@
     mautrix-telegram.flake = false;
     mautrix-signal.url = "github:mautrix/signal";
     mautrix-signal.flake = false;
-    gomod2nix.url = "github:tweag/gomod2nix";
+    gomod2nix.url = "git+https://git.chir.rs/darkkirb/gomod2nix";
     kreative-open-relay.url = "github:kreativekorp/open-relay";
     kreative-open-relay.flake = false;
     nasin-nanpa.url = "github:ETBCOR/nasin-nanpa";
@@ -65,6 +65,7 @@
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
             statix
+            nix-prefetch
           ];
         };
 

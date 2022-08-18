@@ -1,12 +1,13 @@
-{pkgs, inputs, ...} @ args: let
-  inherit ((pkgs.callPackage "${inputs.gomod2nix}/builder" {})) buildGoApplication;
-in {
-  matrix-media-repo = buildGoApplication rec {
+{
+  pkgs,
+  inputs,
+  ...
+} @ args: {
+  matrix-media-repo = pkgs.buildGoModule rec {
     pname = "matrix-media-repo";
     version = inputs.matrix-media-repo.lastModifiedDate;
     src = pkgs.callPackage ./source.nix {};
-    proxyVendor = true;
-    modules = ./gomod2nix.toml;
+    vendorSha256 = builtins.readFile ./vendor.sha256;
     nativeBuildInputs = [
       pkgs.git
     ];

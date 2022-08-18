@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p nix-prefetch-git jq
+#! nix-shell -i bash -p nix-prefetch-git nix-prefetch jq
 set -e
 
 WORK_DIR=$(mktemp -d)
@@ -34,5 +34,3 @@ applyPatches {
 EOF
 SOURCE_DIR="$(nix-build --no-out-link -E '(import <nixpkgs> {}).callPackage ./source.nix {}')"
 
-echo "Creating gomod2nix.toml"
-nix run github:tweag/gomod2nix -- --dir $SOURCE_DIR --outdir $TARGET_DIR
