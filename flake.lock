@@ -37,38 +37,6 @@
         "url": "https://gist.github.com/DarkKirb/533e9e8b9b6dd1badf9b103b4285dc4e"
       }
     },
-    "copilot-cmp": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1660186814,
-        "narHash": "sha256-9w4WpU+8tk+2CTWwdzBbhHa5igVGSM5g0318lkBNfT0=",
-        "owner": "zbirenbaum",
-        "repo": "copilot-cmp",
-        "rev": "e93c7c8eab2e98c0fe34619cfb7487d13fb756a4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zbirenbaum",
-        "repo": "copilot-cmp",
-        "type": "github"
-      }
-    },
-    "copilot-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1659658362,
-        "narHash": "sha256-71FbWwmuYcxOBD+0UHqjcHHA61qQgO/EKNWVUBS76Ac=",
-        "owner": "zbirenbaum",
-        "repo": "copilot.lua",
-        "rev": "08230e4d9be4807b60543265fae4f34e32ae1555",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zbirenbaum",
-        "repo": "copilot.lua",
-        "type": "github"
-      }
-    },
     "drone-runner-docker": {
       "flake": false,
       "locked": {
@@ -736,8 +704,6 @@
       "inputs": {
         "cargo2nix": "cargo2nix",
         "clean-s3-cache": "clean-s3-cache",
-        "copilot-cmp": "copilot-cmp",
-        "copilot-lua": "copilot-lua",
         "drone-runner-docker": "drone-runner-docker",
         "flake-utils": "flake-utils_2",
         "gomod2nix": "gomod2nix",
