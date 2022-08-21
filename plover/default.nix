@@ -5,8 +5,17 @@
 with pkgs; let
   inherit (inputs.nixpkgs-stable.legacyPackages.${system}) pypy3;
   tarballs = import ../python/tarballs.nix {inherit inputs pkgs;};
+  patched-python3Packages = python3Packages.override {
+    overrides = self: super: {
+      requests-cache = super.requests-cache.overrideAttrs (old: {
+        postPatch = ''
+          substituteInPlace pyproject.toml --replace 'attrs         = "^21.2"' 'attrs         = ">=21.2"'
+        '';
+      });
+    };
+  };
 in rec {
-  plover-plugins-manager = with python3Packages;
+  plover-plugins-manager = with patched-python3Packages;
     buildPythonPackage rec {
       inherit (tarballs.plover-plugins-manager-src.passthru) pname version;
       src = tarballs.plover-plugins-manager-src;
