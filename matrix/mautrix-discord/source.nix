@@ -1,7 +1,7 @@
 {fetchgit}:
 fetchgit {
   url = "https://github.com/mautrix/discord";
-  rev = "522ac4e2feefe265e2e46df4e847858b1191713e";
-  sha256 = "07m98ajjyn6rc50fcz7friwpyw24d05289lb6lddxrav3ajmsglx";
+  rev = "92c5407359e18500d3090cbca460781e86c88726";
+  sha256 = "0y9z4mhrvmw23mqj3g6gzqpz798hynwm11263zg3mmxcvrql5183";
   leaveDotGit = true;
 }

@@ -5,6 +5,9 @@ schema = 3
     version = "v0.0.0-20220708141955-6445b637ad87"
     hash = "sha256-8QVvFW6sLEJ5biGXV9mIM6Sm2pZdEZFeJk1eSJilmQs="
     replaced = "github.com/beeper/discordgo"
+  [mod."github.com/davecgh/go-spew"]
+    version = "v1.1.1"
+    hash = "sha256-nhzSUrE1fCkN0+RL04N4h8jWmRFPPPWbCuDc7Ss0akI="
   [mod."github.com/gorilla/mux"]
     version = "v1.8.0"
     hash = "sha256-s905hpzMH9bOLue09E2JmzPXfIS4HhAlgT7g13HCwKE="
@@ -23,12 +26,18 @@ schema = 3
   [mod."github.com/mattn/go-sqlite3"]
     version = "v1.14.15"
     hash = "sha256-fSrs2sdBKFTAiffBHNnAkN8kDTqiXgm4HNqzJAOF1RM="
+  [mod."github.com/pmezard/go-difflib"]
+    version = "v1.0.0"
+    hash = "sha256-/FtmHnaGjdvEIKAJtrUfEhV7EVo5A/eYrtdnUkuxLDA="
   [mod."github.com/rs/zerolog"]
     version = "v1.27.0"
     hash = "sha256-BxQtP2TROeSSpj9l1irocuSfxn55UL4ugzB/og7r8eE="
   [mod."github.com/skip2/go-qrcode"]
     version = "v0.0.0-20200617195104-da1b6568686e"
     hash = "sha256-ST9t4/b7WFXUb8wra4ZYVDNZJGrEykw8dkWhLrxp8F0="
+  [mod."github.com/stretchr/testify"]
+    version = "v1.8.0"
+    hash = "sha256-LDxBAebK+A06y4vbH7cd1sVBOameIY81Xm8/9OPZh7o="
   [mod."github.com/tidwall/gjson"]
     version = "v1.14.1"
     hash = "sha256-v8zb6n6ReFE9hmiwT7tu4avTgLCrelD9lDMMg2My/AI="
