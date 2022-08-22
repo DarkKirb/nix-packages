@@ -9,6 +9,7 @@ in {
     pname = "mautrix-discord";
     version = inputs.mautrix-discord.lastModifiedDate;
     src = pkgs.callPackage ./source.nix {};
+    patches = [ ./sticker.patch ];
     proxyVendor = true;
     modules = ./gomod2nix.toml;
     CGO_ENABLED = "1";
