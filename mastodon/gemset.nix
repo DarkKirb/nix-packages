@@ -2593,10 +2593,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1zyq0faxkrk9jxqchzjlazpycjh8fg33h84qi654yv9c7a146r2z";
+      sha256 = "1c6sskq3ivpll14jqbmp09bkrz64i08j9dg8m2a7p5akkzklwiil";
       type = "gem";
     };
-    version = "6.5.4";
+    version = "6.5.5";
   };
   sidekiq-bulk = {
     dependencies = ["sidekiq"];
@@ -2732,10 +2732,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "17ih8nb2v4adihb8fihmja72f55dm0ds92j8asadsjm9mpci4bgc";
+      sha256 = "1bpmrz2vw59gw556y5hsha3xlrvfv4qwck4wg2r39qf2bp2hcr1b";
       type = "gem";
     };
-    version = "0.2.20";
+    version = "0.2.21";
   };
   statsd-ruby = {
     groups = ["default"];

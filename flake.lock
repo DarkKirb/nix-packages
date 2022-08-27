@@ -261,11 +261,11 @@
     "mastodon": {
       "flake": false,
       "locked": {
-        "lastModified": 1661097670,
-        "narHash": "sha256-cmVdejxRrJclywzVAAa0cKvsAkK699PxK+7L35qJjGU=",
+        "lastModified": 1661602624,
+        "narHash": "sha256-AQB2/HBaWOJHgKoAbx649ihMtbsOv87zvCaZ2rFRjiE=",
         "ref": "develop",
-        "rev": "5206dddac7bd835eddf73d6db9078f793f69dc91",
-        "revCount": 15752,
+        "rev": "ca18ac7d4133014280ad825db3e3e062f949316a",
+        "revCount": 15800,
         "type": "git",
         "url": "https://git.kescher.at/kescher/catstodon"
       },
@@ -326,11 +326,11 @@
     "mautrix-telegram": {
       "flake": false,
       "locked": {
-        "lastModified": 1661364791,
-        "narHash": "sha256-FS2rRCEKu4CB2rYWkJe8D+FHywI9T5Nz55Zh49vd1nM=",
+        "lastModified": 1661520126,
+        "narHash": "sha256-SUwiRrTY8NgOGQ643prsm3ZklOlwX/59m/u1aewFuik=",
         "owner": "mautrix",
         "repo": "telegram",
-        "rev": "85b8f5def7a3f40504b8f814437bf7e4507fc3ba",
+        "rev": "0289f4b524f1b02b9fe21fda1d5d29a150a9880a",
         "type": "github"
       },
       "original": {
@@ -342,11 +342,11 @@
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
-        "lastModified": 1661364387,
-        "narHash": "sha256-SPLQumhAPWEpjXWw8ytAZfw9DxVdz1Vz+xMxFtLA5wE=",
+        "lastModified": 1661436345,
+        "narHash": "sha256-2W2JaoKTWeyEIWqb9fTFq/SPyZk6TOLiU7zKBDe2P+g=",
         "owner": "mautrix",
         "repo": "whatsapp",
-        "rev": "e554d048c9162c561d463023e6babeecf9a94fba",
+        "rev": "985b33fd7caf7556cbcabd4c8a2b80d9ea7cce94",
         "type": "github"
       },
       "original": {
@@ -561,11 +561,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1661262176,
-        "narHash": "sha256-42FXNd2B0QECaULG0Vx+oYzQ9euKcmlg2gmX2D+HbKI=",
+        "lastModified": 1661427965,
+        "narHash": "sha256-LJeSDbiebN0/eRt9vyOm+Bxljdsq5ZdalmmTk9Xpp30=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b9fd420fa535fd254c6f1f26df770b32a9dc98b4",
+        "rev": "058de3818577db19d1965c21e2479916a3eaaf95",
         "type": "github"
       },
       "original": {
@@ -638,11 +638,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1661386810,
-        "narHash": "sha256-3xBaVjrIC/Bjjxo/g88+PHlvOtgnNW5SD5dW8TdbkoQ=",
+        "lastModified": 1661609538,
+        "narHash": "sha256-Z/AsV0YEXso8mzEtsHQTbDRcMkZTSJavhE2ONJ+6ku8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "efb22d3bcf9c9a8e00c5099274e2094038b8b5ab",
+        "rev": "b4f86a3746b47026a1ca041a072cebf7d3e5f876",
         "type": "github"
       },
       "original": {
