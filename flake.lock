@@ -261,11 +261,11 @@
     "mastodon": {
       "flake": false,
       "locked": {
-        "lastModified": 1661602624,
-        "narHash": "sha256-AQB2/HBaWOJHgKoAbx649ihMtbsOv87zvCaZ2rFRjiE=",
+        "lastModified": 1661720132,
+        "narHash": "sha256-1x0GFJkWPCqW8zHhnvtxyFaDgPAF70638wumdnVyiAQ=",
         "ref": "develop",
-        "rev": "ca18ac7d4133014280ad825db3e3e062f949316a",
-        "revCount": 15800,
+        "rev": "bc970c92adf0e6052df7964943fcc779f9a5c5bc",
+        "revCount": 15825,
         "type": "git",
         "url": "https://git.kescher.at/kescher/catstodon"
       },
@@ -310,11 +310,11 @@
     "mautrix-signal": {
       "flake": false,
       "locked": {
-        "lastModified": 1661280786,
-        "narHash": "sha256-uJGoXbYo4uzMmLHNAuRK6GfPw0G6O3+IUOY9A5BJZJU=",
+        "lastModified": 1661682941,
+        "narHash": "sha256-NBgmU6sHhhEOJPz6Y1AiawhLPsd4XkSEr3XlpLySrLM=",
         "owner": "mautrix",
         "repo": "signal",
-        "rev": "56c96d47e8fb628eb694e26a63e909caa7885044",
+        "rev": "9211af2444902e8118da1fae936367e6e57cda48",
         "type": "github"
       },
       "original": {
@@ -561,11 +561,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1661427965,
-        "narHash": "sha256-LJeSDbiebN0/eRt9vyOm+Bxljdsq5ZdalmmTk9Xpp30=",
+        "lastModified": 1661700591,
+        "narHash": "sha256-NZa+z+TJC+Hk+87+LKkjFFmBn4GyMVEPcWFXFU+aTkU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "058de3818577db19d1965c21e2479916a3eaaf95",
+        "rev": "16236dd7e33ba4579ccd3ca8349396b2f9c960fe",
         "type": "github"
       },
       "original": {
@@ -638,11 +638,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1661609538,
-        "narHash": "sha256-Z/AsV0YEXso8mzEtsHQTbDRcMkZTSJavhE2ONJ+6ku8=",
+        "lastModified": 1661818354,
+        "narHash": "sha256-VwmN70RHY0ZawdJnu1qkoTdB5AL6tXq7hHYnzCyMg10=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b4f86a3746b47026a1ca041a072cebf7d3e5f876",
+        "rev": "60737ae4ce7795ef7f3e2e268381f3ccc0b64ec5",
         "type": "github"
       },
       "original": {
@@ -755,11 +755,11 @@
     "steno-dictionaries": {
       "flake": false,
       "locked": {
-        "lastModified": 1660107729,
-        "narHash": "sha256-suHQGwMgcc3ZALGhleF8uwiqcj87YcLv/K8+VIsk6MM=",
+        "lastModified": 1661648632,
+        "narHash": "sha256-tt/2uR9Nw0d7Imz6aPXj6YDqg1p8MAbNq7m4+Pou/j0=",
         "owner": "didoesdigital",
         "repo": "steno-dictionaries",
-        "rev": "151d99a7c36674228aff14e80d76104b6c45ec74",
+        "rev": "f706309c530d0d52f5ace3175834d29c7b1ba8fd",
         "type": "github"
       },
       "original": {

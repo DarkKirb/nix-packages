@@ -104,5 +104,5 @@ schema = 3
     version = "v2.3.2"
     hash = "sha256-FlrO1bogPrIzzVzDtIovYyr+1mNk0YaO5hEVv5zovM8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.12.1-0.20220822105214-a9d9c9ba569d"
-    hash = "sha256-CuPsYS2D3dCgQoStLy3Lllr658gs6CMVCXQrlKa7x3Y="
+    version = "v0.12.1-0.20220825085831-88c1e0dc4593"
+    hash = "sha256-1QxmIn21cEG4haBJmmLIH2sItYg+owEN6752rQNAW2E="
