@@ -15,10 +15,10 @@ steps:
       - (cd minecraft && bash ./update.sh)
     depends_on:
       - Update flake
-  - name: Update mastodon-glitch
+  - name: Update akkoma
     image: nixos/nix
     commands:
-      - (cd mastodon && ./update.sh)
+      - (cd akkoma && ./update.sh)
     environment:
       USER: nobody
     depends_on:

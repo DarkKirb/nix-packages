@@ -13,6 +13,10 @@
     miifox-net.flake = false;
     akkoma.url = "git+https://akkoma.dev/AkkomaGang/akkoma";
     akkoma.flake = false;
+    akkoma-fe.url = "git+https://akkoma.dev/AkkomaGang/pleroma-fe";
+    akkoma-fe.flake = false;
+    akkoma-admin-fe.url = "git+https://akkoma.dev/AkkomaGang/admin-fe";
+    akkoma-admin-fe.flake = false;
     matrix-media-repo.url = "github:turt2live/matrix-media-repo";
     matrix-media-repo.flake = false;
     mautrix-whatsapp.url = "github:mautrix/whatsapp";

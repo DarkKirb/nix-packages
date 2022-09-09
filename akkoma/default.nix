@@ -2,7 +2,7 @@
   pkgs,
   inputs,
 }:
-with pkgs; {akkoma = beamPackages.mixRelease rec {
+with pkgs; rec {akkoma = beamPackages.mixRelease rec {
   pname = "akkoma";
   version = inputs.akkoma.lastModifiedDate;
 
@@ -168,4 +168,28 @@ with pkgs; {akkoma = beamPackages.mixRelease rec {
       };
     };
   };
-};}
+};
+akkoma-fe = mkYarnPackage rec {
+  pname = "akkoma-fe";
+  version = inputs.akkoma-fe.lastModifiedDate;
+  src = inputs.akkoma-fe;
+  patchPhase = ''
+    sed -i 's/let commitHash = .*/let commitHash = "${inputs.akkoma-fe.rev}"/' build/webpack.prod.conf.js
+    sed -i 's/.*git rev-parse.*//' build/webpack.prod.conf.js
+  '';
+  buildPhase = "yarn build --offline";
+};
+akkoma-admin-src = applyPatches {
+  name = "akkoma-admin-fe-src-${inputs.akkoma-admin-fe.lastModifiedDate}";
+  src = inputs.akkoma-admin-fe;
+  patches = [
+    ./akkoma.patch
+  ];
+};
+akkoma-admin-fe = mkYarnPackage rec {
+  pname = "akkoma-admin-fe";
+  version = inputs.akkoma-admin-fe.lastModifiedDate;
+  src = akkoma-admin-src;
+  buildPhase = "yarn build:prod --offline";
+};
+}

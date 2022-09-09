@@ -16,6 +16,38 @@
         "url": "https://akkoma.dev/AkkomaGang/akkoma"
       }
     },
+    "akkoma-admin-fe": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661801796,
+        "narHash": "sha256-dqkW8p4x+5z1Hd8gp8V4+DsLm8EspVwPXDxtvlp1AIk=",
+        "ref": "refs/heads/develop",
+        "rev": "6b131e0779b16f8f3c1021b2a0e72b4e7a271c4c",
+        "revCount": 1961,
+        "type": "git",
+        "url": "https://akkoma.dev/AkkomaGang/admin-fe"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://akkoma.dev/AkkomaGang/admin-fe"
+      }
+    },
+    "akkoma-fe": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662632260,
+        "narHash": "sha256-JykZWh+BQrVZPlaKe9bNHh5h5ieUddS/HYLfYyjPTbw=",
+        "ref": "refs/heads/develop",
+        "rev": "da4b315d69843ecf463b7236d90755afc43b0b52",
+        "revCount": 6732,
+        "type": "git",
+        "url": "https://akkoma.dev/AkkomaGang/pleroma-fe"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://akkoma.dev/AkkomaGang/pleroma-fe"
+      }
+    },
     "cargo2nix": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -485,6 +517,8 @@
     "root": {
       "inputs": {
         "akkoma": "akkoma",
+        "akkoma-admin-fe": "akkoma-admin-fe",
+        "akkoma-fe": "akkoma-fe",
         "cargo2nix": "cargo2nix",
         "clean-s3-cache": "clean-s3-cache",
         "drone-runner-docker": "drone-runner-docker",
