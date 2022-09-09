@@ -11,8 +11,8 @@
     clean-s3-cache.flake = false;
     miifox-net.url = "git+https://git.chir.rs/CarolineHusky/MiiFox.net";
     miifox-net.flake = false;
-    mastodon.url = "git+https://git.kescher.at/kescher/catstodon?ref=develop";
-    mastodon.flake = false;
+    akkoma.url = "git+https://akkoma.dev/AkkomaGang/akkoma";
+    akkoma.flake = false;
     matrix-media-repo.url = "github:turt2live/matrix-media-repo";
     matrix-media-repo.flake = false;
     mautrix-whatsapp.url = "github:mautrix/whatsapp";
@@ -69,7 +69,7 @@
             ./scripts/clean-s3-cache.nix
             ./web/old-homepage.nix
             ./web/miifox-net.nix
-            ./mastodon
+            ./akkoma
             ./matrix/matrix-media-repo
             ./matrix/mautrix-whatsapp
             ./matrix/mautrix-discord

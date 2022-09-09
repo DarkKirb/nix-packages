@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "akkoma": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662632362,
+        "narHash": "sha256-X2rk9x1qvSBZK7FFhiO6JeMk6lcAi0LdZ9O8jaM9v8Q=",
+        "ref": "refs/heads/develop",
+        "rev": "a6d85003fe0cedab924a14f1065c181a2d468a1b",
+        "revCount": 14702,
+        "type": "git",
+        "url": "https://akkoma.dev/AkkomaGang/akkoma"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://akkoma.dev/AkkomaGang/akkoma"
+      }
+    },
     "cargo2nix": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -256,23 +272,6 @@
         "owner": "kristapsdz",
         "repo": "lowdown",
         "type": "github"
-      }
-    },
-    "mastodon": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1662133938,
-        "narHash": "sha256-pVSxp3htAzIIQfv6bprMu5wRE/eVJGc0tHKNDEcgGeg=",
-        "ref": "develop",
-        "rev": "3a83d8fd9150c2e8a8d5d347e3f63425548bb65e",
-        "revCount": 15834,
-        "type": "git",
-        "url": "https://git.kescher.at/kescher/catstodon"
-      },
-      "original": {
-        "ref": "develop",
-        "type": "git",
-        "url": "https://git.kescher.at/kescher/catstodon"
       }
     },
     "matrix-media-repo": {
@@ -702,6 +701,7 @@
     },
     "root": {
       "inputs": {
+        "akkoma": "akkoma",
         "cargo2nix": "cargo2nix",
         "clean-s3-cache": "clean-s3-cache",
         "drone-runner-docker": "drone-runner-docker",
@@ -711,7 +711,6 @@
         "hydra-base": "hydra-base",
         "hydra-patched": "hydra-patched",
         "kreative-open-relay": "kreative-open-relay",
-        "mastodon": "mastodon",
         "matrix-media-repo": "matrix-media-repo",
         "mautrix-discord": "mautrix-discord",
         "mautrix-signal": "mautrix-signal",
