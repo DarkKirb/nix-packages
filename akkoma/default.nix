@@ -179,6 +179,7 @@ akkoma-fe = mkYarnPackage rec {
   '';
   buildPhase = "yarn build --offline";
   installPhase = "cp -rv deps/pleroma_fe/dist $out";
+  distPhase = "true";
 };
 akkoma-admin-src = applyPatches {
   name = "akkoma-admin-fe-src-${inputs.akkoma-admin-fe.lastModifiedDate}";
