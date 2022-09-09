@@ -33,9 +33,7 @@
     cargo2nix.url = "github:cargo2nix/cargo2nix";
     drone-runner-docker.url = "github:drone-runners/drone-runner-docker";
     drone-runner-docker.flake = false;
-    hydra.url = "github:mlabs-haskell/hydra/aciceri/ca-derivations";
-    hydra-patched.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack";
-    hydra-base.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack&rev=3fdc9e491dc7d33bc09ef4f33984f87c8f478aa2";
+    hydra.url = "git+https://git.chir.rs/darkkirb/hydra?ref=hack";
     steno-dictionaries.url = "github:didoesdigital/steno-dictionaries";
     steno-dictionaries.flake = false;
     plover-machine-hid.url = "git+https://git.chir.rs/darkkirb/plover-machine-hid";

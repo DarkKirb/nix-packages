@@ -1,7 +1,8 @@
-{ pkgs, inputs }: with pkgs;
-{ akkoma = 
-
-beamPackages.mixRelease rec {
+{
+  pkgs,
+  inputs,
+}:
+with pkgs; {akkoma = beamPackages.mixRelease rec {
   pname = "akkoma";
   version = inputs.akkoma.lastModifiedDate;
 
@@ -9,7 +10,7 @@ beamPackages.mixRelease rec {
 
   mixNixDeps = import ./mix.nix {
     inherit beamPackages lib;
-    overrides = (final: prev: {
+    overrides = final: prev: {
       # mix2nix does not support git dependencies yet,
       # so we need to add them manually
       captcha = beamPackages.buildMix rec {
@@ -24,7 +25,7 @@ beamPackages.mixRelease rec {
           rev = "e0f16822d578866e186a0974d65ad58cddc1e2ab";
           sha256 = "0qbf86l59kmpf1nd82v4141ba9ba75xwmnqzpgbm23fa1hh8pi9c";
         };
-        beamDeps = with final; [ ];
+        beamDeps = with final; [];
       };
       elasticsearch = beamPackages.buildMix rec {
         name = "elasticsearch";
@@ -60,7 +61,7 @@ beamPackages.mixRelease rec {
           rev = "912fba81152d4d572e457fd5427f9875b2bc3dbe";
           sha256 = "0frkklrnxmiq0avsi3pkpx7insg8s81h8j1iy96caasa3h8scxcz";
         };
-        beamDeps = with final; [ temple ];
+        beamDeps = with final; [temple];
       };
       temple = beamPackages.buildMix rec {
         name = "temple";
@@ -77,7 +78,6 @@ beamPackages.mixRelease rec {
           cp config/dev.exs config/prod.exs
         '';
       };
-
 
       gettext = beamPackages.buildMix rec {
         name = "gettext";
@@ -102,7 +102,7 @@ beamPackages.mixRelease rec {
           rev = "b647d0deecaa3acb140854fe4bda5b7e1dc6d1c8";
           sha256 = "0c7vmakcxlcs3j040018i7bfd6z0yq6fjfig02g5fgakx398s0x6";
         };
-        beamDeps = with final; [ combine plug inet_cidr ];
+        beamDeps = with final; [combine plug inet_cidr];
       };
       search_parser = beamPackages.buildMix rec {
         name = "search_parser";
@@ -113,7 +113,7 @@ beamPackages.mixRelease rec {
           rev = "08971a81e68686f9ac465cfb6661d51c5e4e1e7f";
           sha256 = "0xl3mbcwlhn02igh0nm4c1icy8nf43i1g031lcwkv8bnr8lkvfmi";
         };
-        beamDeps = with final; [ nimble_parsec ];
+        beamDeps = with final; [nimble_parsec];
       };
       crypt = beamPackages.buildRebar3 rec {
         name = "crypt";
@@ -128,7 +128,7 @@ beamPackages.mixRelease rec {
 
         postInstall = "mv $out/lib/erlang/lib/crypt-${version}/priv/{source,crypt}.so";
 
-        beamDeps = with final; [ elixir_make ];
+        beamDeps = with final; [elixir_make];
       };
 
       # Some additional build inputs and build fixes
@@ -138,15 +138,15 @@ beamPackages.mixRelease rec {
         '';
       };
       fast_html = prev.fast_html.override {
-        nativeBuildInputs = [ cmake ];
+        nativeBuildInputs = [cmake];
         dontUseCmakeConfigure = true;
       };
       syslog = prev.syslog.override {
-        buildPlugins = with beamPackages; [ pc ];
+        buildPlugins = with beamPackages; [pc];
       };
 
       majic = prev.majic.override {
-        buildInputs = [ file ];
+        buildInputs = [file];
       };
 
       mime = prev.mime.override {
@@ -166,6 +166,6 @@ beamPackages.mixRelease rec {
           cp ${cfgFile} config/config.exs
         '';
       };
-    });
+    };
   };
 };}
