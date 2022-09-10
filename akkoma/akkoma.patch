@@ -1,6 +1,6 @@
 diff --git a/lib/mix/migrator.ex b/lib/mix/migrator.ex
 new file mode 100644
-index 000000000..87a6b2c53
+index 000000000..fb61bfb34
 --- /dev/null
 +++ b/lib/mix/migrator.ex
 @@ -0,0 +1,111 @@
@@ -71,7 +71,7 @@ index 000000000..87a6b2c53
 +  end
 +
 +  def try_create_activity(params) do
-+    {:ok, object} = try_create_object(params)
++    {:ok, object} = try_create_object(params["object"])
 +    if object do
 +      try do
 +        {:ok, _activity, _meta} = ActivityPub.persist(params, local: true)
