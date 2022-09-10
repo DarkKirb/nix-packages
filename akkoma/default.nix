@@ -181,7 +181,7 @@ akkoma-fe = mkYarnPackage rec {
     sed -i 's/.*git rev-parse.*//' build/webpack.prod.conf.js
   '';
   buildPhase = "yarn build --offline";
-  installPhase = "cp -rv deps/pleroma_fe/dist $out";
+  installPhase = "cp -rv dist $out";
   distPhase = "true";
 };
 akkoma-admin-src = applyPatches {
