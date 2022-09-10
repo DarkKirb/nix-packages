@@ -7,6 +7,9 @@ with pkgs; rec {akkoma = beamPackages.mixRelease rec {
   version = inputs.akkoma.lastModifiedDate;
 
   src = inputs.akkoma;
+  patches = [
+    ./akkoma.patch
+  ];
 
   mixNixDeps = import ./mix.nix {
     inherit beamPackages lib;
@@ -185,7 +188,7 @@ akkoma-admin-src = applyPatches {
   name = "akkoma-admin-fe-src-${inputs.akkoma-admin-fe.lastModifiedDate}";
   src = inputs.akkoma-admin-fe;
   patches = [
-    ./akkoma.patch
+    ./akkoma-admin.patch
   ];
 };
 akkoma-admin-fe = mkYarnPackage rec {
