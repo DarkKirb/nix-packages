@@ -1,15 +1,16 @@
 diff --git a/lib/mix/migrator.ex b/lib/mix/migrator.ex
 new file mode 100644
-index 000000000..946c2d892
+index 000000000..ec7b6f812
 --- /dev/null
 +++ b/lib/mix/migrator.ex
-@@ -0,0 +1,112 @@
+@@ -0,0 +1,125 @@
 +defmodule Mix.Pleroma.Migrator do
 +  import Mix.Pleroma
 +  alias Pleroma.Activity
 +  alias Pleroma.Object
 +  alias Pleroma.Repo
 +  alias Pleroma.Web.ActivityPub.Transmogrifier
++  alias Pleroma.Web.ActivityPub.ActivityPub
 +
 +  @doc "Common functions to be reused in migrator tasks"
 +  def keys_to_atoms(map) do
@@ -73,6 +74,16 @@ index 000000000..946c2d892
 +    activity_params = params
 +      |> Map.delete(:object_data)
 +
++    {:ok, object} = try_create_object(params)
++    if object do
++      try do
++        {:ok, _activity, _meta} = ActivityPub.persist(activity_params, local: true)
++      rescue
++        Ecto.ConstraintError ->
++          shell_info("Activity already in database, skipping")
++      end
++    end
++
 +    try do
 +      {:ok, _activity} = Repo.insert(struct(Activity, activity_params))
 +      shell_info("Activity created")
@@ -108,11 +119,13 @@ index 000000000..946c2d892
 +    }
 +
 +    try do
-+      {:ok, _object} = Repo.insert(struct(Object, object_params))
++      {:ok, oobject} = Repo.insert(struct(Object, object_params))
 +      shell_info("Object created")
++      {:ok, oobject}
 +    rescue
 +      Ecto.ConstraintError ->
 +        shell_info("Object already in database, skipping")
++        {nil, nil}
 +    end
 +  end
 +end
@@ -499,10 +512,10 @@ index 000000000..1b1e439e0
 +end
 diff --git a/lib/mix/tasks/migrator/import/statuses.ex b/lib/mix/tasks/migrator/import/statuses.ex
 new file mode 100644
-index 000000000..9d4c46bef
+index 000000000..e96aa2f3c
 --- /dev/null
 +++ b/lib/mix/tasks/migrator/import/statuses.ex
-@@ -0,0 +1,24 @@
+@@ -0,0 +1,23 @@
 +defmodule Mix.Tasks.Pleroma.Migrator.Import.Statuses do
 +  use Mix.Task
 +  import Mix.Pleroma
@@ -519,7 +532,6 @@ index 000000000..9d4c46bef
 +    params =
 +      Jason.decode!(line)
 +      |> keys_to_atoms
-+      |> loop_fields([:object], &keys_to_atoms/1)
 +      |> loop_fields([:inserted_at, :updated_at], &parse_timestamp/1)
 +      |> Map.delete(:id)
 +
