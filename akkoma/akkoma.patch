@@ -499,10 +499,10 @@ index 000000000..1b1e439e0
 +end
 diff --git a/lib/mix/tasks/migrator/import/statuses.ex b/lib/mix/tasks/migrator/import/statuses.ex
 new file mode 100644
-index 000000000..e96aa2f3c
+index 000000000..9d4c46bef
 --- /dev/null
 +++ b/lib/mix/tasks/migrator/import/statuses.ex
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,24 @@
 +defmodule Mix.Tasks.Pleroma.Migrator.Import.Statuses do
 +  use Mix.Task
 +  import Mix.Pleroma
@@ -519,6 +519,7 @@ index 000000000..e96aa2f3c
 +    params =
 +      Jason.decode!(line)
 +      |> keys_to_atoms
++      |> loop_fields([:object], &keys_to_atoms/1)
 +      |> loop_fields([:inserted_at, :updated_at], &parse_timestamp/1)
 +      |> Map.delete(:id)
 +
