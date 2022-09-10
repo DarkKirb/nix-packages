@@ -1,9 +1,9 @@
 diff --git a/lib/mix/migrator.ex b/lib/mix/migrator.ex
 new file mode 100644
-index 000000000..806e18ce8
+index 000000000..15a6ccf7c
 --- /dev/null
 +++ b/lib/mix/migrator.ex
-@@ -0,0 +1,111 @@
+@@ -0,0 +1,114 @@
 +defmodule Mix.Pleroma.Migrator do
 +  import Mix.Pleroma
 +  alias Pleroma.Activity
@@ -109,7 +109,10 @@ index 000000000..806e18ce8
 +      shell_info("Object created")
 +      {:ok, oobject}
 +    rescue
-+      _ ->
++      Ecto.ConstraintError ->
++        shell_info("Object already in database, skipping")
++        {nil, nil}
++      FunctionClauseError ->
 +        shell_info("Unknown error occurred, skipping")
 +        {nil, nil}
 +    end
