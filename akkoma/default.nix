@@ -179,7 +179,8 @@ akkoma-fe = mkYarnPackage rec {
   patchPhase = ''
     sed -i 's/let commitHash = .*/let commitHash = "${inputs.akkoma-fe.rev}"/' build/webpack.prod.conf.js
     sed -i 's/.*git rev-parse.*//' build/webpack.prod.conf.js
-  '';
+    '';
+  configurePhase = "cp -r $node_modules node_modules";
   buildPhase = "yarn build --offline";
   installPhase = "cp -rv dist $out";
   distPhase = "true";
