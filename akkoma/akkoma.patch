@@ -1,6 +1,6 @@
 diff --git a/lib/mix/migrator.ex b/lib/mix/migrator.ex
 new file mode 100644
-index 000000000..7ae9e2805
+index 000000000..7ea9fbd46
 --- /dev/null
 +++ b/lib/mix/migrator.ex
 @@ -0,0 +1,114 @@
@@ -111,10 +111,10 @@ index 000000000..7ae9e2805
 +    rescue
 +      Ecto.ConstraintError ->
 +        shell_info("Object already in database, skipping")
-+        {nil, nil}
++        {:error, nil}
 +      err ->
 +        shell_info("Unknown error occurred, skipping")
-+        {:error, err}
++        {:error, nil}
 +    end
 +  end
 +end
