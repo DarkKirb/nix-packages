@@ -1,9 +1,9 @@
 diff --git a/lib/mix/migrator.ex b/lib/mix/migrator.ex
 new file mode 100644
-index 000000000..ec7b6f812
+index 000000000..87a6b2c53
 --- /dev/null
 +++ b/lib/mix/migrator.ex
-@@ -0,0 +1,125 @@
+@@ -0,0 +1,111 @@
 +defmodule Mix.Pleroma.Migrator do
 +  import Mix.Pleroma
 +  alias Pleroma.Activity
@@ -71,33 +71,19 @@ index 000000000..ec7b6f812
 +  end
 +
 +  def try_create_activity(params) do
-+    activity_params = params
-+      |> Map.delete(:object_data)
-+
 +    {:ok, object} = try_create_object(params)
 +    if object do
 +      try do
-+        {:ok, _activity, _meta} = ActivityPub.persist(activity_params, local: true)
++        {:ok, _activity, _meta} = ActivityPub.persist(params, local: true)
 +      rescue
 +        Ecto.ConstraintError ->
 +          shell_info("Activity already in database, skipping")
 +      end
 +    end
-+
-+    try do
-+      {:ok, _activity} = Repo.insert(struct(Activity, activity_params))
-+      shell_info("Activity created")
-+      if params[:object_data] do
-+        try_create_object(params)
-+      end
-+    rescue
-+      Ecto.ConstraintError ->
-+        shell_info("Activity already in database, skipping")
-+    end
 +  end
 +
 +  defp try_create_object(params) do
-+    object_data = params[:object_data]
++    object_data = params
 +      # |> Transmogrifier.strip_internal_fields # We need internal fields for `likes` and `like_count`, etc
 +      # |> Transmogrifier.fix_actor # Makes network requests
 +      |> Transmogrifier.fix_url
@@ -512,10 +498,10 @@ index 000000000..1b1e439e0
 +end
 diff --git a/lib/mix/tasks/migrator/import/statuses.ex b/lib/mix/tasks/migrator/import/statuses.ex
 new file mode 100644
-index 000000000..e96aa2f3c
+index 000000000..8dbe38d1d
 --- /dev/null
 +++ b/lib/mix/tasks/migrator/import/statuses.ex
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,21 @@
 +defmodule Mix.Tasks.Pleroma.Migrator.Import.Statuses do
 +  use Mix.Task
 +  import Mix.Pleroma
@@ -531,9 +517,7 @@ index 000000000..e96aa2f3c
 +  defp handle_line(line) do
 +    params =
 +      Jason.decode!(line)
-+      |> keys_to_atoms
-+      |> loop_fields([:inserted_at, :updated_at], &parse_timestamp/1)
-+      |> Map.delete(:id)
++      |> Map.delete("id")
 +
 +    shell_info("Importing status...")
 +    try_create_activity(params)
