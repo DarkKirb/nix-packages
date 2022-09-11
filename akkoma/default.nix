@@ -196,6 +196,24 @@ akkoma-admin-fe = mkYarnPackage rec {
   pname = "akkoma-admin-fe";
   version = inputs.akkoma-admin-fe.lastModifiedDate;
   src = akkoma-admin-src;
+  configurePhase = "cp -r $node_modules node_modules";
   buildPhase = "yarn build:prod --offline";
+  installPhase = "cp -rv dist $out";
+  distPhase = "true";
+  yarnPreBuild = ''
+    mkdir -p $HOME/.node-gyp/${nodejs.version}
+    echo 9 > $HOME/.node-gyp/${nodejs.version}/installVersion
+    ln -sfv ${nodejs}/include $HOME/.node-gyp/${nodejs.version}
+    export npm_config_nodedir=${nodejs}
+  '';
+  pkgConfig = {
+    node-sass = {
+      buildInputs = [ python3 libsass pkg-config ];
+      postInstall = ''
+        LIBSASS_EXT=auto yarn --offline run build
+        rm build/config.gypi
+      '';
+    };
+  };
 };
 }
