@@ -1,3 +1,98 @@
+diff --git a/.envrc b/.envrc
+new file mode 100644
+index 000000000..3550a30f2
+--- /dev/null
++++ b/.envrc
+@@ -0,0 +1 @@
++use flake
+diff --git a/.gitignore b/.gitignore
+index 8fa79b68f..f2cc62c76 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -65,3 +65,5 @@ pleroma.iml
+ 
+ # Generated documentation
+ docs/site
++
++.direnv/
+diff --git a/flake.lock b/flake.lock
+new file mode 100644
+index 000000000..fcb32b26f
+--- /dev/null
++++ b/flake.lock
+@@ -0,0 +1,42 @@
++{
++  "nodes": {
++    "flake-utils": {
++      "locked": {
++        "lastModified": 1659877975,
++        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
++        "owner": "numtide",
++        "repo": "flake-utils",
++        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
++        "type": "github"
++      },
++      "original": {
++        "owner": "numtide",
++        "repo": "flake-utils",
++        "type": "github"
++      }
++    },
++    "nixpkgs": {
++      "locked": {
++        "lastModified": 1663141849,
++        "narHash": "sha256-7c9PePBWzOSgiXiSaocvQ55egmc6tYULmRaRvCyIdqk=",
++        "owner": "NixOS",
++        "repo": "nixpkgs",
++        "rev": "8614d1dd20e05abbc7fc7284bb7431c9e5ff2f37",
++        "type": "github"
++      },
++      "original": {
++        "owner": "NixOS",
++        "repo": "nixpkgs",
++        "type": "github"
++      }
++    },
++    "root": {
++      "inputs": {
++        "flake-utils": "flake-utils",
++        "nixpkgs": "nixpkgs"
++      }
++    }
++  },
++  "root": "root",
++  "version": 7
++}
+diff --git a/flake.nix b/flake.nix
+new file mode 100644
+index 000000000..4a0cdee4d
+--- /dev/null
++++ b/flake.nix
+@@ -0,0 +1,24 @@
++{
++  description = "Akkoma dev flake";
++
++  inputs = {
++    nixpkgs.url = "github:NixOS/nixpkgs";
++    flake-utils.url = "github:numtide/flake-utils";
++  };
++
++  outputs = { self, nixpkgs, flake-utils }: flake-utils.lib.eachDefaultSystem (system:
++  let pkgs = import nixpkgs { inherit system; };
++  in
++  {
++    formatter = pkgs.alejandra;
++    devShells.default = pkgs.mkShell {
++      buildInputs = with pkgs; [
++        file
++      ];
++      nativeBuildInputs = with pkgs; [
++        elixir
++        cmake
++      ];
++    };
++  });
++}
 diff --git a/lib/mix/migrator.ex b/lib/mix/migrator.ex
 new file mode 100644
 index 000000000..648b0166d
@@ -754,6 +849,45 @@ index 000000000..f3894c8ae
 +    |> Stream.run()
 +  end
 +
++end
+diff --git a/lib/pleroma/web/activity_pub/mrf/require_image_description.ex b/lib/pleroma/web/activity_pub/mrf/require_image_description.ex
+new file mode 100644
+index 000000000..eaa3fe695
+--- /dev/null
++++ b/lib/pleroma/web/activity_pub/mrf/require_image_description.ex
+@@ -0,0 +1,33 @@
++defmodule Pleroma.Web.ActivityPub.MRF.RequireImageDescription do
++  @moduledoc "MRF policy which removes media without image description"
++  @behaviour Pleroma.Web.ActivityPub.MRF.Policy
++
++  def is_valid_attachment(
++    %{"name" => name} = _
++  ), do: is_binary(name) and !String.equivalent?(name, "")
++  def is_valid_attachment(_), do: false
++
++  @impl true
++  def filter(
++    %{"type" => "Create", "object" => %{"attachment" => attachments, "content" => content} = object } = message
++  ) when is_list(attachments) and length(attachments) > 0 and is_binary(content) do
++    old_length = attachments |> length()
++    attachments = attachments |> Enum.filter(fn(attach) -> is_valid_attachment(attach) end)
++    content = if old_length != attachments |> length() do
++      content <> "<br/><emph>This post contained media without content description. Offending media has been removed from this post.</emph>";
++    else
++      content
++    end
++    object = object |> Map.put("content", content) |> Map.put("attachment", attachments)
++    message = message |> Map.put("object", object)
++    {:ok, message}
++  end
++
++  @impl true
++  def filter(message), do: {:ok, message}
++
++  @impl true
++  def describe do
++    {:ok, %{mrf_sample: %{content: "<br/><emph>This post contained media without content description. Offending media has been removed from this post.</emph>"}}}
++  end
 +end
 diff --git a/mix.exs b/mix.exs
 index ef038ce74..a28d98917 100644
