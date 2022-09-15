@@ -2,7 +2,11 @@
   pkgs,
   inputs,
 }:
-with pkgs; rec {
+with pkgs; let
+  mkYarnPackage = (yarn2nix-moretea.override (super: {
+    nodejs = pkgs.nodejs-16_x;
+  })).mkYarnPackage;
+in rec {
   akkoma = beamPackages.mixRelease rec {
     pname = "akkoma";
     version = inputs.akkoma.lastModifiedDate;
@@ -173,10 +177,18 @@ with pkgs; rec {
       };
     };
   };
+  akkoma-fe-src = applyPatches {
+    name = "akkoma-fe-src-${inputs.akkoma-fe.lastModifiedDate}";
+    src = inputs.akkoma-fe;
+    patches = [
+      ./akkoma-fe.patch
+    ];
+  };
+
   akkoma-fe = mkYarnPackage rec {
     pname = "akkoma-fe";
     version = inputs.akkoma-fe.lastModifiedDate;
-    src = inputs.akkoma-fe;
+    src = akkoma-fe-src;
     patchPhase = ''
       sed -i 's/let commitHash = .*/let commitHash = "${inputs.akkoma-fe.rev}"/' build/webpack.prod.conf.js
       sed -i 's/.*git rev-parse.*//' build/webpack.prod.conf.js
