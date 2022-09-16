@@ -522,6 +522,19 @@ index 1987f1b8..009c5da7 100644
    },
    "engines": {
      "node": ">= 4.0.0",
+diff --git a/src/components/rich_content/rich_content.jsx b/src/components/rich_content/rich_content.jsx
+index 0d4127b6..ff271435 100644
+--- a/src/components/rich_content/rich_content.jsx
++++ b/src/components/rich_content/rich_content.jsx
+@@ -3,7 +3,7 @@ import { getTagName, processTextForEmoji, getAttrs } from 'src/services/html_con
+ import { convertHtmlToTree } from 'src/services/html_converter/html_tree_converter.service.js'
+ import { convertHtmlToLines } from 'src/services/html_converter/html_line_converter.service.js'
+ import { marked } from 'marked'
+-import markedMfm from 'marked-mfm'
++import markedMfm from '../../../node_modules/marked-mfm/src/index.js'
+ import StillImage from 'src/components/still-image/still-image.vue'
+ import MentionsLine, { MENTIONS_LIMIT } from 'src/components/mentions_line/mentions_line.vue'
+ import HashtagLink from 'src/components/hashtag_link/hashtag_link.vue'
 diff --git a/src/i18n/messages.js b/src/i18n/messages.js
 index 18ed79b7..c7439f51 100644
 --- a/src/i18n/messages.js
