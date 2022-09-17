@@ -74,8 +74,8 @@ schema = 3
     version = "v0.0.0-20220628090436-4d18b66b087e"
     hash = "sha256-H601DPysjRRWn12zM1NRozGCkLkWriR/VviVPfpd5vY="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20220811191500-f650c10b0068"
-    hash = "sha256-PvAj1B3DprRdJVmPfWxkZqAyS1jJ16b3MN/SpMvKrn8="
+    version = "v0.0.0-20220912085258-5c8577b8ac6f"
+    hash = "sha256-HMNqQ+9AtW8gAZIx1dWEBTbj8PiyyzVG4qTw+X/4zFc="
   [mod."golang.org/x/crypto"]
     version = "v0.0.0-20220817201139-bc19a97f63c8"
     hash = "sha256-LvSArox3yRkhJLOik9DLTSBp4ldI+OHjiWWilg2t4Hs="
@@ -104,5 +104,5 @@ schema = 3
     version = "v2.3.2"
     hash = "sha256-FlrO1bogPrIzzVzDtIovYyr+1mNk0YaO5hEVv5zovM8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.12.1-0.20220914153054-e61df9ab8b9b"
-    hash = "sha256-evjGYB6V6pxBF4CwjERBPFbqrCFJYXeo1EbsPhjZLLg="
+    version = "v0.12.1"
+    hash = "sha256-nYa2Nt+Wx44ieRbJuaaI4FvyDp0PBZOg8N/XtDy4jPo="

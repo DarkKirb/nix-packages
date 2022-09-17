@@ -3,9 +3,11 @@
   inputs,
 }:
 with pkgs; let
-  mkYarnPackage = (yarn2nix-moretea.override (super: {
-    nodejs = pkgs.nodejs-16_x;
-  })).mkYarnPackage;
+  mkYarnPackage =
+    (yarn2nix-moretea.override (super: {
+      nodejs = pkgs.nodejs-16_x;
+    }))
+    .mkYarnPackage;
 in rec {
   akkoma = beamPackages.mixRelease rec {
     pname = "akkoma";

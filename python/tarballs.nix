@@ -47,15 +47,15 @@ in rec {
     passthru.version = "0.0.12";
   };
   mautrix-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/67/c2/e16ace515e1fbb91eac3cecb0c75db95f6916ae138a9ca9df7131d4c468b/mautrix-0.17.8.tar.gz";
-    sha256 = "0c56a3003e669d72d0989191bf88f699686d223efb9d93524216deb17e2a332b";
+    url = "https://files.pythonhosted.org/packages/67/fb/713647cfece9ac9f22819a9bcd32eb16be32e271d8cced0de43fc89334e8/mautrix-0.18.1.tar.gz";
+    sha256 = "7e51f0c3a8ef7a51387d8910ccf17294c3c647a5b8c744c790ac33f1b5461396";
     passthru.pname = "mautrix";
-    passthru.version = "0.17.8";
+    passthru.version = "0.18.1";
   };
   tulir-telethon-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/38/f0/8236f11154532dc0d4e2c161c5c1cff63517fe7d9c05131e92240c11f37c/tulir-telethon-1.25.0a20.tar.gz";
-    sha256 = "5fda28f9808d32a42b26f41afcf222f5d16069e4316eb967c14267c2345be897";
+    url = "https://files.pythonhosted.org/packages/8f/3b/bb197a597a36f0de35fc4a2885da6f5ecc284de4c741b1688d15ef421a84/tulir-telethon-1.26.0a1.tar.gz";
+    sha256 = "e91e630b4122634c38a9e7ca3241f17db8b9ae73a69f0f15ef361165380c1aea";
     passthru.pname = "tulir-telethon";
-    passthru.version = "1.25.0a20";
+    passthru.version = "1.26.0a1";
   };
 }

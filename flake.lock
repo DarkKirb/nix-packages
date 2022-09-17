@@ -3,11 +3,11 @@
     "akkoma": {
       "flake": false,
       "locked": {
-        "lastModified": 1663150807,
-        "narHash": "sha256-pycVgUZtoE8UW60oiwqE3TNQlTuGvdagbOhm0aaM+C8=",
+        "lastModified": 1663334611,
+        "narHash": "sha256-vTMev3jDQdqNX2uTf525CjhdItWPLddxJ9awJeasjTs=",
         "ref": "refs/heads/develop",
-        "rev": "00f840fd44d5c32a975af85ff7e3a0f6f242b903",
-        "revCount": 14718,
+        "rev": "ad1a6d3dc2b431f0d6d5cbe523093a7a3fb0308d",
+        "revCount": 14723,
         "type": "git",
         "url": "https://akkoma.dev/AkkomaGang/akkoma"
       },
@@ -242,11 +242,11 @@
     "mautrix-discord": {
       "flake": false,
       "locked": {
-        "lastModified": 1663179219,
-        "narHash": "sha256-2r7254UASruTC18RT086jhzpFin//CQc5JzdkpTxq9A=",
+        "lastModified": 1663321613,
+        "narHash": "sha256-J8tANwCnOOZkEP90Nu3d7MZ9jHWVOU3nY0U5vs5ZTto=",
         "owner": "mautrix",
         "repo": "discord",
-        "rev": "8f6f98acce8db6a660538d495aedcb7ea5c30f65",
+        "rev": "b8b2eef3699719834b25968580026f3a8a1c3216",
         "type": "github"
       },
       "original": {
@@ -258,11 +258,11 @@
     "mautrix-signal": {
       "flake": false,
       "locked": {
-        "lastModified": 1662300286,
-        "narHash": "sha256-C4t8f8FioyOv8dc4qMbmGNuqpgTaWOwSAJgc2C1szg8=",
+        "lastModified": 1663268101,
+        "narHash": "sha256-lekuVt3nLiBKriDpRutZMzUYgMjCtpcdEBxxJY0oB8Q=",
         "owner": "mautrix",
         "repo": "signal",
-        "rev": "c901201de1cda298fd167f1caa4ab2100497c0de",
+        "rev": "fcffb15c506f5b811ffc896d3cd468fdf4f7b4c2",
         "type": "github"
       },
       "original": {
@@ -274,11 +274,11 @@
     "mautrix-telegram": {
       "flake": false,
       "locked": {
-        "lastModified": 1663076198,
-        "narHash": "sha256-kMKJpUWZwCdot6roR/b2SFIVttdAZim9E8EWzqgr9j0=",
+        "lastModified": 1663416049,
+        "narHash": "sha256-0aHLzAgCnRB6WWx/2sHXv+EV/pyJA4tdpYS2o1aUfZs=",
         "owner": "mautrix",
         "repo": "telegram",
-        "rev": "ad0c6cfc8d32e8411a0a948dfa3ce25417ce66ca",
+        "rev": "65bd7fcc49b6833c857966d59437e9426e115907",
         "type": "github"
       },
       "original": {
@@ -290,11 +290,11 @@
     "mautrix-whatsapp": {
       "flake": false,
       "locked": {
-        "lastModified": 1663178976,
-        "narHash": "sha256-5ay147gERtF9YxTuGE65uIIxmA+6C+lKG9an4VqEUEc=",
+        "lastModified": 1663322613,
+        "narHash": "sha256-OUGFp25M8wn8eWMuQHDh8Zp67x+VHVbyvuBHq+UE+NY=",
         "owner": "mautrix",
         "repo": "whatsapp",
-        "rev": "bcf67b89b64e5bde4a379be243828707141654a6",
+        "rev": "20e6d9e65903ae9e2b91bb81aa00c6cbe2ed3731",
         "type": "github"
       },
       "original": {
@@ -405,11 +405,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1663067291,
-        "narHash": "sha256-1BTrqhLMamWf53sJobtMiUDI91PEw6xF8YEwg2VE8w4=",
+        "lastModified": 1663244735,
+        "narHash": "sha256-+EukKkeAx6ithOLM1u5x4D12ZFuoi6vpPYjhNDmLz1o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d86a4619b7e80bddb6c01bc01a954f368c56d1df",
+        "rev": "178fea1414ae708a5704490f4c49ec3320be9815",
         "type": "github"
       },
       "original": {
@@ -452,11 +452,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1663178737,
-        "narHash": "sha256-ayOtdyoNx6BqJtTYVzdQCDz/YWb67TY/CMGacFCgNQo=",
+        "lastModified": 1663424456,
+        "narHash": "sha256-MVe+mgBAS9C8LPo0/mluK3JHf3bX934gHvhKno04Nyo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1158501e7c7cba26d922723cf9f70099995eb755",
+        "rev": "89da717b159de94d5eb928fc1c635af4b6136f6d",
         "type": "github"
       },
       "original": {
@@ -468,11 +468,11 @@
     "nvim-telescope-file-browser": {
       "flake": false,
       "locked": {
-        "lastModified": 1661178357,
-        "narHash": "sha256-HnALvKA4/K8T5LbITzRE0JLF4MN/o/KA3VTDC22o41Q=",
+        "lastModified": 1663305358,
+        "narHash": "sha256-25nYpWCprrisPeaXCNVucdBwBpwWLEleQIQ6bqzZ1TY=",
         "owner": "nvim-telescope",
         "repo": "telescope-file-browser.nvim",
-        "rev": "00a814a891de086ed446151bacc559c63682b6ee",
+        "rev": "60bcf4e70ecb9392445c2a2205ee8181dff964d5",
         "type": "github"
       },
       "original": {
