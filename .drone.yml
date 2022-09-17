@@ -77,7 +77,7 @@ steps:
       - alejandra .
     depends_on:
       - Update minecraft
-      - Update mastodon-glitch
+      - Update akkoma
       - Update matrix-media-repo
       - Update mautrix-whatsapp
       - Update mautrix-discord
