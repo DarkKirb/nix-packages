@@ -3,11 +3,11 @@
     "akkoma": {
       "flake": false,
       "locked": {
-        "lastModified": 1663334611,
-        "narHash": "sha256-vTMev3jDQdqNX2uTf525CjhdItWPLddxJ9awJeasjTs=",
+        "lastModified": 1663608812,
+        "narHash": "sha256-wmeVluq+9CCPqU3TSYlLIZsTYZTo+vx8Gw11bc8QK60=",
         "ref": "refs/heads/develop",
-        "rev": "ad1a6d3dc2b431f0d6d5cbe523093a7a3fb0308d",
-        "revCount": 14723,
+        "rev": "9b2c169cefa8d48e6bb090a78e0ad5068f6c8bf2",
+        "revCount": 14728,
         "type": "git",
         "url": "https://akkoma.dev/AkkomaGang/akkoma"
       },
@@ -35,11 +35,11 @@
     "akkoma-fe": {
       "flake": false,
       "locked": {
-        "lastModified": 1662997673,
-        "narHash": "sha256-eQ1cX8ddgqNWg0V6MKyIGjFoFM49msPytUGi1M2GMRA=",
+        "lastModified": 1663609161,
+        "narHash": "sha256-SnRx33E4j8WloqWOcI0191o8rQLp6XHFpSU/GSrV0qk=",
         "ref": "refs/heads/develop",
-        "rev": "f628483499a2222acef43b5f8f48ef37e951d1ff",
-        "revCount": 6739,
+        "rev": "aedd0794a403fd1afd46e72c8cf8feef5daaeb31",
+        "revCount": 6743,
         "type": "git",
         "url": "https://akkoma.dev/AkkomaGang/pleroma-fe"
       },
@@ -242,11 +242,11 @@
     "mautrix-discord": {
       "flake": false,
       "locked": {
-        "lastModified": 1663321613,
-        "narHash": "sha256-J8tANwCnOOZkEP90Nu3d7MZ9jHWVOU3nY0U5vs5ZTto=",
+        "lastModified": 1663622286,
+        "narHash": "sha256-j/LjX41ajTzUTrwsvLO8fjPCJXwHkSe8P9ClYOj51I4=",
         "owner": "mautrix",
         "repo": "discord",
-        "rev": "b8b2eef3699719834b25968580026f3a8a1c3216",
+        "rev": "6be531685f308f081675034904d89c9e920be996",
         "type": "github"
       },
       "original": {
@@ -274,11 +274,11 @@
     "mautrix-telegram": {
       "flake": false,
       "locked": {
-        "lastModified": 1663416049,
-        "narHash": "sha256-0aHLzAgCnRB6WWx/2sHXv+EV/pyJA4tdpYS2o1aUfZs=",
+        "lastModified": 1663628387,
+        "narHash": "sha256-x11tS/sZYVp1ay73yCYYeRQsjdh4Em/n7Zm+WpuqOgM=",
         "owner": "mautrix",
         "repo": "telegram",
-        "rev": "65bd7fcc49b6833c857966d59437e9426e115907",
+        "rev": "4210091e9abb973bdbfaeb37d87e20f0558fcfe2",
         "type": "github"
       },
       "original": {
@@ -405,11 +405,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1663410121,
-        "narHash": "sha256-+SN249gXLmawmwTVo3AhydVoVwgi/gbqutJV7YHrj0Y=",
+        "lastModified": 1663587673,
+        "narHash": "sha256-4C4R/PV8+HjkgVd1Db8AuvHwhQp5vllVqOQEl6YDh3o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f21492b413295ab60f538d5e1812ab908e3e3292",
+        "rev": "20dc478985d6545df53f0153f4af125eb014083d",
         "type": "github"
       },
       "original": {
@@ -452,11 +452,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1663460020,
-        "narHash": "sha256-rDClYj1dCXd3v5ZbIkxQLn5rkdFxqJFrPbnwz3GNXUE=",
+        "lastModified": 1663654579,
+        "narHash": "sha256-PAzhdlx+WSXL/UQYZEM7xiD29uwaNwRKR+wzCTFse9E=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f1a49e20e1b4a7eeb43d73d60bae5be84a1e7610",
+        "rev": "263f1e2be33b7431c97a7af5c388d61f4be1effa",
         "type": "github"
       },
       "original": {
