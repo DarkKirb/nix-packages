@@ -53,9 +53,9 @@ in rec {
     passthru.version = "0.18.1";
   };
   tulir-telethon-src = fetchurl {
-    url = "https://files.pythonhosted.org/packages/5a/b3/1ae78aa15e8575ed5ef53a5dd6682137e5897b8d198bce605d5eb1dd1815/tulir-telethon-1.26.0a3.tar.gz";
-    sha256 = "c3ac590eed06d5a46dc01a35ed50465f598934d1b02908045ba90d452964a761";
+    url = "https://files.pythonhosted.org/packages/5e/d6/9199b56df6b5e12672f49e724b19eb6a7e2d1936993203f8b73394f031a7/tulir-telethon-1.26.0a4.tar.gz";
+    sha256 = "1fca3906b780a2351fda03fc00be00877cce337a096b49637572b093606525d5";
     passthru.pname = "tulir-telethon";
-    passthru.version = "1.26.0a3";
+    passthru.version = "1.26.0a4";
   };
 }
