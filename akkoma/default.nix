@@ -17,6 +17,7 @@ in rec {
     patches = [
       ./akkoma.patch
     ];
+    stripDebug = false;
 
     mixNixDeps = import ./mix.nix {
       inherit beamPackages lib;
