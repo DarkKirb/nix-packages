@@ -16,6 +16,7 @@
       system: let
         pkgs = import nixpkgs {
           inherit system;
+          config.allowUnfree = true;
         };
         inherit (pkgs) lib;
         nur = import ./default.nix {inherit pkgs;};
