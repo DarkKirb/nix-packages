@@ -29,4 +29,5 @@
   fairfax = pkgs.callPackage ./fonts/kreative/fairfax.nix {};
   fairfax-hd = pkgs.callPackage ./fonts/kreative/fairfax-hd.nix {};
   kreative-square = pkgs.callPackage ./fonts/kreative/kreative-square.nix {};
+  nasin-nanpa = pkgs.callPackage ./fonts/nasin-nanpa {};
 }

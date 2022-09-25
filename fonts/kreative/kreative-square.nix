@@ -1,6 +1,11 @@
-{ stdenv, callPackage, lib }: 
-  let source = builtins.fromJSON (builtins.readFile ./source.json);
-  in stdenv.mkDerivation {
+{
+  stdenv,
+  callPackage,
+  lib,
+}: let
+  source = builtins.fromJSON (builtins.readFile ./source.json);
+in
+  stdenv.mkDerivation {
     name = "kreative-square";
     version = source.date;
     src = callPackage ./source.nix {};
