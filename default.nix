@@ -24,4 +24,9 @@
   emoji-volpeon-vlpn = pkgs.callPackage ./art/emoji/volpeon/vlpn.nix {};
   lotte-art = pkgs.callPackage ./art/lotte {};
   drone-runner-docker = pkgs.callPackage ./ci/drone-runner-docker {};
+  alco-sans = pkgs.callPackage ./fonts/kreative/alco-sans.nix {};
+  constructium = pkgs.callPackage ./fonts/kreative/constructium.nix {};
+  fairfax = pkgs.callPackage ./fonts/kreative/fairfax.nix {};
+  fairfax-hd = pkgs.callPackage ./fonts/kreative/fairfax-hd.nix {};
+  kreative-square = pkgs.callPackage ./fonts/kreative/kreative-square.nix {};
 }
