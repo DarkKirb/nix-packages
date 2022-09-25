@@ -23,4 +23,5 @@
   emoji-volpeon-raccoon = pkgs.callPackage ./art/emoji/volpeon/raccoon.nix {};
   emoji-volpeon-vlpn = pkgs.callPackage ./art/emoji/volpeon/vlpn.nix {};
   lotte-art = pkgs.callPackage ./art/lotte {};
+  drone-runner-docker = pkgs.callPackage ./ci/drone-runner-docker {};
 }
