@@ -14,4 +14,12 @@
   akkoma = pkgs.callPackage ./akkoma {};
   pleroma-fe = pkgs.callPackage ./akkoma/pleroma-fe {};
   admin-fe = pkgs.callPackage ./akkoma/admin-fe {};
+  emoji-volpeon-blobfox = pkgs.callPackage ./art/emoji/volpeon/blobfox.nix {};
+  emoji-volpeon-blobfox-flip = pkgs.callPackage ./art/emoji/volpeon/blobfox_flip.nix {};
+  emoji-volpeon-bunhd = pkgs.callPackage ./art/emoji/volpeon/bunhd.nix {};
+  emoji-volpeon-bunhd-flip = pkgs.callPackage ./art/emoji/volpeon/bunhd_flip.nix {};
+  emoji-volpeon-drgn = pkgs.callPackage ./art/emoji/volpeon/drgn.nix {};
+  emoji-volpeon-fox = pkgs.callPackage ./art/emoji/volpeon/fox.nix {};
+  emoji-volpeon-raccoon = pkgs.callPackage ./art/emoji/volpeon/raccoon.nix {};
+  emoji-volpeon-vlpn = pkgs.callPackage ./art/emoji/volpeon/vlpn.nix {};
 }
