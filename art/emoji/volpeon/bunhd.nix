@@ -1,4 +1,5 @@
-{ callPackage }: callPackage ../../../lib/mkPleromaEmoji.nix {} rec {
+{callPackage}:
+callPackage ../../../lib/mkPleromaEmoji.nix {} rec {
   name = "bunhd";
   manifest = ./${name}.json;
   passthru.updateScript = [
