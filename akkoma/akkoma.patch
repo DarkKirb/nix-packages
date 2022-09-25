@@ -889,24 +889,3 @@ index 000000000..eaa3fe695
 +    {:ok, %{mrf_sample: %{content: "<br/><emph>This post contained media without content description. Offending media has been removed from this post.</emph>"}}}
 +  end
 +end
-diff --git a/mix.exs b/mix.exs
-index ef038ce74..a28d98917 100644
---- a/mix.exs
-+++ b/mix.exs
-@@ -78,7 +78,7 @@ def application do
-         :comeonin,
-         :quack,
-         :fast_sanitize,
--        :os_mon,
-+#        :os_mon,
-         :ssl
-       ],
-       included_applications: [:ex_syslogger]
-@@ -197,6 +197,7 @@ defp deps do
- 
-       # indirect dependency version override
-       {:plug, "~> 1.10.4", override: true},
-+      {:temple, git: "https://akkoma.dev/AkkomaGang/temple.git", ref: "066a699ade472d8fa42a9d730b29a61af9bc8b59"},
- 
-       ## dev & test
-       {:ex_doc, "~> 0.22", only: :dev, runtime: false},

@@ -1,22 +1,42 @@
 {
-  pkgs,
-  inputs,
-}:
-with pkgs; let
-  mkYarnPackage =
-    (yarn2nix-moretea.override (super: {
-      nodejs = pkgs.nodejs-16_x;
-    }))
-    .mkYarnPackage;
-in rec {
-  akkoma = beamPackages.mixRelease rec {
+  lib,
+  beamPackages,
+  fetchFromGitea,
+  fetchFromGitHub,
+  fetchFromGitLab,
+  cmake,
+  file,
+  writeText,
+  writeScript,
+  applyPatches,
+  ...
+}: let
+  source = builtins.fromJSON (builtins.readFile ./source.json);
+  src = applyPatches {
+    src = fetchFromGitea {
+      domain = "akkoma.dev";
+      owner = "AkkomaGang";
+      repo = "akkoma";
+      inherit (source) rev sha256;
+    };
+    patches = [./akkoma.patch];
+  };
+in
+  beamPackages.mixRelease rec {
     pname = "akkoma";
-    version = inputs.akkoma.lastModifiedDate;
+    version = source.date;
 
-    src = inputs.akkoma;
-    patches = [
-      ./akkoma.patch
-    ];
+    inherit src;
+
+    # Correct version number and remove dependency on OS_Mon
+    postPatch = ''
+      sed -E -i \
+        -e 's/(version\(")\d+\.\d+\.\d+("\))/\1${version}\2/' \
+        -e 's/(^|\s):os_mon,//' \
+        mix.exs
+    '';
+
+    # cf. https://github.com/whitfin/cachex/issues/205
     stripDebug = false;
 
     mixNixDeps = import ./mix.nix {
@@ -38,68 +58,75 @@ in rec {
           };
           beamDeps = with final; [];
         };
+        crypt = beamPackages.buildRebar3 rec {
+          name = "crypt";
+          version = "0.4.3";
+
+          src = fetchFromGitHub {
+            owner = "msantos";
+            repo = "crypt";
+            rev = "f75cd55325e33cbea198fb41fe41871392f8fb76";
+            sha256 = "sha256-ZYhZTe7cTITkl8DZ4z2IOlxTX5gnbJImu/lVJ2ZjR1o=";
+          };
+
+          postInstall = "mv $out/lib/erlang/lib/crypt-${version}/priv/{source,crypt}.so";
+
+          beamDeps = with final; [elixir_make];
+        };
         elasticsearch = beamPackages.buildMix rec {
           name = "elasticsearch";
           version = "1.0.1";
+
           src = fetchFromGitea {
             domain = "akkoma.dev";
             owner = "AkkomaGang";
             repo = "elasticsearch-elixir";
             rev = "6cd946f75f6ab9042521a009d1d32d29a90113ca";
-            sha256 = "0pf8m5a91nqkcivyp8q2p2p08rv0whb9zgkpk9g3lmbyb4fr1n8a";
+            hash = "sha256-CtmQHVl+VTpemne+nxbkYGcErrgCo+t3ZBPbkFSpyF0=";
           };
+
+          beamDeps = with final; [];
+        };
+        gettext = beamPackages.buildMix {
+          name = "gettext";
+          version = "0.19.1";
+
+          src = fetchFromGitHub {
+            owner = "tusooa";
+            repo = "gettext";
+            rev = "72fb2496b6c5280ed911bdc3756890e7f38a4808";
+            hash = "sha256-V0qmE+LcAbVoWsJmWE4fwrduYFIZ5BzK/sGzgLY3eH0=";
+          };
+
           beamDeps = with final; [];
         };
         linkify = beamPackages.buildMix rec {
           name = "linkify";
           version = "0.5.2";
+
           src = fetchFromGitea {
             domain = "akkoma.dev";
             owner = "AkkomaGang";
             repo = "linkify";
             rev = "2567e2c1073fa371fd26fd66dfa5bc77b6919c16";
-            sha256 = "1y7n48clwfgs1gyif85c7zar3xaz6f5frnwl0za0zjvfnjak6z3v";
+            hash = "sha256-e3wzlbRuyw/UB5Tb7IozX/WR1T+sIBf9C/o5Thki9vg=";
           };
+
           beamDeps = with final; [];
         };
         mfm_parser = beamPackages.buildMix rec {
           name = "mfm_parser";
           version = "0.1.1";
+
           src = fetchFromGitea {
             domain = "akkoma.dev";
             owner = "AkkomaGang";
             repo = "mfm-parser";
             rev = "912fba81152d4d572e457fd5427f9875b2bc3dbe";
-            sha256 = "0frkklrnxmiq0avsi3pkpx7insg8s81h8j1iy96caasa3h8scxcz";
+            hash = "sha256-n3WmERxKK8VM8jFIBAPS6GkbT7/zjqi3AjjWbjOdMzs=";
           };
-          beamDeps = with final; [temple];
-        };
-        temple = beamPackages.buildMix rec {
-          name = "temple";
-          version = "0.9.0-rc.1";
-          src = fetchFromGitea {
-            domain = "akkoma.dev";
-            owner = "AkkomaGang";
-            repo = "temple";
-            rev = "066a699ade472d8fa42a9d730b29a61af9bc8b59";
-            sha256 = "05sqxlzqxlnrcxq6nb1pgdbyxdpwcw20868pif7fv36cckqk63d8";
-          };
-          beamDeps = with final; [];
-          patchPhase = ''
-            cp config/dev.exs config/prod.exs
-          '';
-        };
 
-        gettext = beamPackages.buildMix rec {
-          name = "gettext";
-          version = "0.19.1";
-          src = fetchFromGitHub {
-            owner = "tusooa";
-            repo = "gettext";
-            rev = "72fb2496b6c5280ed911bdc3756890e7f38a4808";
-            sha256 = "0zbq6yv81cy1zv51rr0ra9h6xdy23x75hrn2b9lba0fww89scjjp";
-          };
-          beamDeps = with final; [];
+          beamDeps = with final; [phoenix_view temple];
         };
         remote_ip = beamPackages.buildMix rec {
           name = "remote_ip";
@@ -118,46 +145,47 @@ in rec {
         search_parser = beamPackages.buildMix rec {
           name = "search_parser";
           version = "0.1.0";
+
           src = fetchFromGitHub {
             owner = "FloatingGhost";
             repo = "pleroma-contrib-search-parser";
             rev = "08971a81e68686f9ac465cfb6661d51c5e4e1e7f";
-            sha256 = "0xl3mbcwlhn02igh0nm4c1icy8nf43i1g031lcwkv8bnr8lkvfmi";
+            hash = "sha256-sbo9Kcp2oT05o2GAF+IgziLPYmCkWgBfFMBCytmqg3Y=";
           };
+
           beamDeps = with final; [nimble_parsec];
         };
-        crypt = beamPackages.buildRebar3 rec {
-          name = "crypt";
-          version = "0.4.3";
+        temple = beamPackages.buildMix rec {
+          name = "temple";
+          version = "0.9.0-rc.0";
 
-          src = fetchFromGitHub {
-            owner = "msantos";
-            repo = "crypt";
-            rev = "f75cd55325e33cbea198fb41fe41871392f8fb76";
-            sha256 = "sha256-ZYhZTe7cTITkl8DZ4z2IOlxTX5gnbJImu/lVJ2ZjR1o=";
+          src = fetchFromGitea {
+            domain = "akkoma.dev";
+            owner = "AkkomaGang";
+            repo = "temple";
+            rev = "066a699ade472d8fa42a9d730b29a61af9bc8b59";
+            hash = "sha256-qA0z8WTMjO2OixcZBARn/LbuV3s3LGtwZ9nSjj/tWBc=";
           };
 
-          postInstall = "mv $out/lib/erlang/lib/crypt-${version}/priv/{source,crypt}.so";
-
-          beamDeps = with final; [elixir_make];
+          mixEnv = "dev";
+          beamDeps = with final; [earmark_parser ex_doc makeup makeup_elixir makeup_erlang nimble_parsec];
         };
 
         # Some additional build inputs and build fixes
+        fast_html = prev.fast_html.override {
+          nativeBuildInputs = [cmake];
+          dontUseCmakeConfigure = true;
+        };
         http_signatures = prev.http_signatures.override {
           patchPhase = ''
             substituteInPlace mix.exs --replace ":logger" ":logger, :public_key"
           '';
         };
-        fast_html = prev.fast_html.override {
-          nativeBuildInputs = [cmake];
-          dontUseCmakeConfigure = true;
+        majic = prev.majic.override {
+          buildInputs = [file];
         };
         syslog = prev.syslog.override {
           buildPlugins = with beamPackages; [pc];
-        };
-
-        majic = prev.majic.override {
-          buildInputs = [file];
         };
 
         mime = prev.mime.override {
@@ -179,63 +207,20 @@ in rec {
         };
       };
     };
-  };
-  akkoma-fe-src = applyPatches {
-    name = "akkoma-fe-src-${inputs.akkoma-fe.lastModifiedDate}";
-    src = inputs.akkoma-fe;
-    patches = [
-      ./akkoma-fe.patch
-    ];
-  };
 
-  akkoma-fe = mkYarnPackage rec {
-    pname = "akkoma-fe";
-    version = inputs.akkoma-fe.lastModifiedDate;
-    src = akkoma-fe-src;
-    patchPhase = ''
-      sed -i 's/let commitHash = .*/let commitHash = "${inputs.akkoma-fe.rev}"/' build/webpack.prod.conf.js
-      sed -i 's/.*git rev-parse.*//' build/webpack.prod.conf.js
-    '';
-    configurePhase = "cp -r $node_modules node_modules";
-    buildPhase = ''
-      export NODE_OPTIONS="--openssl-legacy-provider"
-      yarn build --offline
-    '';
-    installPhase = "cp -rv dist $out";
-    distPhase = "true";
-  };
-  akkoma-admin-src = applyPatches {
-    name = "akkoma-admin-fe-src-${inputs.akkoma-admin-fe.lastModifiedDate}";
-    src = inputs.akkoma-admin-fe;
-    patches = [
-      ./akkoma-admin.patch
-    ];
-  };
-  akkoma-admin-fe = mkYarnPackage rec {
-    pname = "akkoma-admin-fe";
-    version = inputs.akkoma-admin-fe.lastModifiedDate;
-    src = akkoma-admin-src;
-    configurePhase = "cp -r $node_modules node_modules";
-    buildPhase = ''
-      export NODE_OPTIONS="--openssl-legacy-provider"
-      yarn build:prod --offline
-    '';
-    installPhase = "cp -rv dist $out";
-    distPhase = "true";
-    yarnPreBuild = ''
-      mkdir -p $HOME/.node-gyp/${nodejs.version}
-      echo 9 > $HOME/.node-gyp/${nodejs.version}/installVersion
-      ln -sfv ${nodejs}/include $HOME/.node-gyp/${nodejs.version}
-      export npm_config_nodedir=${nodejs}
-    '';
-    pkgConfig = {
-      node-sass = {
-        buildInputs = [python3 libsass pkg-config];
-        postInstall = ''
-          LIBSASS_EXT=auto yarn --offline run build
-          rm build/config.gypi
-        '';
-      };
+    passthru = {
+      inherit mixNixDeps;
+      updateScript = writeScript "update-akkoma" ''
+        ${../scripts/update-git.sh} https://akkoma.dev/AkkomaGang/akkoma.git akkoma/source.json
+        SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
+        ${../scripts/update-mix.sh} $SRC_PATH akkoma/mix.nix
+      '';
     };
-  };
-}
+
+    meta = with lib; {
+      description = "ActivityPub microblogging server";
+      homepage = "https://akkoma.dev";
+      license = licenses.agpl3;
+      platforms = platforms.unix;
+    };
+  }

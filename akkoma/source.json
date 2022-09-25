@@ -1,0 +1,11 @@
+{
+  "url": "https://akkoma.dev/AkkomaGang/akkoma.git",
+  "rev": "07295f7c8ce8109f1a2df23b0d7c62d230319c82",
+  "date": "2022-09-20T13:43:14+00:00",
+  "path": "/nix/store/zdrz6r9pvjpwb04bhai8w6vd5s0ml398-akkoma",
+  "sha256": "1kf04khili9myxg3034jm2x502ydrzk4076syh84mnny5mmf7cvn",
+  "fetchLFS": false,
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}
