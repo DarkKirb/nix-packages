@@ -31,4 +31,5 @@
   kreative-square = pkgs.callPackage ./fonts/kreative/kreative-square.nix {};
   nasin-nanpa = pkgs.callPackage ./fonts/nasin-nanpa {};
   matrix-media-repo = pkgs.callPackage ./matrix/matrix-media-repo {};
+  mautrix-discord = pkgs.callPackage ./matrix/mautrix-discord {};
 }

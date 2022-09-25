@@ -1,5 +1,5 @@
 diff --git a/portal.go b/portal.go
-index d93ad17..e5cd370 100644
+index d93ad17..198a12c 100644
 --- a/portal.go
 +++ b/portal.go
 @@ -874,7 +874,7 @@ func (portal *Portal) sendMatrixMessage(intent *appservice.IntentAPI, eventType
@@ -11,7 +11,7 @@ index d93ad17..e5cd370 100644
  		portal.handleMatrixMessage(msg.user, msg.evt)
  	case event.EventRedaction:
  		portal.handleMatrixRedaction(msg.user, msg.evt)
-@@ -1138,7 +1138,7 @@ func (portal *Portal) handleMatrixMessage(sender *User, evt *event.Event) {
+@@ -1138,13 +1138,20 @@ func (portal *Portal) handleMatrixMessage(sender *User, evt *event.Event) {
  			}
  		}
  		sendReq.Content = portal.parseMatrixHTML(sender, content)
@@ -20,3 +20,16 @@ index d93ad17..e5cd370 100644
  		data, err := portal.downloadMatrixAttachment(content)
  		if err != nil {
  			go portal.sendMessageMetrics(evt, err, "Error downloading media in")
+ 			return
+ 		}
+ 
++    // extract file suffix from mime type
++    mimeParts := strings.Split(content.Info.MimeType, "/")
++
++    if content.MsgType == "" && !strings.HasSuffix(content.Body, "." + mimeParts[1]) {
++      content.Body += mimeParts[1]
++    }
++
+ 		sendReq.Files = []*discordgo.File{{
+ 			Name:        content.Body,
+ 			ContentType: content.Info.MimeType,

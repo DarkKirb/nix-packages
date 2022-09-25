@@ -9,66 +9,10 @@ steps:
     commands:
       - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
       - nix flake update
-  - name: Update minecraft
-    image: nixery.dev/shell/curl/jq
-    commands:
-      - (cd minecraft && bash ./update.sh)
-    depends_on:
-      - Update flake
-  - name: Update akkoma
+  - name: Run update script
     image: nixos/nix
     commands:
-      - (cd akkoma && ./update.sh)
-    environment:
-      USER: nobody
-    depends_on:
-      - Update flake
-  - name: Update matrix-media-repo
-    image: nixos/nix
-    commands:
-      - mkdir -p /etc/nix
-      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-      - (cd matrix/matrix-media-repo && ./update.sh)
-    environment:
-      USER: nobody
-    depends_on:
-      - Update flake
-  - name: Update mautrix-whatsapp
-    image: nixos/nix
-    commands:
-      - mkdir -p /etc/nix
-      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-      - (cd matrix/mautrix-whatsapp && ./update.sh)
-  - name: Update mautrix-discord
-    image: nixos/nix
-    commands:
-      - mkdir -p /etc/nix
-      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-      - (cd matrix/mautrix-discord && ./update.sh)
-    environment:
-      USER: nobody
-    depends_on:
-      - Update flake
-  - name: Update art
-    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep
-    commands:
-      - (cd art && bash ./update.sh)
-    environment:
-      USER: nobody
-    depends_on:
-      - Update flake
-  - name: Update pypi
-    image: nixery.dev/shell/curl/jq/gnused
-    commands:
-      - (cd python && bash ./update.sh)
-    depends_on:
-      - Update flake
-  - name: Update miifox
-    image: nixery.dev/shell/nix-prefetch-git/jq/gnugrep
-    commands:
-      - (cd web && bash ./update.sh)
-    environment:
-      USER: nobody
+      - yes | nix-shell ./scripts/update.nix
     depends_on:
       - Update flake
   - name: Format nix
@@ -76,14 +20,7 @@ steps:
     commands:
       - alejandra .
     depends_on:
-      - Update minecraft
-      - Update akkoma
-      - Update matrix-media-repo
-      - Update mautrix-whatsapp
-      - Update mautrix-discord
-      - Update art
-      - Update pypi
-      - Update miifox
+      - Run update script
   - name: Push git
     image: nixery.dev/shell/gitfull/git-lfs/shadow
     commands:

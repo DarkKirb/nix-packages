@@ -1,18 +1,34 @@
 {
-  pkgs,
-  inputs,
-  ...
-} @ args: let
-  inherit ((pkgs.callPackage "${inputs.gomod2nix}/builder" {})) buildGoApplication;
-in {
-  mautrix-discord = buildGoApplication rec {
+  buildGoModule,
+  olm,
+  fetchFromGitHub,
+  lib,
+  writeScript,
+}: let
+  source = builtins.fromJSON (builtins.readFile ./source.json);
+in
+  buildGoModule rec {
     pname = "mautrix-discord";
-    version = inputs.mautrix-discord.lastModifiedDate;
-    src = pkgs.callPackage ./source.nix {};
+    version = source.date;
+    src = fetchFromGitHub {
+      owner = "mautrix";
+      repo = "discord";
+      inherit (source) rev sha256;
+    };
     patches = [./sticker.patch];
+    vendorSha256 = builtins.readFile ./vendor.sha256;
+    buildInputs = [
+      olm
+    ];
     proxyVendor = true;
-    modules = ./gomod2nix.toml;
     CGO_ENABLED = "1";
-    buildInputs = [pkgs.olm];
-  };
-}
+    meta = {
+      description = "Discord-Matrix double-puppeting bridge";
+      license = lib.licenses.agpl3;
+    };
+    passthru.updateScript = writeScript "update-matrix-media-repo" ''
+      ${../../scripts/update-git.sh} "https://github.com/mautrix/discord" matrix/mautrix-discord/source.json
+      SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
+      ${../../scripts/update-go.sh} ./matrix/mautrix-discord matrix/mautrix-discord/vendor.sha256
+    '';
+  }
