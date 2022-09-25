@@ -197,7 +197,10 @@ in rec {
       sed -i 's/.*git rev-parse.*//' build/webpack.prod.conf.js
     '';
     configurePhase = "cp -r $node_modules node_modules";
-    buildPhase = "yarn build --offline";
+    buildPhase = ''
+      export NODE_OPTIONS="--openssl-legacy-provider"
+      yarn build --offline
+    '';
     installPhase = "cp -rv dist $out";
     distPhase = "true";
   };
@@ -213,7 +216,10 @@ in rec {
     version = inputs.akkoma-admin-fe.lastModifiedDate;
     src = akkoma-admin-src;
     configurePhase = "cp -r $node_modules node_modules";
-    buildPhase = "yarn build:prod --offline";
+    buildPhase = ''
+      export NODE_OPTIONS="--openssl-legacy-provider"
+      yarn build:prod --offline
+    '';
     installPhase = "cp -rv dist $out";
     distPhase = "true";
     yarnPreBuild = ''
