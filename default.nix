@@ -34,5 +34,7 @@
   mautrix-discord = pkgs.callPackage ./matrix/mautrix-discord {};
   mautrix-whatsapp = pkgs.callPackage ./matrix/mautrix-whatsapp {};
   mautrix-signal = pkgs.callPackage ./matrix/mautrix-signal {};
+  mautrix-telegram = pkgs.callPackage ./matrix/mautrix-telegram {};
   python-mautrix = pkgs.python3Packages.callPackage ./python/mautrix.nix {};
+  python-tulir-telethon = pkgs.python3Packages.callPackage ./python/tulir-telethon.nix {};
 }

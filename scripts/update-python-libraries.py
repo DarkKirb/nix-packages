@@ -46,15 +46,18 @@ class Version(_Version, collections.abc.Sequence):
         # We cannot use `str(Version(0.04.21))` because that becomes `0.4.21`
         # https://github.com/avian2/unidecode/issues/13#issuecomment-354538882
         self.raw_version = version
+        self.full_version = list(self._version.release)
+        if self._version.dev is not None:
+            self.full_version += list(self._version.dev)
 
     def __getitem__(self, i):
-        return self._version.release[i]
+        return self.full_version[i]
 
     def __len__(self):
-        return len(self._version.release)
+        return len(self.full_version)
 
     def __iter__(self):
-        yield from self._version.release
+        yield from self.full_version
 
 
 def _get_values(attribute, text):
@@ -153,9 +156,6 @@ def _determine_latest_version(current_version, target, versions):
     else:
         ceiling[-1]+=1
         ceiling = Version(".".join(map(str, ceiling)))
-
-    # We do not want prereleases
-    versions = SpecifierSet(prereleases=PRERELEASES).filter(versions)
 
     if ceiling is not None:
         versions = SpecifierSet(f"<{ceiling}").filter(versions)

@@ -1,0 +1,39 @@
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  openssl,
+  rsa,
+  pyaes,
+  pythonOlder,
+}:
+buildPythonPackage rec {
+  pname = "tulir-telethon";
+  version = "1.26.0a5";
+
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "sha256-s6pj9kHqcl6XU1KQ/aOw1XWQ3CyDotaDl0m7aj9SbW4=";
+  };
+
+  patchPhase = ''
+    substituteInPlace telethon/crypto/libssl.py --replace \
+      "ctypes.util.find_library('ssl')" "'${lib.getLib openssl}/lib/libssl.so'"
+  '';
+
+  propagatedBuildInputs = [
+    rsa
+    pyaes
+  ];
+
+  # No tests available
+  doCheck = false;
+
+  disabled = pythonOlder "3.5";
+
+  meta = with lib; {
+    homepage = "https://github.com/LonamiWebs/Telethon";
+    description = "Full-featured Telegram client library for Python 3";
+    license = licenses.mit;
+  };
+}
