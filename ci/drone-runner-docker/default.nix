@@ -1,7 +1,7 @@
 {
   fetchFromGitHub,
   buildGoModule,
-  writeScript
+  writeScript,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   src = fetchFromGitHub {
@@ -34,8 +34,8 @@ in
         }
       ];
     };
-  passthru.updateScript = writeScript "update-matrix-media-repo" ''
-    ${../../scripts/update-git.sh} "https://github.com/drone-runners/drone-runner-docker" ci/drone-runner-docker/source.json
-    SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
-    ${../../scripts/update-go.sh} ./ci/drone-runner-docker ci/drone-runner-docker/goVendor.hash  ''; 
+    passthru.updateScript = writeScript "update-matrix-media-repo" ''
+      ${../../scripts/update-git.sh} "https://github.com/drone-runners/drone-runner-docker" ci/drone-runner-docker/source.json
+      SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
+      ${../../scripts/update-go.sh} ./ci/drone-runner-docker ci/drone-runner-docker/goVendor.hash  '';
   }

@@ -33,4 +33,6 @@
   matrix-media-repo = pkgs.callPackage ./matrix/matrix-media-repo {};
   mautrix-discord = pkgs.callPackage ./matrix/mautrix-discord {};
   mautrix-whatsapp = pkgs.callPackage ./matrix/mautrix-whatsapp {};
+  mautrix-signal = pkgs.callPackage ./matrix/mautrix-signal {};
+  python-mautrix = pkgs.python3Packages.callPackage ./python/mautrix.nix {};
 }

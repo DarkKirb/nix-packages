@@ -4,9 +4,7 @@ set -e
 PACKAGES="plover-plugins-manager plover-stroke rtf-tokenize plover-emoji plover-tapey-tape plover-yaml-dictionary simplefuzzyset mautrix tulir-telethon"
 
 cat > tarballs.nix << EOF
-{ inputs, pkgs }: let
-  inherit (pkgs) fetchurl;
-in rec {
+{ fetchurl }: rec {
 EOF
 
 for package in $PACKAGES; do
