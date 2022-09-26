@@ -25,7 +25,7 @@ in
       CommonMark
       aiohttp
       yarl
-      mautrix
+      (python.pkgs.callPackage ../../python/mautrix.nix {})
       (python.pkgs.callPackage ../../python/tulir-telethon.nix {})
       asyncpg
       Mako
