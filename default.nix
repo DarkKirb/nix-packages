@@ -37,4 +37,5 @@
   mautrix-telegram = pkgs.callPackage ./matrix/mautrix-telegram {};
   python-mautrix = pkgs.python3Packages.callPackage ./python/mautrix.nix {};
   python-tulir-telethon = pkgs.python3Packages.callPackage ./python/tulir-telethon.nix {};
+  papermc = pkgs.callPackage ./minecraft/papermc {};
 }
