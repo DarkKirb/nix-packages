@@ -6,7 +6,7 @@
   source = builtins.fromJSON (builtins.readFile ./source.json);
   python = python3.override {
     packageOverrides = self: super: {
-      dask = super.dask.overrridePythonAttrs (_: {
+      dask = super.dask.overridePythonAttrs (_: {
         installCheckPhase = "true";
       });
     };
