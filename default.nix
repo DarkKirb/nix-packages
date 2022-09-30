@@ -51,4 +51,5 @@
   plover-dict-didoesdigital = pkgs.callPackage ./plover/didoesdigital-dictionary.nix {};
   miifox-net = pkgs.python3Packages.callPackage ./web/miifox-net.nix {};
   old-homepage = pkgs.callPackage ./web/old-homepage.nix {};
+  clean-s3-cache = pkgs.python3Packages.callPackage ./scripts/clean-s3-cache.nix {};
 }
