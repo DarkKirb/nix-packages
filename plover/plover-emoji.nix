@@ -3,10 +3,10 @@ let plover = callPackage ./plover {};
 simplefuzzyset = callPackage ../python/simplefuzzyset.nix {};
 in buildPythonPackage rec {
   pname = "plover_emoji";
-  version = "0.0.0";
+  version = "0.0.4";
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-3gOyP0ruZrZfaffU7MQjNoG0NUFQLYa/FP3inqpy0VM=";
+    sha256 = "sha256-22YRzSoJSFmES2P2uiA333kpxHGUV1Vlhun2q08LV+o=";
   };
   
   doCheck = false;
