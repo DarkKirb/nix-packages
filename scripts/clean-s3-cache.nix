@@ -7,8 +7,8 @@
   clean-s3-cache-env = python3.buildEnv.override {
     extraLibs = [boto3];
   };
-in {
-  clean-s3-cache = stdenvNoCC.mkDerivation {
+in
+  stdenvNoCC.mkDerivation {
     name = "clean-s3-cache";
     src = ./clean-s3-cache.py;
     python = clean-s3-cache-env;
@@ -27,5 +27,4 @@ in {
       description = "Scriept for cleaning a nix s3 binary cache";
       license = lib.licenses.bsd2;
     };
-  };
-}
+  }
