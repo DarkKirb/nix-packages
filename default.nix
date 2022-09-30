@@ -42,4 +42,10 @@
   python-rtf-tokenize = pkgs.python3Packages.callPackage ./python/rtf-tokenize.nix {};
   plover = pkgs.python3Packages.callPackage ./plover/plover {};
   plover-plugins-manager = pkgs.python3Packages.callPackage ./plover/plover-plugins-manager.nix {};
+  python-simplefuzzyset = pkgs.python3Packages.callPackage ./python/simplefuzzyset.nix {};
+  plover-plugin-emoji = pkgs.python3Packages.callPackage ./plover/plover-emoji.nix {};
+  plover-plugin-tapey-tape = pkgs.python3Packages.callPackage ./plover/plover-tapey-tape.nix {};
+  plover-plugin-yaml-dictionary = pkgs.python3Packages.callPackage ./plover/plover-yaml-dictionary.nix {};
+  plover-plugin-machine-hid = pkgs.python3Packages.callPackage ./plover/plover-machine-hid.nix {};
+  plover-plugin-rkb1-hid = pkgs.python3Packages.callPackage ./plover/plover-rkb1-hid.nix {};
 }
