@@ -9,11 +9,11 @@
 }:
 buildPythonPackage rec {
   pname = "tulir-telethon";
-  version = "1.26.0a5";
+  version = "1.26.0a6";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-s6pj9kHqcl6XU1KQ/aOw1XWQ3CyDotaDl0m7aj9SbW4=";
+    sha256 = "sha256-62KRlpuAPA4LQBsPJI2puMrTlr/1PtvGKKYRfth5xEg=";
   };
 
   patchPhase = ''
@@ -36,4 +36,5 @@ buildPythonPackage rec {
     description = "Full-featured Telegram client library for Python 3";
     license = licenses.mit;
   };
+  passthru.updateScript = [../scripts/update-python-libraries "python/tulir-telethon.nix"];
 }
