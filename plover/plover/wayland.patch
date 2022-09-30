@@ -1272,7 +1272,7 @@ index 00000000..5095c91b
 +  </interface>
 +</protocol>
 diff --git a/plover_build_utils/setup.py b/plover_build_utils/setup.py
-index 0be32e26..2134d6d1 100644
+index 0be32e26..92e3f206 100644
 --- a/plover_build_utils/setup.py
 +++ b/plover_build_utils/setup.py
 @@ -1,14 +1,20 @@
@@ -1292,7 +1292,7 @@ index 0be32e26..2134d6d1 100644
  import setuptools
  
 +logging.basicConfig()
-+log = logging.egtLogger("plover setup")
++log = logging.getLogger("plover setup")
  
  class Command(setuptools.Command):
  

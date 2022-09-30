@@ -39,6 +39,6 @@
   python-tulir-telethon = pkgs.python3Packages.callPackage ./python/tulir-telethon.nix {};
   papermc = pkgs.callPackage ./minecraft/papermc {};
   python-plover-stroke = pkgs.python3Packages.callPackage ./plover/plover-stroke.nix {};
-  python-rtf-tokenize = pkgs.python3Packages.callPackage ./plover/rtf-tokenize.nix {};
+  python-rtf-tokenize = pkgs.python3Packages.callPackage ./python/rtf-tokenize.nix {};
   plover = pkgs.python3Packages.callPackage ./plover/plover {};
 }
