@@ -1,7 +1,7 @@
 {callPackage, buildPythonPackage, fetchPypi, lib, pip, pkginfo, pygments, readme_renderer, requests, requests-cache, requests-futures, setuptools, wheel, pythonOlder}:
 let plover = callPackage ./plover {};
 in buildPythonPackage rec {
-  pname = "plover-plugins-manager";
+  pname = "plover_plugins_manager";
   version = "0.7.1";
   src = fetchPypi {
     inherit pname version;
