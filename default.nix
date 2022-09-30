@@ -48,4 +48,5 @@
   plover-plugin-yaml-dictionary = pkgs.python3Packages.callPackage ./plover/plover-yaml-dictionary.nix {};
   plover-plugin-machine-hid = pkgs.python3Packages.callPackage ./plover/plover-machine-hid.nix {};
   plover-plugin-rkb1-hid = pkgs.python3Packages.callPackage ./plover/plover-rkb1-hid.nix {};
+  plover-dict-didoesdigital = pkgs.callPackage ./plover/didoesdigital-dictionary.nix {};
 }
