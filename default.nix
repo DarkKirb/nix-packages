@@ -41,4 +41,5 @@
   python-plover-stroke = pkgs.python3Packages.callPackage ./plover/plover-stroke.nix {};
   python-rtf-tokenize = pkgs.python3Packages.callPackage ./python/rtf-tokenize.nix {};
   plover = pkgs.python3Packages.callPackage ./plover/plover {};
+  plover-plugins-manager = pkgs.python3Packages.callPackage ./plover/plover-plugins-manager.nix {};
 }
