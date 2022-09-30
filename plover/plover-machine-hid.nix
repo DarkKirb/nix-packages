@@ -1,4 +1,4 @@
-{callPackage, buildPythonPackage, fetchFromGitHub, lib, pythonOlder}:
+{callPackage, buildPythonPackage, fetchFromGitHub, lib, pythonOlder, hid, bitstring}:
 let plover = callPackage ./plover {};
 source = builtins.fromJSON (builtins.readFile ./plover-machine-hid.json);
 in buildPythonPackage rec {
@@ -13,7 +13,7 @@ in buildPythonPackage rec {
   doCheck = false;
 
   disabled = pythonOlder "3.6";
-  propagatedBuildInputs = [plover];
+  propagatedBuildInputs = [plover hid bitstring];
   
   meta = with lib; {
     description = "POC Plover plugin and firmware for the Plover HID protocol";

@@ -3,16 +3,16 @@ let plover = callPackage ./plover {};
 simplefuzzyset = callPackage ../python/simplefuzzyset.nix {};
 in buildPythonPackage rec {
   pname = "plover_emoji";
-  version = "0.0.4";
+  version = "0.0.0";
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-22YRzSoJSFmES2P2uiA333kpxHGUV1Vlhun2q08LV+o=";
+    sha256 = "sha256-3gOyP0ruZrZfaffU7MQjNoG0NUFQLYa/FP3inqpy0VM=";
   };
   
   doCheck = false;
 
   disabled = pythonOlder "3.6";
-  propagatedBuildInputs = [plover];
+  propagatedBuildInputs = [plover simplefuzzyset];
   
   meta = with lib; {
     description = "Convert text to emoji with a stroke.";
