@@ -4,11 +4,11 @@
   stdenvNoCC,
   lib,
 }: let
-  clean-s3-cache-env = pkgs.python3.buildEnv.override {
-    extraLibs = with pkgs.python3Packages; [boto3];
+  clean-s3-cache-env = python3.buildEnv.override {
+    extraLibs = [boto3];
   };
 in {
-  clean-s3-cache = pkgs.stdenvNoCC.mkDerivation {
+  clean-s3-cache = stdenvNoCC.mkDerivation {
     name = "clean-s3-cache";
     src = ./clean-s3-cache.py;
     python = clean-s3-cache-env;
