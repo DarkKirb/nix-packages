@@ -550,7 +550,7 @@ index 00000000..51bccf28
 +</protocol>
 diff --git a/plover/oslayer/wayland/keyboardcontrol.py b/plover/oslayer/wayland/keyboardcontrol.py
 new file mode 100644
-index 00000000..c3e4d1bc
+index 00000000..ec1057bb
 --- /dev/null
 +++ b/plover/oslayer/wayland/keyboardcontrol.py
 @@ -0,0 +1,389 @@
@@ -907,7 +907,7 @@ index 00000000..c3e4d1bc
 +        self._mod_state = (depressed | latched | locked) & ~0x10
 +        return False
 +
-+    def suppress_keyboard(self, keys=()):
++    def suppress(self, keys=()):
 +        """Change the set of keys to capture."""
 +        self._suppressed_keys = set(keys)
 +
