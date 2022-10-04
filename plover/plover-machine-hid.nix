@@ -11,7 +11,7 @@
   source = builtins.fromJSON (builtins.readFile ./plover-machine-hid.json);
 in
   buildPythonPackage rec {
-    pname = "plover_machine_hid";
+    pname = "plover-machine-hid";
     version = source.date;
     src = fetchFromGitHub {
       owner = "dnaq";
