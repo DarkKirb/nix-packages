@@ -26,7 +26,7 @@ index 00000000..9c04de6b
 @@ -0,0 +1 @@
 +Add support for wlroots-based Wayland compositors like Sway, and other compositors that implement the `virtual_keyboard_unstable_v1` and `input_method_unstable_v2` protocols.
 diff --git a/plover/oslayer/linux/keyboardcontrol.py b/plover/oslayer/linux/keyboardcontrol.py
-index bb135614..9a421412 100644
+index bb135614..ee7abd91 100644
 --- a/plover/oslayer/linux/keyboardcontrol.py
 +++ b/plover/oslayer/linux/keyboardcontrol.py
 @@ -1 +1,6 @@
@@ -34,7 +34,7 @@ index bb135614..9a421412 100644
 +import os
 +
 +if os.environ.get('WAYLAND_DISPLAY', None):
-+    from ..wayland.keyboardcontrol import KeyboardCapture, KeyboardEmulation # pylint: disable=unused-import
++    from plover.oslayer.wayland.keyboardcontrol import KeyboardCapture, KeyboardEmulation # pylint: disable=unused-import
 +else:
 +    from .keyboardcontrol_x11 import KeyboardCapture, KeyboardEmulation # pylint: disable=unused-import
 diff --git a/plover/oslayer/wayland/.gitignore b/plover/oslayer/wayland/.gitignore
