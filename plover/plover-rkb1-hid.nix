@@ -1,7 +1,7 @@
 {
   callPackage,
   buildPythonPackage,
-  fetchFromGitHub,
+  fetchFromGitea,
   lib,
   pythonOlder,
   hid,
