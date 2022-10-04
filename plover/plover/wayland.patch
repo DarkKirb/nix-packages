@@ -945,14 +945,14 @@ index 00000000..c3e4d1bc
 +            _keyboard.send_key_combination(combo_string)
 diff --git a/plover/oslayer/wayland/keyboardlayout.py b/plover/oslayer/wayland/keyboardlayout.py
 new file mode 100644
-index 00000000..26be0a1b
+index 00000000..f4006d67
 --- /dev/null
 +++ b/plover/oslayer/wayland/keyboardlayout.py
 @@ -0,0 +1,203 @@
 +from xkbcommon import xkb
 +
 +from plover.key_combo import add_modifiers_aliases, parse_key_combo
-+from plover.oslayer.xkeyboardcontrol import uchr_to_keysym
++from plover.oslayer.linux.keyboardcontrol_x11 import uchr_to_keysym
 +
 +
 +XKB_KEYCODE_OFFSET = 8
