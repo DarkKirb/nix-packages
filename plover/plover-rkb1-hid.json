@@ -1,9 +1,9 @@
 {
   "url": "https://git.chir.rs/darkkirb/plover-machine-hid",
-  "rev": "f11d7586a993522832efed78cfa5e3654bb48258",
-  "date": "2022-07-27T21:41:10+01:00",
-  "path": "/nix/store/nil6qwsspjpq843wv8acqryp49ad47k5-plover-machine-hid",
-  "sha256": "12zb1q10yywmplm6rh8x4y536f3aa31vz0dnr68hqxk91vcvgswa",
+  "rev": "1326e78b59162a5b1140dcd34b2daaece91094d2",
+  "date": "2022-10-05T13:07:29+01:00",
+  "path": "/nix/store/93fm2769fypq28vq7c43kmyldnp5bzrb-plover-machine-hid",
+  "sha256": "1ralv7dvl7cc2l37w8b675sr2cswh0k7rzxzhhdf80p9116kcrps",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

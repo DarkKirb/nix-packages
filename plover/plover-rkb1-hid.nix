@@ -19,7 +19,7 @@ in
       repo = "plover-machine-hid";
       inherit (source) rev sha256;
     };
-    
+
     doCheck = false;
 
     disabled = pythonOlder "3.6";
