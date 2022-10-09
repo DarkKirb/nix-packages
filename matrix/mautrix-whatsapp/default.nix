@@ -4,6 +4,7 @@
   fetchFromGitHub,
   lib,
   writeScript,
+  go
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
@@ -24,6 +25,7 @@ in
     meta = {
       description = "Whatsapp-Matrix double-puppeting bridge";
       license = lib.licenses.agpl3;
+      broken = builtins.compareVersions go.version "1.18";
     };
     passthru.updateScript = writeScript "update-mautrix-whatsapp" ''
       ${../../scripts/update-git.sh} "https://github.com/mautrix/whatsapp" matrix/mautrix-whatsapp/source.json
