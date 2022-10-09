@@ -59,6 +59,7 @@ in
       description = "A Matrix-Telegram hybrid puppeting/relaybot bridge";
       license = licenses.agpl3Plus;
       platforms = platforms.linux;
+      broken = !(python.pkgs ? cryptg);
     };
     passthru.updateScript = [
       ../../scripts/update-git.sh
