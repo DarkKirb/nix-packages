@@ -27,6 +27,8 @@ in
     pname = "pleroma-fe";
     version = source.date;
     inherit src;
+    packageJson = ./package.json;
+    yarnLock = ./yarn.lock;
     yarnNix = ./yarn.nix;
 
     nativeBuildInputs = [
@@ -56,7 +58,7 @@ in
       updateScript = writeScript "update-pleroma-fe" ''
         ${../../scripts/update-git.sh} https://akkoma.dev/AkkomaGang/pleroma-fe.git akkoma/pleroma-fe/source.json
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
-        ${../../scripts/update-yarn.sh} $SRC_PATH akkoma/pleroma-fe/yarn.nix
+        ${../../scripts/update-yarn.sh} $SRC_PATH akkoma/pleroma-fe
       '';
     };
 
