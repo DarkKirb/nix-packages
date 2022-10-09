@@ -25,6 +25,7 @@
     };
     patches = [./admin-fe.patch];
   };
+  nodeOptions = if builtins.compareVersions nodejs.version "18" >= 0 then "--openssl-legacy-provider" else "";
 in
   mkYarnPackage rec {
     pname = "admin-fe";
@@ -44,7 +45,7 @@ in
 
     configurePhase = "cp -r $node_modules node_modules";
     buildPhase = ''
-      export NODE_OPTIONS="--openssl-legacy-provider"
+      export NODE_OPTIONS="${nodeOptions}"
       yarn build:prod --offline
     '';
     installPhase = "cp -rv dist $out";
