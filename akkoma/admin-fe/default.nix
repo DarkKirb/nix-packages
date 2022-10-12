@@ -25,7 +25,10 @@
     };
     patches = [./admin-fe.patch];
   };
-  nodeOptions = if builtins.compareVersions nodejs.version "18" >= 0 then "--openssl-legacy-provider" else "";
+  nodeOptions =
+    if builtins.compareVersions nodejs.version "18" >= 0
+    then "--openssl-legacy-provider"
+    else "";
 in
   mkYarnPackage rec {
     pname = "admin-fe";

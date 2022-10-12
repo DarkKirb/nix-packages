@@ -4,7 +4,7 @@
   fetchFromGitHub,
   lib,
   writeScript,
-  go
+  go,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
