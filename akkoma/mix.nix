@@ -338,12 +338,12 @@
 
     ecto = buildMix rec {
       name = "ecto";
-      version = "3.8.4";
+      version = "3.9.1";
 
       src = fetchHex {
         pkg = "${name}";
         version = "${version}";
-        sha256 = "1m42zrwnv2pjggl9y94wpdjfbq7lyf600fj62l2v8bflp244497r";
+        sha256 = "015k9vsngl01zzj5p9iw439rsbcjdjrq2bzryy8gg3b46vbv62y8";
       };
 
       beamDeps = [decimal jason telemetry];
@@ -377,12 +377,12 @@
 
     ecto_sql = buildMix rec {
       name = "ecto_sql";
-      version = "3.8.3";
+      version = "3.9.0";
 
       src = fetchHex {
         pkg = "${name}";
         version = "${version}";
-        sha256 = "16rjcz9qa2gabl7nlpifi7i0ay5mzkm4jw58a7rgdnp6p5zv331l";
+        sha256 = "0lv4b45j0bja98q0qhlp97a7zvb0g7x2bgkqr721m2rv0whggwx8";
       };
 
       beamDeps = [db_connection ecto postgrex telemetry];
@@ -702,12 +702,12 @@
 
     jason = buildMix rec {
       name = "jason";
-      version = "1.3.0";
+      version = "1.4.0";
 
       src = fetchHex {
         pkg = "${name}";
         version = "${version}";
-        sha256 = "1b620901micds3q2pfnwcp861hjiwx0wpyahgvnf142k4m8izz2k";
+        sha256 = "0891p2yrg3ri04p302cxfww3fi16pvvw1kh4r91zg85jhl87k8vr";
       };
 
       beamDeps = [decimal];
@@ -1170,12 +1170,12 @@
 
     postgrex = buildMix rec {
       name = "postgrex";
-      version = "0.16.3";
+      version = "0.16.5";
 
       src = fetchHex {
         pkg = "${name}";
         version = "${version}";
-        sha256 = "142535k22dl5zdq757fhmnih7kk4lnq43llhzvjs8b9js79f3amf";
+        sha256 = "1s5jbwfzsdsyvlwgx3bqlfwilj2c468wi3qxq0c2d23fvhwxdspd";
       };
 
       beamDeps = [connection db_connection decimal jason];

@@ -5,16 +5,6 @@ index 000000000..3550a30f2
 +++ b/.envrc
 @@ -0,0 +1 @@
 +use flake
-diff --git a/.gitignore b/.gitignore
-index 8fa79b68f..f2cc62c76 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -65,3 +65,5 @@ pleroma.iml
- 
- # Generated documentation
- docs/site
-+
-+.direnv/
 diff --git a/flake.lock b/flake.lock
 new file mode 100644
 index 000000000..fcb32b26f
