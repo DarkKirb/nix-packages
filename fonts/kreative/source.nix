@@ -3,6 +3,6 @@
 in
   fetchFromGitLab {
     owner = "kreativekorp";
-    repo = "openrelay";
+    repo = "open-relay";
     inherit (source) rev sha256;
   }
