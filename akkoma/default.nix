@@ -9,6 +9,7 @@
   writeText,
   writeScript,
   applyPatches,
+  libxcrypt,
   ...
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
@@ -72,6 +73,7 @@ in
           postInstall = "mv $out/lib/erlang/lib/crypt-${version}/priv/{source,crypt}.so";
 
           beamDeps = with final; [elixir_make];
+          buildInputs = [libxcrypt];
         };
         elasticsearch = beamPackages.buildMix rec {
           name = "elasticsearch";
