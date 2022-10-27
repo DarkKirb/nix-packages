@@ -31,7 +31,7 @@ in
     pname = "pleroma-fe";
     version = source.date;
     inherit src;
-    packageJson = ./package.json;
+    packageJSON = ./package.json;
     yarnLock = ./yarn.lock;
     yarnNix = ./yarn.nix;
 
