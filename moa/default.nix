@@ -72,7 +72,7 @@ in
       cp -rv $src $out
       chmod -R +w $out
       cp start-*.sh $out
-      sed -i 's/engine, reflect=True/autoload_with=engine/' $out/moa/models.py
+      sed -i 's/, reflect=True//' $out/moa/models.py
     '';
     meta = {
       description = "Mastodon-Twitter crossposter";
