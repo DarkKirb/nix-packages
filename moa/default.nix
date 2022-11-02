@@ -57,14 +57,17 @@ in
       echo "#!/bin/sh" > start.sh
       echo "cd $out" >> start.sh
       echo "${moa-env}/bin/python -m moa.models" >> start.sh
-      echo "exec ${moa-env}/bin/python -m moa.worker" >> start.sh
-      chmod +x start.sh
+      cp start.sh start-worker.sh
+      mv start.sh start-app.sh
+      echo "exec ${moa-env}/bin/python -m moa.worker" >> start-worker.sh
+      echo "exec ${moa-env}/bin/python app.py" >> start-app.sh
+      chmod +x start-*.sh
     '';
 
     installPhase = ''
       cp -rv $src $out
       chmod +w $out
-      cp start.sh $out
+      cp start-*.sh $out
     '';
     meta = {
       description = "Mastodon-Twitter crossposter";
