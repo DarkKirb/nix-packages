@@ -57,9 +57,6 @@ in
     pname = "moa";
     version = source.date;
     inherit src;
-    patchPhase = ''
-      substituteInPlace moa/models.py --replace "engine, reflect=True" "autoload_with=engine"
-    '';
     buildPhase = ''
       echo "#!/bin/sh" > start.sh
       echo "cd $out" >> start.sh
@@ -73,8 +70,9 @@ in
 
     installPhase = ''
       cp -rv $src $out
-      chmod +w $out
+      chmod -R +w $out
       cp start-*.sh $out
+      sed -i 's/engine, reflect=True/autoload_with=engine/' $out/moa/models.py
     '';
     meta = {
       description = "Mastodon-Twitter crossposter";
