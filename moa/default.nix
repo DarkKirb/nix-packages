@@ -21,6 +21,7 @@
   callPackage,
   stdenvNoCC,
   lib,
+  setuptools,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   src = fetchFromGitLab {
@@ -46,6 +47,7 @@
     cairosvg
     werkzeug
     wheel
+    setuptools
     (callPackage ../python/instagram.nix {})
   ]);
 in
