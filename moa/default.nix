@@ -77,6 +77,7 @@ in
       substituteInPlace $out/moa/worker.py --replace "Path(f'" "Path(f'/tmp/moa_"
       substituteInPlace $out/app.py --replace "logHandler = logging.FileHandler('logs/app.log')" "import sys; logHandler = logging.StreamHandler(sys.stderr)"
       substituteInPlace $out/moa/worker.py --replace "sqlite" "postgresql"
+      substituteInPlace $out/app.py --replace "app.run()" "app.run(host='::1')"
     '';
     meta = {
       description = "Mastodon-Twitter crossposter";
