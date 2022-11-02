@@ -74,7 +74,7 @@ in
       cp start-*.sh $out
       sed -i 's/, reflect=True//' $out/moa/models.py
       substituteInPlace $out/app.py --replace "from authlib.integrations._client import MissingRequestTokenError" "class MissingRequestTokenError(Exception): pass"
-      substituteInPlace $out/moa/worker.py --replace "Path(f'" "Path(f'/run/moa_"
+      substituteInPlace $out/moa/worker.py --replace "Path(f'" "Path(f'/tmp/moa_"
       substituteInPlace $out/app.py --replace "logHandler = logging.FileHandler('logs/app.log')" "import sys; logHandler = logging.StreamHandler(sys.stderr)"
     '';
     meta = {
