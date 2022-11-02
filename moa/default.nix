@@ -76,6 +76,7 @@ in
       substituteInPlace $out/app.py --replace "from authlib.integrations._client import MissingRequestTokenError" "class MissingRequestTokenError(Exception): pass"
       substituteInPlace $out/moa/worker.py --replace "Path(f'" "Path(f'/tmp/moa_"
       substituteInPlace $out/app.py --replace "logHandler = logging.FileHandler('logs/app.log')" "import sys; logHandler = logging.StreamHandler(sys.stderr)"
+      substituteInPlace $out/moa/worker.py --replace "sqlite" "postgresql"
     '';
     meta = {
       description = "Mastodon-Twitter crossposter";
