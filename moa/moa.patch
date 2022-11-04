@@ -980,7 +980,7 @@ index 08aa61d..29426a3 100644
              else:
                  logger.info('Truncating toot')
 diff --git a/moa/tweet.py b/moa/tweet.py
-index b156967..5d02abb 100644
+index b156967..0eeeaae 100644
 --- a/moa/tweet.py
 +++ b/moa/tweet.py
 @@ -20,6 +20,7 @@ HANDLE_SUFFIX = ''
@@ -1020,6 +1020,15 @@ index b156967..5d02abb 100644
                  self.__fetched_attachments = fetched_tweet.media
  
              except (TwitterError, ConnectionError) as e:
+@@ -122,7 +122,7 @@ class Tweet(Message):
+                 logger.info(f'Skipping because {local_tags} found')
+                 return True
+ 
+-        if not self.settings.post_to_mastodon:
++        elif not self.settings.post_to_mastodon:
+             logger.info(f'Skipping regular tweets.')
+             return True
+ 
 @@ -130,7 +130,7 @@ class Tweet(Message):
  
      @property
