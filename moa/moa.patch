@@ -980,7 +980,7 @@ index 08aa61d..02cee13 100644
              else:
                  logger.info('Truncating toot')
 diff --git a/moa/tweet.py b/moa/tweet.py
-index b156967..95d4a96 100644
+index b156967..0578338 100644
 --- a/moa/tweet.py
 +++ b/moa/tweet.py
 @@ -20,6 +20,7 @@ HANDLE_SUFFIX = ''
@@ -1083,7 +1083,7 @@ index b156967..95d4a96 100644
                  content = re.sub(url.url, url.expanded_url, content)
  
              if self.is_retweet:
-+                self.media = []
++                self.__fetched_attachments = []
 +                self.__content = f"RT @{self.data.retweeted_status.user.screen_name}{HANDLE_SUFFIX}\n{self.url}"
 +                return self.__content
                  if len(content) > 0:
