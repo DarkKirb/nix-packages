@@ -856,7 +856,7 @@ index 000000000..f3894c8ae
 +end
 diff --git a/lib/pleroma/web/activity_pub/mrf/require_image_description.ex b/lib/pleroma/web/activity_pub/mrf/require_image_description.ex
 new file mode 100644
-index 000000000..ea7c1ee68
+index 000000000..67390e613
 --- /dev/null
 +++ b/lib/pleroma/web/activity_pub/mrf/require_image_description.ex
 @@ -0,0 +1,45 @@
@@ -871,12 +871,12 @@ index 000000000..ea7c1ee68
 +
 +  def mark_sensitive(object) do
 +    object |> Map.put("sensitive", true)
-+    {:ok, object}
++    object
 +  end
 +
 +  def correct_attachment(object) do
 +    if is_valid_attachment(object) do
-+      {:ok, object}
++      object
 +    else
 +      mark_sensitive(object)
 +    end
