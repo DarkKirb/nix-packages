@@ -25,6 +25,7 @@ in
     meta = {
       description = "Discord-Matrix double-puppeting bridge";
       license = lib.licenses.agpl3;
+      broken = builtins.compareVersions go.version "1.18" < 0;
     };
     passthru.updateScript = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/mautrix/discord" matrix/mautrix-discord/source.json
