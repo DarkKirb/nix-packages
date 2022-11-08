@@ -3,6 +3,7 @@
   stdenvNoCC,
   libjxl,
   imagemagick,
+  lib,
 }: let
   crushpng = callPackage ../../../lib/crushpng.nix {};
   lotte-art = callPackage ../../lotte {};
