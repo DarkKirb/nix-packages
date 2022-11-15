@@ -51,7 +51,7 @@ jobs:
           - plover-plugin-rkb1-hid
           - plover-dict-didoesdigital
           - miifox-net
-          - old-homeage
+          - old-homepage
           - clean-s3-cache
           - python-instagram
           - moa
@@ -77,11 +77,14 @@ jobs:
         env:
           NIX_CACHE_KEY: ${{secrets.NIX_CACHE_KEY}}
           AWS_CREDENTIALS: ${{secrets.AWS_CREDENTIALS}}
+      - name: install jq
+        run: sudo apt install jq
       - name: Build ${{ matrix.package }}
         run: |
           DRV_PATH=$(nix-instantiate -E '(import ./. {}).${{ matrix.package }}')
+          OUT_PATH=$(nix show-derivation $DRV_PATH | jq -r ".\"$DRV_PATH\".outputs.out.path")
           # check if we already built it
-          NARINFO=$(echo $DRV_PATH | sed 's|/| |g' | sed 's|-| |g' | awk '{print $3}')
+          NARINFO=$(echo $OUT_PATH | sed 's|/| |g' | sed 's|-| |g' | awk '{print $3}')
           if curl --output /dev/null --silent --head --fail "https://f000.backblazeb2.com/file/cache-chir-rs/$NARINFO.narinfo"; then
             echo "${{ matrix.package }} already built. Skipping"
           else
