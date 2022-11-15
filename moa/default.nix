@@ -28,7 +28,7 @@
   source = builtins.fromJSON (builtins.readFile ./source.json);
   src = applyPatches {
     src = fetchFromGitLab {
-      owner = "hexchen";
+      owner = "fedstoa";
       repo = "moa";
       inherit (source) rev sha256;
     };
