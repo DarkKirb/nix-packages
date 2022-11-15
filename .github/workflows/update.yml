@@ -38,7 +38,7 @@ jobs:
       - name: Update flake.lock
         run: nix flake update
       - name: Run update script
-        run: yes '' | nix-shell ./scripts/update.nix
+        run: yes '' | nix-shell ./scripts/update.nix --argstr max-workers 1
       - name: Format
         run: nix fmt
       - name: Delete secrets
