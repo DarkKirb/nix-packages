@@ -16,12 +16,12 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixcache:8KKuGz95Pk4UJ5W/Ni+pN+v+LDTkMMFV4yrGmAYgkDg= hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs=
             experimental-features = nix-command flakes ca-derivations
+            post-build-hook = ${{ github.workspace/scripts/post-build-hook }}
       - name: Set up secrets
         run: |
           echo "$NIX_CACHE_KEY" > ~/cache.key
           mkdir ~/.aws
           echo "$AWS_CREDENTIALS" > ~/.aws/credentials
-          echo "post-build-hook = $PWD/script/post-build-hook" >> /etc/nix/nix.conf
         env:
           NIX_CACHE_KEY: ${{secrets.NIX_CACHE_KEY}}
           AWS_CREDENTIALS: ${{secrets.AWS_CREDENTIALS}}
