@@ -83,8 +83,7 @@ in
     };
     passthru.updateScript = [
       ../scripts/update-git.sh
-      "https://gitlab.com/hexchen/moa"
+      "https://gitlab.com/fedstoa/moa"
       "moa/source.json"
-      "--rev refs/heads/fix/pleroma"
     ];
   }
