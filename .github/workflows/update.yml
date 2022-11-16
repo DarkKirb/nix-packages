@@ -39,7 +39,6 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v4.2.0
         with:
-          token: ${{secrets.GH_TOKEN}}
           commit-message: Update nix-packages
           author: Github Actions <github-actions@users.noreply.github.com>
           committer: Github Actions <github-actions@users.noreply.github.com>
