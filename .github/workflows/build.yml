@@ -55,6 +55,7 @@ jobs:
           - clean-s3-cache
           - python-instagram
           - moa
+          - nix-s3-dedup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
