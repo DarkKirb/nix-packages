@@ -1,8 +1,5 @@
 name: build
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -68,8 +65,11 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixcache:8KKuGz95Pk4UJ5W/Ni+pN+v+LDTkMMFV4yrGmAYgkDg= hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs=
             experimental-features = nix-command flakes ca-derivations
-            post-build-hook = ${{ github.workspace }}/scripts/post-build-hook
             substituters = https://cache.chir.rs/
+      - name: Download patched nix
+        run: nix build github:DarkKirb/nix-packages#nix-s3-dedup
+      - name: Setup post-build-hook
+        run: echo "post-build-hook = ${{ github.workspace }}/scripts/post-build-hook" | sudo tee -a /etc/nix/nix.conf
       - name: Set up secrets
         run: |
           echo "$NIX_CACHE_KEY" > ~/cache.key
