@@ -1,5 +1,5 @@
 diff --git a/portal.go b/portal.go
-index 25e0dc2..7a14a3d 100644
+index 25e0dc2..9f6a5b3 100644
 --- a/portal.go
 +++ b/portal.go
 @@ -351,7 +351,7 @@ func (portal *Portal) CreateMatrixRoom(user *User, channel *discordgo.Channel) e
@@ -11,7 +11,7 @@ index 25e0dc2..7a14a3d 100644
  	}
  	if !portal.bridge.Config.Bridge.FederateRooms {
  		creationContent["m.federate"] = false
-@@ -1777,11 +1777,7 @@ func (portal *Portal) UpdateParent(parentID string) bool {
+@@ -1777,18 +1777,12 @@ func (portal *Portal) UpdateParent(parentID string) bool {
  	}
  	portal.log.Debugfln("Updating parent ID %q -> %q", portal.ParentID, parentID)
  	portal.ParentID = parentID
@@ -24,3 +24,11 @@ index 25e0dc2..7a14a3d 100644
  	return true
  }
  
+ func (portal *Portal) ExpectedSpaceID() id.RoomID {
+-	if portal.Parent != nil {
+-		return portal.Parent.MXID
+-	} else if portal.Guild != nil {
++	if portal.Guild != nil {
+ 		return portal.Guild.MXID
+ 	}
+ 	return ""
