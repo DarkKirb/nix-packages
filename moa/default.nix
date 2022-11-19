@@ -7,7 +7,6 @@
   flask_mail,
   flask_migrate,
   flask_wtf,
-  mastodon-py,
   pandas,
   psutil,
   pygal,
@@ -41,7 +40,7 @@
     flask_mail
     flask_migrate
     flask_wtf
-    mastodon-py
+    (callPackage ../python/mastodon.nix {})
     pandas
     psutil
     pygal
