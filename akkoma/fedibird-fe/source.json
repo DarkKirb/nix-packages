@@ -1,0 +1,11 @@
+{
+  "url": "https://akkoma.dev/AkkomaGang/fedibird-fe.git",
+  "rev": "0a64eb70d71f2800f37c3e39f184616d87ab6f59",
+  "date": "2022-08-21T17:30:39+01:00",
+  "path": "/nix/store/dnmyrwrfc2n37sdbrbhglps57gx1yfjh-fedibird-fe",
+  "sha256": "1b1qzqn762iyi3sdf4cwdch74zcskan3cv097picsmprdpr4ni7y",
+  "fetchLFS": false,
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

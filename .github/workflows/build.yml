@@ -11,6 +11,7 @@ jobs:
           - akkoma
           - pleroma-fe
           - admin-fe
+          - fedibird-fe
           - emoji-lotte
           - emoji-volpeon-blobfox
           - emoji-volpeon-blobfox-flip
