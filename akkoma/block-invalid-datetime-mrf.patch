@@ -2,7 +2,7 @@ diff --git a/lib/pleroma/web/activity_pub/mrf/block-invalid-datetime.ex b/lib/pl
 new file mode 100644
 index 000000000..114a0c112
 --- /dev/null
-+++ b/lib/pleroma/web/activity_pub/mrf/block-invalid-datetime.ex
++++ b/lib/pleroma/web/activity_pub/mrf/block_invalid_datetime.ex
 @@ -0,0 +1,51 @@
 +defmodule Pleroma.Web.ActivityPub.MRF.BlockInvalidDatetime do
 +  alias Pleroma.Web.CommonAPI
