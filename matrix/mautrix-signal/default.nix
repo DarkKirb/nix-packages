@@ -35,7 +35,7 @@ in
     postPatch = ''
       substituteInPlace requirements.txt \
         --replace "asyncpg>=0.20,<0.26" "asyncpg>=0.20" \
-        --replace "mautrix>=0.16.0,<0.17" "mautrix>=0.16.0"
+        --replace "mautrix<0.19,>=0.18.9" "mautrix>=0.18.9"
     '';
 
     postInstall = ''
