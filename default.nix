@@ -5,9 +5,15 @@
 # Having pkgs default to <nixpkgs> is fine though, and it lets you use short
 # commands such as:
 #     nix-build -A mypackage
-{pkgs ? import <nixpkgs> {}}: {
-  # The `lib`, `modules`, and `overlay` names are special
+{pkgs ? import <nixpkgs> {}}: let
   lib = import ./lib {inherit pkgs;}; # functions
+  attic = lib.importFlake {
+    input = "attic";
+    inherit (pkgs) system;
+  };
+in {
+  # The `lib`, `modules`, and `overlay` names are special
+  inherit lib;
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
@@ -58,4 +64,5 @@
   python-instagram = pkgs.python3Packages.callPackage ./python/instagram.nix {};
   moa = pkgs.python3Packages.callPackage ./moa {};
   nix-s3-dedup = pkgs.callPackage ./nix {};
+  inherit (attic.defaultNix.packages.${pkgs.system}) attic attic-client attic-server;
 }
