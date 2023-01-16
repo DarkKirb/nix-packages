@@ -55,6 +55,9 @@ jobs:
           - python-instagram
           - moa
           - nix-s3-dedup
+          - attic
+          - attic-client
+          - attic-server
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
