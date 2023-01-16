@@ -5392,10 +5392,10 @@
       };
     }
     {
-      name = "https___registry.npmjs.org_iso_639_1___iso_639_1_2.1.15.tgz";
+      name = "iso_639_1___iso_639_1_2.1.15.tgz";
       path = fetchurl {
-        name = "https___registry.npmjs.org_iso_639_1___iso_639_1_2.1.15.tgz";
-        url = "https://registry.npmjs.org/iso-639-1/-/iso-639-1-2.1.15.tgz";
+        name = "iso_639_1___iso_639_1_2.1.15.tgz";
+        url = "https://registry.yarnpkg.com/iso-639-1/-/iso-639-1-2.1.15.tgz";
         sha512 = "7c7mBznZu2ktfvyT582E2msM+Udc1EjOyhVRE/0ZsjD9LBtWSm23h3PtiRh2a35XoUsTQQjJXaJzuLjXsOdFDg==";
       };
     }
