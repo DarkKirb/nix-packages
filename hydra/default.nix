@@ -4,6 +4,7 @@
   system,
 }: let
   pkgs = import nixpkgs {inherit system;};
-  ci = import "${nix-packages}/ci.nix" {inherit pkgs;};
+  ci = import nix-packages {inherit pkgs;};
+  isReserved = n: n == "lib" || n == "overlays" || n == "modules";
 in
-  ci.buildPkgs
+  pkgs.lib.filterAttrs (name: _: !(isReserved name))
