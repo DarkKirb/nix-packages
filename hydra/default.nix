@@ -3,7 +3,13 @@
   nixpkgs,
   system,
 }: let
-  pkgs = import nixpkgs {inherit system;};
+  pkgs = import nixpkgs {
+    inherit system;
+    config = {
+      allowUnfree = true;
+      allowUnsupportedSystem = true;
+    };
+  };
   ci = import nix-packages {inherit pkgs;};
   isReserved = n: n == "lib" || n == "overlays" || n == "modules";
 in
