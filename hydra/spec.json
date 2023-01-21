@@ -1,0 +1,29 @@
+{
+    "enabled": 1,
+    "hidden": false,
+    "description": "jobsets",
+    "nixexprinput": "nix-packages",
+    "nixexprpath": "hydra/jobsets.nix",
+    "checkinterval": 60,
+    "schedulingshares": 100,
+    "enableemail": false,
+    "emailoverride": "",
+    "keepnr": 1,
+    "inputs": {
+        "nix-packages": {
+            "type": "git",
+            "value": "https://github.com/DarkKirb/nix-packages.git main",
+            "emailresponsible": false
+        },
+        "nixpkgs": {
+            "type": "git",
+            "value": "https://github.com/NixOS/nixpkgs.git",
+            "emailresponsible": false
+        },
+        "prsJSON": {
+            "type": "githubpulls",
+            "value": "https://api.github.com/repos/DarkKirb/nix-packages/pulls",
+            "emailresponsible": false
+        }
+    }
+}
