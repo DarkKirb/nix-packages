@@ -7,4 +7,4 @@
   ci = import nix-packages {inherit pkgs;};
   isReserved = n: n == "lib" || n == "overlays" || n == "modules";
 in
-  pkgs.lib.filterAttrs (name: _: !(isReserved name))
+  pkgs.lib.filterAttrs (name: _: !(isReserved name)) ci
