@@ -22,7 +22,7 @@
         },
         "prsJSON": {
             "type": "githubpulls",
-            "value": "https://api.github.com/repos/DarkKirb/nix-packages/pulls",
+            "value": "DarkKirb nixos-config",
             "emailresponsible": false
         }
     }
