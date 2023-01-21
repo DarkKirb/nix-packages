@@ -16,7 +16,7 @@
             description = "PR ${num} (${system}-${version}): ${info.title}";
             nixexprinput = "nix-packages";
             nixexprpath = "hydra/default.nix";
-            checkinterval = 60;
+            checkinterval = 300;
             schedulingshares = 100;
             enableemail = false;
             emailoverride = "";
@@ -48,7 +48,7 @@
         description = "nix-packages ${system}-${version}";
         nixexprinput = "nix-packages";
         nixexprpath = "hydra/default.nix";
-        checkinterval = 60;
+        checkinterval = 300;
         schedulingshares = 100;
         enableemail = false;
         emailoverride = "";
