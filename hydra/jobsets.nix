@@ -69,7 +69,7 @@
       };
     };
 
-  mapToAttrs = f: list: pkgs.listToAttrs (map f list);
+  mapToAttrs = f: list: pkgs.lib.listToAttrs (map f list);
 
   jobsets =
     mapToAttrs (system: {
