@@ -16,7 +16,10 @@
             description = "PR ${num} (${system}-${version}): ${info.title}";
             nixexprinput = "nix-packages";
             nixexprpath = "hydra/default.nix";
-            checkinterval = 300;
+            checkinterval =
+              if info.head.repo.owner.login == "darkkirb" && info.head.repo.name == "nix-packages" # Don’t need to manually check
+              then 0
+              else 300;
             schedulingshares = 100;
             enableemail = false;
             emailoverride = "";
@@ -48,7 +51,7 @@
         description = "nix-packages ${system}-${version}";
         nixexprinput = "nix-packages";
         nixexprpath = "hydra/default.nix";
-        checkinterval = 300;
+        checkinterval = 0;
         schedulingshares = 100;
         enableemail = false;
         emailoverride = "";
@@ -74,5 +77,27 @@
 
   concatAttrs = pkgs.lib.foldr (a: b: a // b) {};
 
-  jobsets = concatAttrs (pkgs.lib.concatMap (system: map (version: mkJobsets system version) nixpkgs_version) systems);
+  jobsets =
+    concatAttrs (pkgs.lib.concatMap (system: map (version: mkJobsets system version) nixpkgs_version) systems)
+    // {
+      flake = {
+        enabled = 1;
+        hidden = false;
+        description = "nix-packages flake";
+        nixexprinput = "nix-packages";
+        nixexprpath = "hydra/parse-flake.nix";
+        checkinterval = 0;
+        schedulingshares = 100;
+        enableemail = false;
+        emailoverride = "";
+        keepnr = 1;
+        inputs = {
+          flake = {
+            type = "git";
+            value = "https://github.com/DarkKirb/nix-packages.git main";
+            emailresponsible = false;
+          };
+        };
+      };
+    };
 in {jobsets = pkgs.writeText "jobsets.json" (builtins.toJSON jobsets);}
