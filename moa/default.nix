@@ -80,6 +80,7 @@ in
     meta = {
       description = "Mastodon-Twitter crossposter";
       license = lib.licenses.mit;
+      broken = true;
     };
     passthru.updateScript = [
       ../scripts/update-git.sh
