@@ -78,7 +78,7 @@
   concatAttrs = pkgs.lib.foldr (a: b: a // b) {};
 
   jobsets =
-    concatAttrs (pkgs.lib.concatMap (system: map (version: mkJobsets system version) nixpkgs_version) systems)
+    (concatAttrs (pkgs.lib.concatMap (system: map (version: mkJobsets system version) nixpkgs_version) systems))
     // {
       flake = {
         enabled = 1;
