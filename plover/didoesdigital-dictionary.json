@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/didoesdigital/steno-dictionaries",
-  "rev": "de999de8b25111c61b35f3dc1eae36317b3980ca",
-  "date": "2023-01-07T12:16:34+10:00",
-  "path": "/nix/store/n3bl4ln9l8gph47zx9vbw8dp1939cbvw-steno-dictionaries",
-  "sha256": "0piyaw8nb2v1r0xwdcmlclqf6iq1dfpbmnwkkcx01z62lkglc7xd",
+  "rev": "e2556e840bb52c4d4b4c0dabdf8c1d010af8ac99",
+  "date": "2023-01-21T10:26:34+10:00",
+  "path": "/nix/store/l5qdgc8cc4xw9qvsqky462vkv3irr8ak-steno-dictionaries",
+  "sha256": "0z7z1kvl54p7mxl00ksq2zhzbc5qjqjnznlg1qccqgl57p7zn5ak",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
