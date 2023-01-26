@@ -80,7 +80,7 @@
   jobsets =
     (concatAttrs (pkgs.lib.concatMap (system: map (version: mkJobsets system version) nixpkgs_version) systems))
     // {
-      flake = {
+      nix-packages-flake = {
         enabled = 1;
         hidden = false;
         description = "nix-packages flake";
