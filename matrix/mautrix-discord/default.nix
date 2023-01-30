@@ -17,7 +17,6 @@ in
       inherit (source) rev sha256;
     };
     patches = [
-      ./sticker.patch
       ./no-category-spaces.patch
     ];
     vendorSha256 = builtins.readFile ./vendor.sha256;
