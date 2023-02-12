@@ -22,13 +22,9 @@ jobs:
       - name: Download attic
         run: nix build github:DarkKirb/nix-packages#attic-client
       - name: Set up secrets
-        run: |
-          echo "$NIX_CACHE_KEY" > ~/cache.key
-          sudo mkdir /root/.aws
-          echo "$AWS_CREDENTIALS" | sudo tee /root/.aws/credentials > /dev/null
+        run: nix run github:DarkKirb/nix-packages#attic-client -- login attic-server https://attic-nocdn.chir.rs/ "$ATTIC_TOKEN"
         env:
-          NIX_CACHE_KEY: ${{secrets.NIX_CACHE_KEY}}
-          AWS_CREDENTIALS: ${{secrets.AWS_CREDENTIALS}}
+          ATTIC_TOKEN: ${{secrets.ATTIC_TOKEN}}
       - name: Update flake.lock
         run: nix flake update
       - name: Run update script
