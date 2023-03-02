@@ -7,7 +7,7 @@
 #     nix-build -A mypackage
 {pkgs ? import <nixpkgs> {}}: let
   lib = import ./lib {inherit pkgs;}; # functions
-  attic = lib.importFlake {
+  attic' = lib.importFlake {
     input = "attic";
     inherit (pkgs) system;
   };
@@ -63,7 +63,7 @@ in rec {
   clean-s3-cache = pkgs.python3Packages.callPackage ./scripts/clean-s3-cache.nix {};
   python-instagram = pkgs.python3Packages.callPackage ./python/instagram.nix {};
   moa = pkgs.python3Packages.callPackage ./moa {};
-  inherit (attic.defaultNix.packages.${pkgs.system}) attic attic-client attic-server;
+  inherit (attic'.defaultNix.packages.${pkgs.system}) attic attic-client attic-server;
   vf2Kernel = pkgs.callPackage ./linux/vf2 {kernelPatches = [];};
   vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
 }
