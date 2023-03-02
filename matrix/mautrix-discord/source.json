@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/mautrix/discord",
-  "rev": "3e5baa502eb5453e2a8bd4e3fed43c938d4e1c0e",
-  "date": "2023-02-04T16:33:40+02:00",
-  "path": "/nix/store/yrflscqfwhcd9l6hs94v4sc9z33bi38i-discord",
-  "sha256": "0mk66nk1z6jn89vl7awar8zz6ygvnisfi2bnp18i94ds6h5bcxcm",
+  "rev": "0e8b845014cfb5cd42e3a52f2ad7a01d0824f2bd",
+  "date": "2023-03-01T22:50:19+02:00",
+  "path": "/nix/store/r8w9cpkrmpmhgbwc07233wkaphiib4mi-discord",
+  "sha256": "1w3al7gwnpy21dpyrw3wj1l7llsm03xcj3wbh6xqam2h6c27a1wv",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

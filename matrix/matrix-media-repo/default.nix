@@ -35,7 +35,7 @@ in
       description = "Matrix media repository with multi-domain in mind.";
       license = lib.licenses.mit;
     };
-    passthru.updateScript = writeScript "update-matrix-media-repo" ''
+    passthru.updateScript' = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/turt2live/matrix-media-repo" matrix/matrix-media-repo/source.json
       if [ "$(git diff -- matrix/matrix-media-repo/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
