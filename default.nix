@@ -11,7 +11,7 @@
     input = "attic";
     inherit (pkgs) system;
   };
-in {
+in rec {
   # The `lib`, `modules`, and `overlay` names are special
   inherit lib;
   modules = import ./modules; # NixOS modules
@@ -64,4 +64,6 @@ in {
   python-instagram = pkgs.python3Packages.callPackage ./python/instagram.nix {};
   moa = pkgs.python3Packages.callPackage ./moa {};
   inherit (attic.defaultNix.packages.${pkgs.system}) attic attic-client attic-server;
+  vf2Kernel = pkgs.callPackage ./linux/vf2 {kernelPatches = [];};
+  vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
 }
