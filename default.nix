@@ -66,4 +66,5 @@ in rec {
   inherit (attic'.defaultNix.packages.${pkgs.system}) attic attic-client attic-server;
   vf2Kernel = pkgs.callPackage ./linux/vf2 {kernelPatches = [];};
   vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
+  element-web = pkgs.callPackage ./matrix/element-web {};
 }
