@@ -4,7 +4,7 @@
 }: let
   pkgs = import nixpkgs {};
   prs = builtins.fromJSON (builtins.readFile prsJSON);
-  systems = ["x86_64-linux" "aarch64-linux" "riscv64-linux"];
+  systems = ["x86_64-linux" "aarch64-linux"];
   nixpkgs_version = ["master" "nixos-22.05"];
   mkJobsets = system: version:
     (pkgs.lib.mapAttrs' (
