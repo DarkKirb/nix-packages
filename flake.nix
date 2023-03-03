@@ -45,7 +45,7 @@
         inherit (nur) overlays modules lib;
 
         hydraJobs =
-          if (system == "x86_64-linux") || (system == "aarch64-linux") || (system == "riscv64-linux")
+          if (system == "x86_64-linux") || (system == "aarch64-linux")
           then {
             inherit packages devShells formatter;
           }
