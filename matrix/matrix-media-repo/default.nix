@@ -16,6 +16,7 @@ in
       inherit (source) rev sha256;
     };
     #patches = [./async-media.patch];
+    patches = [./fix-build.patch];
     vendorSha256 = builtins.readFile ./vendor.sha256;
     nativeBuildInputs = [
       git
