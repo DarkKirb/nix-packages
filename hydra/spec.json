@@ -12,7 +12,7 @@
     "inputs": {
         "nix-packages": {
             "type": "git",
-            "value": "https://github.com/DarkKirb/nix-packages.git switch-to-hydra",
+            "value": "https://github.com/DarkKirb/nix-packages.git",
             "emailresponsible": false
         },
         "nixpkgs": {
