@@ -7,15 +7,17 @@
         "flake-utils": [
           "flake-utils"
         ],
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1676581287,
-        "narHash": "sha256-a/6ClchROZ5PoLz0WK42mkAkUtJlMDbe5QyyZZ7bomc=",
+        "lastModified": 1678041467,
+        "narHash": "sha256-qqHbiN0ZfEuZ2guMAW5T011TqgrPqGqNWlHtd8AXtQA=",
         "owner": "zhaofengli",
         "repo": "attic",
-        "rev": "0bb3d001365a5d75947a7a713dfd06307b3934d4",
+        "rev": "1a3b6513b02202198bb497608d0cedc45119799b",
         "type": "github"
       },
       "original": {
@@ -41,17 +43,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1673405853,
-        "narHash": "sha256-6Nq9DuOo+gE2I8z5UZaKuumykz2xxZ9JGYmUthOuwSA=",
+        "lastModified": 1677892403,
+        "narHash": "sha256-/Wi0L1spSWLFj+UQxN3j0mPYMoc7ZoAujpUF/juFVII=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "b13963c8c18026aa694acd98d14f66d24666f70b",
+        "rev": "105e27adb70a9890986b6d543a67761cbc1964a2",
         "type": "github"
       },
       "original": {
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "b13963c8c18026aa694acd98d14f66d24666f70b",
         "type": "github"
       }
     },
@@ -89,32 +90,54 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1676283394,
-        "narHash": "sha256-XX2f9c3iySLCw54rJ/CZs+ZK6IQy7GXNY4nSOyu2QG4=",
-        "owner": "numtide",
+        "lastModified": 1677835344,
+        "narHash": "sha256-+SF1dfj02xAizhtY2/pEPyA0DP0pMvZZjC2aMyprYhA=",
+        "owner": "DarkKirb",
         "repo": "flake-utils",
-        "rev": "3db36a8b464d0c4532ba1c7dda728f4576d6d073",
+        "rev": "17cffe5284b6da6b50cc82f4d2b4c3ff8185f83c",
         "type": "github"
       },
       "original": {
-        "owner": "numtide",
+        "owner": "DarkKirb",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "mautrix-cleanup": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1678395415,
+        "narHash": "sha256-l7upZ8y8SobYtv+RYD7DodRU74DGvDRjvaKfj8VmAow=",
+        "owner": "DarkKirb",
+        "repo": "mautrix-cleanup",
+        "rev": "5f5f51ce8b7560d18ddae1824bc253a9e896ab0b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DarkKirb",
+        "repo": "mautrix-cleanup",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1672428209,
-        "narHash": "sha256-eejhqkDz2cb2vc5VeaWphJz8UXNuoNoM8/Op8eWv2tQ=",
+        "lastModified": 1678433091,
+        "narHash": "sha256-dsD0Yhr5yuxY55xRHupQAcKtCwnqCfihGMYriqwUD0k=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847",
+        "rev": "88bdb6d79b0bdf03d3338f6f3d1416a55ec199ab",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847",
         "type": "github"
       }
     },
@@ -134,27 +157,13 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1677746272,
-        "narHash": "sha256-4raJuGYuBiZ2h+vl71i1itduZ5OLnXbipslPeGzOLds=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a87b99a3c708dc91d2a7149fa28302aa0fae8c84",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "attic": "attic",
         "flake-compat": "flake-compat_2",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2"
+        "mautrix-cleanup": "mautrix-cleanup",
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-overlay": {
