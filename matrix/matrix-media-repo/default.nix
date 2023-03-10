@@ -1,5 +1,5 @@
 {
-  buildGo118Module,
+  buildGo119Module,
   git,
   fetchFromGitHub,
   lib,
@@ -7,7 +7,7 @@
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
-  buildGo118Module rec {
+  buildGo119Module rec {
     pname = "matrix-media-repo";
     version = source.date;
     src = fetchFromGitHub {
