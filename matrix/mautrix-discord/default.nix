@@ -16,9 +16,6 @@ in
       repo = "discord";
       inherit (source) rev sha256;
     };
-    patches = [
-      ./no-category-spaces.patch
-    ];
     vendorSha256 = builtins.readFile ./vendor.sha256;
     buildInputs = [
       olm
