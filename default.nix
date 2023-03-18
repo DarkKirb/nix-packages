@@ -66,7 +66,6 @@ in
     miifox-net = pkgs.python3Packages.callPackage ./web/miifox-net.nix {};
     old-homepage = pkgs.callPackage ./web/old-homepage.nix {};
     python-instagram = pkgs.python3Packages.callPackage ./python/instagram.nix {};
-    moa = pkgs.python3Packages.callPackage ./moa {};
     inherit (attic'.defaultNix.packages.${pkgs.system}) attic attic-client attic-server;
     element-web = pkgs.callPackage ./matrix/element-web {};
     mautrix-cleanup = mautrix-cleanup'.defaultNix.packages.${pkgs.system}.default;
