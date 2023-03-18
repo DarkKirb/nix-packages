@@ -73,7 +73,7 @@ in
   }
   // (
     if pkgs.system == "riscv64-linux"
-    then {
+    then rec {
       vf2Kernel = pkgs.callPackage ./linux/vf2 {kernelPatches = [];};
       vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
     }
