@@ -1,0 +1,21 @@
+diff --git a/lib/pleroma/uploaders/s3.ex b/lib/pleroma/uploaders/s3.ex
+index 481153fe8..cae92cf2c 100644
+--- a/lib/pleroma/uploaders/s3.ex
++++ b/lib/pleroma/uploaders/s3.ex
+@@ -33,14 +33,14 @@ def put_file(%Pleroma.Upload{} = upload) do
+         upload.tempfile
+         |> ExAws.S3.Upload.stream_file()
+         |> ExAws.S3.upload(bucket, s3_name, [
+-          {:acl, :public_read},
++          {:acl, :private},
+           {:content_type, upload.content_type}
+         ])
+       else
+         {:ok, file_data} = File.read(upload.tempfile)
+ 
+         ExAws.S3.put_object(bucket, s3_name, file_data, [
+-          {:acl, :public_read},
++          {:acl, :private},
+           {:content_type, upload.content_type}
+         ])
+       end

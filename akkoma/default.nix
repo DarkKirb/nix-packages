@@ -26,6 +26,7 @@
       ./block-invalid-datetime-mrf.patch
       ./require-image-description.patch
       ./change-twitter-preview.patch
+      ./make-uploads-private.patch
     ];
   };
 in
