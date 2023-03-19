@@ -54,6 +54,7 @@ in
       python-olm
       pycryptodome
       unpaddedbase64
+      setuptools
     ];
 
     # has no tests
