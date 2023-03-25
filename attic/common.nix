@@ -24,7 +24,7 @@ in
     rustChannel = "stable";
     rustVersion = "latest";
     packageOverrides = pkgs: pkgs.rustBuilder.overrides.all ++ [
-      (pkgs.rustBuilder.ruustLib.makeOverride {
+      (pkgs.rustBuilder.rustLib.makeOverride {
         name = "attic";
         overrideAttrs = drv: {
           propagatedBuildInputs = drv.propagatedBuildInputs or [] ++ [
