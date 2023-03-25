@@ -15,7 +15,7 @@
     buildPhase = "true";
     installPhase = ''
       cp -rv $src $out
-      chmod -R +w $outgit c
+      chmod -R +w $out
       cp ${./Cargo.lock} $out
     '';
   };
