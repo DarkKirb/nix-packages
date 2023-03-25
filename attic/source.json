@@ -1,0 +1,11 @@
+{
+  "url": "https://github.com/zhaofengli/attic",
+  "rev": "4d92e69fc1b279676f997e6b99d2cacc4d0a3e87",
+  "date": "2023-03-21T18:45:45-06:00",
+  "path": "/nix/store/wg5x0vm9vcqhxq01a4qll0nh03wb0ynm-attic",
+  "sha256": "1j3168hfrvblzfsgmn7vzaiah10bw7nghk375qk8kzj02hhm79si",
+  "fetchLFS": false,
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

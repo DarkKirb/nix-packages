@@ -2,11 +2,6 @@
   description = "Lotte’s nix packages";
 
   inputs = {
-    attic = {
-      url = "github:zhaofengli/attic";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     cargo2nix = {
       url = "github:DarkKirb/cargo2nix/release-0.11.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,10 +38,9 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnsupportedSystem = true;
+          overlays = [inputs.cargo2nix.overlays.default];
         };
         inherit (pkgs) lib;
-        nur = import ./default.nix {inherit pkgs;};
-        packages = lib.filterAttrs (n: _: n != "overlays" && n != "modules" && n != "lib") nur;
       in rec {
         formatter = pkgs.alejandra;
 
@@ -103,7 +97,8 @@
             miifox-net = pkgs.python3Packages.callPackage ./web/miifox-net.nix {};
             old-homepage = pkgs.callPackage ./web/old-homepage.nix {};
             python-instagram = pkgs.python3Packages.callPackage ./python/instagram.nix {};
-            inherit (inputs.attic.packages.${pkgs.system}) attic attic-client attic-server;
+            attic-client = pkgs.callPackage ./attic/attic-client.nix {};
+            attic-server = pkgs.callPackage ./attic/attic-server.nix {};
             element-web = pkgs.callPackage ./matrix/element-web {};
             mautrix-cleanup = inputs.mautrix-cleanup.packages.${pkgs.system}.default;
           }
