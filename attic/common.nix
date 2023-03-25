@@ -15,7 +15,7 @@
     buildPhase = "true";
     installPhase = ''
       cp -rv $src $out
-      chmod -R +w $out
+      chmod -R +w $outgit c
       cp ${./Cargo.lock} $out
     '';
   };
@@ -23,7 +23,16 @@ in
   rustBuilder.makePackageSet {
     rustChannel = "stable";
     rustVersion = "latest";
-    packageOverrides = pkgs: pkgs.rustBuilder.overrides.all;
+    packageOverrides = pkgs: pkgs.rustBuilder.overrides.all ++ [
+      (pkgs.rustBuilder.ruustLib.makeOverride {
+        name = "attic";
+        overrideAttrs = drv: {
+          propagatedBuildInputs = drv.propagatedBuildInputs or [] ++ [
+            pkgs.nix.dev
+          ];
+        };
+      })
+    ];
     packageFun = import ./Cargo.nix;
     workspaceSrc = source;
   }
