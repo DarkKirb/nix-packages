@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/maunium/element-web",
-  "rev": "796837f5e409f1639c0e7150f27e0e92857ae5fd",
-  "date": "2023-03-14T13:57:29+02:00",
-  "path": "/nix/store/b8hcwvzfwyqg8iaamwq1a49a8mswi1vg-element-web",
-  "sha256": "0j2rvajypssw9h9iyv3h5vnki4n3gwvckppd8bdqkfwa85ldpx17",
+  "rev": "4d6720b88f599520be7a0461b9cb2cbda9736371",
+  "date": "2023-03-25T15:24:23+02:00",
+  "path": "/nix/store/0w5vahib1gd5r2gclcbj2r1naqk46svj-element-web",
+  "sha256": "1m3g0y5zi1bx2mgllcgi83zmkwgyipdrrdw3wvkfxb3mf1dv4kib",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
