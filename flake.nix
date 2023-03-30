@@ -107,7 +107,7 @@
           // (
             if system == "aarch64-linux"
             then rec {
-              rpiKernel = pkgs.CallPackage ./linux/rpi {kernelPatches = [];};
+              rpiKernel = pkgs.callPackage ./linux/rpi {kernelPatches = [];};
             }
             else {}
           );
