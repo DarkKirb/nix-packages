@@ -14,7 +14,7 @@
 in
   lib.overrideDerivation (buildLinux (args
     // {
-      version = "${modDirVersion}-${tag}";
+      version = "${modDirVersion}";
       inherit modDirVersion;
 
       src = fetchFromGitHub {
