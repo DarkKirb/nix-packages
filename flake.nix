@@ -103,6 +103,16 @@
               vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
             }
             else {}
+          )
+          // (
+            if system == "aarch64-linux"
+            then rec {
+              rpi4Kernel = pkgs.callPackage ./linux/rpi {
+                kernelPatches = [];
+                rpiVersion = 4;
+              };
+            }
+            else {}
           );
 
         overlays = import ./overlays;
