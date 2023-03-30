@@ -14,7 +14,7 @@
 in
   lib.overrideDerivation (buildLinux (args
     // {
-      version = "${modDirVersion}";
+      version = "${modDirVersion}-rp${toString rpiVersion}";
       inherit modDirVersion;
 
       src = fetchFromGitHub {

@@ -107,7 +107,10 @@
           // (
             if system == "aarch64-linux"
             then rec {
-              rpiKernel = pkgs.callPackage ./linux/rpi {kernelPatches = [];};
+              rpi4Kernel = pkgs.callPackage ./linux/rpi {
+                kernelPatches = [];
+                rpiVersion = 4;
+              };
             }
             else {}
           );
