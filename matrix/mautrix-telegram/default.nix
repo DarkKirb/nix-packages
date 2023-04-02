@@ -9,6 +9,13 @@
       dask = super.dask.overridePythonAttrs (_: {
         installCheckPhase = "true";
       });
+
+      pyarrow = super.pyarrow.overridePythonAttrs (old: {
+        installCheckPhase = "true";
+      });
+      tifffile = super.tifffile.overridePythonAttrs (old: {
+        installCheckPhase = "true";
+      });
     };
   };
 in
