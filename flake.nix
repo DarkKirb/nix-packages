@@ -94,6 +94,10 @@
             inherit (inputs.attic.packages.${pkgs.system}) attic attic-client attic-server;
             element-web = pkgs.callPackage ./matrix/element-web {};
             mautrix-cleanup = inputs.mautrix-cleanup.packages.${pkgs.system}.default;
+            woodpecker-agent = pkgs.callPackage ./ci/woodpecker/agent.nix {};
+            woodpecker-cli = pkgs.callPackage ./ci/woodpecker/cli.nix {};
+            woodpecker-frontend = pkgs.callPackage ./ci/woodpecker/frontend.nix {};
+            woodpecker-server = pkgs.callPackage ./ci/woodpecker/server.nix {};
           }
           // (
             if system == "riscv64-linux"
