@@ -25,7 +25,7 @@
             inputs = {
               nix-packages = {
                 type = "git";
-                url = "${info.head.repo.clone_url} ${info.head.ref}";
+                value = "${info.head.repo.clone_url} ${info.head.ref}";
                 emailresponsible = false;
               };
               nixpkgs = {
