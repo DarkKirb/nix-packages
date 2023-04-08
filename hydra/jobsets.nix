@@ -22,34 +22,36 @@
             enableemail = false;
             emailoverride = "";
             keepnr = 1;
-            nix-packages = {
-              type = "git";
-              url = "${info.head.repo.clone_url} ${info.head.ref}";
-              emailresponsible = false;
-            };
-            nixpkgs = {
-              type = "git";
-              value = "https://github.com/NixOS/nixpkgs.git ${version}";
-              emailresponsible = false;
-            };
-            system = {
-              type = "string";
-              value = system;
-            };
-            gitea_status_repo = {
-              type = "string";
-              value = "nix-packages";
-              emailresponsible = false;
-            };
-            gitea_repo_owner = {
-              type = "string";
-              value = "${info.head.repo.owner.login}";
-              emailresponsible = false;
-            };
-            gitea_repo_name = {
-              type = "string";
-              value = "${info.head.repo.name}";
-              emailresponsible = false;
+            inputs = {
+              nix-packages = {
+                type = "git";
+                url = "${info.head.repo.clone_url} ${info.head.ref}";
+                emailresponsible = false;
+              };
+              nixpkgs = {
+                type = "git";
+                value = "https://github.com/NixOS/nixpkgs.git ${version}";
+                emailresponsible = false;
+              };
+              system = {
+                type = "string";
+                value = system;
+              };
+              gitea_status_repo = {
+                type = "string";
+                value = "nix-packages";
+                emailresponsible = false;
+              };
+              gitea_repo_owner = {
+                type = "string";
+                value = "${info.head.repo.owner.login}";
+                emailresponsible = false;
+              };
+              gitea_repo_name = {
+                type = "string";
+                value = "${info.head.repo.name}";
+                emailresponsible = false;
+              };
             };
           };
         }
