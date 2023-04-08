@@ -97,7 +97,7 @@
           };
           gitea_repo_name = {
             type = "string";
-            value = "nixos-config";
+            value = "nix-packages";
             emailresponsible = false;
           };
         };
