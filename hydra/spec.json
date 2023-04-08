@@ -12,7 +12,7 @@
     "inputs": {
         "nix-packages": {
             "type": "git",
-            "value": "https://github.com/DarkKirb/nix-packages.git main",
+            "value": "https://git.chir.rs/darkkirb/nix-packages.git switch-to-gitea",
             "emailresponsible": false
         },
         "nixpkgs": {
@@ -21,8 +21,28 @@
             "emailresponsible": false
         },
         "prsJSON": {
-            "type": "githubpulls",
-            "value": "DarkKirb nix-packages",
+            "type": "path",
+            "value": "https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls",
+            "emailresponsible": false
+        },
+        "gitea_status_repo": {
+            "type": "string",
+            "value": "nix-packages",
+            "emailresponsible": false
+        },
+        "gitea_http_url": {
+            "type": "string",
+            "value": "https://git.chir.rs/",
+            "emailresponsible": false
+        },
+        "gitea_repo_owner": {
+            "type": "string",
+            "value": "darkkirb",
+            "emailresponsible": false
+        },
+        "gitea_repo_name": {
+            "type": "string",
+            "value": "nix-packages",
             "emailresponsible": false
         }
     }
