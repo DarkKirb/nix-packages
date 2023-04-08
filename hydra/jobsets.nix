@@ -7,13 +7,13 @@
   systems = ["x86_64-linux" "aarch64-linux"];
   nixpkgs_version = ["master"];
   mkJobsets = system: version:
-    builtins.listToAttrs (
-      map (info:
-        {
+    (builtins.listToAttrs (
+      map (
+        info: {
           name = "${system}-${version}-pr${toString info.number}";
           value = {
-            enabled = 1;
-            hidden = false;
+            enabled = info.state == "open";
+            hidden = info.state != "open";
             description = "PR ${toString info.number} (${system}-${version}): ${info.title}";
             nixexprinput = "nix-packages";
             nixexprpath = "hydra/default.nix";
@@ -53,8 +53,9 @@
             };
           };
         }
-        prs)
-    )
+      )
+      prs
+    ))
     // {
       "${system}-${version}" = {
         enabled = 1;
