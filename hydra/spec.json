@@ -22,7 +22,7 @@
         },
         "prsJSON": {
             "type": "path",
-            "value": "https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls?state=open",
+            "value": "https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls",
             "emailresponsible": false
         },
         "gitea_status_repo": {
