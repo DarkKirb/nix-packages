@@ -60,3 +60,4 @@ pipeline:
     when:
       - event: cron
       - event: manual
+branches: main

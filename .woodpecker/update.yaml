@@ -107,3 +107,4 @@ matrix:
     - woodpecker-agent
     - woodpecker-cli
     - woodpecker-server
+branches: main
