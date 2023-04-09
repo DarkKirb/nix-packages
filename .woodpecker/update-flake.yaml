@@ -1,4 +1,8 @@
 pipeline:
+  empty:
+    image: nixery.dev/shell
+    commands:
+      - "true"
   flake-update:
     image: nixpkgs/nix-unstable
     commands:
@@ -24,7 +28,8 @@ pipeline:
         EOF
       - nix flake update
     when:
-      event: cron
+      - event: cron
+      - event: manual
   git-push:
     image: nixery.dev/shell/ssh/git/gpg
     commands: |
@@ -46,7 +51,8 @@ pipeline:
       - gpg_key
       - ssh_key
     when:
-      event: cron
+      - event: cron
+      - event: manual
   gitea-pr:
     image: nixery.dev/shell/curl
     commands: |
@@ -54,4 +60,5 @@ pipeline:
     secrets:
       - gitea_token
     when:
-      event: cron
+      - event: cron
+      - event: manual
