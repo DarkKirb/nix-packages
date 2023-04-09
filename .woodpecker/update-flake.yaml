@@ -31,7 +31,7 @@ pipeline:
       - event: cron
       - event: manual
   git-push:
-    image: nixery.dev/shell/ssh/git/gpg
+    image: nixery.dev/shell/openssh/git/gnupg
     commands: |
       - mkdir ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
