@@ -1,5 +1,5 @@
 pipeline:
-  flake-update:
+  update-${PACKAGE}:
     image: nixos/nix
     commands:
       - mkdir -p /etc/nix
