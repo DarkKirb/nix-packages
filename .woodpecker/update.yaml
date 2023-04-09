@@ -21,7 +21,7 @@ pipeline:
         trusted-users = @wheel
         experimental-features = nix-command flakes ca-derivations
         EOF
-      - yes | nix-shell ./scripts/update.nix --argstr path ${PACKAGE}
+      - yes '' | nix-shell ./scripts/update.nix --argstr path ${PACKAGE}
     when:
       - event: cron
       - event: manual
