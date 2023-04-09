@@ -1,8 +1,4 @@
 pipeline:
-  empty:
-    image: nixery.dev/shell
-    commands:
-      - "true"
   flake-update:
     image: nixpkgs/nix-unstable
     commands:
