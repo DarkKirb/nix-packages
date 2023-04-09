@@ -1,5 +1,31 @@
 pipeline:
-  update-${PACKAGE}:
+  flake-update:
+    image: nixpkgs/nix-unstable
+    commands:
+      - mkdir -p /etc/nix
+      - |
+        cat > /etc/nix/nix.conf << EOF
+        # WARNING: this file is generated from the nix.* options in
+        # your NixOS configuration, typically
+        # /etc/nixos/configuration.nix.  Do not edit it!
+        build-users-group = nixbld
+        allowed-users = *
+        auto-optimise-store = true
+        builders-use-substitutes = true
+        require-sigs = true
+        sandbox = false
+        substituters = https://attic.chir.rs/chir-rs/ https://cache.nixos.org/
+        system-features = big-parallel benchmark ca-derivations
+        trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixcache:8KKuGz95Pk4UJ5W/Ni+pN+v+LDTkMMFV4yrGmAYgkDg= hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs= chir-rs:AnwyFacopHSkprD6aXY4/R3J9JYzTbV2rosJCBPaB28=
+        trusted-substituters =
+        trusted-users = @wheel
+        experimental-features = nix-command flakes ca-derivations
+        EOF
+      - nix flake update
+    when:
+      - event: cron
+      - event: manual
+  update:
     image: nixos/nix
     commands:
       - mkdir -p /etc/nix
@@ -21,7 +47,7 @@ pipeline:
         trusted-users = @wheel
         experimental-features = nix-command flakes ca-derivations
         EOF
-      - yes '' | nix-shell ./scripts/update.nix --argstr path ${PACKAGE}
+      - yes '' | nix-shell ./scripts/update.nix --argstr max-workers 1
     when:
       - event: cron
       - event: manual
@@ -49,8 +75,8 @@ pipeline:
       - git config --global "user.signingKey" "0x417A4BCCAB696E24"
       - git config --global "commit.gpgSign" "true"
       - git add .
-      - git commit -am "Update ${PACKAGE}"
-      - git push --force origin main:update-${PACKAGE}
+      - git commit -am "Update flake"
+      - git push --force origin main:update-flake
     secrets:
       - gpg_key
       - ssh_key
@@ -61,50 +87,10 @@ pipeline:
     image: nixery.dev/shell/curl
     commands:
       - |
-        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-${PACKAGE}", "title": "Update ${PACKAGE}", "body": "" }' | curl -X POST -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- 'https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls'
+        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-flake, "title": "Update flake", "body": "" }' | curl -X POST -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- 'https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls'
     secrets:
       - gitea_token
     when:
       - event: cron
       - event: manual
-matrix:
-  PACKAGE:
-    - akkoma
-    - pleroma-fe
-    - admin-fe
-    - emoji-volpeon-blobfox
-    - emoji-volpeon-bunhd
-    - emoji-volpeon-drgn
-    - emoji-volpeon-fox
-    - emoji-volpeon-gphn
-    - emoji-volpeon-raccoon
-    - emoji-volpeon-vlpn
-    - emoji-caro
-    - lotte-art
-    - fairfax-hd
-    - nasin-nanpa
-    - matrix-media-repo
-    - mautrix-discord
-    - mautrix-whatsapp
-    - mautrix-signal
-    - mautrix-telegram
-    - python-mautrix
-    - python-tulir-telethon
-    - papermc
-    - python-plover-stroke
-    - python-rtf-tokenize
-    - plover
-    - plover-plugins-manager
-    - python-simplefuzzyset
-    - plover-plugin-emoji
-    - plover-plugin-tapey-tape
-    - plover-plugin-machine-hid
-    - plover-plugin-rkb1-hid
-    - plover-dict-didoesdigital
-    - miifox-net
-    - python-instagram
-    - element-web
-    - woodpecker-agent
-    - woodpecker-cli
-    - woodpecker-server
 branches: main
