@@ -30,6 +30,9 @@ pipeline:
     image: nixery.dev/shell/alejandra
     commands:
       - alejandra .
+    when:
+      - event: cron
+      - event: manual
   git-push:
     image: nixery.dev/shell/openssh/gitfull/git-lfs/gnupg/shadow
     commands:
