@@ -31,7 +31,7 @@ pipeline:
       - event: cron
       - event: manual
   git-push:
-    image: nixery.dev/shell/openssh/gitfull/git-lfs/gnupg
+    image: nixery.dev/shell/openssh/gitfull/git-lfs/gnupg/shadow
     commands:
       - groupadd -g 0 root
       - useradd -u 0 -g root -d $HOME root
