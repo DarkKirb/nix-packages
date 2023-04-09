@@ -44,8 +44,8 @@ pipeline:
       - git config --global 'user.email' 'gitea-bot@chir.rs'
       - git config --global 'user.name' 'Gitea Bot'
       - echo "$GPG_KEY" | gpg --import
-      - gpg config --global "user.signingKey" "0x417A4BCCAB696E24"
-      - gpg config --global "commit.gpgSign" "true"
+      - git config --global "user.signingKey" "0x417A4BCCAB696E24"
+      - git config --global "commit.gpgSign" "true"
       - git add .
       - git commit -am "Update flake lockfile"
       - git push --force origin main:update-flake-lock
