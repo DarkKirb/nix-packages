@@ -57,8 +57,9 @@ pipeline:
       - event: manual
   gitea-pr:
     image: nixery.dev/shell/curl
-    commands: |
-      - echo '{ "assignee": "darkkirb", "base": "main", "head": "update-flake-lock", "title": "Update lockfile", "body": "" }' | curl -X PUT -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- 'https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls'
+    commands:
+      - |
+        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-flake-lock", "title": "Update lockfile", "body": "" }' | curl -X PUT -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- 'https://git.chir.rs/api/v1/repos/darkkirb/nix-packages/pulls'
     secrets:
       - gitea_token
     when:
