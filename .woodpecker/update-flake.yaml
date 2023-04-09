@@ -31,9 +31,11 @@ pipeline:
       - event: cron
       - event: manual
   git-push:
-    image: nixery.dev/shell/openssh/git/gnupg
+    image: nixery.dev/shell/openssh/gitfull/git-lfs/gnupg
     commands:
-      - mkdir ~/.ssh
+      - groupadd -g 0 root
+      - useradd -u 0 -g root -d $HOME root
+      - mkdir -p ~/.ssh
       - echo "$SSH_KEY" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
       - echo "git.chir.rs ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICQ77jA9S5qXDFGPLZRsC++AtxiXXeF8gVbkLlglx0GQ" > ~/.ssh/known_hosts
