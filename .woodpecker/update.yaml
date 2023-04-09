@@ -1,6 +1,6 @@
 pipeline:
   flake-update:
-    image: nixpkgs/nix-unstable
+    image: nixos/nix
     commands:
       - mkdir -p /etc/nix
       - |
@@ -26,6 +26,10 @@ pipeline:
     when:
       - event: cron
       - event: manual
+  format:
+    image: nixery.dev/shell/alejandra
+    commands:
+      - alejandra .
   git-push:
     image: nixery.dev/shell/openssh/gitfull/git-lfs/gnupg/shadow
     commands:
