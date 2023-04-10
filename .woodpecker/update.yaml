@@ -57,9 +57,9 @@ pipeline:
         trusted-users = @wheel
         experimental-features = nix-command flakes ca-derivations
         EOF
-      - rm -rf /tmp
-      - mkdir -p /tmp
-      - chmod 1777 /tmp
+      - mkdir -p /tmp2
+      - chmod 1777 /tmp2
+      - export TMPDIR=/tmp2
       - yes '' | nix-shell ./scripts/update.nix --argstr max-workers 1
     when:
       - event: cron
