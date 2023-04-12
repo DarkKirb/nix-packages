@@ -1,5 +1,5 @@
 diff --git a/pipeline/frontend/yaml/matrix/matrix.go b/pipeline/frontend/yaml/matrix/matrix.go
-index da5e9f24..bebad5f0 100644
+index da5e9f24..c3fe9896 100644
 --- a/pipeline/frontend/yaml/matrix/matrix.go
 +++ b/pipeline/frontend/yaml/matrix/matrix.go
 @@ -22,11 +22,6 @@ import (
@@ -14,7 +14,13 @@ index da5e9f24..bebad5f0 100644
  // Matrix represents the pipeline matrix.
  type Matrix map[string][]string
  
-@@ -92,20 +87,10 @@ func calc(matrix Matrix) []Axis {
+@@ -87,25 +82,15 @@ func calc(matrix Matrix) []Axis {
+ 	for p := 0; p < perm; p++ {
+ 		axis := map[string]string{}
+ 		decr := perm
+-		for i, tag := range tags {
++		for _, tag := range tags {
+ 			elems := matrix[tag]
  			decr = decr / len(elems)
  			elem := p / decr % len(elems)
  			axis[tag] = elems[elem]
