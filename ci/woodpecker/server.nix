@@ -22,6 +22,8 @@ in
 
     CGO_ENABLED = 1;
 
+    patches = [./unlimited-matrix.patch];
+
     passthru = {
       inherit woodpecker-frontend;
 
