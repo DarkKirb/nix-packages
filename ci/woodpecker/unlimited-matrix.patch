@@ -1,0 +1,37 @@
+diff --git a/pipeline/frontend/yaml/matrix/matrix.go b/pipeline/frontend/yaml/matrix/matrix.go
+index da5e9f24..bebad5f0 100644
+--- a/pipeline/frontend/yaml/matrix/matrix.go
++++ b/pipeline/frontend/yaml/matrix/matrix.go
+@@ -22,11 +22,6 @@ import (
+ 	"gopkg.in/yaml.v3"
+ )
+ 
+-const (
+-	limitTags = 10
+-	limitAxis = 25
+-)
+-
+ // Matrix represents the pipeline matrix.
+ type Matrix map[string][]string
+ 
+@@ -92,20 +87,10 @@ func calc(matrix Matrix) []Axis {
+ 			decr = decr / len(elems)
+ 			elem := p / decr % len(elems)
+ 			axis[tag] = elems[elem]
+-
+-			// enforce a maximum number of tags in the pipeline matrix.
+-			if i > limitTags {
+-				break
+-			}
+ 		}
+ 
+ 		// append to the list of axis.
+ 		axisList = append(axisList, axis)
+-
+-		// enforce a maximum number of axis that should be calculated.
+-		if p > limitAxis {
+-			break
+-		}
+ 	}
+ 
+ 	return axisList
