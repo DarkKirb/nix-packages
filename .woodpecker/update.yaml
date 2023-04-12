@@ -1,6 +1,3 @@
-clone:
-  git:
-    image: woodpeckerci/plugin-git
 pipeline:
   clone2:
     image: nixery.dev/shell/gitfull
@@ -121,3 +118,4 @@ matrix:
     - python-instagram
     - element-web
     - woodpecker-server
+skip_clone: true
