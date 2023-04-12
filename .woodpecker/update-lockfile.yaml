@@ -12,8 +12,8 @@ pipeline:
     when:
       - event: cron
       - event: manual
-  update-$PACKAGE:
-    image: nixos/nix
+  flake-update:
+    image: nixpkgs/nix-unstable
     commands:
       - mkdir -p /etc/nix
       - |
@@ -34,17 +34,7 @@ pipeline:
         trusted-users = @wheel
         experimental-features = nix-command flakes ca-derivations
         EOF
-      - mkdir -p /tmp2
-      - chmod 1777 /tmp2
-      - export TMPDIR=/tmp2
-      - yes '' | nix-shell ./scripts/update.nix --argstr path $PACKAGE
-    when:
-      - event: cron
-      - event: manual
-  format:
-    image: nixery.dev/shell/alejandra
-    commands:
-      - alejandra .
+      - nix flake update
     when:
       - event: cron
       - event: manual
@@ -66,7 +56,7 @@ pipeline:
       - git config --global "commit.gpgSign" "true"
       - git add .
       - git commit -am "Update flake"
-      - git push --force origin main:update-$PACKAGE
+      - git push --force origin main:update-flake
     secrets:
       - gpg_key
       - ssh_key
@@ -77,47 +67,9 @@ pipeline:
     image: nixery.dev/shell/curl
     commands:
       - |
-        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-$PACKAGE", "title": "Update flake", "body": "" }' | curl -X POST -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- "https://git.chir.rs/api/v1/repos/$CI_REPO_OWNER/$CI_REPO_NAME/pulls"
+        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-flake", "title": "Update flake", "body": "" }' | curl -X POST -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- "https://git.chir.rs/api/v1/repos/$CI_REPO_OWNER/$CI_REPO_NAME/pulls"
     secrets:
       - gitea_token
     when:
       - event: cron
       - event: manual
-matrix:
-  PACKAGE:
-    - akkoma
-    - pleroma-fe
-    - admin-fe
-    - emoji-volpeon-blobfox
-    - emoji-volpeon-bunhd
-    - emoji-volpeon-drgn
-    - emoji-volpeon-fox
-    - emoji-volpeon-gphn
-    - emoji-volpeon-raccoon
-    - emoji-volpeon-vlpn
-    - emoji-caro
-    - lotte-art
-    - nasin-nanpa
-    - matrix-media-repo
-    - mautrix-discord
-    - mautrix-whatsapp
-    - mautrix-signal
-    - mautrix-telegram
-    - python-mautrix
-    - python-tulir-telethon
-    - papermc
-    - python-plover-stroke
-    - python-rtf-tokenize
-    - plover
-    - plover-plugins-manager
-    - python-simplefuzzyset
-    - plover-plugin-emoji
-    - plover-plugin-tapey-tape
-    - plover-plugin-yaml-dictionary
-    - plover-plugin-machine-hid
-    - plover-plugin-rkb1-hid
-    - plover-dict-didoesdigital
-    - miifox-net
-    - python-instagram
-    - element-web
-    - woodpecker-server
