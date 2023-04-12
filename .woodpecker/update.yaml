@@ -9,7 +9,7 @@ pipeline:
     when:
       - event: cron
       - event: manual
-  update-$PACKAGE:
+  update-${PACCKAGE}:
     image: nixos/nix
     commands:
       - mkdir -p /etc/nix
@@ -34,7 +34,7 @@ pipeline:
       - mkdir -p /tmp2
       - chmod 1777 /tmp2
       - export TMPDIR=/tmp2
-      - yes '' | nix-shell ./scripts/update.nix --argstr path $PACKAGE
+      - yes '' | nix-shell ./scripts/update.nix --argstr path ${PACCKAGE}
     when:
       - event: cron
       - event: manual
@@ -63,7 +63,7 @@ pipeline:
       - git config --global "commit.gpgSign" "true"
       - git add .
       - git commit -am "Update flake"
-      - git push --force origin main:update-$PACKAGE
+      - git push --force origin main:update-${PACCKAGE}
     secrets:
       - gpg_key
       - ssh_key
@@ -74,7 +74,7 @@ pipeline:
     image: nixery.dev/shell/curl
     commands:
       - |
-        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-$PACKAGE", "title": "Update flake", "body": "" }' | curl -X POST -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- "https://git.chir.rs/api/v1/repos/$CI_REPO_OWNER/$CI_REPO_NAME/pulls"
+        echo '{ "assignee": "darkkirb", "base": "main", "head": "update-${PACCKAGE}", "title": "Update flake", "body": "" }' | curl -X POST -H "Authorization: token $GITEA_TOKEN" -H "Content-Type: application/json" --data-binary @- "https://git.chir.rs/api/v1/repos/$CI_REPO_OWNER/$CI_REPO_NAME/pulls"
     secrets:
       - gitea_token
     when:
