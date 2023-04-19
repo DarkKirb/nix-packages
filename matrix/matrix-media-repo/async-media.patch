@@ -1,187 +1,8 @@
-diff --git a/api/r0/download.go b/api/r0/download.go
-index d84c74e..e431385 100644
---- a/api/r0/download.go
-+++ b/api/r0/download.go
-@@ -48,6 +48,21 @@ func DownloadMedia(r *http.Request, rctx rcontext.RequestContext, user api.UserI
- 		downloadRemote = parsedFlag
- 	}
- 
-+	var asyncWaitMs *int = nil
-+	if rctx.Config.Features.MSC2246Async.Enabled {
-+		// request default wait time if feature enabled
-+		var parsedInt int = -1
-+		maxStallMs := r.URL.Query().Get("fi.mau.msc2246.max_stall_ms")
-+		if maxStallMs != "" {
-+			var err error
-+			parsedInt, err = strconv.Atoi(maxStallMs)
-+			if err != nil {
-+				return api.InternalServerError("fi.mau.msc2246.max_stall_ms does not appear to be a number")
-+			}
-+		}
-+		asyncWaitMs = &parsedInt
-+	}
-+
- 	rctx = rctx.LogWithFields(logrus.Fields{
- 		"mediaId":     mediaId,
- 		"server":      server,
-@@ -55,7 +70,7 @@ func DownloadMedia(r *http.Request, rctx rcontext.RequestContext, user api.UserI
- 		"allowRemote": downloadRemote,
- 	})
- 
--	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, false, rctx)
-+	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, false, asyncWaitMs, rctx)
- 	if err != nil {
- 		if err == common.ErrMediaNotFound {
- 			return api.NotFoundError()
-@@ -63,6 +78,8 @@ func DownloadMedia(r *http.Request, rctx rcontext.RequestContext, user api.UserI
- 			return api.RequestTooLarge()
- 		} else if err == common.ErrMediaQuarantined {
- 			return api.NotFoundError() // We lie for security
-+		} else if err == common.ErrNotYetUploaded {
-+			return api.NotYetUploaded()
- 		}
- 		rctx.Log.Error("Unexpected error locating media: " + err.Error())
- 		sentry.CaptureException(err)
-diff --git a/api/r0/thumbnail.go b/api/r0/thumbnail.go
-index b1b73f0..8392596 100644
---- a/api/r0/thumbnail.go
-+++ b/api/r0/thumbnail.go
-@@ -29,6 +29,21 @@ func ThumbnailMedia(r *http.Request, rctx rcontext.RequestContext, user api.User
- 		downloadRemote = parsedFlag
- 	}
- 
-+	var asyncWaitMs *int = nil
-+	if rctx.Config.Features.MSC2246Async.Enabled {
-+		// request default wait time if feature enabled
-+		var parsedInt int = -1
-+		maxStallMs := r.URL.Query().Get("fi.mau.msc2246.max_stall_ms")
-+		if maxStallMs != "" {
-+			var err error
-+			parsedInt, err = strconv.Atoi(maxStallMs)
-+			if err != nil {
-+				return api.InternalServerError("fi.mau.msc2246.max_stall_ms does not appear to be a number")
-+			}
-+		}
-+		asyncWaitMs = &parsedInt
-+	}
-+
- 	rctx = rctx.LogWithFields(logrus.Fields{
- 		"mediaId":     mediaId,
- 		"server":      server,
-@@ -87,12 +102,14 @@ func ThumbnailMedia(r *http.Request, rctx rcontext.RequestContext, user api.User
- 		return api.BadRequest("Width and height must be greater than zero")
- 	}
- 
--	streamedThumbnail, err := thumbnail_controller.GetThumbnail(server, mediaId, width, height, animated, method, downloadRemote, rctx)
-+	streamedThumbnail, err := thumbnail_controller.GetThumbnail(server, mediaId, width, height, animated, method, downloadRemote, asyncWaitMs, rctx)
- 	if err != nil {
- 		if err == common.ErrMediaNotFound {
- 			return api.NotFoundError()
- 		} else if err == common.ErrMediaTooLarge {
- 			return api.RequestTooLarge()
-+		} else if err == common.ErrNotYetUploaded {
-+			return api.NotYetUploaded()
- 		}
- 		rctx.Log.Error("Unexpected error locating media: " + err.Error())
- 		sentry.CaptureException(err)
-diff --git a/api/r0/upload.go b/api/r0/upload.go
-index 63b0170..b47ae99 100644
---- a/api/r0/upload.go
-+++ b/api/r0/upload.go
-@@ -6,7 +6,9 @@ import (
- 	"io/ioutil"
- 	"net/http"
- 	"path/filepath"
-+	"time"
- 
-+	"github.com/gorilla/mux"
- 	"github.com/sirupsen/logrus"
- 	"github.com/turt2live/matrix-media-repo/api"
- 	"github.com/turt2live/matrix-media-repo/common"
-@@ -14,6 +16,7 @@ import (
- 	"github.com/turt2live/matrix-media-repo/controllers/info_controller"
- 	"github.com/turt2live/matrix-media-repo/controllers/upload_controller"
- 	"github.com/turt2live/matrix-media-repo/quota"
-+	"github.com/turt2live/matrix-media-repo/util"
- 	"github.com/turt2live/matrix-media-repo/util/cleanup"
- )
- 
-@@ -22,14 +25,52 @@ type MediaUploadedResponse struct {
- 	Blurhash   string `json:"xyz.amorgan.blurhash,omitempty"`
- }
- 
-+type MediaCreatedResponse struct {
-+	ContentUri      string `json:"content_uri"`
-+	UnusedExpiresAt int64  `json:"unused_expires_at"`
-+}
-+
-+func CreateMedia(r *http.Request, rctx rcontext.RequestContext, user api.UserInfo) interface{} {
-+	media, _, err := upload_controller.CreateMedia(r.Host, rctx)
-+	if err != nil {
-+		rctx.Log.Error("Unexpected error creating media reference: " + err.Error())
-+		return api.InternalServerError("Unexpected Error")
-+	}
-+
-+	if err = upload_controller.PersistMedia(media, user.UserId, rctx); err != nil {
-+		rctx.Log.Error("Unexpected error persisting media reference: " + err.Error())
-+		return api.InternalServerError("Unexpected Error")
-+	}
-+
-+	return &MediaCreatedResponse{
-+		ContentUri:      media.MxcUri(),
-+		UnusedExpiresAt: time.Now().Unix() + int64(rctx.Config.Features.MSC2246Async.AsyncUploadExpirySecs),
-+	}
-+}
-+
- func UploadMedia(r *http.Request, rctx rcontext.RequestContext, user api.UserInfo) interface{} {
-+	var server = ""
-+	var mediaId = ""
-+
- 	filename := filepath.Base(r.URL.Query().Get("filename"))
- 	defer cleanup.DumpAndCloseStream(r.Body)
- 
-+	if rctx.Config.Features.MSC2246Async.Enabled {
-+		params := mux.Vars(r)
-+		server = params["server"]
-+		mediaId = params["mediaId"]
-+	}
-+
- 	rctx = rctx.LogWithFields(logrus.Fields{
-+		"server":   server,
-+		"mediaId":  mediaId,
- 		"filename": filename,
- 	})
- 
-+	if server != "" && (!util.IsServerOurs(server) || server != r.Host) {
-+		return api.NotFoundError()
-+	}
-+
- 	contentType := r.Header.Get("Content-Type")
- 	if contentType == "" {
- 		contentType = "application/octet-stream" // binary
-@@ -59,12 +100,16 @@ func UploadMedia(r *http.Request, rctx rcontext.RequestContext, user api.UserInf
- 
- 	contentLength := upload_controller.EstimateContentLength(r.ContentLength, r.Header.Get("Content-Length"))
- 
--	media, err := upload_controller.UploadMedia(r.Body, contentLength, contentType, filename, user.UserId, r.Host, rctx)
-+	media, err := upload_controller.UploadMedia(r.Body, contentLength, contentType, filename, user.UserId, r.Host, mediaId, rctx)
- 	if err != nil {
- 		io.Copy(ioutil.Discard, r.Body) // Ditch the entire request
- 
- 		if err == common.ErrMediaQuarantined {
- 			return api.BadRequest("This file is not permitted on this server")
-+		} else if err == common.ErrCannotOverwriteMedia {
-+			return api.CannotOverwriteMedia()
-+		} else if err == common.ErrMediaNotFound {
-+			return api.NotFoundError()
- 		}
- 
- 		rctx.Log.Error("Unexpected error storing media: " + err.Error())
-diff --git a/api/responses.go b/api/responses.go
-index 93d2c39..6fd8f23 100644
---- a/api/responses.go
-+++ b/api/responses.go
-@@ -57,3 +57,11 @@ func BadRequest(message string) *ErrorResponse {
+diff --git a/api/_responses/errors.go b/api/_responses/errors.go
+index 1cee502..c075815 100644
+--- a/api/_responses/errors.go
++++ b/api/_responses/errors.go
+@@ -55,3 +55,11 @@ func BadRequest(message string) *ErrorResponse {
  func QuotaExceeded() *ErrorResponse {
  	return &ErrorResponse{common.ErrCodeForbidden, "Quota Exceeded", common.ErrCodeQuotaExceeded}
  }
@@ -193,24 +14,275 @@ index 93d2c39..6fd8f23 100644
 +func NotYetUploaded() *ErrorResponse {
 +	return &ErrorResponse{common.ErrCodeNotYetUploaded, "Media not yet uploaded", common.ErrCodeNotYetUploaded}
 +}
+diff --git a/api/_routers/98-use-rcontext.go b/api/_routers/98-use-rcontext.go
+index 63fc7d0..a5843aa 100644
+--- a/api/_routers/98-use-rcontext.go
++++ b/api/_routers/98-use-rcontext.go
+@@ -166,7 +166,7 @@ beforeParseDownload:
+ 		case common.ErrCodeUnknownToken:
+ 			proposedStatusCode = http.StatusUnauthorized
+ 			break
+-		case common.ErrCodeNotFound:
++		case common.ErrCodeNotYetUploaded, common.ErrCodeNotFound:
+ 			proposedStatusCode = http.StatusNotFound
+ 			break
+ 		case common.ErrCodeMediaTooLarge:
+@@ -181,6 +181,9 @@ beforeParseDownload:
+ 		case common.ErrCodeForbidden:
+ 			proposedStatusCode = http.StatusForbidden
+ 			break
++        case common.ErrCodeCannotOverwriteMedia:
++            proposedStatusCode = http.StatusConflict
++            break
+ 		default: // Treat as unknown (a generic server error)
+ 			proposedStatusCode = http.StatusInternalServerError
+ 			break
+diff --git a/api/r0/download.go b/api/r0/download.go
+index 83b9232..8e0dd1a 100644
+--- a/api/r0/download.go
++++ b/api/r0/download.go
+@@ -46,6 +46,21 @@ func DownloadMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta.
+ 		downloadRemote = parsedFlag
+ 	}
+ 
++	var asyncWaitMs *int = nil
++	if rctx.Config.Features.MSC2246Async.Enabled {
++		// request default wait time if feature enabled
++		var parsedInt int = -1
++		maxStallMs := r.URL.Query().Get("fi.mau.msc2246.max_stall_ms")
++		if maxStallMs != "" {
++			var err error
++			parsedInt, err = strconv.Atoi(maxStallMs)
++			if err != nil {
++				return _responses.InternalServerError("fi.mau.msc2246.max_stall_ms does not appear to be a number")
++			}
++		}
++		asyncWaitMs = &parsedInt
++	}
++
+ 	rctx = rctx.LogWithFields(logrus.Fields{
+ 		"mediaId":     mediaId,
+ 		"server":      server,
+@@ -58,7 +73,7 @@ func DownloadMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta.
+ 		return _responses.MediaBlocked()
+ 	}
+ 
+-	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, false, rctx)
++	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, false, asyncWaitMs, rctx)
+ 	if err != nil {
+ 		if err == common.ErrMediaNotFound {
+ 			return _responses.NotFoundError()
+@@ -66,6 +81,8 @@ func DownloadMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta.
+ 			return _responses.RequestTooLarge()
+ 		} else if err == common.ErrMediaQuarantined {
+ 			return _responses.NotFoundError() // We lie for security
++		} else if err == common.ErrNotYetUploaded {
++			return _responses.NotYetUploaded()
+ 		}
+ 		rctx.Log.Error("Unexpected error locating media: " + err.Error())
+ 		sentry.CaptureException(err)
+diff --git a/api/r0/thumbnail.go b/api/r0/thumbnail.go
+index 8669431..93af427 100644
+--- a/api/r0/thumbnail.go
++++ b/api/r0/thumbnail.go
+@@ -34,6 +34,21 @@ func ThumbnailMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta
+ 		downloadRemote = parsedFlag
+ 	}
+ 
++	var asyncWaitMs *int = nil
++	if rctx.Config.Features.MSC2246Async.Enabled {
++		// request default wait time if feature enabled
++		var parsedInt int = -1
++		maxStallMs := r.URL.Query().Get("fi.mau.msc2246.max_stall_ms")
++		if maxStallMs != "" {
++			var err error
++			parsedInt, err = strconv.Atoi(maxStallMs)
++			if err != nil {
++				return _responses.InternalServerError("fi.mau.msc2246.max_stall_ms does not appear to be a number")
++			}
++		}
++		asyncWaitMs = &parsedInt
++	}
++
+ 	rctx = rctx.LogWithFields(logrus.Fields{
+ 		"mediaId":     mediaId,
+ 		"server":      server,
+@@ -97,12 +112,14 @@ func ThumbnailMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta
+ 		return _responses.BadRequest("Width and height must be greater than zero")
+ 	}
+ 
+-	streamedThumbnail, err := thumbnail_controller.GetThumbnail(server, mediaId, width, height, animated, method, downloadRemote, rctx)
++	streamedThumbnail, err := thumbnail_controller.GetThumbnail(server, mediaId, width, height, animated, method, downloadRemote, asyncWaitMs, rctx)
+ 	if err != nil {
+ 		if err == common.ErrMediaNotFound {
+ 			return _responses.NotFoundError()
+ 		} else if err == common.ErrMediaTooLarge {
+ 			return _responses.RequestTooLarge()
++		} else if err == common.ErrNotYetUploaded {
++			return _responses.NotYetUploaded()
+ 		}
+ 		rctx.Log.Error("Unexpected error locating media: " + err.Error())
+ 		sentry.CaptureException(err)
+diff --git a/api/r0/upload.go b/api/r0/upload.go
+index 245b15e..a933713 100644
+--- a/api/r0/upload.go
++++ b/api/r0/upload.go
+@@ -4,11 +4,13 @@ import (
+ 	"github.com/getsentry/sentry-go"
+ 	"github.com/turt2live/matrix-media-repo/api/_apimeta"
+ 	"github.com/turt2live/matrix-media-repo/api/_responses"
++    "github.com/turt2live/matrix-media-repo/api/_routers"
+ 	"github.com/turt2live/matrix-media-repo/util/stream_util"
+ 
+ 	"io"
+ 	"net/http"
+ 	"path/filepath"
++	"time"
+ 
+ 	"github.com/sirupsen/logrus"
+ 	"github.com/turt2live/matrix-media-repo/common"
+@@ -16,6 +18,7 @@ import (
+ 	"github.com/turt2live/matrix-media-repo/controllers/info_controller"
+ 	"github.com/turt2live/matrix-media-repo/controllers/upload_controller"
+ 	"github.com/turt2live/matrix-media-repo/quota"
++	"github.com/turt2live/matrix-media-repo/util"
+ )
+ 
+ type MediaUploadedResponse struct {
+@@ -23,14 +26,51 @@ type MediaUploadedResponse struct {
+ 	Blurhash   string `json:"xyz.amorgan.blurhash,omitempty"`
+ }
+ 
++type MediaCreatedResponse struct {
++	ContentUri      string `json:"content_uri"`
++	UnusedExpiresAt int64  `json:"unused_expires_at"`
++}
++
++func CreateMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta.UserInfo) interface{} {
++	media, _, err := upload_controller.CreateMedia(r.Host, rctx)
++	if err != nil {
++		rctx.Log.Error("Unexpected error creating media reference: " + err.Error())
++		return _responses.InternalServerError("Unexpected Error")
++	}
++
++	if err = upload_controller.PersistMedia(media, user.UserId, rctx); err != nil {
++		rctx.Log.Error("Unexpected error persisting media reference: " + err.Error())
++		return _responses.InternalServerError("Unexpected Error")
++	}
++
++	return &MediaCreatedResponse{
++		ContentUri:      media.MxcUri(),
++		UnusedExpiresAt: time.Now().Unix() + int64(rctx.Config.Features.MSC2246Async.AsyncUploadExpirySecs),
++	}
++}
++
+ func UploadMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta.UserInfo) interface{} {
++	var server = ""
++	var mediaId = ""
++
+ 	filename := filepath.Base(r.URL.Query().Get("filename"))
+ 	defer stream_util.DumpAndCloseStream(r.Body)
+ 
++	if rctx.Config.Features.MSC2246Async.Enabled {
++		server = _routers.GetParam("server", r)
++		mediaId = _routers.GetParam("mediaId", r)
++	}
++
+ 	rctx = rctx.LogWithFields(logrus.Fields{
++		"server":   server,
++		"mediaId":  mediaId,
+ 		"filename": filename,
+ 	})
+ 
++	if server != "" && (!util.IsServerOurs(server) || server != r.Host) {
++		return _responses.NotFoundError()
++	}
++
+ 	contentType := r.Header.Get("Content-Type")
+ 	if contentType == "" {
+ 		contentType = "application/octet-stream" // binary
+@@ -60,13 +100,17 @@ func UploadMedia(r *http.Request, rctx rcontext.RequestContext, user _apimeta.Us
+ 
+ 	contentLength := upload_controller.EstimateContentLength(r.ContentLength, r.Header.Get("Content-Length"))
+ 
+-	media, err := upload_controller.UploadMedia(r.Body, contentLength, contentType, filename, user.UserId, r.Host, rctx)
++	media, err := upload_controller.UploadMedia(r.Body, contentLength, contentType, filename, user.UserId, r.Host, mediaId, rctx)
+ 	if err != nil {
+ 		io.Copy(io.Discard, r.Body) // Ditch the entire request
+ 
+ 		if err == common.ErrMediaQuarantined {
+ 			return _responses.BadRequest("This file is not permitted on this server")
+-		}
++		} else if err == common.ErrCannotOverwriteMedia {
++			return _responses.CannotOverwriteMedia()
++		} else if err == common.ErrMediaNotFound {
++			return _responses.NotFoundError()
++	    }	
+ 
+ 		rctx.Log.Error("Unexpected error storing media: " + err.Error())
+ 		sentry.CaptureException(err)
+diff --git a/api/routes.go b/api/routes.go
+index ff6378d..4e1c7e3 100644
+--- a/api/routes.go
++++ b/api/routes.go
+@@ -13,6 +13,7 @@ import (
+ 	"github.com/turt2live/matrix-media-repo/api/custom"
+ 	"github.com/turt2live/matrix-media-repo/api/r0"
+ 	"github.com/turt2live/matrix-media-repo/api/unstable"
++    "github.com/turt2live/matrix-media-repo/common/config"
+ )
+ 
+ const PrefixMedia = "/_matrix/media"
+@@ -29,7 +30,8 @@ func buildRoutes() http.Handler {
+ 	}
+ 
+ 	// Standard (spec) features
+-	register([]string{"POST"}, PrefixMedia, "upload", false, router, makeRoute(_routers.RequireAccessToken(r0.UploadMedia), "upload", false, counter))
++    uploadRoute := makeRoute(_routers.RequireAccessToken(r0.UploadMedia), "upload", false, counter)
++	register([]string{"POST"}, PrefixMedia, "upload", false, router, uploadRoute)
+ 	downloadRoute := makeRoute(_routers.OptionalAccessToken(r0.DownloadMedia), "download", false, counter)
+ 	register([]string{"GET"}, PrefixMedia, "download/:server/:mediaId/:filename", false, router, downloadRoute)
+ 	register([]string{"GET"}, PrefixMedia, "download/:server/:mediaId", false, router, downloadRoute)
+@@ -52,6 +54,12 @@ func buildRoutes() http.Handler {
+ 	router.Handler("GET", "/healthz", healthzRoute)
+ 	router.Handler("HEAD", "/healthz", healthzRoute)
+ 
++    if config.Get().Features.MSC2246Async.Enabled {
++        logrus.Info("Asynchronous uploads (MSC2246) enabled")
++        register([]string{"POST"}, PrefixMedia, "create", true, router, makeRoute(_routers.RequireAccessToken(r0.CreateMedia), "create", false, counter))
++        register([]string{"PUT"}, PrefixMedia, "upload/{server:[a-zA-Z0-9.:\\-_]+}/{mediaId:[^/]+}", true, router, uploadRoute)
++    }
++
+ 	// All admin routes are unstable only
+ 	purgeRemoteRoute := makeRoute(_routers.RequireRepoAdmin(custom.PurgeRemoteMedia), "purge_remote_media", false, counter)
+ 	register([]string{"POST"}, PrefixMedia, "admin/purge_remote", true, router, purgeRemoteRoute)
+@@ -106,7 +114,7 @@ func makeRoute(generator _routers.GeneratorFn, name string, ignoreHost bool, cou
+ 		))
+ }
+ 
+-var versions = []string{"r0", "v1", "v3", "unstable", "unstable/io.t2bot.media"}
++var versions = []string{"r0", "v1", "v3", "unstable", "unstable/io.t2bot.media", "unstable/fi.mamu.msc2246"}
+ 
+ func register(methods []string, prefix string, postfix string, unstableOnly bool, router *httprouter.Router, handler http.Handler) {
+ 	for _, method := range methods {
 diff --git a/api/unstable/info.go b/api/unstable/info.go
-index 448e018..b04ff1e 100644
+index 8ea40d5..3e5edf3 100644
 --- a/api/unstable/info.go
 +++ b/api/unstable/info.go
-@@ -69,7 +69,7 @@ func MediaInfo(r *http.Request, rctx rcontext.RequestContext, user api.UserInfo)
- 		"allowRemote": downloadRemote,
- 	})
+@@ -79,7 +79,7 @@ func MediaInfo(r *http.Request, rctx rcontext.RequestContext, user _apimeta.User
+ 		return _responses.MediaBlocked()
+ 	}
  
 -	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, true, rctx)
 +	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, true, nil, rctx)
  	if err != nil {
  		if err == common.ErrMediaNotFound {
- 			return api.NotFoundError()
+ 			return _responses.NotFoundError()
 diff --git a/api/unstable/local_copy.go b/api/unstable/local_copy.go
-index 30d5f26..885633b 100644
+index fa5a1f0..98a21f2 100644
 --- a/api/unstable/local_copy.go
 +++ b/api/unstable/local_copy.go
-@@ -40,7 +40,7 @@ func LocalCopy(r *http.Request, rctx rcontext.RequestContext, user api.UserInfo)
+@@ -50,7 +50,7 @@ func LocalCopy(r *http.Request, rctx rcontext.RequestContext, user _apimeta.User
  
  	// TODO: There's a lot of room for improvement here. Instead of re-uploading media, we should just update the DB.
  
@@ -218,8 +290,8 @@ index 30d5f26..885633b 100644
 +	streamedMedia, err := download_controller.GetMedia(server, mediaId, downloadRemote, true, nil, rctx)
  	if err != nil {
  		if err == common.ErrMediaNotFound {
- 			return api.NotFoundError()
-@@ -60,7 +60,7 @@ func LocalCopy(r *http.Request, rctx rcontext.RequestContext, user api.UserInfo)
+ 			return _responses.NotFoundError()
+@@ -70,7 +70,7 @@ func LocalCopy(r *http.Request, rctx rcontext.RequestContext, user _apimeta.User
  		return &r0.MediaUploadedResponse{ContentUri: streamedMedia.KnownMedia.MxcUri()}
  	}
  
@@ -228,56 +300,8 @@ index 30d5f26..885633b 100644
  	if err != nil {
  		rctx.Log.Error("Unexpected error storing media: " + err.Error())
  		sentry.CaptureException(err)
-diff --git a/api/webserver/route_handler.go b/api/webserver/route_handler.go
-index 3d04714..a120d7a 100644
---- a/api/webserver/route_handler.go
-+++ b/api/webserver/route_handler.go
-@@ -146,7 +146,7 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
- 		case common.ErrCodeUnknownToken:
- 			statusCode = http.StatusUnauthorized
- 			break
--		case common.ErrCodeNotFound:
-+		case common.ErrCodeNotYetUploaded, common.ErrCodeNotFound:
- 			statusCode = http.StatusNotFound
- 			break
- 		case common.ErrCodeMediaTooLarge:
-@@ -161,6 +161,9 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
- 		case common.ErrCodeForbidden:
- 			statusCode = http.StatusForbidden
- 			break
-+		case common.ErrCodeCannotOverwriteMedia:
-+			statusCode = http.StatusConflict
-+			break
- 		default: // Treat as unknown (a generic server error)
- 			statusCode = http.StatusInternalServerError
- 			break
-diff --git a/api/webserver/webserver.go b/api/webserver/webserver.go
-index fb9c7dd..583d270 100644
---- a/api/webserver/webserver.go
-+++ b/api/webserver/webserver.go
-@@ -44,6 +44,7 @@ func Init() *sync.WaitGroup {
- 	counter := &requestCounter{}
- 
- 	optionsHandler := handler{api.EmptyResponseHandler, "options_request", counter, false}
-+	createHandler := handler{api.AccessTokenRequiredRoute(r0.CreateMedia), "create", counter, false}
- 	uploadHandler := handler{api.AccessTokenRequiredRoute(r0.UploadMedia), "upload", counter, false}
- 	downloadHandler := handler{api.AccessTokenOptionalRoute(r0.DownloadMedia), "download", counter, false}
- 	thumbnailHandler := handler{api.AccessTokenOptionalRoute(r0.ThumbnailMedia), "thumbnail", counter, false}
-@@ -160,6 +161,12 @@ func Init() *sync.WaitGroup {
- 		}
- 	}
- 
-+	if config.Get().Features.MSC2246Async.Enabled {
-+		logrus.Info("Asynchronous uploads (MSC2246) enabled")
-+		routes = append(routes, definedRoute{"/_matrix/media/unstable/fi.mau.msc2246/create", route{"POST", createHandler}})
-+		routes = append(routes, definedRoute{"/_matrix/media/unstable/fi.mau.msc2246/upload/{server:[a-zA-Z0-9.:\\-_]+}/{mediaId:[^/]+}", route{"PUT", uploadHandler}})
-+	}
-+
- 	if config.Get().Features.IPFS.Enabled {
- 		routes = append(routes, definedRoute{features.IPFSDownloadRoute, route{"GET", ipfsDownloadHandler}})
- 		routes = append(routes, definedRoute{features.IPFSLiveDownloadRouteR0, route{"GET", ipfsDownloadHandler}})
 diff --git a/common/config/conf_min_shared.go b/common/config/conf_min_shared.go
-index e43dffc..ae0344a 100644
+index 09eb821..dec051e 100644
 --- a/common/config/conf_min_shared.go
 +++ b/common/config/conf_min_shared.go
 @@ -53,6 +53,11 @@ func NewDefaultMinimumRepoConfig() MinimumRepoConfig {
@@ -289,11 +313,11 @@ index e43dffc..ae0344a 100644
 +				AsyncUploadExpirySecs:        60,
 +				AsyncDownloadDefaultWaitSecs: 20,
 +			},
- 			IPFS: IPFSConfig{
- 				Enabled: false,
- 				Daemon: IPFSDaemonConfig{
+ 		},
+ 		AccessTokens: AccessTokenConfig{
+ 			MaxCacheTimeSeconds: 0,
 diff --git a/common/config/models_domain.go b/common/config/models_domain.go
-index 3242724..c30abd9 100644
+index 0c3fc55..6060763 100644
 --- a/common/config/models_domain.go
 +++ b/common/config/models_domain.go
 @@ -88,6 +88,7 @@ type TimeoutsConfig struct {
@@ -301,10 +325,10 @@ index 3242724..c30abd9 100644
  type FeatureConfig struct {
  	MSC2448Blurhash MSC2448Config `yaml:"MSC2448"`
 +	MSC2246Async    MSC2246Config `yaml:"MSC2246"`
- 	IPFS            IPFSConfig    `yaml:"IPFS"`
  	Redis           RedisConfig   `yaml:"redis"`
  }
-@@ -103,6 +104,12 @@ type MSC2448Config struct {
+ 
+@@ -102,6 +103,12 @@ type MSC2448Config struct {
  	Punch           int  `yaml:"punch"`
  }
  
@@ -314,9 +338,9 @@ index 3242724..c30abd9 100644
 +	AsyncDownloadDefaultWaitSecs int  `yaml:"asyncDownloadDefaultWaitSecs"`
 +}
 +
- type IPFSConfig struct {
- 	Enabled bool             `yaml:"enabled"`
- 	Daemon  IPFSDaemonConfig `yaml:"builtInDaemon"`
+ type AccessTokenConfig struct {
+ 	MaxCacheTimeSeconds int                `yaml:"maxCacheTimeSeconds"`
+ 	UseAppservices      bool               `yaml:"useLocalAppserviceConfig"`
 diff --git a/common/errorcodes.go b/common/errorcodes.go
 index 599b32c..b9a3274 100644
 --- a/common/errorcodes.go
@@ -338,10 +362,10 @@ index 5fc0e69..09f5310 100644
 +var ErrCannotOverwriteMedia = errors.New("cannot overwrite media")
 +var ErrNotYetUploaded = errors.New("not yet uploaded")
 diff --git a/config.sample.yaml b/config.sample.yaml
-index fa49e74..0f506f1 100644
+index e3570bb..0b003ec 100644
 --- a/config.sample.yaml
 +++ b/config.sample.yaml
-@@ -544,6 +544,20 @@ featureSupport:
+@@ -542,6 +542,20 @@ featureSupport:
      # make the effect more subtle, larger values make it stronger.
      punch: 1
  
@@ -359,11 +383,11 @@ index fa49e74..0f506f1 100644
 +    # wait by default. Setting to zero will disable this behavior unless the client requests it.
 +    asyncDownloadDefaultWaitSecs: 20
 +
-   # IPFS Support
-   # This is currently experimental and might not work at all.
-   IPFS:
+ # Support for redis as a cache mechanism
+ #
+ # Note: Enabling Redis support will mean that the existing cache mechanism will do nothing.
 diff --git a/controllers/download_controller/download_controller.go b/controllers/download_controller/download_controller.go
-index 4d7f354..e3d6c92 100644
+index 5519d36..437ff1a 100644
 --- a/controllers/download_controller/download_controller.go
 +++ b/controllers/download_controller/download_controller.go
 @@ -26,14 +26,14 @@ import (
@@ -482,7 +506,7 @@ index 4d7f354..e3d6c92 100644
  		}
  
 diff --git a/controllers/info_controller/info_controller.go b/controllers/info_controller/info_controller.go
-index 281ec60..7eee6c6 100644
+index 98eb096..cb6a0dc 100644
 --- a/controllers/info_controller/info_controller.go
 +++ b/controllers/info_controller/info_controller.go
 @@ -27,7 +27,7 @@ func GetOrCalculateBlurhash(media *types.Media, rctx rcontext.RequestContext) (s
@@ -508,10 +532,10 @@ index 1df60a3..dfdd1f8 100644
  		return err
  	}
 diff --git a/controllers/preview_controller/preview_resource_handler.go b/controllers/preview_controller/preview_resource_handler.go
-index 86c42b9..cd99dba 100644
+index 3230caa..20556c8 100644
 --- a/controllers/preview_controller/preview_resource_handler.go
 +++ b/controllers/preview_controller/preview_resource_handler.go
-@@ -133,7 +133,7 @@ func urlPreviewWorkFn(request *resource_handler.WorkRequest) (resp *urlPreviewRe
+@@ -134,7 +134,7 @@ func urlPreviewWorkFn(request *resource_handler.WorkRequest) (resp *urlPreviewRe
  		contentLength := upload_controller.EstimateContentLength(preview.Image.ContentLength, preview.Image.ContentLengthHeader)
  
  		// UploadMedia will close the read stream for the thumbnail and dedupe the image
@@ -521,10 +545,10 @@ index 86c42b9..cd99dba 100644
  			ctx.Log.Warn("Non-fatal error storing preview thumbnail: " + err.Error())
  			sentry.CaptureException(err)
 diff --git a/controllers/thumbnail_controller/thumbnail_controller.go b/controllers/thumbnail_controller/thumbnail_controller.go
-index 9b5e121..c464790 100644
+index 12d9cf9..0c21bd2 100644
 --- a/controllers/thumbnail_controller/thumbnail_controller.go
 +++ b/controllers/thumbnail_controller/thumbnail_controller.go
-@@ -26,8 +26,8 @@ import (
+@@ -28,8 +28,8 @@ import (
  
  var localCache = cache.New(30*time.Second, 60*time.Second)
  
@@ -536,75 +560,66 @@ index 9b5e121..c464790 100644
  		return nil, err
  	}
 diff --git a/controllers/upload_controller/upload_controller.go b/controllers/upload_controller/upload_controller.go
-index 7936faa..25759ff 100644
+index 99c8c58..0d6d54b 100644
 --- a/controllers/upload_controller/upload_controller.go
 +++ b/controllers/upload_controller/upload_controller.go
-@@ -1,6 +1,7 @@
+@@ -1,12 +1,12 @@
  package upload_controller
  
  import (
 +	"database/sql"
- 	"fmt"
- 	"github.com/getsentry/sentry-go"
  	"io"
-@@ -92,39 +93,26 @@ func EstimateContentLength(contentLength int64, contentLengthHeader string) int6
+ 	"strconv"
+ 	"time"
+ 
+ 	"github.com/getsentry/sentry-go"
+-	"github.com/turt2live/matrix-media-repo/util/ids"
+ 	"github.com/turt2live/matrix-media-repo/util/stream_util"
+ 
+ 	"github.com/patrickmn/go-cache"
+@@ -92,7 +92,63 @@ func EstimateContentLength(contentLength int64, contentLengthHeader string) int6
  	return -1 // unknown
  }
  
 -func UploadMedia(contents io.ReadCloser, contentLength int64, contentType string, filename string, userId string, origin string, ctx rcontext.RequestContext) (*types.Media, error) {
--	defer cleanup.DumpAndCloseStream(contents)
--
--	var data io.ReadCloser
--	if ctx.Config.Uploads.MaxSizeBytes > 0 {
--		data = ioutil.NopCloser(io.LimitReader(contents, ctx.Config.Uploads.MaxSizeBytes))
--	} else {
--		data = contents
--	}
--
--	dataBytes, err := ioutil.ReadAll(data)
--	if err != nil {
--		return nil, err
--	}
--
 +func CreateMedia(origin string, ctx rcontext.RequestContext) (*types.Media, *datastore.DatastoreRef, error) {
- 	metadataDb := storage.GetDatabase().GetMetadataStore(ctx)
- 
- 	mediaTaken := true
- 	var mediaId string
++	metadataDb := storage.GetDatabase().GetMetadataStore(ctx)
++
++	mediaTaken := true
++	var mediaId string
 +	var err error
- 	attempts := 0
- 	for mediaTaken {
- 		attempts += 1
- 		if attempts > 10 {
--			return nil, errors.New("failed to generate a media ID after 10 rounds")
++	attempts := 0
++	for mediaTaken {
++		attempts += 1
++		if attempts > 10 {
 +			return nil, nil, errors.New("failed to generate a media ID after 10 rounds")
- 		}
- 
- 		mediaId, err = util.GenerateRandomString(64)
- 		if err != nil {
--			return nil, err
++		}
++
++		mediaId, err = util.GenerateRandomString(64)
++		if err != nil {
 +			return nil, nil, err
- 		}
- 		mediaId, err = util.GetSha1OfString(mediaId + strconv.FormatInt(util.NowMillis(), 10))
- 		if err != nil {
--			return nil, err
++		}
++		mediaId, err = util.GetSha1OfString(mediaId + strconv.FormatInt(util.NowMillis(), 10))
++		if err != nil {
 +			return nil, nil, err
- 		}
- 
- 		// Because we use the current time in the media ID, we don't need to worry about
-@@ -136,17 +124,88 @@ func UploadMedia(contents io.ReadCloser, contentLength int64, contentType string
- 
- 		mediaTaken, err = metadataDb.IsReserved(origin, mediaId)
- 		if err != nil {
--			return nil, err
++		}
++
++		// Because we use the current time in the media ID, we don't need to worry about
++		// collisions from the database.
++		if _, present := recentMediaIds.Get(mediaId); present {
++			mediaTaken = true
++			continue
++		}
++
++		mediaTaken, err = metadataDb.IsReserved(origin, mediaId)
++		if err != nil {
 +			return nil, nil, err
- 		}
- 	}
- 
- 	_ = recentMediaIds.Add(mediaId, true, cache.DefaultExpiration)
- 
--	var existingFile *AlreadyUploadedFile = nil
- 	ds, err := datastore.PickDatastore(common.KindLocalMedia, ctx)
++		}
++	}
++
++	_ = recentMediaIds.Add(mediaId, true, cache.DefaultExpiration)
++
++	ds, err := datastore.PickDatastore(common.KindLocalMedia, ctx)
 +	if err != nil {
 +		return nil, nil, err
 +	}
@@ -624,42 +639,48 @@ index 7936faa..25759ff 100644
 +}
 +
 +func UploadMedia(contents io.ReadCloser, contentLength int64, contentType string, filename string, userId string, origin string, asyncMediaId string, ctx rcontext.RequestContext) (*types.Media, error) {
-+	defer cleanup.DumpAndCloseStream(contents)
-+
-+	var data io.ReadCloser
-+	if ctx.Config.Uploads.MaxSizeBytes > 0 {
-+		data = ioutil.NopCloser(io.LimitReader(contents, ctx.Config.Uploads.MaxSizeBytes))
-+	} else {
-+		data = contents
-+	}
-+
-+	dataBytes, err := ioutil.ReadAll(data)
- 	if err != nil {
+ 	defer stream_util.DumpAndCloseStream(contents)
+ 
+ 	var data io.ReadCloser
+@@ -107,46 +163,61 @@ func UploadMedia(contents io.ReadCloser, contentLength int64, contentType string
  		return nil, err
  	}
-+
-+	var mediaId string
-+	var ds *datastore.DatastoreRef
+ 
+-	metadataDb := storage.GetDatabase().GetMetadataStore(ctx)
+-
+-	mediaTaken := true
+ 	var mediaId string
+-	attempts := 0
+-	for mediaTaken {
+-		attempts += 1
+-		if attempts > 10 {
+-			return nil, errors.New("failed to generate a media ID after 10 rounds")
 +	if asyncMediaId == "" {
-+		media, newDs, err := CreateMedia(origin, ctx)
++		media, _, err := CreateMedia(origin, ctx)
 +		if err != nil {
 +			return nil, err
-+		}
-+
+ 		}
+ 
+-		mediaId, err = ids.NewUniqueId()
 +		mediaId = media.MediaId
-+		ds = newDs
 +	} else {
 +		db := storage.GetDatabase().GetMediaStore(ctx)
 +
 +		media, err := db.Get(origin, asyncMediaId)
-+		if err != nil {
-+			return nil, err
-+		}
-+
+ 		if err != nil {
+ 			return nil, err
+ 		}
+ 
+-		// Because we use the current time in the media ID, we don't need to worry about
+-		// collisions from the database.
+-		if _, present := recentMediaIds.Get(mediaId); present {
+-			mediaTaken = true
+-			continue
 +		if media == nil {
 +			return nil, common.ErrMediaNotFound
-+		}
-+
+ 		}
+ 
+-		mediaTaken, err = metadataDb.IsReserved(origin, mediaId)
 +		if media.UserId != userId {
 +			return nil, common.ErrMediaNotFound
 +		}
@@ -673,22 +694,16 @@ index 7936faa..25759ff 100644
 +		}
 +
 +		mediaId = asyncMediaId
-+		ds, err = datastore.LocateDatastore(ctx, media.DatastoreId)
-+		if err != nil {
-+			return nil, err
-+		}
-+	}
-+
-+	var existingFile *AlreadyUploadedFile = nil
- 	if ds.Type == "ipfs" {
- 		// Do the upload now so we can pick the media ID to point to IPFS
- 		info, err := ds.UploadFile(util_byte_seeker.NewByteSeeker(dataBytes), contentLength, ctx)
-@@ -160,15 +219,22 @@ func UploadMedia(contents io.ReadCloser, contentLength int64, contentType string
- 		mediaId = fmt.Sprintf("ipfs:%s", info.Location[len("ipfs/"):])
++		_, err = datastore.LocateDatastore(ctx, media.DatastoreId)
+ 		if err != nil {
+ 			return nil, err
+ 		}
  	}
  
--	m, err := StoreDirect(existingFile, util_byte_seeker.NewByteSeeker(dataBytes), contentLength, contentType, filename, userId, origin, mediaId, common.KindLocalMedia, ctx, true)
-+	m, err := StoreDirect(existingFile, util_byte_seeker.NewByteSeeker(dataBytes), contentLength, contentType, filename, userId, origin, mediaId, common.KindLocalMedia, ctx, asyncMediaId == "")
+-	_ = recentMediaIds.Add(mediaId, true, cache.DefaultExpiration)
+-
+-	m, err := StoreDirect(nil, util_byte_seeker.NewByteSeeker(dataBytes), contentLength, contentType, filename, userId, origin, mediaId, common.KindLocalMedia, ctx, true)
++	m, err := StoreDirect(nil, util_byte_seeker.NewByteSeeker(dataBytes), contentLength, contentType, filename, userId, origin, mediaId, common.KindLocalMedia, ctx, asyncMediaId == "")
  	if err != nil {
  		return m, err
  	}
@@ -709,7 +724,7 @@ index 7936faa..25759ff 100644
  	}
  	return m, err
  }
-@@ -193,8 +259,7 @@ func checkSpam(contents []byte, filename string, contentType string, userId stri
+@@ -171,8 +242,7 @@ func checkSpam(contents []byte, filename string, contentType string, userId stri
  	return nil
  }
  
@@ -719,7 +734,7 @@ index 7936faa..25759ff 100644
  	var ds *datastore.DatastoreRef
  	var info *types.ObjectInfo
  	var contentBytes []byte
-@@ -229,15 +294,16 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
+@@ -207,15 +277,16 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
  			return nil, err
  		}
  	}
@@ -741,7 +756,7 @@ index 7936faa..25759ff 100644
  		return nil, err
  	}
  
-@@ -270,22 +336,12 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
+@@ -248,22 +319,12 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
  
  		err = checkSpam(contentBytes, filename, contentType, userId, origin, mediaId)
  		if err != nil {
@@ -764,7 +779,7 @@ index 7936faa..25759ff 100644
  			ctx.Log.Warn("User attempted to upload quarantined content - rejecting")
  			return nil, common.ErrMediaQuarantined
  		}
-@@ -304,21 +360,37 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
+@@ -282,21 +343,37 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
  			}
  		}
  
@@ -815,7 +830,7 @@ index 7936faa..25759ff 100644
  			return nil, err
  		}
  
-@@ -327,11 +399,6 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
+@@ -305,11 +382,6 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
  		if media.DatastoreId != ds.DatastoreId && media.Location != info.Location {
  			ds2, err := datastore.LocateDatastore(ctx, media.DatastoreId)
  			if err != nil {
@@ -827,7 +842,7 @@ index 7936faa..25759ff 100644
  				return nil, err
  			}
  			if !ds2.ObjectExists(media.Location) {
-@@ -366,46 +433,54 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
+@@ -344,46 +416,54 @@ func StoreDirect(f *AlreadyUploadedFile, contents io.ReadCloser, expectedSize in
  	// The media doesn't already exist - save it as new
  
  	if info.SizeBytes <= 0 {
@@ -936,10 +951,10 @@ index 8a4f936..9d4a264 100644
 +	return nil
 +}
 diff --git a/internal_cache/redis.go b/internal_cache/redis.go
-index aeb4c2c..baacab0 100644
+index c83a863..9e3199a 100644
 --- a/internal_cache/redis.go
 +++ b/internal_cache/redis.go
-@@ -67,3 +67,7 @@ func (c *RedisCache) UploadMedia(sha256hash string, content io.ReadCloser, ctx r
+@@ -66,3 +66,7 @@ func (c *RedisCache) UploadMedia(sha256hash string, content io.ReadCloser, ctx r
  	defer content.Close()
  	return c.redis.SetStream(ctx, sha256hash, content)
  }
@@ -948,10 +963,10 @@ index aeb4c2c..baacab0 100644
 +	return c.redis.NotifyUpload(ctx, origin, mediaId)
 +}
 diff --git a/redis_cache/redis.go b/redis_cache/redis.go
-index c129490..13a6434 100644
+index dadbb87..8a76e47 100644
 --- a/redis_cache/redis.go
 +++ b/redis_cache/redis.go
-@@ -12,6 +12,8 @@ import (
+@@ -11,6 +11,8 @@ import (
  	"github.com/sirupsen/logrus"
  	"github.com/turt2live/matrix-media-repo/common/config"
  	"github.com/turt2live/matrix-media-repo/common/rcontext"
@@ -960,7 +975,7 @@ index c129490..13a6434 100644
  )
  
  var ErrCacheMiss = errors.New("missed cache")
-@@ -32,14 +34,45 @@ func NewCache(conf config.RedisConfig) *RedisCache {
+@@ -31,14 +33,45 @@ func NewCache(conf config.RedisConfig) *RedisCache {
  		DB:          conf.DbNum,
  	})
  
@@ -1007,7 +1022,7 @@ index c129490..13a6434 100644
  		return nil
  	})
  
-@@ -97,3 +130,21 @@ func (c *RedisCache) GetBytes(ctx rcontext.RequestContext, key string) ([]byte,
+@@ -96,3 +129,21 @@ func (c *RedisCache) GetBytes(ctx rcontext.RequestContext, key string) ([]byte,
  	b, err := r.Bytes()
  	return b, err
  }
@@ -1030,7 +1045,7 @@ index c129490..13a6434 100644
 +	return nil
 +}
 diff --git a/storage/stores/media_store.go b/storage/stores/media_store.go
-index 958f1b0..71aaa3a 100644
+index 958f1b0..697c58d 100644
 --- a/storage/stores/media_store.go
 +++ b/storage/stores/media_store.go
 @@ -16,6 +16,7 @@ import (
@@ -1045,7 +1060,7 @@ index 958f1b0..71aaa3a 100644
  	selectMedia                      *sql.Stmt
  	selectMediaByHash                *sql.Stmt
  	insertMedia                      *sql.Stmt
-+	updateMedia                      *sql.Stmt
++    updateMedia                      *sql.Stmt
  	selectOldMedia                   *sql.Stmt
  	selectOrigins                    *sql.Stmt
  	deleteMedia                      *sql.Stmt
