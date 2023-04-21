@@ -1,5 +1,5 @@
 {
-  buildGoModule,
+  buildGoApplication,
   olm,
   fetchFromGitHub,
   lib,
@@ -8,7 +8,7 @@
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
-  buildGoModule rec {
+  buildGoApplication rec {
     pname = "mautrix-whatsapp";
     version = source.date;
     src = fetchFromGitHub {
@@ -16,11 +16,10 @@ in
       repo = "whatsapp";
       inherit (source) rev sha256;
     };
-    vendorSha256 = builtins.readFile ./vendor.sha256;
+    modules = ./gomod2nix.toml;
     buildInputs = [
       olm
     ];
-    proxyVendor = true;
     CGO_ENABLED = "1";
     meta = {
       description = "Whatsapp-Matrix double-puppeting bridge";
@@ -31,7 +30,7 @@ in
       ${../../scripts/update-git.sh} "https://github.com/mautrix/whatsapp" matrix/mautrix-whatsapp/source.json
       if [ "$(git diff -- matrix/mautrix-whatsapp/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
-        ${../../scripts/update-go.sh} ./matrix/mautrix-whatsapp matrix/mautrix-whatsapp/vendor.sha256
+        ${../../scripts/update-go.sh} $SRC_PATH matrix/mautrix-whatsapp/
       fi
     '';
   }

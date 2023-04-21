@@ -1,5 +1,6 @@
 {
-  buildGo119Module,
+  go_1_19,
+  buildGoApplication,
   git,
   fetchFromGitHub,
   lib,
@@ -7,7 +8,7 @@
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
-  buildGo119Module rec {
+  buildGoApplication rec {
     pname = "matrix-media-repo";
     version = source.date;
     src = fetchFromGitHub {
@@ -18,11 +19,11 @@ in
     patches = [
       ./fix-build.patch
     ];
-    vendorSha256 = builtins.readFile ./vendor.sha256;
+    modules = ./gomod2nix.toml;
+    go = go_1_19;
     nativeBuildInputs = [
       git
     ];
-    proxyVendor = true;
     CGO_ENABLED = "1";
     buildPhase = ''
       GOBIN=$PWD/bin go install -v ./cmd/compile_assets
@@ -41,7 +42,7 @@ in
       ${../../scripts/update-git.sh} "https://github.com/turt2live/matrix-media-repo" matrix/matrix-media-repo/source.json
       if [ "$(git diff -- matrix/matrix-media-repo/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
-        ${../../scripts/update-go.sh} ./matrix/matrix-media-repo matrix/matrix-media-repo/vendor.sha256
+        ${../../scripts/update-go.sh} $SRC_PATH matrix/matrix-media-repo/
       fi
     '';
   }
