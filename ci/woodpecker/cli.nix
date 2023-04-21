@@ -1,16 +1,13 @@
 {
-  lib,
-  buildGoModule,
+  buildGoApplication,
   callPackage,
-  fetchFromGitHub,
 }: let
   common = callPackage ./common.nix {};
 in
-  buildGoModule {
+  buildGoApplication {
     pname = "woodpecker-cli";
     inherit (common) version src ldflags postBuild;
-    vendorSha256 = builtins.readFile ./cli.sha256;
-    proxyVendor = true;
+    modules = ./gomod2nix.toml;
 
     subPackages = "cmd/cli";
 

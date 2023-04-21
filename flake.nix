@@ -18,12 +18,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    gomod2nix = {
+        url = "github:nix-community/gomod2nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
-    self,
     nixpkgs,
     flake-utils,
+    gomod2nix,
     ...
   } @ inputs:
     flake-utils.lib.eachSystem ["aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux" "riscv64-linux"] (
@@ -32,10 +37,10 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnsupportedSystem = true;
+          overlays = [
+            gomod2nix.overlays.default
+          ];
         };
-        inherit (pkgs) lib;
-        nur = import ./default.nix {inherit pkgs;};
-        packages = lib.filterAttrs (n: _: n != "overlays" && n != "modules" && n != "lib") nur;
       in rec {
         formatter = pkgs.alejandra;
 
