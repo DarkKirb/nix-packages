@@ -17,6 +17,9 @@ system: self: super: let
   };
 
   overlays = [
+    (getFlakeOverlay "attic" "default")
+    (getFlakeOverlay "hydra" "default")
+    (getFlakeOverlay "gomod2nix" "default")
     (self: super: {
       akkoma = self.callPackage ./akkoma {};
       pleroma-fe = self.callPackage ./akkoma/pleroma-fe {};
@@ -81,9 +84,6 @@ system: self: super: let
       hydra-unstable = self.hydra;
     })
     riscv-overlay
-    (getFlakeOverlay "attic" "default")
-    (getFlakeOverlay "hydra" "default")
-    (getFlakeOverlay "gomod2nix" "default")
   ];
 in
   super.lib.composeManyExtensions overlays self super
