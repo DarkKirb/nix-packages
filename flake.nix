@@ -23,12 +23,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "flake-utils";
     };
+    hydra = {
+      url = "github:NixOS/hydra";
+    };
   };
 
   outputs = {
     nixpkgs,
     flake-utils,
     gomod2nix,
+    hydra,
     ...
   } @ inputs:
     flake-utils.lib.eachSystem ["aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux" "riscv64-linux"] (
@@ -111,7 +115,17 @@
               vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
             }
             else {}
-          );
+          ) // (if system == "aarch64-linux" || system == "x86_64-linux" then {
+            hydra = hydra.packages.${system}.hydra.overrideAttrs (super: {
+              doCheck = false;
+              patches = (super.patches or []) ++ [
+                ./ci/hydra/add-ca-support.patch
+                ./ci/hydra/add-gitea-push-hook.patch
+                ./ci/hydra/jobset-inputs-for-flakes.patch
+                ./ci/hydra/remove-hydra-size-limit.patch
+              ];
+            });
+          } else {});
 
         overlays = import ./overlays;
         modules = import ./modules;
