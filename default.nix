@@ -8,9 +8,72 @@
 {pkgs ? import <nixpkgs> {}}: let
   lib = import ./lib {inherit pkgs;}; # functions
   flake = (lib.importFlake {inherit (pkgs) system;}).defaultNix;
+  pkgsWithOverlay = pkgs.appendOverlays [(import ./overlay.nix pkgs.system)];
 in
   {
     # The `lib`, `modules`, and `overlay` names are special
     inherit (flake) lib modules overlays;
   }
-  // (flake.packages.${pkgs.system})
+  // {
+    inherit
+      (pkgsWithOverlay)
+      akkoma
+      pleroma-fe
+      admin-fe
+      emoji-lotte
+      emoji-volpeon-blobfox
+      emoji-volpeon-blobfox-flip
+      emoji-volpeon-bunhd
+      emoji-volpeon-bunhd-flip
+      emoji-volpeon-drgn
+      emoji-volpeon-fox
+      emoji-volpeon-gphn
+      emoji-volpeon-raccoon
+      emoji-volpeon-vlpn
+      emoji-caro
+      lotte-art
+      alco-sans
+      constructium
+      fairfax
+      fairfax-hd
+      kreative-square
+      nasin-nanpa
+      matrix-media-repo
+      mautrix-discord
+      mautrix-whatsapp
+      mautrix-signal
+      mautrix-telegram
+      python-mautrix
+      python-tulir-telethon
+      papermc
+      python-plover-stroke
+      python-rtf-tokenize
+      plover
+      plover-plugins-manager
+      python-simplefuzzyset
+      plover-plugin-emoji
+      plover-plugin-tapey-tape
+      plover-plugin-yaml-dictionary
+      plover-plugin-machine-hid
+      plover-plugin-rkb1-hid
+      plover-dict-didoesdigital
+      miifox-net
+      old-homepage
+      python-instagram
+      element-web
+      mautrix-cleanup
+      woodpecker-agent
+      woodpecker-cli
+      woodpecker-frontend
+      woodpecker-server
+      hydra
+      hydra-unstable
+      ;
+  }
+  // (
+    if pkgs.system == "riscv64-linux"
+    then {
+      inherit (pkgsWithOverlay) vf2Kernel vf2KernelPackages;
+    }
+    else {}
+  )
