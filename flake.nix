@@ -23,12 +23,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "flake-utils";
     };
+    hydra = {
+      url = "github:NixOS/hydra";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
     nixpkgs,
     flake-utils,
     gomod2nix,
+    hydra,
     ...
   } @ inputs:
     flake-utils.lib.eachSystem ["aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux" "riscv64-linux"] (
@@ -103,6 +108,15 @@
             woodpecker-cli = pkgs.callPackage ./ci/woodpecker/cli.nix {};
             woodpecker-frontend = pkgs.callPackage ./ci/woodpecker/frontend.nix {};
             woodpecker-server = pkgs.callPackage ./ci/woodpecker/server.nix {};
+            hydra = hydra.overrideAttrs (super: {
+              doCheck = false;
+              patches = (super.patches or []) ++ [
+                ./ci/hydra/add-ca-support.patch
+                ./ci/hydra/add-gitea-push-hook.patch
+                ./ci/hydra/jobset-inputs-for-flakes.patch
+                ./ci/hydra/remove-hydra-size-limit.patch
+              ];
+            });
           }
           // (
             if system == "riscv64-linux"
