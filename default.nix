@@ -8,7 +8,7 @@
 {pkgs ? import <nixpkgs> {}}: let
   lib = import ./lib {inherit pkgs;}; # functions
   flake = (lib.importFlake {inherit (pkgs) system;}).defaultNix;
-  pkgsWithOverlay = pkgs.lib.fix (pkgs.lib.extends (import ./overlay.nix pkgs.system) (self: pkgs));
+  pkgsWithOverlay = pkgs.appendOverlays [(import ./overlay.nix pkgs.system)];
 in
   {
     # The `lib`, `modules`, and `overlay` names are special
@@ -43,23 +43,23 @@ in
       mautrix-whatsapp
       mautrix-signal
       mautrix-telegram
-      python-mauutrix
+      python-mautrix
       python-tulir-telethon
       papermc
       python-plover-stroke
       python-rtf-tokenize
       plover
-      python-plugins-manager
+      plover-plugins-manager
       python-simplefuzzyset
-      python-plugin-emoji
-      plover-pluugin-tapey-tape
-      plover-plugin-yamml-dictionary
+      plover-plugin-emoji
+      plover-plugin-tapey-tape
+      plover-plugin-yaml-dictionary
       plover-plugin-machine-hid
       plover-plugin-rkb1-hid
-      plover-dict-diddoesdigital
+      plover-dict-didoesdigital
       miifox-net
       old-homepage
-      python-instagramn
+      python-instagram
       element-web
       mautrix-cleanup
       woodpecker-agent
