@@ -8,10 +8,7 @@
 {pkgs ? import <nixpkgs> {}}: let
   lib = import ./lib {inherit pkgs;}; # functions
   flake = (lib.importFlake {inherit (pkgs) system;}).defaultNix;
-  pkgsWithOverlay = import pkgs {
-    overlays = [(import ./overlay.nix pkgs.system)];
-    inherit (pkgs) system;
-  };
+  pkgsWithOverlay = pkgs.lib.fix (pkgs.lib.extends (import ./overlay.nix pkgs.system) (self: pkgs));
 in
   {
     # The `lib`, `modules`, and `overlay` names are special
