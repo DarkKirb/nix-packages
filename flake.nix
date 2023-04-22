@@ -25,7 +25,6 @@
     };
     hydra = {
       url = "github:NixOS/hydra";
-      inputs.flake-utils.follows = "flake-utils";
     };
   };
 
@@ -108,15 +107,6 @@
             woodpecker-cli = pkgs.callPackage ./ci/woodpecker/cli.nix {};
             woodpecker-frontend = pkgs.callPackage ./ci/woodpecker/frontend.nix {};
             woodpecker-server = pkgs.callPackage ./ci/woodpecker/server.nix {};
-            hydra = hydra.overrideAttrs (super: {
-              doCheck = false;
-              patches = (super.patches or []) ++ [
-                ./ci/hydra/add-ca-support.patch
-                ./ci/hydra/add-gitea-push-hook.patch
-                ./ci/hydra/jobset-inputs-for-flakes.patch
-                ./ci/hydra/remove-hydra-size-limit.patch
-              ];
-            });
           }
           // (
             if system == "riscv64-linux"
@@ -125,7 +115,17 @@
               vf2KernelPackages = pkgs.linuxPackagesFor vf2Kernel;
             }
             else {}
-          );
+          ) // (if system == "aarch64-linux" || system == "x86_64-linux" then {
+            hydra = hydra.packages.${system}.hydra.overrideAttrs (super: {
+              doCheck = false;
+              patches = (super.patches or []) ++ [
+                ./ci/hydra/add-ca-support.patch
+                ./ci/hydra/add-gitea-push-hook.patch
+                ./ci/hydra/jobset-inputs-for-flakes.patch
+                ./ci/hydra/remove-hydra-size-limit.patch
+              ];
+            });
+          } else {});
 
         overlays = import ./overlays;
         modules = import ./modules;
