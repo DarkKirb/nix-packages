@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/mautrix/telegram",
-  "rev": "6c6fe134ba831d5b255ba8fdf955be2219b585fa",
-  "date": "2023-04-18T10:20:36-06:00",
-  "path": "/nix/store/1iihiy44snn90f0nr5ax2w8hcirdkj8x-telegram",
-  "sha256": "1qchb5zpwa18jnxfa7vp02s0xpnbgn8zphqnk7407q40i6qgyk7g",
+  "rev": "c4037ccf1110b89f93ad760cdbb34412953d0b0a",
+  "date": "2023-04-23T22:47:28+03:00",
+  "path": "/nix/store/7b48f37rka0dixnff3svnczbahwjk9yp-telegram",
+  "sha256": "1vd67m72jmrdi80xx3xz9pb1mikmj9p5bw9ciy19x65hhx76fbz8",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
