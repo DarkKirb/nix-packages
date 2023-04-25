@@ -16,7 +16,7 @@ in
         stdenv.mkDerivation {
           inherit (source) pname version;
           src = fetchurl {
-            inherit url sha256;
+            inherit (source) url sha256;
           };
           installPhase = "mkdir -p $out; cp -R * $out/";
           meta = {inherit (source) description;};
