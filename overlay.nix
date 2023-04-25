@@ -82,6 +82,7 @@ system: self: super: let
           ];
       });
       hydra-unstable = self.hydra;
+      wordpressPlugins = self.callPackage ./web/wordpress-plugins {};
     })
     riscv-overlay
   ];
