@@ -118,4 +118,5 @@ matrix:
     - python-instagram
     - element-web
     - woodpecker-server
+    - wordpress-plugins
 skip_clone: true
