@@ -1,4 +1,3 @@
-jetpack
 wp-super-cache
 google-sitemap-generator
 indieweb
@@ -9,3 +8,8 @@ syndication-links
 micropub
 webmention
 activitypub
+friends
+hum
+webfinger
+nodeinfo
+classic-editor

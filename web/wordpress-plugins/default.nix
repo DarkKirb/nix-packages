@@ -2,7 +2,7 @@
   stdenv,
   fetchurl,
   lib,
-  unzip
+  unzip,
 }:
 with builtins;
 with lib; let
@@ -22,7 +22,7 @@ in
           unpackPhase = ''
             unzip $src
           '';
-          installPhase = "mkdir -p $out; cp -R * $out/";
+          installPhase = "mkdir -p $out; cp -R $pname/* $out/";
           meta = {inherit (source) description;};
           passthru.updateScript =
             if name == "activitypub"
