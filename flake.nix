@@ -111,7 +111,7 @@
               woodpecker-server
               hydra
               hydra-unstable
-              wordpressPlugins
+              wordpress-plugins
               ;
           }
           // (
