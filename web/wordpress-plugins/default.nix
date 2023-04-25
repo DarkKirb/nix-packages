@@ -2,7 +2,7 @@
   stdenv,
   fetchurl,
   lib,
-  unzip
+  unzip,
 }:
 with builtins;
 with lib; let
