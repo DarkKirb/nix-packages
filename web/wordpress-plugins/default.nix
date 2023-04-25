@@ -2,7 +2,7 @@
   stdenv,
   fetchurl,
   lib,
-  writeScript,
+  unzip
 }:
 with builtins;
 with lib; let
@@ -18,6 +18,10 @@ in
           src = fetchurl {
             inherit (source) url sha256;
           };
+          nativeBuildInputs = [unzip];
+          unpackPhase = ''
+            unzip $src
+          '';
           installPhase = "mkdir -p $out; cp -R * $out/";
           meta = {inherit (source) description;};
           passthru.updateScript =
