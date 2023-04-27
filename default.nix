@@ -69,6 +69,7 @@ in
       hydra
       hydra-unstable
       wordpress-plugins
+      wordpress-themes
       ;
   }
   // (

@@ -119,4 +119,5 @@ matrix:
     - element-web
     - woodpecker-server
     - wordpress-plugins
+    - wordpress-themes
 skip_clone: true
