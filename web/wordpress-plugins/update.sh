@@ -1,7 +1,7 @@
 #!/usr/bin/env nix-shell
 #!nix-shell -i bash -p curl jq
 
-cd web/workpress-plugins
+cd web/wordpress-plugins
 
 set -ex
 
