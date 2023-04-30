@@ -5,8 +5,11 @@ schema = 3
     version = "v0.15.1-0.20221016183512-2d9ee57af1e0"
     hash = "sha256-gBwU5pQ+0FpjmbF7vsUzguhiYn2KvOS3nBXnHyEIBmE="
   [mod."codeberg.org/6543/go-yaml2json"]
-    version = "v0.3.0"
-    hash = "sha256-O32tAU3WVNQl3B/4VSHop+t6/LgzAlY4sWNuidnH9Zs="
+    version = "v1.0.0"
+    hash = "sha256-R+N/ZOXbolCZiChdNytEgQEyurLYXVzwpd/MQc9OJno="
+  [mod."codeberg.org/6543/xyaml"]
+    version = "v1.1.0"
+    hash = "sha256-4FzQXxT8RQguwdOiIcHDTJQvEin22gmv2+0Yx8mkLYA="
   [mod."github.com/Azure/go-ansiterm"]
     version = "v0.0.0-20210617225240-d185dfc1b5a1"
     hash = "sha256-rOhb0GMLPdnh1302vaxFjO20fM69hCT29hQD1F1YpPg="
