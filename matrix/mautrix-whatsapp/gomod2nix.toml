@@ -83,8 +83,8 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-hSZQkw/0eV5Y0pj1N+idYuKb/jtiw/qTfaOGdYCXmn0="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20230416122908-c21751ee590a"
-    hash = "sha256-VdjuJP0gCR46I81iOH5JYVKI/kiQlGz8+pX/YnMQjbs="
+    version = "v0.0.0-20230424211606-8ef68cdfb9b1"
+    hash = "sha256-HWKIAEciUPPFhagaR1V6noKnxTL0CbPp69mlIHTH7b4="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
@@ -119,5 +119,5 @@ schema = 3
     version = "v2.4.1"
     hash = "sha256-OstOCC7Bib6mbcUG2X3YafEBikFhPQ8lN6jPK5c/Ah8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.15.2-0.20230419141951-735033cd9e87"
-    hash = "sha256-HrMF8U6tzDRizAczb89Pg2Q61Aw752nduUaXgwh8g0E="
+    version = "v0.15.2-0.20230425124429-33e696f02c15"
+    hash = "sha256-iONDn8XAEeDibDtREVHHQDJd7NEAxMVbNaPiuYj1GIQ="
