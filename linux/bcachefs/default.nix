@@ -1,0 +1,32 @@
+{ lib,
+  fetchFromGitHub,
+  buildLinux,
+  ...
+} @ args:
+
+let 
+    modDirVersion = "6.3.0";
+    source = builtins.fromJSON (builtins.readFile ./source.json);
+in buildLinux (args // {
+    inherit modDirVersion;
+    version = source.date;
+    src = fetchFromGitHub {
+        owner = "koverstreet";
+        repo = "bcachefs";
+        inherit (source) rev sha256;
+    };
+    structuredExtraConfig = with lib.kernel; {
+        BCACHEFS_FS = module;
+        BCACHEFS_DEBUG = yes;
+        KALLSYMS = yes;
+        KALLSYMS_ALL = yes;
+        DEBUG_FS = yes;
+        DYNAMIC_FTRACE = yes;
+        FTRACE = yes;
+    };
+    passthru.updateScript = [
+        ../../scripts/update-git.sh
+        "github.com/koverstreet/bcachefs"
+        "linux/bcachefs/source.json"
+    ];
+})
