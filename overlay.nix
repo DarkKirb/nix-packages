@@ -84,6 +84,7 @@ system: self: super: let
       hydra-unstable = self.hydra;
       wordpress-plugins = self.callPackage ./web/wordpress-plugins {};
       wordpress-themes = self.callPackage ./web/wordpress-themes {};
+      kubo = self.callPackage ./ipfs/kubo {};
     })
     riscv-overlay
   ];
