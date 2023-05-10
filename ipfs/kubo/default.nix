@@ -20,6 +20,7 @@
     installPhase = ''
       cp -r $src $out
       chmod -R +w $out
+      cd $out
       cp ${./go.mod} go.mod
       cp ${./go.sum} go.sum
       cp ${./preload.go} plugin/loader/preload.go 
