@@ -43,15 +43,12 @@ in
       --replace '/usr/bin/ipfs' "$out/bin/ipfs"
     '';
 
-    outputs = ["out" "systemd_unit" "systemd_unit_hardened"];
-    postInstall = ''
-      install --mode=444 -D 'misc/systemd/ipfs-api.socket' "$systemd_unit/etc/systemd/system/ipfs-api.socket"
-      install --mode=444 -D 'misc/systemd/ipfs-gateway.socket' "$systemd_unit/etc/systemd/system/ipfs-gateway.socket"
-      install --mode=444 -D 'misc/systemd/ipfs.service' "$systemd_unit/etc/systemd/system/ipfs.service"
+    buildPhase = ''
+        make build
+    '';
 
-      install --mode=444 -D 'misc/systemd/ipfs-api.socket' "$systemd_unit_hardened/etc/systemd/system/ipfs-api.socket"
-      install --mode=444 -D 'misc/systemd/ipfs-gateway.socket' "$systemd_unit_hardened/etc/systemd/system/ipfs-gateway.socket"
-      install --mode=444 -D 'misc/systemd/ipfs-hardened.service' "$systemd_unit_hardened/etc/systemd/system/ipfs.service"
+    installPhase = ''
+        GOBIN=$out/bin make install
     '';
     passthru.updateScript = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/ipfs/kubo" ipfs/kubo/source.json
