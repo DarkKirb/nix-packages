@@ -22,6 +22,7 @@
       chmod -R +w $out
       cp ${./go.mod} go.mod
       cp ${./go.sum} go.sum
+      cp ${./preload.go} plugin/loader/preload.go 
       echo -e "\nstorjds storj.io/ipfs-go-ds-storj/plugin 0" >> plugin/loader/preload_list
       patchShebangs .
     '';
