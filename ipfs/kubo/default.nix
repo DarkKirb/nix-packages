@@ -60,4 +60,5 @@ in
         ${../../scripts/add-go-module.sh} $SRC_PATH ipfs/kubo "storj.io/ipfs-go-ds-storj/plugin@latest"
       fi
     '';
+    passthru.repoVersion = "19"; # Also update kubo-migrator when changing the repo version
   }
