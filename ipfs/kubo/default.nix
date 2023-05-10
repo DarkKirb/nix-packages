@@ -47,7 +47,6 @@ in
     outputs = ["out" "systemd_unit" "systemd_unit_hardened"];
 
     buildPhase = ''
-        go mod tidy
         make build
     '';
 
