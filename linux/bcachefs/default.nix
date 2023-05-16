@@ -9,7 +9,7 @@ let
     source = builtins.fromJSON (builtins.readFile ./source.json);
 in buildLinux (args // {
     inherit modDirVersion;
-    version = source.date;
+    version = "6.3.0+${source.rev}";
     src = fetchFromGitHub {
         owner = "koverstreet";
         repo = "bcachefs";
