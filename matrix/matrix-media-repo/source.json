@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/turt2live/matrix-media-repo",
-  "rev": "f32bbbf6a370a399303e9e35248d889a0aa31daa",
-  "date": "2023-03-05T19:11:24-07:00",
-  "path": "/nix/store/2dc6mvj6kx0s479n0zc7day9qj7phrjk-matrix-media-repo",
-  "sha256": "1829k6mfbb8acx9k4ygnz5c9yb20f0xd2fmdpyzlx3v2fi92023y",
+  "rev": "6d97c1af00d52ce441c3de4d79581f757da1dc91",
+  "date": "2023-05-13T14:22:26-06:00",
+  "path": "/nix/store/42gjnvvfpbmf9ym20q3gwvpaw65yixrx-matrix-media-repo",
+  "sha256": "095k9cwq8qh5jnq7babyk1qy56v7nngya2vw31ilp6qrgkn2fcgz",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

@@ -16,9 +16,6 @@ in
       repo = "matrix-media-repo";
       inherit (source) rev sha256;
     };
-    patches = [
-      ./fix-build.patch
-    ];
     modules = ./gomod2nix.toml;
     go = go_1_19;
     nativeBuildInputs = [
