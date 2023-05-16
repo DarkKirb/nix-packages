@@ -19,7 +19,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     gomod2nix = {
-      url = "github:nix-community/gomod2nix";
+      url = "github:DarkKirb/gomod2nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "flake-utils";
     };
@@ -113,6 +113,7 @@
               hydra-unstable
               wordpress-plugins
               wordpress-themes
+              kubo
               ;
           }
           // (

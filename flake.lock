@@ -113,15 +113,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1677459247,
-        "narHash": "sha256-JbakfAiPYmCCV224yAMq/XO0udN5coWv/oazblMKdoY=",
-        "owner": "nix-community",
+        "lastModified": 1683648237,
+        "narHash": "sha256-j8LGSx2B2TRnt29Sx4R8T/KM/Bgkf6S+bIHmWUl6Yvc=",
+        "owner": "DarkKirb",
         "repo": "gomod2nix",
-        "rev": "3cbf3a51fe32e2f57af4c52744e7228bab22983d",
+        "rev": "c8a28f781346c18882f3988bf5cfd691b0055369",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "DarkKirb",
         "repo": "gomod2nix",
         "type": "github"
       }

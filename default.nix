@@ -70,6 +70,7 @@ in
       hydra-unstable
       wordpress-plugins
       wordpress-themes
+      kubo
       ;
   }
   // (
