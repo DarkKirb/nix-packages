@@ -71,6 +71,7 @@ in
       wordpress-plugins
       wordpress-themes
       kubo
+      linux-bcachefs
       ;
   }
   // (
