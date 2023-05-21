@@ -31,6 +31,5 @@ done
 make build
 
 cp go.mod go.sum $WRITE_PATH
-cp plugin/loader/preload.go $WRITE_PATH
 
 nix run github:nix-community/gomod2nix -- --dir $SOURCE_EXTRACTED --outdir $WRITE_PATH
