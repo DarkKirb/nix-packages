@@ -85,7 +85,6 @@ system: self: super: let
       wordpress-plugins = self.callPackage ./web/wordpress-plugins {};
       wordpress-themes = self.callPackage ./web/wordpress-themes {};
       kubo = self.callPackage ./ipfs/kubo {};
-      linux-bcachefs = self.callPackage ./linux/bcachefs {kernelPatches = [];};
     })
     riscv-overlay
   ];
