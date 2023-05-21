@@ -1,6 +1,6 @@
 {
   "url": "https://github.com/ipfs/kubo",
-  "rev": "b27da1cc871ad98862409c3ceb1bfbca9e8f9bd5",
+  "rev": "b27da1cc871ad98862409c3ceb1bfbca9e8f9bd5", 
   "date": "2023-05-09T15:05:35+02:00",
   "path": "/nix/store/yvgn9bbpq1401la8vymrbyygy5gbi9ya-kubo",
   "sha256": "1ffs4bzmazpxzazgkx14vn61dfpw1y4f6rvcavjy6ncf3a5vm61x",
