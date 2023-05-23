@@ -1,7 +1,7 @@
 {
-  "version": "12.0",
+  "version": "12.1",
   "pname": "jetpack",
   "description": "Jetpack &#8211; WP Security, Backup, Speed, &amp; Growth",
-  "url": "https://downloads.wordpress.org/plugin/jetpack.12.0.zip",
-  "sha256": "db722fd367ac1a2b4c5c47e213a16e9e06ad1a3e458257f708c55cdc69c51004"
+  "url": "https://downloads.wordpress.org/plugin/jetpack.12.1.zip",
+  "sha256": "cb6f0e7c952138058ed14519db1d29de1a887eb131f4414a2dc2add6ad0f8e82"
 }
