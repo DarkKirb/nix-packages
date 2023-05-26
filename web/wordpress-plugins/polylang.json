@@ -1,7 +1,7 @@
 {
-  "version": "3.4",
+  "version": "3.4.1",
   "pname": "polylang",
   "description": "Polylang",
-  "url": "https://downloads.wordpress.org/plugin/polylang.3.4.zip",
-  "sha256": "215cacf094b7abce673b89e56050c36894902e69abf680cf11623ebb6c6c9f4f"
+  "url": "https://downloads.wordpress.org/plugin/polylang.3.4.1.zip",
+  "sha256": "1ab671cdfd65c6740bbb8415159bf1a41b46922b492405f77e147e00dfa75b48"
 }
