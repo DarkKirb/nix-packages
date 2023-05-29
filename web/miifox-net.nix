@@ -1,6 +1,6 @@
 {
   stdenvNoCC,
-  fetchFromGitea,
+  fetchgit,
   chevron,
   lndir,
   lib,
@@ -10,11 +10,8 @@ in
   stdenvNoCC.mkDerivation {
     pname = "miifox.net";
     version = source.date;
-    src = fetchFromGitea {
-      domain = "git.chir.rs";
-      owner = "CarolineHusky";
-      repo = "MiiFox.net";
-      inherit (source) rev sha256;
+    src = fetchgit {
+      inherit (source) url rev sha256;
     };
     nativeBuildInputs = [chevron lndir];
     buildPhase = ''
