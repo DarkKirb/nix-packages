@@ -75,7 +75,6 @@ system: self: super: let
         patches =
           (super.patches or [])
           ++ [
-            ./ci/hydra/add-ca-support.patch
             ./ci/hydra/add-gitea-push-hook.patch
             ./ci/hydra/jobset-inputs-for-flakes.patch
             ./ci/hydra/remove-hydra-size-limit.patch
