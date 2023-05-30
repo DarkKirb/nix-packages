@@ -1,7 +1,7 @@
 {
-  "version": "4.4.9",
+  "version": "4.4.11",
   "pname": "syndication-links",
   "description": "Syndication Links",
-  "url": "https://downloads.wordpress.org/plugin/syndication-links.4.4.9.zip",
-  "sha256": "bba55959232139de04df57d777245ff1ed750cd40be60221d29fe4a7159dbeb2"
+  "url": "https://downloads.wordpress.org/plugin/syndication-links.4.4.11.zip",
+  "sha256": "cf9b033195e1a01b587800cb9f0bfccbbd94b48add3b37a4a3da9225c0b704c9"
 }

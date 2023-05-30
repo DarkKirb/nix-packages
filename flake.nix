@@ -24,7 +24,7 @@
       inputs.utils.follows = "flake-utils";
     };
     hydra = {
-      url = "github:NixOS/hydra";
+      url = "git+https://git.chir.rs/darkkirb/hydra";
     };
   };
 

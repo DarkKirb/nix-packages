@@ -136,17 +136,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1683550113,
-        "narHash": "sha256-niw0RHfwpo2/86wvtHrbU/DQYlkkwtrM+qG7GEC0qAo=",
-        "owner": "NixOS",
-        "repo": "hydra",
-        "rev": "13ef4e3c5d87bc6f68c91a36d78cdc7d589d8ff2",
-        "type": "github"
+        "lastModified": 1685431783,
+        "narHash": "sha256-NriQMCsRiB7fYJ9v+3Tw3/jshB8y/tNsHwgqz24cxO4=",
+        "ref": "refs/heads/master",
+        "rev": "51c2319f653df748adfbc7a5fa7440205ad884df",
+        "revCount": 4066,
+        "type": "git",
+        "url": "https://git.chir.rs/darkkirb/hydra"
       },
       "original": {
-        "owner": "NixOS",
-        "repo": "hydra",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.chir.rs/darkkirb/hydra"
       }
     },
     "lowdown-src": {
@@ -259,11 +259,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1685333304,
-        "narHash": "sha256-rjRRlW4/qJU0DD9gohs34Mk2B81ZDKYEmyWEv2+4p44=",
+        "lastModified": 1685425566,
+        "narHash": "sha256-qllF/IC3nXH1drPxG1wxAc5yn9nGiF7PCuo+gHhz3WM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6d93b7783264d34b424b6ef7c6271775d8bbe7aa",
+        "rev": "1eaf23e8febf68394df1e6d3304c7a02dbf4c59c",
         "type": "github"
       },
       "original": {
