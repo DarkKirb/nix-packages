@@ -1,7 +1,7 @@
 {
   callPackage,
   buildPythonPackage,
-  fetchFromGitea,
+  fetchgit,
   lib,
   pythonOlder,
   hid,
@@ -10,14 +10,11 @@
   plover = callPackage ./plover {};
   source = builtins.fromJSON (builtins.readFile ./plover-rkb1-hid.json);
 in
-  buildPythonPackage rec {
+  buildPythonPackage {
     pname = "plover_machine_hid";
     version = source.date;
-    src = fetchFromGitea {
-      domain = "git.chir.rs";
-      owner = "darkkirb";
-      repo = "plover-machine-hid";
-      inherit (source) rev sha256;
+    src = fetchgit {
+      inherit (source) rev sha256 url;
     };
 
     doCheck = false;
