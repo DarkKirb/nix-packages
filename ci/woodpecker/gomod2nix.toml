@@ -13,6 +13,9 @@ schema = 3
   [mod."github.com/Azure/go-ansiterm"]
     version = "v0.0.0-20210617225240-d185dfc1b5a1"
     hash = "sha256-rOhb0GMLPdnh1302vaxFjO20fM69hCT29hQD1F1YpPg="
+  [mod."github.com/KyleBanks/depth"]
+    version = "v1.2.1"
+    hash = "sha256-czR52MfeKA2FdStXCebTMQRKT8jaWQcbV214O3j49qU="
   [mod."github.com/Microsoft/go-winio"]
     version = "v0.6.1"
     hash = "sha256-BL0BVaHtmPKQts/711W59AbHXjGKqFS4ZTal0RYnR9I="
@@ -73,6 +76,9 @@ schema = 3
   [mod."github.com/emicklei/go-restful/v3"]
     version = "v3.9.0"
     hash = "sha256-qt0M3tryKAzQS4JbmTr/N5+47Ue63U0dpbWov2Me5Os="
+  [mod."github.com/fatih/color"]
+    version = "v1.13.0"
+    hash = "sha256-Xo0zFKLm/9NuChdHDhHoUFo8Oa7Mkb3ezZCu23SfOAk="
   [mod."github.com/franela/goblin"]
     version = "v0.0.0-20211003143422-0a4f594942bf"
     hash = "sha256-ZYGrEKEROa1UrqscdI407z9MnDToU+yuUr2iyRG3rRo="
@@ -103,6 +109,9 @@ schema = 3
   [mod."github.com/go-openapi/jsonreference"]
     version = "v0.20.1"
     hash = "sha256-q7RkjxGF5y7lfluCfESPVPtlbGTagP+7oB5dG+gtnGk="
+  [mod."github.com/go-openapi/spec"]
+    version = "v0.20.8"
+    hash = "sha256-1hj2wZBodG0yw86vEKL9+u1LGwHRXrhRVDzvGpM8o9M="
   [mod."github.com/go-openapi/swag"]
     version = "v0.22.3"
     hash = "sha256-iUGFBMt9RobFG+Qsy2zKWEjFARi2xCSCaV2HRDL0vw4="
@@ -160,6 +169,9 @@ schema = 3
   [mod."github.com/hashicorp/go-cleanhttp"]
     version = "v0.5.2"
     hash = "sha256-N9GOKYo7tK6XQUFhvhImtL7PZW/mr4C4Manx/yPVvcQ="
+  [mod."github.com/hashicorp/go-hclog"]
+    version = "v1.2.0"
+    hash = "sha256-XGIirpWp3lFLaBK5lHLVnNMwkVGCnnyt7Pqranb4amQ="
   [mod."github.com/hashicorp/go-retryablehttp"]
     version = "v0.7.2"
     hash = "sha256-PcLyolWF7G409rs7j3tnwgQK6xhgWYk9/iK2bO13TGQ="
@@ -167,8 +179,8 @@ schema = 3
     version = "v1.5.0"
     hash = "sha256-nrV59GgQHrZ0i/pyighGahr0Or/x3jNeyS/TD67HCf4="
   [mod."github.com/imdario/mergo"]
-    version = "v0.3.6"
-    hash = "sha256-B4uSmAVWme2nDAqbW9XiwlEnCg7CAvewToNsji7yf9E="
+    version = "v0.3.12"
+    hash = "sha256-IPGunEznxlUilS22LUU4p/QTA7f5+Goowf1Utg9ARpc="
   [mod."github.com/joho/godotenv"]
     version = "v1.5.1"
     hash = "sha256-kA0osKfsc6Kp+nuGTRJyXZZlJt1D/kuEazKMWYCWcQ8="
@@ -295,6 +307,15 @@ schema = 3
   [mod."github.com/stretchr/testify"]
     version = "v1.8.3"
     hash = "sha256-7U008LCuOyALE/T2mw4Ag7CVoAE2xUe/DNYzgbWfMtM="
+  [mod."github.com/swaggo/files"]
+    version = "v1.0.1"
+    hash = "sha256-bNBmpJaM7g1BNwd7VxNIRSdY35NKSXhYHGfnZsSEUZ8="
+  [mod."github.com/swaggo/gin-swagger"]
+    version = "v1.6.0"
+    hash = "sha256-hvX6co7b9Xmhl29ACMvTcD1TTRbI5178r+DRlabgMwY="
+  [mod."github.com/swaggo/swag"]
+    version = "v1.16.1"
+    hash = "sha256-phcrc0rA3pqIl+AzjCv173mfSPFHKhkAv97I/n6y9P0="
   [mod."github.com/syndtr/goleveldb"]
     version = "v1.0.0"
     hash = "sha256-rW7SW6nehede0oMZo4NBatM6Eizbnlb7xYoX/dcDUxA="
@@ -329,8 +350,8 @@ schema = 3
     version = "v1.9.0"
     hash = "sha256-D8OtLaViqPShz1w8ijhIHmjw9xVaRu0qD2hXKj63r4Q="
   [mod."go.uber.org/multierr"]
-    version = "v1.6.0"
-    hash = "sha256-X+l7OPAkMhpw+5VvFWuQ/DfTCSjQH/8VvSoQrb44CEU="
+    version = "v1.8.0"
+    hash = "sha256-WHWgw6hLI4tPKEqJt+WC38yt64OGCXfkUJDem6mM+Mw="
   [mod."go.uber.org/zap"]
     version = "v1.23.0"
     hash = "sha256-A/Wf2F9yc+OTyX86QjTtzemUOaFSd7ptoNFaqr2smig="
