@@ -38,8 +38,8 @@ schema = 3
     version = "v0.0.14"
     hash = "sha256-e8zn5eCVh/B1HOP1PGXeXH0bGkIV0vKYP9KLwZni5as="
   [mod."github.com/mattn/go-sqlite3"]
-    version = "v1.14.16"
-    hash = "sha256-Ky0kas72AY0lpuRiC/fQk9rw9aJ6dvL9y1Ikw5PFzlA="
+    version = "v1.14.17"
+    hash = "sha256-ictf2uCW2AnQbykhI0kKPXwzHQlbHHZflZgvpqGFquY="
   [mod."github.com/matttproud/golang_protobuf_extensions"]
     version = "v1.0.4"
     hash = "sha256-uovu7OycdeZ2oYQ7FhVxLey5ZX3T0FzShaRldndyGvc="
@@ -83,8 +83,8 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-hSZQkw/0eV5Y0pj1N+idYuKb/jtiw/qTfaOGdYCXmn0="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20230601124015-46f2ff088640"
-    hash = "sha256-GZbZ8jSagCY4wFIYI1uhE44RR2cClxSKeX5zdeh3hsk="
+    version = "v0.0.0-20230603164718-6ce745d7990a"
+    hash = "sha256-GhmgjB4T0JEvajXnfzAwjcoIR6ErBoUE6kAjMzIYsXI="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
