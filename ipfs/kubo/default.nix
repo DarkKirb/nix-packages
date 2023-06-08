@@ -60,7 +60,7 @@ in
       install --mode=444 -D 'misc/systemd/ipfs-gateway.socket' "$systemd_unit_hardened/etc/systemd/system/ipfs-gateway.socket"
       install --mode=444 -D 'misc/systemd/ipfs-hardened.service' "$systemd_unit_hardened/etc/systemd/system/ipfs.service"
     '';
-    passthru.updateScript = writeScript "update-matrix-media-repo" ''
+    passthru.updateScript' = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/ipfs/kubo" ipfs/kubo/source.json
       if [ "$(git diff -- ipfs/kubo/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')

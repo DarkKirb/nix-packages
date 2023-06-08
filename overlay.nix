@@ -18,7 +18,6 @@ system: self: super: let
 
   overlays = [
     (getFlakeOverlay "attic" "default")
-    (getFlakeOverlay "hydra" "default")
     (getFlakeOverlay "gomod2nix" "default")
     (self: super: {
       akkoma = self.callPackage ./akkoma {};
@@ -70,7 +69,7 @@ system: self: super: let
       woodpecker-cli = self.callPackage ./ci/woodpecker/cli.nix {};
       woodpecker-frontend = self.callPackage ./ci/woodpecker/frontend.nix {};
       woodpecker-server = self.callPackage ./ci/woodpecker/server.nix {};
-      hydra = super.hydra.overrideAttrs (super: {
+      hydra = flake.inputs.hydra.outputs.packages.hydra.overrideAttrs (super: {
         doCheck = false;
         patches =
           (super.patches or [])
