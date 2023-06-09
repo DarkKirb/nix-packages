@@ -5,11 +5,13 @@ system: self: super: let
   lib = import ./lib {pkgs = super;}; # functions
   flake = (lib.importFlake {inherit system;}).defaultNix;
 
-  getFlakeOverlay = flakeName: overlay: self: super: let
+  getFlake = flakeName: let
     lib = import ./lib {pkgs = super;};
     flake = (lib.importFlake {inherit system;}).defaultNix;
   in
-    flake.inputs.${flakeName}.outputs.overlays.${overlay} self super;
+    flake.inputs.${flakeName};
+
+  getFlakeOverlay = flakeName: overlay: self: super: (getFlake flakeName).outputs.overlays.${overlay} self super;
 
   riscv-overlay = self: super: {
     vf2Kernel = self.callPackage ./linux/vf2 {kernelPatches = [];};
@@ -69,7 +71,7 @@ system: self: super: let
       woodpecker-cli = self.callPackage ./ci/woodpecker/cli.nix {};
       woodpecker-frontend = self.callPackage ./ci/woodpecker/frontend.nix {};
       woodpecker-server = self.callPackage ./ci/woodpecker/server.nix {};
-      hydra = flake.inputs.hydra.outputs.packages.hydra.overrideAttrs (super: {
+      hydra = (getFlake "hydra").outputs.packages.${system}.hydra.overrideAttrs (super: {
         doCheck = false;
         patches =
           (super.patches or [])

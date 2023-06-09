@@ -113,9 +113,9 @@
               wordpress-plugins
               wordpress-themes
               kubo
+              hydra
+              hydra-unstable
               ;
-            inherit (hydra.packages.${system}) hydra;
-            hydra-unstable = hydra.packages.${system}.hydra;
           }
           // (
             if system == "riscv64-linux"

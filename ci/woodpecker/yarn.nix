@@ -448,11 +448,11 @@
       };
     }
     {
-      name = "_iconify_json___json_2.2.75.tgz";
+      name = "_iconify_json___json_2.2.76.tgz";
       path = fetchurl {
-        name = "_iconify_json___json_2.2.75.tgz";
-        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.75.tgz";
-        sha512 = "uVnt14GehnyRlPZg+GA6t6+hep1rcVksyRREaiYLYiFVw7nC6xXX9uYrQU224sKEQEyu6bwS1VQWHtTbPEgUdg==";
+        name = "_iconify_json___json_2.2.76.tgz";
+        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.76.tgz";
+        sha512 = "SXnvEurfutQ0ytXGxzQZ3TU1/vuYl1XoBIvAkvAVIlxu4qXiqSJQbXoZ+bATInKdeai/HuALcL0vAxUR5FLjOg==";
       };
     }
     {
@@ -1184,11 +1184,11 @@
       };
     }
     {
-      name = "caniuse_lite___caniuse_lite_1.0.30001495.tgz";
+      name = "caniuse_lite___caniuse_lite_1.0.30001497.tgz";
       path = fetchurl {
-        name = "caniuse_lite___caniuse_lite_1.0.30001495.tgz";
-        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001495.tgz";
-        sha512 = "F6x5IEuigtUfU5ZMQK2jsy5JqUUlEFRVZq8bO2a+ysq5K7jD6PPc9YXZj78xDNS3uNchesp1Jw47YXEqr+Viyg==";
+        name = "caniuse_lite___caniuse_lite_1.0.30001497.tgz";
+        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001497.tgz";
+        sha512 = "I4/duVK4wL6rAK/aKZl3HXB4g+lIZvaT4VLAn2rCgJ38jVLb0lv2Xug6QuqmxXFVRJMF74SPPWPJ/1Sdm3vCzw==";
       };
     }
     {
@@ -1464,11 +1464,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.425.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.426.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.425.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.425.tgz";
-        sha512 = "wv1NufHxu11zfDbY4fglYQApMswleE9FL/DSeyOyauVXDZ+Kco96JK/tPfBUaDqfRarYp2WH2hJ/5UnVywp9Jg==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.426.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.426.tgz";
+        sha512 = "dWuNH+XUT9hdFHASfMpcZGW5kUyJvllumJkXaXiswuCkoaFIFI89aykBPuHEi1YUWQGRCqvIO0BUdmeFJ4W4Ww==";
       };
     }
     {
