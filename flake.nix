@@ -32,6 +32,7 @@
     self,
     nixpkgs,
     flake-utils,
+    hydra,
     ...
   }:
     flake-utils.lib.eachSystem ["aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux" "riscv64-linux"] (
@@ -109,12 +110,12 @@
               woodpecker-cli
               woodpecker-frontend
               woodpecker-server
-              hydra
-              hydra-unstable
               wordpress-plugins
               wordpress-themes
               kubo
               ;
+            inherit (hydra.packages.${system}) hydra;
+            hydra-unstable = hydra.packages.${system}.hydra;
           }
           // (
             if system == "riscv64-linux"
