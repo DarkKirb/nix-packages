@@ -85,6 +85,9 @@ system: self: super: let
       wordpress-plugins = self.callPackage ./web/wordpress-plugins {};
       wordpress-themes = self.callPackage ./web/wordpress-themes {};
       kubo = self.callPackage ./ipfs/kubo {};
+      fcitx5 = super.fcitx5.overrideAttrs (_: {
+        src = self.callPackage ./i18n/fcitx5/patched-source.nix {inherit (super) fcitx5;};
+      });
     })
     riscv-overlay
   ];

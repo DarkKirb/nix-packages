@@ -115,6 +115,7 @@
               kubo
               hydra
               hydra-unstable
+              fcitx5
               ;
           }
           // (
