@@ -15,7 +15,7 @@ in
       version = "${modDirVersion}-vf2";
 
       src = fetchFromGitHub {
-        owner = "DarkKirb";
+        owner = "starfive-tech";
         repo = "linux";
         inherit (source) rev sha256;
       };
