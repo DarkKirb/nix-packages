@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/starfive-tech/linux",
-  "rev": "d0bfa67ad26dd9e76a5cd13d68599066ec9ad955",
-  "date": "2023-05-30T17:59:49+08:00",
-  "path": "/nix/store/jx738r7wrhlkwjj3aqarynv2s1id37as-linux",
-  "sha256": "1cr2pjplpqsbxf9ssr5pzzks22rzrp273s5rjd4cc2kbdksqr44h",
+  "rev": "d9eee31aaec51ade1641391836c1f07dd2151a4a",
+  "date": "2023-05-29T19:51:46+08:00",
+  "path": "/nix/store/rp9rqfpprj4v6sgq264dvwzi8kg82ywm-linux",
+  "sha256": "044p3z1m8slk33b3d7cdvbn6xp4y1vad7scshjmda72cr6l53nl3",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
