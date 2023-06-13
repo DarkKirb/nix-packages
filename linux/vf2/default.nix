@@ -20,11 +20,6 @@ in
         inherit (source) rev sha256;
       };
 
-      defconfig = "starfive_visionfive2_defconfig";
-
-      autoModules = false;
-      kernelPreferBuiltin = true;
-
       structuredExtraConfig = with lib.kernel; {
         ARCH_STARFIVE = yes;
         SOC_STARFIVE = yes;
