@@ -42,7 +42,8 @@ in
 
         SIFIVE_CCACHE = yes;
 
-        V4L_PLATFORM_DRIVERS = yes; # TODO: Make module
+        V4L_PLATFORM_DRIVERS = no; # TODO: Make module
+        DRM_VERISILICON = no;
 
         PL330_DMA = no;
       };
