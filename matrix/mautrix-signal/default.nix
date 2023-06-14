@@ -18,7 +18,7 @@ in
       aiohttp
       asyncpg
       attrs
-      (python3.pkgs.callPackage ../../python/mautrix.nix {})
+      (python3.pkgs.callPackage ../../python/mautrix-1.19.nix {})
       phonenumbers
       pillow
       prometheus-client
