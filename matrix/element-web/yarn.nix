@@ -1472,11 +1472,11 @@
       };
     }
     {
-      name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.0.0.tgz";
+      name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.2.2.tgz";
       path = fetchurl {
-        name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.0.0.tgz";
-        url = "https://registry.yarnpkg.com/@matrix-org/matrix-wysiwyg/-/matrix-wysiwyg-2.0.0.tgz";
-        sha512 = "xRYFwsf6Jx7KTCpwU91mVhPA8q/c+oOVyK98NnexyK/IcQS7BMFAns5GZX9b6ZEy38u30KoxeN6mxvxi+ysQgg==";
+        name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.2.2.tgz";
+        url = "https://registry.yarnpkg.com/@matrix-org/matrix-wysiwyg/-/matrix-wysiwyg-2.2.2.tgz";
+        sha512 = "FprkgKiqEHoFUfaamKwTGBENqDxbORFgoPjiE1b9yPS3hgRswobVKRl4qrXgVgFj4qQ7gWeTqogiyrHXkm1myw==";
       };
     }
     {
@@ -8696,11 +8696,11 @@
       };
     }
     {
-      name = "92f49474fdb649968a946a85d321a0701b7bdf4b";
+      name = "2647c5884d54bfa67bda68719a2c88306633dd69";
       path = fetchurl {
-        name = "92f49474fdb649968a946a85d321a0701b7bdf4b";
-        url = "https://codeload.github.com/maunium/matrix-js-sdk/tar.gz/92f49474fdb649968a946a85d321a0701b7bdf4b";
-        sha512 = "a928de015226b0054c6a7b20b8698766885ffe9864e060cba0f00c056baad1b6ddb686e28622e9bb06431f9161d92ba86d0ef62159a45524118e53ccc0820ffb";
+        name = "2647c5884d54bfa67bda68719a2c88306633dd69";
+        url = "https://codeload.github.com/maunium/matrix-js-sdk/tar.gz/2647c5884d54bfa67bda68719a2c88306633dd69";
+        sha512 = "64cf2e68fdcc84c1d2562a5fb5e54964a959ef74519d36b94afe5c60e233b72403e4843b3d818650a1bc387b59f3c32e4b5cbd854953f036d02aaba19fc88074";
       };
     }
     {
@@ -8712,11 +8712,11 @@
       };
     }
     {
-      name = "b2539bc4cd3d9d3c55ec29b2d2a01599451467be";
+      name = "6c86fa68594631c9b60be2b202a1b838697abece";
       path = fetchurl {
-        name = "b2539bc4cd3d9d3c55ec29b2d2a01599451467be";
-        url = "https://codeload.github.com/maunium/matrix-react-sdk/tar.gz/b2539bc4cd3d9d3c55ec29b2d2a01599451467be";
-        sha512 = "5568105642df5da4271ed9ca21a8b41bdaeeefa620ef2faf7e56ad000bae2c4634f1842af1d3ad19659fe37897ce7fd8d9154c0bd6b35b6ab049281b56771654";
+        name = "6c86fa68594631c9b60be2b202a1b838697abece";
+        url = "https://codeload.github.com/maunium/matrix-react-sdk/tar.gz/6c86fa68594631c9b60be2b202a1b838697abece";
+        sha512 = "7f24c7ab5eb00ecc248ef97315ca4daece28bdaa0117d22a773cd96a232e9d56d36156f7e385be2673861bcc40a806b88367c95c29ab819eadec3b98cd11c703";
       };
     }
     {
@@ -10760,11 +10760,11 @@
       };
     }
     {
-      name = "posthog_js___posthog_js_1.57.2.tgz";
+      name = "posthog_js___posthog_js_1.63.3.tgz";
       path = fetchurl {
-        name = "posthog_js___posthog_js_1.57.2.tgz";
-        url = "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.57.2.tgz";
-        sha512 = "ER4gkYZasrd2Zwmt/yLeZ5G/nZJ6tpaYBCpx3CvocDx+3F16WdawJlYMT0IyLKHXDniC5+AsjzFd6fi8uyYlJA==";
+        name = "posthog_js___posthog_js_1.63.3.tgz";
+        url = "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.63.3.tgz";
+        sha512 = "Ob2x1ENxx/mWAdhLhc6ouKAph9LwmitBy7M+hiaFoS0T9g7OVL4lYdrJbODbYV+HX/HeO3bsnQwYO1QLPWm/YA==";
       };
     }
     {
@@ -11653,14 +11653,6 @@
         name = "ripemd160___ripemd160_2.0.2.tgz";
         url = "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.2.tgz";
         sha512 = "ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==";
-      };
-    }
-    {
-      name = "rrweb_snapshot___rrweb_snapshot_1.1.14.tgz";
-      path = fetchurl {
-        name = "rrweb_snapshot___rrweb_snapshot_1.1.14.tgz";
-        url = "https://registry.yarnpkg.com/rrweb-snapshot/-/rrweb-snapshot-1.1.14.tgz";
-        sha512 = "eP5pirNjP5+GewQfcOQY4uBiDnpqxNRc65yKPW0eSoU1XamDfc4M8oqpXGMyUyvLyxFDB0q0+DChuxxiU2FXBQ==";
       };
     }
     {
