@@ -121,7 +121,7 @@
           // (
             if system == "riscv64-linux"
             then {
-              inherit (pkgs) vf2Kernel vf2KernelPackages;
+              inherit (pkgs) vf2Kernel;
             }
             else {}
           );
@@ -129,12 +129,9 @@
         modules = import ./modules;
         lib = import ./lib {inherit pkgs;};
 
-        hydraJobs =
-          if (system == "x86_64-linux") || (system == "aarch64-linux")
-          then {
-            inherit packages devShells formatter;
-          }
-          else {};
+        hydraJobs = {
+          inherit packages devShells formatter;
+        };
       }
     );
 }

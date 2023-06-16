@@ -1472,11 +1472,11 @@
       };
     }
     {
-      name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.2.2.tgz";
+      name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.3.0.tgz";
       path = fetchurl {
-        name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.2.2.tgz";
-        url = "https://registry.yarnpkg.com/@matrix-org/matrix-wysiwyg/-/matrix-wysiwyg-2.2.2.tgz";
-        sha512 = "FprkgKiqEHoFUfaamKwTGBENqDxbORFgoPjiE1b9yPS3hgRswobVKRl4qrXgVgFj4qQ7gWeTqogiyrHXkm1myw==";
+        name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.3.0.tgz";
+        url = "https://registry.yarnpkg.com/@matrix-org/matrix-wysiwyg/-/matrix-wysiwyg-2.3.0.tgz";
+        sha512 = "VtA+Bti2IdqpnpCNaTFHMjbpKXe4xHR+OWWJl/gjuYgn4NJO9lfeeEIv34ftC6dBh7R280JEiMxQ9mDcH0J54g==";
       };
     }
     {
@@ -8696,11 +8696,11 @@
       };
     }
     {
-      name = "2647c5884d54bfa67bda68719a2c88306633dd69";
+      name = "04ad5184ca39c2c3522825b2cb44a702da2671eb";
       path = fetchurl {
-        name = "2647c5884d54bfa67bda68719a2c88306633dd69";
-        url = "https://codeload.github.com/maunium/matrix-js-sdk/tar.gz/2647c5884d54bfa67bda68719a2c88306633dd69";
-        sha512 = "64cf2e68fdcc84c1d2562a5fb5e54964a959ef74519d36b94afe5c60e233b72403e4843b3d818650a1bc387b59f3c32e4b5cbd854953f036d02aaba19fc88074";
+        name = "04ad5184ca39c2c3522825b2cb44a702da2671eb";
+        url = "https://codeload.github.com/maunium/matrix-js-sdk/tar.gz/04ad5184ca39c2c3522825b2cb44a702da2671eb";
+        sha512 = "cbde4cc924b6e203b4f817c92fc58b447bbb4e3c8da03cd2f23366c57b590198ba4457697cfbce2e2111e161ab27806880ad1503973d0ef7e2c6960ab445c7e8";
       };
     }
     {
