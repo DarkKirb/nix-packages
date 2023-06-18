@@ -77,7 +77,7 @@ in
   // (
     if pkgs.system == "riscv64-linux"
     then {
-      inherit (pkgsWithOverlay) vf2Kernel vf2KernelPackages;
+      inherit (pkgsWithOverlay) vf2Kernel;
     }
     else {}
   )

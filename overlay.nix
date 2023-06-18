@@ -15,7 +15,6 @@ system: self: super: let
 
   riscv-overlay = self: super: {
     vf2Kernel = self.callPackage ./linux/vf2 {kernelPatches = [];};
-    vf2KernelPackages = super.linuxPackagesFor self.vf2Kernel;
   };
 
   overlays = [

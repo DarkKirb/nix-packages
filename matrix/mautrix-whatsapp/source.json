@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/mautrix/whatsapp",
-  "rev": "5c5633548ff8151cd68c9cc44388c119ea16ab23",
-  "date": "2023-06-10T01:19:00+03:00",
-  "path": "/nix/store/5zibg18wfj8hh6smfcmrczdqvmfl5bdg-whatsapp",
-  "sha256": "0yf4xjmp42iiplf1hp2rqclfw9gxzlczfjkvr9d5q2g8wba720na",
+  "rev": "8ab06edaca57ba0d726fe1013915d1fa3681436b",
+  "date": "2023-06-16T14:40:03-06:00",
+  "path": "/nix/store/h749gl1mxk970wp798azpbqh6f2av7pi-whatsapp",
+  "sha256": "097605j10n4a8k93mn6vd14x18am8dyzdypn8kzzjy44rfg0qdpx",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
