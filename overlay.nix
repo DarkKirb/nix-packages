@@ -88,6 +88,7 @@ system: self: super: let
         src = self.callPackage ./i18n/fcitx5/patched-source.nix {inherit (super) fcitx5;};
       });
       linux-bcachefs = self.callPackage ./linux/bcachefs {kernelPatches = [];};
+      bcachefs-tools = self.callPackage ./linux/bcachefs-tools {};
     })
     riscv-overlay
   ];

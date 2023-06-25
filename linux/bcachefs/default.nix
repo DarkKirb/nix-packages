@@ -7,7 +7,7 @@
   modDirVersion = "6.3.0";
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
-  buildLinux (args
+  (buildLinux (args
     // {
       inherit modDirVersion;
       version = "6.3.0+${source.rev}";
@@ -25,9 +25,11 @@ in
         DYNAMIC_FTRACE = yes;
         FTRACE = yes;
       };
-      passthru.updateScript = [
-        ../../scripts/update-git.sh
-        "github.com/koverstreet/bcachefs"
-        "linux/bcachefs/source.json"
-      ];
-    })
+    }))
+  .overrideAttrs (_: {
+    passthru.updateScript = [
+      ../../scripts/update-git.sh
+      "https://github.com/koverstreet/bcachefs"
+      "linux/bcachefs/source.json"
+    ];
+  })

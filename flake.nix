@@ -128,7 +128,7 @@
           // (
             if system == "x86_64-linux"
             then {
-              inherit (pkgs) linux-bcachefs;
+              inherit (pkgs) linux-bcachefs bcachefs-tools;
             }
             else {}
           );
