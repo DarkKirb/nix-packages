@@ -87,6 +87,7 @@ system: self: super: let
       fcitx5 = super.fcitx5.overrideAttrs (_: {
         src = self.callPackage ./i18n/fcitx5/patched-source.nix {inherit (super) fcitx5;};
       });
+      linux-bcachefs = self.callPackage ./linux/bcachefs {kernelPatches = [];};
     })
     riscv-overlay
   ];

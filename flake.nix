@@ -124,6 +124,13 @@
               inherit (pkgs) vf2Kernel;
             }
             else {}
+          )
+          // (
+            if system == "x86_64-linux"
+            then {
+              inherit (pkgs) linux-bcachefs;
+            }
+            else {}
           );
 
         modules = import ./modules;
