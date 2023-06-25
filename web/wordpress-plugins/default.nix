@@ -24,10 +24,9 @@ in
           '';
           installPhase = "mkdir -p $out; cp -R $pname/* $out/";
           meta = {inherit (source) description;};
-          passthru.updateScript =
-            if name == "activitypub"
-            then ./update.sh
-            else [];
         };
     })
     plugins)
+  // {
+    passthru.updateScript = ./update.sh;
+  }
