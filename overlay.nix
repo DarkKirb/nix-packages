@@ -13,9 +13,37 @@ system: self: super: let
 
   getFlakeOverlay = flakeName: overlay: self: super: (getFlake flakeName).outputs.overlays.${overlay} self super;
 
-  riscv-overlay = self: super: {
-    vf2Kernel = self.callPackage ./linux/vf2 {kernelPatches = [];};
-  };
+  riscv-overlay =
+    if system == "riscv64-linux"
+    then
+      (self: super: {
+        vf2Kernel = self.callPackage ./linux/vf2 {kernelPatches = [];};
+        meson = super.meson.overrideAttrs (_: {
+          doCheck = false;
+          doInstallCheck = false;
+        });
+        libarchive = super.libarchive.overrideAttrs (_: {
+          doCheck = false;
+          doInstallCheck = false;
+        });
+        openexr = super.openexr.overrideAttrs (_: {
+          doCheck = false;
+          doInstallCheck = false;
+        });
+        libopus = super.libopus.overrideAttrs (_: {
+          mesonFlags = [
+            (lib.mesonBool "fixed-point" false)
+            (lib.mesonBool "custom-modes" true)
+            (lib.mesonEnable "intrinsics" false)
+            (lib.mesonEnable "rtcd" false)
+            (lib.mesonEnable "asm" false)
+            (lib.mesonEnable "docs" false)
+          ];
+          doCheck = false;
+          doInstallCheck = false;
+        });
+      })
+    else (_: _: {});
 
   overlays = [
     (getFlakeOverlay "attic" "default")

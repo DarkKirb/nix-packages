@@ -4,13 +4,13 @@
   buildLinux,
   ...
 } @ args: let
-  modDirVersion = "6.3.0";
+  modDirVersion = "6.4.0";
   source = builtins.fromJSON (builtins.readFile ./source.json);
 in
   buildLinux (args
     // {
       inherit modDirVersion;
-      version = "6.3.0+${source.rev}";
+      version = "6.4.0+${source.rev}";
       src = fetchFromGitHub {
         owner = "koverstreet";
         repo = "bcachefs";
