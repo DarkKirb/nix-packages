@@ -32,13 +32,20 @@ system: self: super: let
         });
         libopus = super.libopus.overrideAttrs (_: {
           mesonFlags = [
-            (lib.mesonBool "fixed-point" false)
-            (lib.mesonBool "custom-modes" true)
-            (lib.mesonEnable "intrinsics" false)
-            (lib.mesonEnable "rtcd" false)
-            (lib.mesonEnable "asm" false)
-            (lib.mesonEnable "docs" false)
+            "-Dfixed-point=false"
+            "-Dcustom-modes=true"
+            "-Dintrinsics=disabled"
+            "-Drtcd=disabled"
+            "-Dasm=disabled"
+            "-Dasm=disabled"
+            "-Ddocs=disabled"
           ];
+          doCheck = false;
+          doInstallCheck = false;
+        });
+        valgrind = self.callPackage ./riscv/valgrind {};
+        valgrind-light = self.valgrind;
+        openldap = super.openldap.overrideAttrs (_: {
           doCheck = false;
           doInstallCheck = false;
         });

@@ -1,0 +1,11 @@
+{
+  "url": "https://github.com/petrpavlu/valgrind-riscv64",
+  "rev": "71272b252977fe52f03ea4fa8306b457b098cca5",
+  "date": "2023-04-10T20:43:50+02:00",
+  "path": "/nix/store/g00qg2qhm10c0a6v5v7al89pc57b4bjy-valgrind-riscv64",
+  "sha256": "0znk98hypdh7j84h237131aqsczz91mrwpwkvy1xgaxkhiskhgy4",
+  "fetchLFS": false,
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}
