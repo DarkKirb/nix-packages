@@ -87,7 +87,7 @@ in
       ${../../scripts/update-git.sh} https://github.com/koverstreet/bcachefs-tools linux/bcachefs-tools/source.json
       if [ "$(git diff -- linux/bcachefs-tools/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).bcachefs-tools.src')
-        cp $SRC_PATH/rust-src/Cargo.toml linux/bcachefs-tools
+        cp $SRC_PATH/rust-src/Cargo.lock linux/bcachefs-tools
       fi
     '';
 

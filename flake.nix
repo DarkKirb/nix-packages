@@ -121,7 +121,7 @@
           // (
             if system == "riscv64-linux"
             then {
-              inherit (pkgs) vf2Kernel;
+              inherit (pkgs) vf2Kernel valgrind;
             }
             else {}
           )

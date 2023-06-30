@@ -2,9 +2,9 @@
   "drgn": {
     "description": "Character by @volpeon@mk.vulpes.one",
     "files": "drgn.json",
-    "homepage": "https://volpeon.ink/projects/emojis/drgn/",
+    "homepage": "https://volpeon.ink/art/emojis/drgn/",
     "src": "https://volpeon.ink/projects/emojis/drgn/drgn.zip",
-    "src_sha256": "d20291131147dcd3d3ca1dafbda9c9aa98352319a9046a53e1ee7ea8b7055ce5",
+    "src_sha256": "2ad8d62e91bb8b10e5d3965535c98cbb5dedd120f692f5fa70e217fc9b619b0d",
     "license": "CC BY-NC-SA 4.0"
   }
 }
