@@ -69,6 +69,7 @@ system: self: super: let
       emoji-volpeon-gphn = self.callPackage ./art/emoji/volpeon/gphn.nix {};
       emoji-volpeon-raccoon = self.callPackage ./art/emoji/volpeon/raccoon.nix {};
       emoji-volpeon-vlpn = self.callPackage ./art/emoji/volpeon/vlpn.nix {};
+      emoji-volpeon-neofox = self.callPackage ./art/emoji/volpeon/neofox.nix {};
       emoji-caro = self.callPackage ./art/emoji/caro {};
       lotte-art = self.callPackage ./art/lotte {};
       alco-sans = self.callPackage ./fonts/kreative/alco-sans.nix {};
