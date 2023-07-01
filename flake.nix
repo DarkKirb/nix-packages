@@ -74,6 +74,7 @@
               emoji-volpeon-gphn
               emoji-volpeon-raccoon
               emoji-volpeon-vlpn
+              emoji-volpeon-neofox
               emoji-caro
               lotte-art
               alco-sans
