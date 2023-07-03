@@ -32,11 +32,11 @@
       };
     }
     {
-      name = "_antfu_utils___utils_0.7.4.tgz";
+      name = "_antfu_utils___utils_0.7.5.tgz";
       path = fetchurl {
-        name = "_antfu_utils___utils_0.7.4.tgz";
-        url = "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.7.4.tgz";
-        sha512 = "qe8Nmh9rYI/HIspLSTwtbMFPj6dISG6+dJnOguTlPNXtCvS2uezdxscVBb7/3DrmNbQK49TDqpkSQ1chbRGdpQ==";
+        name = "_antfu_utils___utils_0.7.5.tgz";
+        url = "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.7.5.tgz";
+        sha512 = "dlR6LdS+0SzOAPx/TPRhnoi7hE251OVeT2Snw0RguNbBSbjUHdWr0l3vcUUDg26rEysT89kCbtw1lVorBXLLCg==";
       };
     }
     {
@@ -1192,11 +1192,11 @@
       };
     }
     {
-      name = "caniuse_lite___caniuse_lite_1.0.30001509.tgz";
+      name = "caniuse_lite___caniuse_lite_1.0.30001511.tgz";
       path = fetchurl {
-        name = "caniuse_lite___caniuse_lite_1.0.30001509.tgz";
-        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001509.tgz";
-        sha512 = "2uDDk+TRiTX5hMcUYT/7CSyzMZxjfGu0vAUjS2g0LSD8UoXOv0LtpH4LxGMemsiPq6LCVIUjNwVM0erkOkGCDA==";
+        name = "caniuse_lite___caniuse_lite_1.0.30001511.tgz";
+        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001511.tgz";
+        sha512 = "NaWPJawcoedlghN4P7bDNeADD7K+rZaY6V8ZcME7PkEZo/nfOg+lnrUgRWiKbNxcQ4/toFKSxnS4WdbyPZnKkw==";
       };
     }
     {
@@ -1632,11 +1632,11 @@
       };
     }
     {
-      name = "eslint_plugin_vue_scoped_css___eslint_plugin_vue_scoped_css_2.4.0.tgz";
+      name = "eslint_plugin_vue_scoped_css___eslint_plugin_vue_scoped_css_2.5.0.tgz";
       path = fetchurl {
-        name = "eslint_plugin_vue_scoped_css___eslint_plugin_vue_scoped_css_2.4.0.tgz";
-        url = "https://registry.yarnpkg.com/eslint-plugin-vue-scoped-css/-/eslint-plugin-vue-scoped-css-2.4.0.tgz";
-        sha512 = "H2GdGyaNuz58gMwJYrPAyok2ZZFklb1wnI4jqLyQZf17gvZeTOpYzCxqhhcT5hBeaCUHhjxU5akCI7A4AtBHew==";
+        name = "eslint_plugin_vue_scoped_css___eslint_plugin_vue_scoped_css_2.5.0.tgz";
+        url = "https://registry.yarnpkg.com/eslint-plugin-vue-scoped-css/-/eslint-plugin-vue-scoped-css-2.5.0.tgz";
+        sha512 = "vR+raYNE1aQ69lS1lZGiKoz8rXFI3MWf2fxrfns/XCQ0XT5sIguhDtQS+9JmUQJClenLDEe2CQx7P+eeSdF4cA==";
       };
     }
     {
