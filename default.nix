@@ -73,6 +73,7 @@ in
       wordpress-themes
       kubo
       fcitx5
+      plover-plugin-python-dictionary
       ;
   }
   // (
