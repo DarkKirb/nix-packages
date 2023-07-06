@@ -117,6 +117,7 @@
               hydra
               hydra-unstable
               fcitx5
+              plover-plugin-python-dictionary
               ;
           }
           // (
