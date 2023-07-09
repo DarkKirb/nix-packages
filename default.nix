@@ -74,6 +74,7 @@ in
       kubo
       fcitx5
       plover-plugin-python-dictionary
+      plover-plugin-stenotype-extended
       ;
   }
   // (

@@ -95,6 +95,7 @@ system: self: super: let
       plover-plugin-tapey-tape = self.python3Packages.callPackage ./plover/plover-tapey-tape.nix {};
       plover-plugin-yaml-dictionary = self.python3Packages.callPackage ./plover/plover-yaml-dictionary.nix {};
       plover-plugin-python-dictionary = self.python3Packages.callPackage ./plover/plover-python-dictionary.nix {};
+      plover-plugin-stenotype-extended = self.python3Packages.callPackage ./plover/plover-stenotype-extended.nix {};
       plover-plugin-machine-hid = self.python3Packages.callPackage ./plover/plover-machine-hid.nix {};
       plover-plugin-rkb1-hid = self.python3Packages.callPackage ./plover/plover-rkb1-hid.nix {};
       plover-dict-didoesdigital = self.callPackage ./plover/didoesdigital-dictionary.nix {};
