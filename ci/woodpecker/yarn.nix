@@ -2130,11 +2130,11 @@
       };
     }
     {
-      name = "humanize_duration___humanize_duration_3.28.0.tgz";
+      name = "humanize_duration___humanize_duration_3.29.0.tgz";
       path = fetchurl {
-        name = "humanize_duration___humanize_duration_3.28.0.tgz";
-        url  = "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.28.0.tgz";
-        sha512 = "jMAxraOOmHuPbffLVDKkEKi/NeG8dMqP8lGRd6Tbf7JgAeG33jjgPWDbXXU7ypCI0o+oNKJFgbSB9FKVdWNI2A==";
+        name = "humanize_duration___humanize_duration_3.29.0.tgz";
+        url  = "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.29.0.tgz";
+        sha512 = "G5wZGwYTLaQAmYqhfK91aw3xt6wNbJW1RnWDh4qP1PvF4T/jnkjx2RVhG5kzB2PGsYGTn+oSDBQp+dMdILLxcg==";
       };
     }
     {

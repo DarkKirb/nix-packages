@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/koverstreet/bcachefs-tools",
-  "rev": "c99a444c5cc242a89845be83236aacd7db628ef5",
-  "date": "2023-07-07T04:25:07-04:00",
-  "path": "/nix/store/g8023jpasa99g7md893w2lwx457k7l2c-bcachefs-tools",
-  "sha256": "1yw5mbf9r9zjpqhk3jah1gnqspk9fqzpdfv3wigxmd0bvq193gz9",
+  "rev": "ffa950ce1d59344ff621659b845416b8a526127f",
+  "date": "2023-07-10T01:44:55-04:00",
+  "path": "/nix/store/qas901x7y544njxssisl1km98b1468fa-bcachefs-tools",
+  "sha256": "1sm3wpxyk7x5i53kqdwkglzv98pwigzxd92naa4r0px3g7ygvlg2",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
