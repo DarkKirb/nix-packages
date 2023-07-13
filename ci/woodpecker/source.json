@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/woodpecker-ci/woodpecker",
-  "rev": "a6d2c789169578da976c693bc51c3a7badd792b7",
-  "date": "2023-07-10T14:46:55+02:00",
-  "path": "/nix/store/c3srmcagi4q5zvprwlqraxrjnr913x8q-woodpecker",
-  "sha256": "0gxf46a9fhr3zim82l9zbcj1dxxmfwyi0p3awpmlmpr79308ad6j",
+  "rev": "87cef4177c7d80af9170f73e89bd1041503f06fa",
+  "date": "2023-07-12T23:31:59+02:00",
+  "path": "/nix/store/h6paz2qxhfcqyf89wn8hv00z1aia081d-woodpecker",
+  "sha256": "0xx6wb6w80laa517x7fbdmmdx9wmyiv2jjb5jyksighfag8bivcd",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
