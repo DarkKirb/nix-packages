@@ -16,4 +16,5 @@ in
     };
     nativeBuildInputs = [cmake ninja];
     cmakeDir = "../src";
+    passthru.updateScript = [../../scripts/update-git.sh "https://github.com/RPGHacker/asar" "compiler/asar/source.json"];
   }
