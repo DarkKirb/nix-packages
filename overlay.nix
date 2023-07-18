@@ -127,6 +127,7 @@ system: self: super: let
       });
       linux-bcachefs = self.callPackage ./linux/bcachefs {kernelPatches = [];};
       bcachefs-tools = self.callPackage ./linux/bcachefs-tools {};
+      asar = self.callPackage ./compiler/asar {};
     })
     riscv-overlay
   ];
