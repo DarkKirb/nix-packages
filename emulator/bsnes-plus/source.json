@@ -1,0 +1,11 @@
+{
+  "url": "https://github.com/devinacker/bsnes-plus",
+  "rev": "14e00375ba15cd605bf716117cd66ddaf5d93914",
+  "date": "2023-06-05T20:56:09-04:00",
+  "path": "/nix/store/pn7q6xy2hpd57s2a29j4zp3lk06sf462-bsnes-plus",
+  "sha256": "0g7djccmshidqjcpgm0w8mvi4wy1w2v3zfvl1sv5caarch6kdswv",
+  "fetchLFS": false,
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

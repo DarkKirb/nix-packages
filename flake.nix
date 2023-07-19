@@ -120,6 +120,7 @@
               plover-plugin-python-dictionary
               plover-plugin-stenotype-extended
               asar
+              bsnes-plus
               ;
           }
           // (
