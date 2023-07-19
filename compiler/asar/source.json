@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/RPGHacker/asar",
-  "rev": "d39723aa3bd071f685e670914ec7b4e47a7e0455",
-  "date": "2023-07-16T03:47:38+03:00",
-  "path": "/nix/store/azqqw9j7wjxk2bgpd9nl14n0s2cy6pxf-asar",
-  "sha256": "1gawm1akq1q40mbmlpcrq3krz563ckp5c1bi2v7l3cq2mk24l3zc",
+  "rev": "cb78f31f890460f83a066a114e9c64bc3a15708a",
+  "date": "2023-07-18T09:27:42+02:00",
+  "path": "/nix/store/jdydjx2am9rd2m584x6db98h4daww40j-asar",
+  "sha256": "00rk52mba49ixpgy6dcinln473pa9326xk9s0rc6ck7ck9wc2a3f",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
