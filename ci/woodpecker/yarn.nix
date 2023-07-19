@@ -1200,11 +1200,11 @@
       };
     }
     {
-      name = "caniuse_lite___caniuse_lite_1.0.30001516.tgz";
+      name = "caniuse_lite___caniuse_lite_1.0.30001517.tgz";
       path = fetchurl {
-        name = "caniuse_lite___caniuse_lite_1.0.30001516.tgz";
-        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001516.tgz";
-        sha512 = "Wmec9pCBY8CWbmI4HsjBeQLqDTqV91nFVR83DnZpYyRnPI1wePDsTg0bGLPC5VU/3OIZV1fmxEea1b+tFKe86g==";
+        name = "caniuse_lite___caniuse_lite_1.0.30001517.tgz";
+        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001517.tgz";
+        sha512 = "Vdhm5S11DaFVLlyiKu4hiUTkpZu+y1KA/rZZqVQfOD5YdDT/eQKlkt7NaE0WGOFgX32diqt9MiP9CAiFeRklaA==";
       };
     }
     {
@@ -1480,11 +1480,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.463.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.464.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.463.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.463.tgz";
-        sha512 = "fT3hvdUWLjDbaTGzyOjng/CQhQJSQP8ThO3XZAoaxHvHo2kUXiRQVMj9M235l8uDFiNPsPa6KHT1p3RaR6ugRw==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.464.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.464.tgz";
+        sha512 = "guZ84yoou4+ILNdj0XEbmGs6DEWj6zpVOWYpY09GU66yEb0DSYvP/biBPzHn0GuW/3RC/pnaYNUWlQE1fJYtgA==";
       };
     }
     {
