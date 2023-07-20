@@ -27,5 +27,8 @@ in
       export HOME=$(mktemp -d)
       export prefix=$out
     '';
+    preFixup = ''
+      qtWrapperArgs+=("--unset" "WAYLAND_DISPLAY")
+    '';
     enableParallelBuilding = true;
   }
