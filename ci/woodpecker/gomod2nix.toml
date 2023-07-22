@@ -247,9 +247,6 @@ schema = 3
   [mod."github.com/morikuni/aec"]
     version = "v1.0.0"
     hash = "sha256-5zYgLeGr3K+uhGKlN3xv0PO67V+2Zw+cezjzNCmAWOE="
-  [mod."github.com/mrjones/oauth"]
-    version = "v0.0.0-20190623134757-126b35219450"
-    hash = "sha256-nHhQ8lhmPOx+vZBpWAHx0ddD7aDfAUYNF/yhVbOPmKU="
   [mod."github.com/munnerz/goautoneg"]
     version = "v0.0.0-20191010083416-a7dc8b61c822"
     hash = "sha256-79URDDFenmGc9JZu+5AXHToMrtTREHb3BC84b/gym9Q="
