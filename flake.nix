@@ -116,7 +116,6 @@
               kubo
               hydra
               hydra-unstable
-              fcitx5
               plover-plugin-python-dictionary
               plover-plugin-stenotype-extended
               asar

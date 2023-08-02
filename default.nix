@@ -72,7 +72,6 @@ in
       wordpress-plugins
       wordpress-themes
       kubo
-      fcitx5
       plover-plugin-python-dictionary
       plover-plugin-stenotype-extended
       asar

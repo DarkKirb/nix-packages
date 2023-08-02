@@ -1,7 +1,7 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "pname": "nodeinfo",
   "description": "NodeInfo(2)",
-  "url": "https://downloads.wordpress.org/plugin/nodeinfo.2.1.0.zip",
-  "sha256": "adbc7eb376192ca1ebd4ca0995ff5ec7b30046d3fcab6a5f00314dc06340b3dd"
+  "url": "https://downloads.wordpress.org/plugin/nodeinfo.2.1.1.zip",
+  "sha256": "ed9ad4d0e8741a1a6e5e15989a5032703600922e4ec65f967622fc4f1e825ddb"
 }
