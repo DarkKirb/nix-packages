@@ -122,10 +122,6 @@ system: self: super: let
       wordpress-plugins = self.callPackage ./web/wordpress-plugins {};
       wordpress-themes = self.callPackage ./web/wordpress-themes {};
       kubo = self.callPackage ./ipfs/kubo {};
-      fcitx5 = super.fcitx5.overrideAttrs (_: {
-        src = self.callPackage ./i18n/fcitx5/patched-source.nix {inherit (super) fcitx5;};
-        passthru.updateScript = ["true"];
-      });
       linux-bcachefs = self.callPackage ./linux/bcachefs {kernelPatches = [];};
       bcachefs-tools = self.callPackage ./linux/bcachefs-tools {};
       asar = self.callPackage ./compiler/asar {};
