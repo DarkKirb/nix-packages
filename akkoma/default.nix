@@ -51,7 +51,7 @@ in
       overrides = final: prev: {
         # mix2nix does not support git dependencies yet,
         # so we need to add them manually
-        captcha = beamPackages.buildMix rec {
+        captcha = beamPackages.buildMix {
           name = "captcha";
           version = "0.1.0";
 
@@ -60,26 +60,24 @@ in
             group = "pleroma";
             owner = "elixir-libraries";
             repo = "elixir-captcha";
-            rev = "e0f16822d578866e186a0974d65ad58cddc1e2ab";
-            sha256 = "0qbf86l59kmpf1nd82v4141ba9ba75xwmnqzpgbm23fa1hh8pi9c";
+            rev = "3bbfa8b5ea13accc1b1c40579a380d8e5cfd6ad2";
+            sha256 = "1fknjlshc52hrd841rw5incp47h1fk20h068gq9mbskq051p8imj";
           };
-          beamDeps = with final; [];
+          beamDeps = [];
         };
-        crypt = beamPackages.buildRebar3 rec {
-          name = "crypt";
-          version = "0.4.3";
+        concurrent_limiter = beamPackages.buildMix rec {
+          name = "concurrent_limiter";
+          version = "0.1.1";
 
-          src = fetchFromGitHub {
-            owner = "msantos";
-            repo = "crypt";
-            rev = "f75cd55325e33cbea198fb41fe41871392f8fb76";
-            sha256 = "sha256-ZYhZTe7cTITkl8DZ4z2IOlxTX5gnbJImu/lVJ2ZjR1o=";
+          src = fetchFromGitea {
+            domain = "akkoma.dev";
+            owner = "AkkomaGang";
+            repo = "concurrent-limiter";
+            rev = "a9e0b3d64574bdba761f429bb4fba0cf687b3338";
+            hash = "sha256-A7ucZnXks4K+JDVY5vV2cT5KfEOUOo/OHO4rga5mGys=";
           };
 
-          postInstall = "mv $out/lib/erlang/lib/crypt-${version}/priv/{source,crypt}.so";
-
-          beamDeps = with final; [elixir_make];
-          buildInputs = [libxcrypt];
+          beamDeps = with final; [];
         };
         elasticsearch = beamPackages.buildMix rec {
           name = "elasticsearch";

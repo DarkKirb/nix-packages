@@ -57,7 +57,7 @@ system: self: super: let
     (getFlakeOverlay "gomod2nix" "default")
     (self: super: {
       akkoma = self.callPackage ./akkoma {};
-      pleroma-fe = self.callPackage ./akkoma/pleroma-fe {};
+      akkoma-fe = self.callPackage ./akkoma/akkoma-fe {};
       admin-fe = self.callPackage ./akkoma/admin-fe {};
       emoji-lotte = self.callPackage ./art/emoji/lotte {};
       emoji-volpeon-blobfox = self.callPackage ./art/emoji/volpeon/blobfox.nix {};

@@ -4,6 +4,7 @@
   "date": "2023-07-18T09:27:42+02:00",
   "path": "/nix/store/jdydjx2am9rd2m584x6db98h4daww40j-asar",
   "sha256": "00rk52mba49ixpgy6dcinln473pa9326xk9s0rc6ck7ck9wc2a3f",
+  "hash": "sha256-bijBeJrsTGZYBjrNbsRI6o5DLLWRNePf7TERtaooMwM=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

@@ -4,6 +4,7 @@
   "date": "2023-05-31T20:09:40+02:00",
   "path": "/nix/store/qcqc0pbzg1brymy7a6i64rdc4yqdd4w0-MiiFox.net",
   "sha256": "1kgf4lzz8di10d2l6ihi2qy05lzvpvrvjp4ykfmw5bh7nfgbg0cl",
+  "hash": "sha256-lIG3nrMHrsKrm55cufO++9MCPBYRRkNFAyE29D8l7s0=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

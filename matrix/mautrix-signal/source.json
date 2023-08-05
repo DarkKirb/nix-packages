@@ -4,6 +4,7 @@
   "date": "2023-05-17T16:52:17+03:00",
   "path": "/nix/store/2mxgl4ksnc6aa5q8mddkjgl5x2v7f5bw-signal",
   "sha256": "13sz1b1ssm9fc21vspn51x8yh6wb3wjbr90isq7ifng206xp4a21",
+  "hash": "sha256-QShyuwHiWRcP1hGkvCQfixvoUQ/FXr2DYC5VrcMKX48=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

@@ -4,6 +4,7 @@
   "date": "2023-05-16T17:48:51-07:00",
   "path": "/nix/store/m2gzmhr0lm3wjyjhagm8kf2li6drydwv-nasin-nanpa",
   "sha256": "1fflz5708l2sv4fq8k7z556kbqf0x1qh6scjckm0ws9g9w4y8ppj",
+  "hash": "sha256-8l7kCU8vaQ7qZJJpA3HowOE1TSn/TIQd2VpQBE751Lk=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

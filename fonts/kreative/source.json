@@ -4,6 +4,7 @@
   "date": "2022-10-20T06:08:47-07:00",
   "path": "/nix/store/2kbzlxqxpyrr3mqwfyn4mk2qc6hjb7v8-open-relay",
   "sha256": "02w7i6mrf5rdi9ksymykrcf0giyzrhrd68h1ncxhkvgg8cc7rkj6",
+  "hash": "sha256-Rs58GEPv7Qk7swEi0zLM38cHHMvTV69nii0Xl6uJhws=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

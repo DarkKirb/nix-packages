@@ -18,15 +18,15 @@
     src = fetchFromGitea {
       domain = "akkoma.dev";
       owner = "AkkomaGang";
-      repo = "pleroma-fe";
+      repo = "akkoma-fe";
       inherit (source) rev sha256;
     };
-    patches = [./pleroma-fe.patch ./jxl-polyfill.patch];
+    patches = [./akkoma-fe.patch ./jxl-polyfill.patch];
   };
   nodeOptions = callPackage ../../lib/opensslLegacyProvider.nix {};
 in
   mkYarnPackage rec {
-    pname = "pleroma-fe";
+    pname = "akkoma-fe";
     version = source.date;
     inherit src;
     packageJSON = ./package.json;
@@ -61,18 +61,18 @@ in
       find $out -type f -name '*.svg' -execdir ${nodePackages.svgo}/bin/svgo {} \;
     '';
     passthru = {
-      updateScript = writeScript "update-pleroma-fe" ''
-        ${../../scripts/update-git.sh} https://akkoma.dev/AkkomaGang/pleroma-fe.git akkoma/pleroma-fe/source.json
-        if [ "$(git diff -- akkoma/pleroma-fe/source.json)" ]; then
+      updateScript = writeScript "update-akkoma-fe" ''
+        ${../../scripts/update-git.sh} https://akkoma.dev/AkkomaGang/akkoma-fe.git akkoma/akkoma-fe/source.json
+        if [ "$(git diff -- akkoma/akkoma-fe/source.json)" ]; then
           SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
-          ${../../scripts/update-yarn.sh} $SRC_PATH akkoma/pleroma-fe
+          ${../../scripts/update-yarn.sh} $SRC_PATH akkoma/akkoma-fe
         fi
       '';
     };
 
     meta = with lib; {
-      description = "Frontend for Akkoma and Pleroma";
-      homepage = "https://akkoma.dev/AkkomaGang/pleroma-fe/";
+      description = "Frontend for Akkoma and akkoma";
+      homepage = "https://akkoma.dev/AkkomaGang/akkoma-fe/";
       license = licenses.agpl3;
     };
   }
