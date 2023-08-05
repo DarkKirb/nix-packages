@@ -4,6 +4,7 @@
   "date": "2023-07-26T09:43:54+10:00",
   "path": "/nix/store/n7vj3yhkjh98wd499jr3ndm3v7afjccn-steno-dictionaries",
   "sha256": "12fx1h3maaf5f1y6qh1grbn5bvqjzyjgvnyjwsipn1zvpixrhki5",
+  "hash": "sha256-JU6Ye7z7B3uj5tLb/aT/Eu9V7MovQGx8cMUpVQcM3Yk=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,

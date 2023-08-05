@@ -62,7 +62,7 @@
             inherit
               (pkgs)
               akkoma
-              pleroma-fe
+              akkoma-fe
               admin-fe
               emoji-lotte
               emoji-volpeon-blobfox

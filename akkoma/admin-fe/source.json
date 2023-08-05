@@ -4,6 +4,7 @@
   "date": "2022-12-14T12:05:59+00:00",
   "path": "/nix/store/pqj5iqn2y89qfgd33b9jjbn58cq395nn-admin-fe",
   "sha256": "0qvr245604yaslvnphx2ybclh51svqi570pzch917jffi8kkr5gr",
+  "hash": "sha256-+ZU8J4rOyRMSZP+CUyLeOhRI2fKiw2s31coTYAoReWM=",
   "fetchLFS": false,
   "fetchSubmodules": false,
   "deepClone": false,
