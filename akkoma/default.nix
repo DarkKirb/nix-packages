@@ -26,6 +26,7 @@
       ./block-invalid-datetime-mrf.patch
       ./require-image-description.patch
       ./make-uploads-private.patch
+      ./0001-Revert-Config-Restrict-permissions-of-OTP-config-fil.patch
     ];
   };
 in
