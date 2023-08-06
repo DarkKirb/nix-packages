@@ -1,0 +1,38 @@
+From 1ec87ef4a78882e0cf4619b02f0a4ec644c7b29a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Charlotte=20=F0=9F=A6=9D=20Delenk?= <lotte@chir.rs>
+Date: Sun, 6 Aug 2023 12:30:52 +0100
+Subject: [PATCH] Revert "Config: Restrict permissions of OTP config file"
+
+This reverts commit ae03513934acbd2b3bae18aa4e0b223c6738cdc9.
+---
+ lib/pleroma/config/release_runtime_provider.ex | 14 --------------
+ 1 file changed, 14 deletions(-)
+
+diff --git a/lib/pleroma/config/release_runtime_provider.ex b/lib/pleroma/config/release_runtime_provider.ex
+index a829a0206..e5f2d6339 100644
+--- a/lib/pleroma/config/release_runtime_provider.ex
++++ b/lib/pleroma/config/release_runtime_provider.ex
+@@ -22,20 +22,6 @@ def load(config, opts) do
+ 
+     with_runtime_config =
+       if File.exists?(config_path) do
+-        # <https://git.pleroma.social/pleroma/pleroma/-/issues/3135>
+-        %File.Stat{mode: mode} = File.lstat!(config_path)
+-
+-        if Bitwise.band(mode, 0o007) > 0 do
+-          raise "Configuration at #{config_path} has world-permissions, execute the following: chmod o= #{config_path}"
+-        end
+-
+-        if Bitwise.band(mode, 0o020) > 0 do
+-          raise "Configuration at #{config_path} has group-wise write permissions, execute the following: chmod g-w #{config_path}"
+-        end
+-
+-        # Note: Elixir doesn't provides a getuid(2)
+-        # so cannot forbid group-read only when config is owned by us
+-
+         runtime_config = Config.Reader.read!(config_path)
+ 
+         with_defaults
+-- 
+2.41.0
+
