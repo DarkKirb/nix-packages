@@ -1,8 +1,8 @@
 diff --git a/mautrix_telegram/portal.py b/mautrix_telegram/portal.py
-index 3b6a81e..c6277a7 100644
+index 701b3eb..8a266bc 100644
 --- a/mautrix_telegram/portal.py
 +++ b/mautrix_telegram/portal.py
-@@ -1626,6 +1626,36 @@ class Portal(DBPortal, BasePortal):
+@@ -1822,6 +1822,35 @@ class Portal(DBPortal, BasePortal):
                  msgtype=content.msgtype,
              )
  
@@ -35,35 +35,33 @@ index 3b6a81e..c6277a7 100644
 +            if sticker.id == int(metadata["id"]):
 +                return sticker
 +
-+
      async def _handle_matrix_file(
          self,
          sender: u.User,
-@@ -1646,6 +1676,7 @@ class Portal(DBPortal, BasePortal):
+@@ -1842,6 +1871,7 @@ class Portal(DBPortal, BasePortal):
              w = h = None
          max_image_size = self.config["bridge.image_as_file_size"] * 1000**2
          max_image_pixels = self.config["bridge.image_as_file_pixels"]
 +        media = None
  
+         attributes = []
          if self.config["bridge.parallel_file_transfer"] and content.url:
-             file_handle, file_size = await util.parallel_transfer_to_telegram(
-@@ -1666,7 +1697,14 @@ class Portal(DBPortal, BasePortal):
+@@ -1863,7 +1893,13 @@ class Portal(DBPortal, BasePortal):
                  file = await self.main_intent.download_media(content.url)
  
              if content.msgtype == MessageType.STICKER:
--                if mime != "image/gif":
+-                if mime == "image/gif":
 +                tg_sticker = None
-+
 +                if "net.maunium.telegram.sticker" in content.info:
 +                    tg_sticker = await self._find_telegram_sticker(client, content.info["net.maunium.telegram.sticker"])
 +
 +                if tg_sticker is not None:
 +                    media = tg_sticker
-+                elif mime != "image/gif":
-                     mime, file, w, h = util.convert_image(
-                         file, source_mime=mime, target_type="webp"
-                     )
-@@ -1708,7 +1746,9 @@ class Portal(DBPortal, BasePortal):
++                elif mime == "image/gif":
+                     # Remove sticker description
+                     file_name = "sticker.gif"
+                 else:
+@@ -1911,7 +1947,9 @@ class Portal(DBPortal, BasePortal):
          if "fi.mau.telegram.force_document" in content:
              force_document = bool(content["fi.mau.telegram.force_document"])
  
