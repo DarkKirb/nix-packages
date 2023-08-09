@@ -126,6 +126,7 @@ system: self: super: let
       bcachefs-tools = self.callPackage ./linux/bcachefs-tools {};
       asar = self.callPackage ./compiler/asar {};
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
+      sliding-sync = self.callPackage ./matrix/sliding-sync {};
     })
     riscv-overlay
   ];
