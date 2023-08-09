@@ -76,6 +76,7 @@ in
       plover-plugin-stenotype-extended
       asar
       bsnes-plus
+      sliding-sync
       ;
   }
   // (
