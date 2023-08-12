@@ -31,6 +31,7 @@ in
       emoji-volpeon-raccoon
       emoji-volpeon-vlpn
       emoji-volpeon-neofox
+      emoji-volpeon-neocat
       emoji-caro
       lotte-art
       alco-sans

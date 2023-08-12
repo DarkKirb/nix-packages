@@ -32,7 +32,7 @@ in
         bsdtar -xf $src
       '';
       buildPhase = ''
-        find . -type f -name '*.png' -execdir ${./crushpng.sh} {} {}.new 50000 \;
+        find . -type f -name '*.png' -print0 | xargs -0 -n 1 -P $NIX_BUILD_CORES sh -c '${./crushpng.sh} $0 $0.new 50000'
         for f in $(find . -type f -name '*.new'); do
           mv $f ${"$"}{f%.new}
         done

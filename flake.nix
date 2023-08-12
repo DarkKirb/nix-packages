@@ -32,7 +32,6 @@
     self,
     nixpkgs,
     flake-utils,
-    hydra,
     ...
   }:
     flake-utils.lib.eachSystem ["aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux" "riscv64-linux"] (
@@ -75,6 +74,7 @@
               emoji-volpeon-raccoon
               emoji-volpeon-vlpn
               emoji-volpeon-neofox
+              emoji-volpeon-neocat
               emoji-caro
               lotte-art
               alco-sans
