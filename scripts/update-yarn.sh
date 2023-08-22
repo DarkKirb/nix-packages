@@ -11,6 +11,8 @@ chmod -R +w $SOURCE_EXTRACTED
 cd $SOURCE_EXTRACTED
 
 yarn install
+yarn upgrade
+yarn install
 
 yarn2nix --lockfile $SOURCE_EXTRACTED/yarn.lock > $WRITE_PATH/yarn.nix
 cp $SOURCE_EXTRACTED/package.json $WRITE_PATH/package.json

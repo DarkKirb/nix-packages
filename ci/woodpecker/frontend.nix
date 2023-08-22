@@ -17,6 +17,10 @@ in
     yarnLock = ./yarn.lock;
     yarnNix = ./yarn.nix;
 
+    configurePhase = ''
+      cp -r $node_modules node_modules
+    '';
+
     buildPhase = ''
       runHook preBuild
 
@@ -28,7 +32,7 @@ in
     installPhase = ''
       runHook preInstall
 
-      cp -R deps/woodpecker-ci/dist $out
+      cp -R ./dist $out
       echo "${common.version}" > "$out/version"
 
       runHook postInstall

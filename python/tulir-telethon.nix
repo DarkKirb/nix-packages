@@ -9,11 +9,11 @@
 }:
 buildPythonPackage rec {
   pname = "tulir-telethon";
-  version = "1.29.0a2";
+  version = "1.30.0a1";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-pTN8mJxbXvnhL11PCH/ZLeSqW0GV124Y3JnDcLek8JE=";
+    sha256 = "sha256-WorG7i00MgnGtIVaLOb2Eo9bHdTje07K/lfexnqX5LU=";
   };
 
   patchPhase = ''

@@ -3,4 +3,4 @@
 SOURCE=$1
 WRITE_PATH=$(realpath $2)
 
-nix run github:nix-community/gomod2nix -- --dir $SOURCE --outdir $WRITE_PATH
+nix run github:darkkirb/gomod2nix -vL -- --dir $SOURCE --outdir $WRITE_PATH
