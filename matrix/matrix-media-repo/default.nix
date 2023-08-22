@@ -35,6 +35,12 @@ in
       description = "Matrix media repository with multi-domain in mind.";
       license = lib.licenses.mit;
     };
+    postConfigure = ''
+      chmod -R +w vendor/
+      for f in vendor/golang.org/x/net/publicsuffix/data/*; do
+          cp -v --remove-destination -f `readlink $f` $f
+      done
+    '';
     passthru.updateScript' = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/turt2live/matrix-media-repo" matrix/matrix-media-repo/source.json
       if [ "$(git diff -- matrix/matrix-media-repo/source.json)" ]; then

@@ -60,6 +60,12 @@ in
       install --mode=444 -D 'misc/systemd/ipfs-gateway.socket' "$systemd_unit_hardened/etc/systemd/system/ipfs-gateway.socket"
       install --mode=444 -D 'misc/systemd/ipfs-hardened.service' "$systemd_unit_hardened/etc/systemd/system/ipfs.service"
     '';
+    postConfigure = ''
+      chmod -R +w vendor/
+      for f in $(find vendor/github.com/ipfs/boxo/gateway/assets -type l) vendor/github.com/ipfs/go-graphsync/message/ipldbind/*.ipldsch; do
+          cp -v --remove-destination -f `readlink $f` $f
+      done
+    '';
     passthru.updateScript' = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/ipfs/kubo" ipfs/kubo/source.json
       if [ "$(git diff -- ipfs/kubo/source.json)" ]; then

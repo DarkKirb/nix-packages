@@ -53,7 +53,6 @@ system: self: super: let
     else (_: _: {});
 
   overlays = [
-    (getFlakeOverlay "attic" "default")
     (getFlakeOverlay "gomod2nix" "default")
     (self: super: {
       akkoma = self.callPackage ./akkoma {};
