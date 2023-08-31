@@ -1,0 +1,195 @@
+From 192348a73e57f556a96f5c2bc2c15fa680ee526a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Charlotte=20=F0=9F=A6=9D=20Delenk?= <lotte@chir.rs>
+Date: Thu, 31 Aug 2023 14:35:17 +0100
+Subject: [PATCH] make previews not break on apps like telegram
+
+---
+ .../web/metadata/providers/twitter_card.ex    | 121 ++++++++++--------
+ 1 file changed, 71 insertions(+), 50 deletions(-)
+
+diff --git a/lib/pleroma/web/metadata/providers/twitter_card.ex b/lib/pleroma/web/metadata/providers/twitter_card.ex
+index ab48ea272..f99d953e1 100644
+--- a/lib/pleroma/web/metadata/providers/twitter_card.ex
++++ b/lib/pleroma/web/metadata/providers/twitter_card.ex
+@@ -16,18 +16,39 @@ defmodule Pleroma.Web.Metadata.Providers.TwitterCard do
+   @media_types ["image", "audio", "video"]
+ 
+   @impl Provider
+-  def build_tags(%{activity_id: id, object: object, user: user}) do
+-    attachments = build_attachments(id, object)
++  def build_tags(%{
++        object: object,
++        url: url,
++        user: user
++      }) do
++    attachments = build_attachments(object)
+     scrubbed_content = Utils.scrub_html_and_truncate(object)
+ 
+     [
+-      title_tag(user),
+-      {:meta, [name: "twitter:description", content: scrubbed_content], []}
++      {:meta,
++        [
++          property: "twitter:card",
++          content: "summary"
++        ], []},
++      {:meta,
++       [
++         property: "twitter:title",
++         content: Utils.user_name_string(user)
++       ], []},
++      {:meta, [property: "twitter:url", content: url], []},
++      {:meta,
++       [
++         property: "twitter:description",
++         content: scrubbed_content
++       ], []},
++      {:meta, [property: "twitter:type", content: "article"], []}
+     ] ++
+       if attachments == [] or Metadata.activity_nsfw?(object) do
+         [
+-          image_tag(user),
+-          {:meta, [name: "twitter:card", content: "summary"], []}
++          {:meta, [property: "twitter:image", content: MediaProxy.preview_url(User.avatar_url(user))],
++           []},
++          {:meta, [property: "twitter:image:width", content: 150], []},
++          {:meta, [property: "twitter:image:height", content: 150], []}
+         ]
+       else
+         attachments
+@@ -38,33 +59,32 @@ def build_tags(%{activity_id: id, object: object, user: user}) do
+   def build_tags(%{user: user}) do
+     with truncated_bio = Utils.scrub_html_and_truncate(user.bio) do
+       [
+-        title_tag(user),
+-        {:meta, [name: "twitter:description", content: truncated_bio], []},
+-        image_tag(user),
+-        {:meta, [name: "twitter:card", content: "summary"], []}
++        {:meta,
++         [
++           property: "twitter:title",
++           content: Utils.user_name_string(user)
++         ], []},
++        {:meta, [property: "twitter:url", content: user.uri || user.ap_id], []},
++        {:meta, [property: "twitter:description", content: truncated_bio], []},
++        {:meta, [property: "twitter:type", content: "article"], []},
++        {:meta, [property: "twitter:image", content: MediaProxy.preview_url(User.avatar_url(user))],
++         []},
++        {:meta, [property: "twitter:image:width", content: 150], []},
++        {:meta, [property: "twitter:image:height", content: 150], []}
+       ]
+     end
+   end
+ 
+-  defp title_tag(user) do
+-    {:meta, [name: "twitter:title", content: Utils.user_name_string(user)], []}
+-  end
+-
+-  def image_tag(user) do
+-    {:meta, [name: "twitter:image", content: MediaProxy.preview_url(User.avatar_url(user))], []}
+-  end
+-
+-  defp build_attachments(id, %{data: %{"attachment" => attachments}}) do
++  defp build_attachments(%{data: %{"attachment" => attachments}}) do
+     Enum.reduce(attachments, [], fn attachment, acc ->
+       rendered_tags =
+         Enum.reduce(attachment["url"], [], fn url, acc ->
++          # TODO: Whatsapp only wants JPEG or PNGs. It seems that if we add a second twitter:image
++          # object when a Video or GIF is attached it will display that in Whatsapp Rich Preview.
+           case Utils.fetch_media_type(@media_types, url["mediaType"]) do
+             "audio" ->
+               [
+-                {:meta, [name: "twitter:card", content: "player"], []},
+-                {:meta, [name: "twitter:player:width", content: "480"], []},
+-                {:meta, [name: "twitter:player:height", content: "80"], []},
+-                {:meta, [name: "twitter:player", content: player_url(id)], []}
++                {:meta, [property: "twitter:audio", content: MediaProxy.url(url["href"])], []}
+                 | acc
+               ]
+ 
+@@ -75,32 +95,19 @@ defp build_attachments(id, %{data: %{"attachment" => attachments}}) do
+             # workaround.
+             "image" ->
+               [
+-                {:meta, [name: "twitter:card", content: "summary_large_image"], []},
+-                {:meta,
+-                 [
+-                   name: "twitter:player",
+-                   content: MediaProxy.url(url["href"])
+-                 ], []}
++                {:meta, [property: "twitter:image", content: MediaProxy.url(url["href"])], []},
++                {:meta, [property: "twitter:image:alt", content: attachment["name"]], []}
+                 | acc
+               ]
+               |> maybe_add_dimensions(url)
+ 
+             "video" ->
+-              # fallback to old placeholder values
+-              height = url["height"] || 480
+-              width = url["width"] || 480
+-
+               [
+-                {:meta, [name: "twitter:card", content: "player"], []},
+-                {:meta, [name: "twitter:player", content: player_url(id)], []},
+-                {:meta, [name: "twitter:player:width", content: "#{width}"], []},
+-                {:meta, [name: "twitter:player:height", content: "#{height}"], []},
+-                {:meta, [name: "twitter:player:stream", content: MediaProxy.url(url["href"])],
+-                 []},
+-                {:meta, [name: "twitter:player:stream:content_type", content: url["mediaType"]],
+-                 []}
++                {:meta, [property: "twitter:video", content: MediaProxy.url(url["href"])], []}
+                 | acc
+               ]
++              |> maybe_add_dimensions(url)
++              |> maybe_add_video_thumbnail(url)
+ 
+             _ ->
+               acc
+@@ -111,21 +118,35 @@ defp build_attachments(id, %{data: %{"attachment" => attachments}}) do
+     end)
+   end
+ 
+-  defp build_attachments(_id, _object), do: []
++  defp build_attachments(_), do: []
+ 
+-  defp player_url(id) do
+-    url(~p[/notice/#{id}/embed_player])
+-  end
+-
+-  # Videos have problems without dimensions, but we used to not provide WxH for images.
+-  # A default (read: incorrect) fallback for images is likely to cause rendering bugs.
++  # We can use url["mediaType"] to dynamically fill the metadata
+   defp maybe_add_dimensions(metadata, url) do
++    type = url["mediaType"] |> String.split("/") |> List.first()
++
+     cond do
+       !is_nil(url["height"]) && !is_nil(url["width"]) ->
+         metadata ++
+           [
+-            {:meta, [name: "twitter:player:width", content: "#{url["width"]}"], []},
+-            {:meta, [name: "twitter:player:height", content: "#{url["height"]}"], []}
++            {:meta, [property: "twitter:#{type}:width", content: "#{url["width"]}"], []},
++            {:meta, [property: "twitter:#{type}:height", content: "#{url["height"]}"], []}
++          ]
++
++      true ->
++        metadata
++    end
++  end
++
++  # Media Preview Proxy makes thumbnails of videos without resizing, so we can trust the
++  # width and height of the source video.
++  defp maybe_add_video_thumbnail(metadata, url) do
++    cond do
++      Pleroma.Config.get([:media_preview_proxy, :enabled], false) ->
++        metadata ++
++          [
++            {:meta, [property: "twitter:image:width", content: "#{url["width"]}"], []},
++            {:meta, [property: "twitter:image:height", content: "#{url["height"]}"], []},
++            {:meta, [property: "twitter:image", content: MediaProxy.preview_url(url["href"])], []}
+           ]
+ 
+       true ->
+-- 
+2.41.0
+

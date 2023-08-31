@@ -86,8 +86,8 @@ schema = 3
     version = "v0.0.0-20230805171708-199bf3eec776"
     hash = "sha256-9ZGlBZl3zSBI/Hbc9N6I3RZhcf0YZ6SvvGRI3Im4t0U="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20230821092221-636dac24aed9"
-    hash = "sha256-DzEoDvpZmWHy9kPr4wYmKLYePcwufGmtEW7bEPajbHE="
+    version = "v0.0.0-20230824151650-6da2abde6b7c"
+    hash = "sha256-N4fVb3K/SnMNB9bEHUl6wbbHNFuPEjP0pFLk6Iaud2k="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
