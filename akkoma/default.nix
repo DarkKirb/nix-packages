@@ -26,6 +26,7 @@
       ./require-image-description.patch
       ./make-uploads-private.patch
       ./0001-Revert-Config-Restrict-permissions-of-OTP-config-fil.patch
+      ./0001-make-previews-not-break-on-apps-like-telegram.patch
     ];
   };
   mkOverride = final: prev: name:

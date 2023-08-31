@@ -1,5 +1,4 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i bash -p go
+#!/usr/bin/env bash
 SOURCE=$1
 WRITE_PATH=$(realpath $2)
 
