@@ -75,7 +75,7 @@ in
       kubo
       plover-plugin-python-dictionary
       plover-plugin-stenotype-extended
-      asar
+      asar-asm
       bsnes-plus
       sliding-sync
       ;
