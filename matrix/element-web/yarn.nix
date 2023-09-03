@@ -1552,11 +1552,11 @@
       };
     }
     {
-      name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.7.0.tgz";
+      name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.8.0.tgz";
       path = fetchurl {
-        name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.7.0.tgz";
-        url = "https://registry.yarnpkg.com/@matrix-org/matrix-wysiwyg/-/matrix-wysiwyg-2.7.0.tgz";
-        sha512 = "5pw2kTuEIZUf8HxDyzP3sFCzMmzDdD5B6h+Ts/pAvITz160VJqTv+bhBIA4OAFsbBKsa/Ajcv9GggSZWtamgbg==";
+        name = "_matrix_org_matrix_wysiwyg___matrix_wysiwyg_2.8.0.tgz";
+        url = "https://registry.yarnpkg.com/@matrix-org/matrix-wysiwyg/-/matrix-wysiwyg-2.8.0.tgz";
+        sha512 = "bEk3hh26HFXKs7Ft5oU89pHUR6ZJR5PKnaWgYuNtTnin9nXIp9RsivXTkq+YBG8+pFkOQ9LL8vIrDju2CMU78Q==";
       };
     }
     {
@@ -1968,11 +1968,11 @@
       };
     }
     {
-      name = "_sentry_cli___cli_2.20.5.tgz";
+      name = "_sentry_cli___cli_2.20.6.tgz";
       path = fetchurl {
-        name = "_sentry_cli___cli_2.20.5.tgz";
-        url = "https://registry.yarnpkg.com/@sentry/cli/-/cli-2.20.5.tgz";
-        sha512 = "ZvWb86eF0QXH9C5Mbi87aUmr8SH848yEpXJmlM2AoBowpE9kKDnewCAKvyXUihojUFwCSEEjoJhrRMMgmCZqXA==";
+        name = "_sentry_cli___cli_2.20.6.tgz";
+        url = "https://registry.yarnpkg.com/@sentry/cli/-/cli-2.20.6.tgz";
+        sha512 = "j4OFbDCIo/dB/uXDmXnRqCbku0KquekSFSG0Wb6RKwkGqpKwFMRauKXZJrgL4as3qIfDX8HrjNRv257QYMwdQA==";
       };
     }
     {
@@ -2472,19 +2472,19 @@
       };
     }
     {
-      name = "_types_node___node_20.5.7.tgz";
+      name = "_types_node___node_20.5.9.tgz";
       path = fetchurl {
-        name = "_types_node___node_20.5.7.tgz";
-        url = "https://registry.yarnpkg.com/@types/node/-/node-20.5.7.tgz";
-        sha512 = "dP7f3LdZIysZnmvP3ANJYTSwg+wLLl8p7RqniVlV7j+oXSXAbt9h0WIBFmJy5inWZoX9wZN6eXx+YXd9Rh3RBA==";
+        name = "_types_node___node_20.5.9.tgz";
+        url = "https://registry.yarnpkg.com/@types/node/-/node-20.5.9.tgz";
+        sha512 = "PcGNd//40kHAS3sTlzKB9C9XL4K0sTup8nbG5lC14kzEteTNuAFh9u5nA0o5TWnSG2r/JNPRXFVcHJIIeRlmqQ==";
       };
     }
     {
-      name = "_types_node___node_16.18.46.tgz";
+      name = "_types_node___node_16.18.48.tgz";
       path = fetchurl {
-        name = "_types_node___node_16.18.46.tgz";
-        url = "https://registry.yarnpkg.com/@types/node/-/node-16.18.46.tgz";
-        sha512 = "Mnq3O9Xz52exs3mlxMcQuA7/9VFe/dXcrgAyfjLkABIqxXKOgBRjyazTxUbjsxDa4BP7hhPliyjVTP9RDP14xg==";
+        name = "_types_node___node_16.18.48.tgz";
+        url = "https://registry.yarnpkg.com/@types/node/-/node-16.18.48.tgz";
+        sha512 = "mlaecDKQ7rIZrYD7iiKNdzFb6e/qD5I9U1rAhq+Fd+DWvYVs+G2kv74UFHmSOlg5+i/vF3XxuR522V4u8BqO+Q==";
       };
     }
     {
@@ -2728,11 +2728,11 @@
       };
     }
     {
-      name = "_vector_im_compound_web___compound_web_0.2.15.tgz";
+      name = "_vector_im_compound_web___compound_web_0.2.17.tgz";
       path = fetchurl {
-        name = "_vector_im_compound_web___compound_web_0.2.15.tgz";
-        url = "https://registry.yarnpkg.com/@vector-im/compound-web/-/compound-web-0.2.15.tgz";
-        sha512 = "F4ay88XJH9LkGrHcpHyJnqqkWOdYmzwLbTQjbjokKwOPeDvcLJDZkTyRR03GbU8Ir/tlGYSx0TbrXA5XQI0g3A==";
+        name = "_vector_im_compound_web___compound_web_0.2.17.tgz";
+        url = "https://registry.yarnpkg.com/@vector-im/compound-web/-/compound-web-0.2.17.tgz";
+        sha512 = "aMFRihw4TRX8QwfrcKIb0bmzVX6LMtPOcUs+5JrWYBEFZnvNAM2Q0CvSexD3Dti6owLRkk7MsDCUgHy7GlOHXg==";
       };
     }
     {
@@ -4528,11 +4528,11 @@
       };
     }
     {
-      name = "cosmiconfig___cosmiconfig_8.2.0.tgz";
+      name = "cosmiconfig___cosmiconfig_8.3.2.tgz";
       path = fetchurl {
-        name = "cosmiconfig___cosmiconfig_8.2.0.tgz";
-        url = "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-8.2.0.tgz";
-        sha512 = "3rTMnFJA1tCOPwRxtgF4wd7Ab2qvDbL8jX+3smjIbS4HlZBagTlpERbdN7iAbWlrfxE3M8c27kTwTawQ7st+OQ==";
+        name = "cosmiconfig___cosmiconfig_8.3.2.tgz";
+        url = "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-8.3.2.tgz";
+        sha512 = "/PvU3MjSLVKJMRHsL6GW+wHQ9RaJuMW6fnn56sXNy+kP1L8nI/SHk9F9giIA+dnfzjKNJAulRjOR/fi9kzGuNA==";
       };
     }
     {
@@ -5432,11 +5432,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.506.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.508.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.506.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.506.tgz";
-        sha512 = "xxGct4GPAKSRlrLBtJxJFYy74W11zX6PO9GyHgl/U+2s3Dp0ZEwAklDfNHXOWcvH7zWMpsmgbR0ggEuaYAVvHA==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.508.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.508.tgz";
+        sha512 = "FFa8QKjQK/A5QuFr2167myhMesGrhlOBD+3cYNxO9/S4XzHEXesyTD/1/xF644gC8buFPz3ca6G1LOQD0tZrrg==";
       };
     }
     {
@@ -9184,11 +9184,11 @@
       };
     }
     rec {
-      name = "b275368ac78a9cd34ec74560edafa02af0dde820";
+      name = "669f17305233a7bc6f93092828f338e6e160eee7";
       path = fetchurl {
         inherit name;
         url = "https://codeload.github.com/maunium/matrix-js-sdk/tar.gz/${name}";
-        sha512 = "8105125a819c888026a6acb8fbe0374ff219300d327e706f976676c304dc56973fe980ee8f5628292af3717fd6e3f3a0ca2bafb5253a516d38e18ce0b6a59465";
+        sha512 = "b5d7c6058653a6437950a657a1ae2dec84cde4a573b1e8880e921f9c6e6f432ead2ba0fac236f764fafca33b4422c63510f4a6dc1ff24fb700d020b3554d761b";
       };
     }
     {
@@ -9984,11 +9984,11 @@
       };
     }
     {
-      name = "object.getownpropertydescriptors___object.getownpropertydescriptors_2.1.6.tgz";
+      name = "object.getownpropertydescriptors___object.getownpropertydescriptors_2.1.7.tgz";
       path = fetchurl {
-        name = "object.getownpropertydescriptors___object.getownpropertydescriptors_2.1.6.tgz";
-        url = "https://registry.yarnpkg.com/object.getownpropertydescriptors/-/object.getownpropertydescriptors-2.1.6.tgz";
-        sha512 = "lq+61g26E/BgHv0ZTFgRvi7NMEPuAxLkFU7rukXjc/AlwH4Am5xXVnIXy3un1bg/JPbXHrixRkK1itUzzPiIjQ==";
+        name = "object.getownpropertydescriptors___object.getownpropertydescriptors_2.1.7.tgz";
+        url = "https://registry.yarnpkg.com/object.getownpropertydescriptors/-/object.getownpropertydescriptors-2.1.7.tgz";
+        sha512 = "PrJz0C2xJ58FNn11XV2lr4Jt5Gzl94qpy9Lu0JlfEj14z88sqbSBJCBEzdlNUCzY2gburhbrwOZ5BHCmuNUy0g==";
       };
     }
     {
