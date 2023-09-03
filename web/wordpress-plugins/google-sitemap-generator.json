@@ -1,7 +1,7 @@
 {
-  "version": "4.1.11",
+  "version": "4.1.13",
   "pname": "google-sitemap-generator",
   "description": "XML Sitemap Generator for Google",
-  "url": "https://downloads.wordpress.org/plugin/google-sitemap-generator.4.1.11.zip",
-  "sha256": "ed0b6e1f3a7394138f37a50b88f2a3c4973431010a20f792cd6b94f334712eeb"
+  "url": "https://downloads.wordpress.org/plugin/google-sitemap-generator.4.1.13.zip",
+  "sha256": "0e597d8ff0ae97982c97eaaa200c349b4da0fb6a12931015ce0bdfd8d344106c"
 }
