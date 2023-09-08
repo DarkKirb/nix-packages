@@ -30,6 +30,9 @@ in
       repo = "matrix-media-repo";
       inherit (source) rev sha256;
     };
+    patches = [
+        ./0001-Make-using-MD5-hashing-a-config-option-on-the-datast.patch
+    ];
     modules = ./gomod2nix.toml;
     go = go_1_20;
     nativeBuildInputs = [
