@@ -1,7 +1,7 @@
 {
-  "version": "21.0",
+  "version": "21.1",
   "pname": "wordpress-seo",
   "description": "Yoast SEO",
-  "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.0.zip",
-  "sha256": "57fea1e0de8f188d4facd2b8ea7331377ec6f7ec17f2e3df23ca36a3ee6a95f6"
+  "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.1.zip",
+  "sha256": "8463f5cfc59499eb80441e92673409de13a728cd5bde08b121f13984708f926e"
 }
