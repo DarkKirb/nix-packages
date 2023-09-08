@@ -50,8 +50,8 @@ schema = 3
     version = "v0.0.0-20210324163249-be2af5ef2e16"
     hash = "sha256-WS9vp/b8nJSqE0U4M1OHR1LdGsraS5KtQcVAdDfZ7UU="
   [mod."github.com/matrix-org/gomatrixserverlib"]
-    version = "v0.0.0-20230105074811-965b10ae73ab"
-    hash = "sha256-dUg80Mk4S5eLNpZYgN4kSCowzO96X2zWGQDZEqJTHV0="
+    version = "v0.0.0-20230822143230-740f742d6993"
+    hash = "sha256-rslVErLl2PSAnVHGF6YTChuKnuaSc3dykSgjCMlIMng="
   [mod."github.com/matrix-org/util"]
     version = "v0.0.0-20200807132607-55161520e1d4"
     hash = "sha256-LvuzVBtlgFlqIvAyred2druEijgWRLND+LXzYCxy9sA="

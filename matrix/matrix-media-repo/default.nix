@@ -1,12 +1,26 @@
 {
-  go_1_19,
+  go_1_20,
   buildGoApplication,
   git,
   fetchFromGitHub,
   lib,
   writeScript,
+  libde265,
+  libheif,
+  pkg-config,
+  cmake,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
+  libheif' = libheif.overrideAttrs (super: rec {
+    version = "1.16.2";
+    src = fetchFromGitHub {
+      owner = "strukturag";
+      repo = "libheif";
+      rev = "v${version}";
+      sha256 = "sha256-+6vWHkhsHSJDjOmNmdf18+IKavH/ysgfyxREMeTasLc=";
+    };
+    nativeBuildInputs = [cmake pkg-config];
+  });
 in
   buildGoApplication rec {
     pname = "matrix-media-repo";
@@ -17,9 +31,14 @@ in
       inherit (source) rev sha256;
     };
     modules = ./gomod2nix.toml;
-    go = go_1_19;
+    go = go_1_20;
     nativeBuildInputs = [
       git
+      pkg-config
+    ];
+    buildInputs = [
+      libde265
+      libheif'
     ];
     CGO_ENABLED = "1";
     buildPhase = ''
@@ -41,7 +60,7 @@ in
           cp -v --remove-destination -f `readlink $f` $f
       done
     '';
-    passthru.updateScript' = writeScript "update-matrix-media-repo" ''
+    passthru.updateScript = writeScript "update-matrix-media-repo" ''
       ${../../scripts/update-git.sh} "https://github.com/turt2live/matrix-media-repo" matrix/matrix-media-repo/source.json
       if [ "$(git diff -- matrix/matrix-media-repo/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
