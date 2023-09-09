@@ -1,6 +1,5 @@
 {
   stdenvNoCC,
-  oxipng,
   pngquant,
 }: {
   name,
@@ -10,7 +9,7 @@
 stdenvNoCC.mkDerivation {
   dontUnpack = true;
   inherit (args) name src maxsize;
-  nativeBuildInputs = [oxipng pngquant];
+  nativeBuildInputs = [pngquant];
   buildPhase = ''
     ${./crushpng.sh} $src $out $maxsize
   '';
