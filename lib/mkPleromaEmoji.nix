@@ -1,7 +1,6 @@
 {
   stdenv,
   fetchurl,
-  oxipng,
   pngquant,
   lib,
   libarchive,
@@ -24,7 +23,6 @@ in
   stdenv.mkDerivation ({
       inherit name src;
       nativeBuildInputs = [
-        oxipng
         pngquant
         libarchive
       ];
@@ -41,7 +39,7 @@ in
         mkdir $out
         cp -r *.png $out
       '';
-      meta = with lib; {
+      meta = {
         inherit (manifestData) description homepage;
         license = fixLicense manifestData.license;
       };

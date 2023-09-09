@@ -4,7 +4,6 @@
   imagemagick,
   lib,
   callPackage,
-  oxipng,
   pngquant,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
@@ -19,7 +18,6 @@ in
     };
     nativeBuildInputs = [
       imagemagick
-      oxipng
       pngquant
     ];
     buildPhase = ''
