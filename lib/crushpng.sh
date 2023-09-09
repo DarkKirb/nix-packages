@@ -2,7 +2,7 @@
 
 set -ex
 
-[ "$(wc -c $1 | awk '{print $1}')" -le $3 ] && exit 0
+[ "$(wc -c $1 | awk '{print $1}')" -le $3 ] && (cp $1 $2; exit 0)
 
 for i in $(seq 100 -1 0); do
   cat $1 | pngquant --quality 0-$i - > $2
