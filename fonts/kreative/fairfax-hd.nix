@@ -22,7 +22,7 @@ in
     };
     passthru.updateScript = [
       ../../scripts/update-git.sh
-      "https://gitlab.com/kreativekorp/open-relay.git"
+      "https://github.com/kreativekorp/open-relay.git"
       "fonts/kreative/source.json"
     ];
   }
