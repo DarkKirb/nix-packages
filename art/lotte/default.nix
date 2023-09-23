@@ -14,7 +14,7 @@ in
     version = srcInfo.date;
     passthru.updateScript = [
       ../../scripts/update-git.sh
-      "https://github.com/DarkKirb/lotte-art"
+      "https://git.chir.rs/DarkKirb/lotte-art"
       "art/lotte/source.json"
       "--fetch-lfs"
     ];

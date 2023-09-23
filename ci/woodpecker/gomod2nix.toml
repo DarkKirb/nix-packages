@@ -2,8 +2,8 @@ schema = 3
 
 [mod]
   [mod."code.gitea.io/sdk/gitea"]
-    version = "v0.15.1-0.20221016183512-2d9ee57af1e0"
-    hash = "sha256-gBwU5pQ+0FpjmbF7vsUzguhiYn2KvOS3nBXnHyEIBmE="
+    version = "v0.16.0"
+    hash = "sha256-KU+2V5zGARWR4GakAmXkl8JYPrtxXkjOKmAELePrcFI="
   [mod."codeberg.org/6543/go-yaml2json"]
     version = "v1.0.0"
     hash = "sha256-R+N/ZOXbolCZiChdNytEgQEyurLYXVzwpd/MQc9OJno="
@@ -29,8 +29,8 @@ schema = 3
     version = "v1.4.2"
     hash = "sha256-TOlNouGwNdaCddRwABb1qXp0HTMt6+G4uatzfAg3XFc="
   [mod."github.com/antonmedv/expr"]
-    version = "v1.15.1"
-    hash = "sha256-o4bLfCZqOGXC/xhCyNtCmEikC8PIaVdL1CzO7zhMJwQ="
+    version = "v1.15.3"
+    hash = "sha256-j6ZvAK4MgiyDnXw4TxnfjBYgxrde4P6kEYROzj10qxc="
   [mod."github.com/beorn7/perks"]
     version = "v1.0.1"
     hash = "sha256-h75GUqfwJKngCJQVE5Ao5wnO3cfKD9lSIteoLp/3xJ4="
@@ -410,8 +410,8 @@ schema = 3
     version = "v0.0.0-20230711160842-782d3b101e98"
     hash = "sha256-VtrLmOh1SLOKKLRmKc/NKR6NR/9DSR4RSq+OXnwmgHY="
   [mod."google.golang.org/grpc"]
-    version = "v1.58.0"
-    hash = "sha256-BopdJVzhPKY3wWjN6g8tqpUK25z0UyKbp0NxOLnb86w="
+    version = "v1.58.2"
+    hash = "sha256-rYE00/zHD2X5PUlOcyc+4viiIx5RD+FT/GMv4lzPME0="
   [mod."google.golang.org/protobuf"]
     version = "v1.31.0"
     hash = "sha256-UdIk+xRaMfdhVICvKRk1THe3R1VU+lWD8hqoW/y8jT0="
@@ -428,14 +428,14 @@ schema = 3
     version = "v3.4.0"
     hash = "sha256-mohKBcuKT29Illk/Gm7Bu5E8QxhRYr6sEGPn/oux65k="
   [mod."k8s.io/api"]
-    version = "v0.28.1"
-    hash = "sha256-IEKiwi1uHTjvkF0AeI3Mm4VsHiczfPJ1dzPXa8OMcko="
+    version = "v0.28.2"
+    hash = "sha256-FIplUrrQ0N1jE0NyGhdT4s2d/lvzNn2G/jv1WOFrgcw="
   [mod."k8s.io/apimachinery"]
-    version = "v0.28.1"
-    hash = "sha256-iDIXyABZ9rfbKe8V5ZJUCUJccOLBJKuYZOvUtzm+j/8="
+    version = "v0.28.2"
+    hash = "sha256-kfXWigf/vzAPzReZNofH95QlxqmLDbz7Ml659ubn2d0="
   [mod."k8s.io/client-go"]
-    version = "v0.28.1"
-    hash = "sha256-TAhUdXA5jHtS5JAy+YHuf3cfMN36p+BoJ1ad+/0otjM="
+    version = "v0.28.2"
+    hash = "sha256-YDHLVTbAk2T9yF/9pRS/7YxvbE38wdcJLbNHKnWhfoM="
   [mod."k8s.io/klog/v2"]
     version = "v2.100.1"
     hash = "sha256-0pf6/CrK6R6FjlKYjy9ybL3+KaAMNEaWUf0mUs6F5+c="
