@@ -4,11 +4,25 @@
   fetchFromGitHub,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
+  python = python3.override {
+    packageOverrides = self: super: {
+      dask = super.dask.overridePythonAttrs (_: {
+        installCheckPhase = "true";
+      });
+
+      pyarrow = super.pyarrow.overridePythonAttrs (old: {
+        installCheckPhase = "true";
+      });
+      tifffile = super.tifffile.overridePythonAttrs (old: {
+        installCheckPhase = "true";
+      });
+    };
+  };
 in
-  python3.pkgs.buildPythonPackage rec {
+  python.pkgs.buildPythonPackage rec {
     pname = "mautrix-telegram";
     version = source.date;
-    disabled = python3.pythonOlder "3.8";
+    disabled = python.pythonOlder "3.8";
 
     src = fetchFromGitHub {
       owner = "mautrix";
@@ -23,14 +37,14 @@ in
         --replace "asyncpg>=0.20,<0.27" "asyncpg>=0.20"
     '';
 
-    propagatedBuildInputs = with python3.pkgs; [
+    propagatedBuildInputs = with python.pkgs; [
       ruamel-yaml
       python-magic
       CommonMark
       aiohttp
       yarl
-      (python3.pkgs.callPackage ../../python/mautrix.nix {})
-      (python3.pkgs.callPackage ../../python/tulir-telethon.nix {})
+      (python.pkgs.callPackage ../../python/mautrix.nix {})
+      (python.pkgs.callPackage ../../python/tulir-telethon.nix {})
       asyncpg
       Mako
       # optional
@@ -58,7 +72,7 @@ in
       description = "A Matrix-Telegram hybrid puppeting/relaybot bridge";
       license = licenses.agpl3Plus;
       platforms = platforms.linux;
-      broken = !(python3.pkgs ? cryptg);
+      broken = !(python.pkgs ? cryptg);
     };
     passthru.updateScript = [
       ../../scripts/update-git.sh
