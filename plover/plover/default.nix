@@ -12,10 +12,9 @@
   appdirs,
   wcwidth,
   setuptools,
-  pywayland,
   xkbcommon,
-  wayland,
   pkg-config,
+  fetchFromGitHub
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   plover-stroke = callPackage ../plover-stroke.nix {};
@@ -24,21 +23,21 @@ in
   qt5.mkDerivationWith buildPythonPackage rec {
     pname = "plover";
     version = source.date;
-    src = callPackage ./source.nix {};
+    src = fetchFromGitHub {
+      owner = "openstenoproject";
+      repo = "plover";
+      inherit (source) rev sha256;
+    };
 
     # I'm not sure why we don't find PyQt5 here but there's a similar
     # sed on many of the platforms Plover builds for
     postPatch = ''
       sed -i /PyQt5/d setup.cfg
-      sed -i 's/pywayland==0.4.11/pywayland>=0.4.11/' reqs/constraints.txt
-      substituteInPlace plover_build_utils/setup.py \
-        --replace "/usr/share/wayland/wayland.xml" "${wayland}/share/wayland/wayland.xml"
     '';
 
     checkInputs = [pytest mock];
-    propagatedBuildInputs = [babel pyqt5 xlib pyserial appdirs wcwidth setuptools plover-stroke rtf-tokenize pywayland xkbcommon];
+    propagatedBuildInputs = [babel pyqt5 xlib pyserial appdirs wcwidth setuptools plover-stroke rtf-tokenize xkbcommon];
     nativeBuildInputs = [
-      wayland
       pkg-config
     ];
 
@@ -52,7 +51,7 @@ in
 
     meta = {
       homepage = "http://www.openstenoproject.org/";
-      description = "Open Source Stenography Software, patched with wayland support";
+      description = "Open Source Stenography Software";
       license = lib.licenses.gpl2Plus;
     };
     passthru.updateScript = [

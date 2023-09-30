@@ -98,6 +98,7 @@ system: self: super: let
       plover-plugin-stenotype-extended = self.python3Packages.callPackage ./plover/plover-stenotype-extended.nix {};
       plover-plugin-machine-hid = self.python3Packages.callPackage ./plover/plover-machine-hid.nix {};
       plover-plugin-rkb1-hid = self.python3Packages.callPackage ./plover/plover-rkb1-hid.nix {};
+      plover-plugin-dotool-output = self.python3Packages.callPackage ./plover/plover-dotool-output.nix {};
       plover-dict-didoesdigital = self.callPackage ./plover/didoesdigital-dictionary.nix {};
       miifox-net = self.python3Packages.callPackage ./web/miifox-net.nix {};
       old-homepage = self.callPackage ./web/old-homepage.nix {};
