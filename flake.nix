@@ -96,6 +96,7 @@
               plover-plugin-yaml-dictionary
               plover-plugin-machine-hid
               plover-plugin-rkb1-hid
+              plover-plugin-dotool-output
               plover-dict-didoesdigital
               miifox-net
               old-homepage
