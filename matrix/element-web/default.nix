@@ -26,7 +26,7 @@ in
     version = source.date;
 
     src = fetchFromGitHub {
-      owner = "maunium";
+      owner = "DarkKirb";
       repo = pname;
       inherit (source) rev sha256;
     };
@@ -79,7 +79,7 @@ in
 
     passthru = {
       updateScript = writeScript "update-element-web" ''
-        ${../../scripts/update-git.sh} https://github.com/maunium/element-web matrix/element-web/source.json
+        ${../../scripts/update-git.sh} https://github.com/DarkKirb/element-web matrix/element-web/source.json
         if [ "$(git diff -- matrix/element-web/source.json)" ]; then
           SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
           ${../../scripts/update-yarn.sh} $SRC_PATH matrix/element-web
