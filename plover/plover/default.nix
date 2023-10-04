@@ -14,7 +14,7 @@
   setuptools,
   xkbcommon,
   pkg-config,
-  fetchFromGitHub
+  fetchFromGitHub,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   plover-stroke = callPackage ../plover-stroke.nix {};
