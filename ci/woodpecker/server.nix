@@ -2,6 +2,7 @@
   buildGoApplication,
   callPackage,
   writeScript,
+  go_1_21,
 }: let
   woodpecker-frontend = callPackage ./frontend.nix {};
   common = callPackage ./common.nix {};
@@ -18,6 +19,8 @@ in
     subPackages = "cmd/server";
 
     CGO_ENABLED = 1;
+
+    go = go_1_21;
 
     patches = [./unlimited-matrix.patch];
 

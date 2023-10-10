@@ -1,6 +1,7 @@
 {
   buildGoApplication,
   callPackage,
+  go_1_21,
 }: let
   common = callPackage ./common.nix {};
 in
@@ -12,6 +13,8 @@ in
     subPackages = "cmd/agent";
 
     CGO_ENABLED = 0;
+
+    go = go_1_21;
 
     meta =
       common.meta
