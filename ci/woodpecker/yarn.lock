@@ -369,9 +369,9 @@
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
 "@iconify/json@^2.2.85":
-  version "2.2.126"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.126.tgz#afdf34c02b70b7d1a226f290645b0ad62c1dbadc"
-  integrity sha512-OoOu5RP3vUiYwwmY/q2KsJQKzI5XKnLeIONwbkvu5EY6+qHQVuqZ4Dry1zdGJub/V0qa6j+OU3bkdL7TgD80dw==
+  version "2.2.127"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.127.tgz#240b38f63e0f7521c828e19bf225ca10cdfac0e4"
+  integrity sha512-5Y3aIrpENV/nMWxXVC5AdmnOPJAor4tN32fw05qscGXuPAO7itAuZ1vskqmBkVv0d4vflDM0yQ9Ssz1JlImGeA==
   dependencies:
     "@iconify/types" "*"
     pathe "^1.1.0"
@@ -746,9 +746,9 @@
     "@vue/shared" "3.3.4"
 
 "@vue/devtools-api@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
-  integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.5.1.tgz#7f71f31e40973eeee65b9a64382b13593fdbd697"
+  integrity sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==
 
 "@vue/language-core@1.8.18":
   version "1.8.18"
@@ -1093,9 +1093,9 @@ callsites@^3.0.0:
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
 caniuse-lite@^1.0.30001541:
-  version "1.0.30001546"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001546.tgz#10fdad03436cfe3cc632d3af7a99a0fb497407f0"
-  integrity sha512-zvtSJwuQFpewSyRrI3AsftF6rM0X80mZkChIt1spBGEvRglCrjTniXvinc8JKRoqTwXAgvqTImaN9igfSMtUBw==
+  version "1.0.30001547"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001547.tgz#d4f92efc488aab3c7f92c738d3977c2a3180472b"
+  integrity sha512-W7CrtIModMAxobGhz8iXmDfuJiiKg1WADMO/9x7/CLNin5cpSbuBjooyoIUVB5eyCc36QuTVlkVa1iB2S5+/eA==
 
 chalk@^2.4.2:
   version "2.4.2"
@@ -1372,9 +1372,9 @@ domutils@^3.0.1:
     domhandler "^5.0.3"
 
 electron-to-chromium@^1.4.535:
-  version "1.4.547"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.547.tgz#b8f34e83641aca0858cbb4dc98b033ff1f298128"
-  integrity sha512-QC99aDjzNir+D4c1jE7QWt3RybAxBWYXBdCoaUaAumkD7nDwPLgyt03qNgpVscn18UIGJIZZbFlzNaUSwhPLiA==
+  version "1.4.549"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.549.tgz#ab223f5d85c55a9def358db163bc8cacba72df69"
+  integrity sha512-gpXfJslSi4hYDkA0mTLEpYKRv9siAgSUgZ+UWyk+J5Cttpd1ThCVwdclzIwQSclz3hYn049+M2fgrP1WpvF8xg==
 
 emojilib@^2.4.0:
   version "2.4.0"
@@ -1572,9 +1572,9 @@ eslint-plugin-import@^2.27.5:
     tsconfig-paths "^3.14.2"
 
 eslint-plugin-prettier@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.0.tgz#6887780ed95f7708340ec79acfdf60c35b9be57a"
-  integrity sha512-AgaZCVuYDXHUGxj/ZGu1u8H8CYgDY3iG6w5kUFw4AzMVXzB7VvbKgYR4nATIN+OvUrghMbiDLeimVjVY5ilq3w==
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.1.tgz#a3b399f04378f79f066379f544e42d6b73f11515"
+  integrity sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==
   dependencies:
     prettier-linter-helpers "^1.0.0"
     synckit "^0.8.5"
@@ -2796,9 +2796,9 @@ resolve-from@^4.0.0:
   integrity sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
 
 resolve@^1.22.2, resolve@^1.22.4:
-  version "1.22.6"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.6.tgz#dd209739eca3aef739c626fea1b4f3c506195362"
-  integrity sha512-njhxM7mV12JfufShqGy3Rz8j11RPdLy4xi15UurGJeoHLfJpVXKdh3ueuOqbYUcDZnffr6X739JBo5LzyahEsw==
+  version "1.22.8"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.8.tgz#b6c87a9f2aa06dfab52e3d70ac8cde321fa5a48d"
+  integrity sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==
   dependencies:
     is-core-module "^2.13.0"
     path-parse "^1.0.7"
