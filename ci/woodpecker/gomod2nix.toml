@@ -344,8 +344,8 @@ schema = 3
     version = "v2.25.7"
     hash = "sha256-/OPbU0DE+xsY6Erz0a3kmzjJPRAXH75FuevmvsaQtw8="
   [mod."github.com/xanzy/go-gitlab"]
-    version = "v0.93.0"
-    hash = "sha256-bcQTM9FWEiFMM0MOa5YGDkEgwAenqQtm1KTIIei/dJk="
+    version = "v0.93.1"
+    hash = "sha256-tYKSuxkKNaNAkBIn3IaGDkPA0X7P8cG683Mb/FZ94W0="
   [mod."github.com/xeipuuv/gojsonpointer"]
     version = "v0.0.0-20180127040702-4e3ac2762d5f"
     hash = "sha256-OEW9nOR3EeMzvqvqpdAgowpZlbXPLWM0JT+5bwWOxo8="
