@@ -22,9 +22,6 @@ schema = 3
   [mod."github.com/Microsoft/go-winio"]
     version = "v0.6.1"
     hash = "sha256-BL0BVaHtmPKQts/711W59AbHXjGKqFS4ZTal0RYnR9I="
-  [mod."github.com/ProtonMail/go-crypto"]
-    version = "v0.0.0-20230217124315-7d5c6f04bbb8"
-    hash = "sha256-QWS55wWNCrgx6BbIrroWpc1s08FeSqf2ehNTXkhbDJQ="
   [mod."github.com/alessio/shellescape"]
     version = "v1.4.2"
     hash = "sha256-TOlNouGwNdaCddRwABb1qXp0HTMt6+G4uatzfAg3XFc="
@@ -52,9 +49,6 @@ schema = 3
   [mod."github.com/chenzhuoyu/base64x"]
     version = "v0.0.0-20221115062448-fe3a3abad311"
     hash = "sha256-xmONcYkIXgXomJYHR521Dr9F3XbbUM14bgf7KJ5FIFc="
-  [mod."github.com/cloudflare/circl"]
-    version = "v1.3.3"
-    hash = "sha256-ItdVkU53Ep01553/tJ4MdAwoTpPljRxiBW9sAd7p0xI="
   [mod."github.com/cpuguy83/go-md2man/v2"]
     version = "v2.0.2"
     hash = "sha256-OvWCtDsVrYzM84SMQwOXPLBxnWnMC1hDm+KiI6zm3uk="
@@ -163,9 +157,9 @@ schema = 3
   [mod."github.com/google/go-cmp"]
     version = "v0.5.9"
     hash = "sha256-lQc4O00R3QSMGs9LP8Sy7A9kj0cqV5rrUdpnGeipIyg="
-  [mod."github.com/google/go-github/v55"]
-    version = "v55.0.0"
-    hash = "sha256-+c3sCiFJ7dY0zbTr7ijlja2wpvRVCodEDikTApCXd/s="
+  [mod."github.com/google/go-github/v56"]
+    version = "v56.0.0"
+    hash = "sha256-1b3x6aQMX3XtB6S3M0Gt2Ux3gM7vopXl89hyJ+RsW6I="
   [mod."github.com/google/go-querystring"]
     version = "v1.1.0"
     hash = "sha256-itsKgKghuX26czU79cK6C2n+lc27jm5Dw1XbIRgwZJY="
