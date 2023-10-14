@@ -2,8 +2,8 @@ schema = 3
 
 [mod]
   [mod."github.com/bwmarrin/discordgo"]
-    version = "v0.0.0-20230804154054-72abb5417718"
-    hash = "sha256-fPK0cEOwEyEzfPwpBkXXuTAQVeMIqogHn2qWaWHg05g="
+    version = "v0.0.0-20231013182643-f333f2578a3c"
+    hash = "sha256-5S/9DqVPRZSjaKkqjnr23vJHk1iMY0QepIbwFBWvAgw="
     replaced = "github.com/beeper/discordgo"
   [mod."github.com/coreos/go-systemd/v22"]
     version = "v22.5.0"
