@@ -1192,11 +1192,11 @@
       };
     }
     {
-      name = "caniuse_lite___caniuse_lite_1.0.30001547.tgz";
+      name = "caniuse_lite___caniuse_lite_1.0.30001549.tgz";
       path = fetchurl {
-        name = "caniuse_lite___caniuse_lite_1.0.30001547.tgz";
-        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001547.tgz";
-        sha512 = "W7CrtIModMAxobGhz8iXmDfuJiiKg1WADMO/9x7/CLNin5cpSbuBjooyoIUVB5eyCc36QuTVlkVa1iB2S5+/eA==";
+        name = "caniuse_lite___caniuse_lite_1.0.30001549.tgz";
+        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001549.tgz";
+        sha512 = "qRp48dPYSCYaP+KurZLhDYdVE+yEyht/3NlmcJgVQ2VMGt6JL36ndQ/7rgspdZsJuxDPFIo/OzBT2+GmIJ53BA==";
       };
     }
     {
@@ -1512,11 +1512,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.553.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.554.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.553.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.553.tgz";
-        sha512 = "HiRdtyKS2+VhiXvjhMvvxiMC33FJJqTA5EB2YHgFZW6v7HkK4Q9Ahv2V7O2ZPgAjw+MyCJVMQvigj13H8t+wvA==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.554.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.554.tgz";
+        sha512 = "Q0umzPJjfBrrj8unkONTgbKQXzXRrH7sVV7D9ea2yBV3Oaogz991yhbpfvo2LMNkJItmruXTEzVpP9cp7vaIiQ==";
       };
     }
     {
@@ -2968,11 +2968,11 @@
       };
     }
     {
-      name = "pinia___pinia_2.1.6.tgz";
+      name = "pinia___pinia_2.1.7.tgz";
       path = fetchurl {
-        name = "pinia___pinia_2.1.6.tgz";
-        url = "https://registry.yarnpkg.com/pinia/-/pinia-2.1.6.tgz";
-        sha512 = "bIU6QuE5qZviMmct5XwCesXelb5VavdOWKWaB17ggk++NUwQWWbP5YnsONTk3b752QkW9sACiR81rorpeOMSvQ==";
+        name = "pinia___pinia_2.1.7.tgz";
+        url = "https://registry.yarnpkg.com/pinia/-/pinia-2.1.7.tgz";
+        sha512 = "+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==";
       };
     }
     {
@@ -3776,11 +3776,11 @@
       };
     }
     {
-      name = "yaml___yaml_2.3.2.tgz";
+      name = "yaml___yaml_2.3.3.tgz";
       path = fetchurl {
-        name = "yaml___yaml_2.3.2.tgz";
-        url = "https://registry.yarnpkg.com/yaml/-/yaml-2.3.2.tgz";
-        sha512 = "N/lyzTPaJasoDmfV7YTrYCI0G/3ivm/9wdG0aHuheKowWQwGTsK0Eoiw6utmzAnI6pkJa0DUVygvp3spqqEKXg==";
+        name = "yaml___yaml_2.3.3.tgz";
+        url = "https://registry.yarnpkg.com/yaml/-/yaml-2.3.3.tgz";
+        sha512 = "zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==";
       };
     }
     {

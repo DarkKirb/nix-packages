@@ -10,9 +10,6 @@ schema = 3
   [mod."github.com/cespare/xxhash/v2"]
     version = "v2.2.0"
     hash = "sha256-nPufwYQfTkyrEkbBrpqM3C2vnMxfIz6tAaBmiUP7vd4="
-  [mod."github.com/chai2010/webp"]
-    version = "v1.1.1"
-    hash = "sha256-fgqfaEmrjMRcUC6WXVISIujzGYauZTKDDrJGLodn70c="
   [mod."github.com/coreos/go-systemd/v22"]
     version = "v22.5.0"
     hash = "sha256-E2zXikbmIQImghstLUWuey1YgA0Folu3F+fi5k4hCxA="
@@ -83,11 +80,14 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-hSZQkw/0eV5Y0pj1N+idYuKb/jtiw/qTfaOGdYCXmn0="
   [mod."go.mau.fi/util"]
+    version = "v0.1.1-0.20231013112707-e938021823cc"
+    hash = "sha256-D+1OVJnLHdcOFfUxLY614q8226HLPCCErUbiaf/jmy0="
+  [mod."go.mau.fi/webp"]
     version = "v0.1.0"
-    hash = "sha256-57TlW5NFS1o5Ee+pNJFLV1DIPwmIDIW+0XRgq369K0o="
+    hash = "sha256-KIP/Onw0t/o10oBuvmRQDff7GF8G5lsMaDXpe0fjvNg="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20230916142552-a743fdc23bf1"
-    hash = "sha256-lz3PYfWEbAJnKz08ajJmmk24kPU8vibBuHZghGnyb2k="
+    version = "v0.0.0-20231013150720-028a685d137c"
+    hash = "sha256-hakhMxtGCZ4fsAXM5L6qRG9QUxDTF+f2qAgcVrvPdHg="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
