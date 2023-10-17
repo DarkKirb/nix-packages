@@ -1,7 +1,7 @@
 {
-  "version": "3.1.2",
+  "version": "3.2.0",
   "pname": "the-plus-addons-for-block-editor",
   "description": "The Plus Blocks for Block Editor | Gutenberg",
-  "url": "https://downloads.wordpress.org/plugin/the-plus-addons-for-block-editor.3.1.2.zip",
-  "sha256": "2dd643e8db5b7a44f1020dfbfccc08813a16b9d54f8158697af2b21a4c8cb34a"
+  "url": "https://downloads.wordpress.org/plugin/the-plus-addons-for-block-editor.3.2.0.zip",
+  "sha256": "ba2cdabcc94841fe3a626250a5178ff113c9e939c4403307bf034527bb889cfb"
 }

@@ -62,14 +62,14 @@ schema = 3
     version = "v0.5.0"
     hash = "sha256-nTlqurp/J/xOZeR0JcJMmE4GUHMMd5I+EOR7huzYuok="
   [mod."github.com/docker/cli"]
-    version = "v20.10.26+incompatible"
-    hash = "sha256-raz6w//bxBzWhTV4Ocmqkm7QyaWxF/NsKWUCcfa0T3c="
+    version = "v23.0.7+incompatible"
+    hash = "sha256-cN3/T46iQ/eMCg8IN6PZNin5S3UqF8So0B1Z2jfD1RA="
   [mod."github.com/docker/distribution"]
     version = "v2.8.3+incompatible"
     hash = "sha256-XhRURCGNpJC83QZTtgCxHHFL76HaxIxjt70HwUa847E="
   [mod."github.com/docker/docker"]
-    version = "v20.10.26+incompatible"
-    hash = "sha256-vECQfJ/AVSTLsXNC4r2VVK1SoIzAiqDlxIWM+lGXqYQ="
+    version = "v23.0.7+incompatible"
+    hash = "sha256-t8CI2LDatM2JV2sIETEe++EdbVYBjxy0dw49rZOdKS8="
   [mod."github.com/docker/docker-credential-helpers"]
     version = "v0.7.0"
     hash = "sha256-Np+esoutU1psMWB0G1ayKwaWVn/XemIXxlVlooXphzg="
@@ -242,8 +242,8 @@ schema = 3
     version = "v1.1.55"
     hash = "sha256-Jbii9veDSpqF7yIkdrzb/bEUM3wZG41mNEAYV3VEAJo="
   [mod."github.com/moby/moby"]
-    version = "v20.10.26+incompatible"
-    hash = "sha256-vECQfJ/AVSTLsXNC4r2VVK1SoIzAiqDlxIWM+lGXqYQ="
+    version = "v23.0.7+incompatible"
+    hash = "sha256-t8CI2LDatM2JV2sIETEe++EdbVYBjxy0dw49rZOdKS8="
   [mod."github.com/moby/term"]
     version = "v0.5.0"
     hash = "sha256-jy0kbkeUsr0KoiE33WLxNAgYXZIERKR2O5+saXBwdD8="
