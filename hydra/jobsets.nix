@@ -37,6 +37,14 @@
                 type = "string";
                 value = system;
               };
+              github_repo_owner = {
+                type = "string";
+                value = info.head.repo.owner.login;
+              };
+              github_repo_name = {
+                type = "string";
+                value = info.head.repo.owner.name;
+              };
             };
           };
         }
@@ -69,6 +77,14 @@
           system = {
             type = "string";
             value = system;
+          };
+          github_repo_owner = {
+            type = "string";
+            value = info.head.repo.owner.login;
+          };
+          github_repo_name = {
+            type = "string";
+            value = info.head.repo.owner.name;
           };
         };
       };

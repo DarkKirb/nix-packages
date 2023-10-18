@@ -12,7 +12,7 @@
     "inputs": {
         "nix-packages": {
             "type": "git",
-            "value": "https://github.com/DarkKirb/nix-packages.git main",
+            "value": "https://github.com/DarkKirb/nix-packages.git fix-status",
             "emailresponsible": false
         },
         "nixpkgs": {
@@ -24,6 +24,14 @@
             "type": "githubpulls",
             "value": "DarkKirb nix-packages",
             "emailresponsible": false
+        },
+        "github_repo_owner": {
+            "type": "string",
+            "value": "DarkKirb"
+        },
+        "github_repo_name": {
+            "type": "string",
+            "value": "nix-packages"
         }
     }
 }
