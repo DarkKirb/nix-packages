@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1685431783,
-        "narHash": "sha256-NriQMCsRiB7fYJ9v+3Tw3/jshB8y/tNsHwgqz24cxO4=",
+        "lastModified": 1697621095,
+        "narHash": "sha256-86HjzjiHBPpAckJE93MwHNMeSxCdxk6vUQgXKhATSOM=",
         "ref": "refs/heads/master",
-        "rev": "51c2319f653df748adfbc7a5fa7440205ad884df",
-        "revCount": 4066,
+        "rev": "eece6d005730ca13ba67b36c5cb707bb265f50d7",
+        "revCount": 4070,
         "type": "git",
         "url": "https://git.chir.rs/darkkirb/hydra"
       },
