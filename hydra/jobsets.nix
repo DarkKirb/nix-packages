@@ -37,6 +37,10 @@
                 type = "string";
                 value = system;
               };
+              github_input = {
+                type = "string";
+                value = "nix-packages";
+              };
               github_repo_owner = {
                 type = "string";
                 value = info.head.repo.owner.login;
@@ -77,6 +81,10 @@
           system = {
             type = "string";
             value = system;
+          };
+          github_input = {
+            type = "string";
+            value = "nix-packages";
           };
           github_repo_owner = {
             type = "string";
