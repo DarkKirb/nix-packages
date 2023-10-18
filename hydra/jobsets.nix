@@ -43,7 +43,7 @@
               };
               github_repo_name = {
                 type = "string";
-                value = info.head.repo.owner.name;
+                value = info.head.repo.name;
               };
             };
           };
@@ -80,11 +80,11 @@
           };
           github_repo_owner = {
             type = "string";
-            value = info.head.repo.owner.login;
+            value = "DarkKirb";
           };
           github_repo_name = {
             type = "string";
-            value = info.head.repo.owner.name;
+            value = "nix-packages";
           };
         };
       };
