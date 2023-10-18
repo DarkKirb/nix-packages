@@ -43,12 +43,18 @@ schema = 3
   [mod."github.com/lib/pq"]
     version = "v1.10.9"
     hash = "sha256-Gl6dLtL+yk6UrTTWfas43aM4lP/pNa2l7+ITXnjQyKs="
+  [mod."github.com/matrix-org/complement"]
+    version = "v0.0.0-20231010122615-008239d3b6e7"
+    hash = "sha256-R15pLwyj7dmYL8sqcinoOKsRiHlEFAr4SnWII1pUNIU="
+  [mod."github.com/matrix-org/gomatrix"]
+    version = "v0.0.0-20220926102614-ceba4d9f7530"
+    hash = "sha256-q1wuafVA5IiyzSFatpIDl8+gLF98b2/m4Rusr9b83lU="
   [mod."github.com/matrix-org/gomatrixserverlib"]
-    version = "v0.0.0-20230822143230-740f742d6993"
-    hash = "sha256-rslVErLl2PSAnVHGF6YTChuKnuaSc3dykSgjCMlIMng="
+    version = "v0.0.0-20230921171121-0466775328c7"
+    hash = "sha256-jcnLQnmaJnII2RPOSTAgLeNzFns4VhciaFaWR1tVncU="
   [mod."github.com/matrix-org/util"]
-    version = "v0.0.0-20200807132607-55161520e1d4"
-    hash = "sha256-LvuzVBtlgFlqIvAyred2druEijgWRLND+LXzYCxy9sA="
+    version = "v0.0.0-20221111132719-399730281e66"
+    hash = "sha256-B9K93f1vgsLXwDgnZPDXIYeVlgaSlml/WxCEsyPl8c0="
   [mod."github.com/mattn/go-colorable"]
     version = "v0.1.13"
     hash = "sha256-qb3Qbo0CELGRIzvw7NVM1g/aayaz4Tguppk9MD2/OI8="
@@ -83,14 +89,14 @@ schema = 3
     version = "v1.9.3"
     hash = "sha256-EnxsWdEUPYid+aZ9H4/iMTs1XMvCLbXZRDyvj89Ebms="
   [mod."github.com/tidwall/gjson"]
-    version = "v1.14.3"
-    hash = "sha256-CjsKkesYwKl6hwHXB/+mvkuzW2ihKecUyvUFHUtylcw="
+    version = "v1.16.0"
+    hash = "sha256-dpOHsSigxmZYBDTYO4d7jL4aTHUTPWDerogprK9/Iyw="
   [mod."github.com/tidwall/match"]
     version = "v1.1.1"
     hash = "sha256-M2klhPId3Q3T3VGkSbOkYl/2nLHnsG+yMbXkPkyrRdg="
   [mod."github.com/tidwall/pretty"]
-    version = "v1.2.0"
-    hash = "sha256-esRQGsn2Ee/CiySlwyuOICSLdqUkH4P7u8qXszos8Yc="
+    version = "v1.2.1"
+    hash = "sha256-S0uTDDGD8qr415Ut7QinyXljCp0TkL4zOIrlJ+9OMl8="
   [mod."github.com/tidwall/sjson"]
     version = "v1.2.5"
     hash = "sha256-OYGNolkmL7E1Qs2qrQ3IVpQp5gkcHNU/AB/z2O+Myps="
@@ -125,8 +131,11 @@ schema = 3
     version = "v1.0.0"
     hash = "sha256-w2WbhXXshdm/ZmZkg5VpWwXFLjJRBBwSObyHGjJcELQ="
   [mod."golang.org/x/crypto"]
-    version = "v0.12.0"
-    hash = "sha256-Wes72EA9ICTG8o0nEYWZk9xjpqlniorFeY6o26GExns="
+    version = "v0.13.0"
+    hash = "sha256-4ThyrEJI4i9XBwx/q/R4jR41VJBZ/TSR0+UCkjTH95A="
+  [mod."golang.org/x/exp"]
+    version = "v0.0.0-20230905200255-921286631fa9"
+    hash = "sha256-CyeVwjp12Wqh4ptqfi3KHCWPzOFhE8fSrP3sMjMXvec="
   [mod."golang.org/x/net"]
     version = "v0.14.0"
     hash = "sha256-QScKgO7lBWOsd0Y31wLRzFETv3tjqdB/eRQWW5q7aV4="
@@ -137,8 +146,8 @@ schema = 3
     version = "v0.12.0"
     hash = "sha256-Ht/PhBJGWNBg4ksmdUu4+7hJjFypSwoUN/8DJricd+0="
   [mod."golang.org/x/text"]
-    version = "v0.12.0"
-    hash = "sha256-aNQaW3EgCK9ehpnBzIAkZX6TmiUU1S175YlJUH7P5Qg="
+    version = "v0.13.0"
+    hash = "sha256-J34dbc8UNVIdRJUZP7jPt11oxuwG8VvrOOylxE7V3oA="
   [mod."google.golang.org/genproto/googleapis/api"]
     version = "v0.0.0-20230822172742-b8732ec3820d"
     hash = "sha256-qd9dJezVHNJZNMkywXapT1rsyD+lb25AU8aG8NJlhm4="
@@ -151,3 +160,6 @@ schema = 3
   [mod."google.golang.org/protobuf"]
     version = "v1.31.0"
     hash = "sha256-UdIk+xRaMfdhVICvKRk1THe3R1VU+lWD8hqoW/y8jT0="
+  [mod."maunium.net/go/mautrix"]
+    version = "v0.11.0"
+    hash = "sha256-Mr0vqRMiKcf1OB/HVusFt/LizklScyGFs75mV6gU/bQ="
