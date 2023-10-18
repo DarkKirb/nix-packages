@@ -12,7 +12,7 @@
     "inputs": {
         "nix-packages": {
             "type": "git",
-            "value": "https://github.com/DarkKirb/nix-packages.git fix-status",
+            "value": "https://github.com/DarkKirb/nix-packages.git main",
             "emailresponsible": false
         },
         "nixpkgs": {
