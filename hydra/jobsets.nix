@@ -8,8 +8,8 @@
   nixpkgs_version = ["master"];
   mkJobsets = system: version:
     (builtins.listToAttrs (
-      map (
-        info: {
+      pkgs.lib.attrsets.mapAttrsToList (
+        _: info: {
           name = "${system}-${version}-pr${toString info.number}";
           value = {
             enabled = info.state == "open";
@@ -37,21 +37,6 @@
                 type = "string";
                 value = system;
               };
-              gitea_status_repo = {
-                type = "string";
-                value = "nix-packages";
-                emailresponsible = false;
-              };
-              gitea_repo_owner = {
-                type = "string";
-                value = "${info.head.repo.owner.login}";
-                emailresponsible = false;
-              };
-              gitea_repo_name = {
-                type = "string";
-                value = "${info.head.repo.name}";
-                emailresponsible = false;
-              };
             };
           };
         }
@@ -73,7 +58,7 @@
         inputs = {
           nix-packages = {
             type = "git";
-            value = "https://git.chir.rs/darkkirb/nix-packages main";
+            value = "https://github.com/DarkKirb/nix-packages main";
             emailresponsible = false;
           };
           nixpkgs = {
@@ -84,21 +69,6 @@
           system = {
             type = "string";
             value = system;
-          };
-          gitea_status_repo = {
-            type = "string";
-            value = "nix-packages";
-            emailresponsible = false;
-          };
-          gitea_repo_owner = {
-            type = "string";
-            value = "darkkirb";
-            emailresponsible = false;
-          };
-          gitea_repo_name = {
-            type = "string";
-            value = "nix-packages";
-            emailresponsible = false;
           };
         };
       };
