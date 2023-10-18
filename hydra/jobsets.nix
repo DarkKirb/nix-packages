@@ -37,6 +37,18 @@
                 type = "string";
                 value = system;
               };
+              github_input = {
+                type = "string";
+                value = "nix-packages";
+              };
+              github_repo_owner = {
+                type = "string";
+                value = info.head.repo.owner.login;
+              };
+              github_repo_name = {
+                type = "string";
+                value = info.head.repo.name;
+              };
             };
           };
         }
@@ -69,6 +81,18 @@
           system = {
             type = "string";
             value = system;
+          };
+          github_input = {
+            type = "string";
+            value = "nix-packages";
+          };
+          github_repo_owner = {
+            type = "string";
+            value = "DarkKirb";
+          };
+          github_repo_name = {
+            type = "string";
+            value = "nix-packages";
           };
         };
       };
