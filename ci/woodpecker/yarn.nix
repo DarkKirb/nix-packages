@@ -416,11 +416,11 @@
       };
     }
     {
-      name = "_humanwhocodes_config_array___config_array_0.11.11.tgz";
+      name = "_humanwhocodes_config_array___config_array_0.11.12.tgz";
       path = fetchurl {
-        name = "_humanwhocodes_config_array___config_array_0.11.11.tgz";
-        url = "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.11.tgz";
-        sha512 = "N2brEuAadi0CcdeMXUkhbZB84eskAc8MEX1By6qEchoVywSgXPIjou4rYsl0V3Hj0ZnuGycGCjdNgockbzeWNA==";
+        name = "_humanwhocodes_config_array___config_array_0.11.12.tgz";
+        url = "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.12.tgz";
+        sha512 = "NlGesA1usRNn6ctHCZ21M4/dKPgW9Nn1FypRdIKKgZOKzkVV4T1FlK5mBiLhHBCDmEbdQG0idrcXlbZfksJ+RA==";
       };
     }
     {
@@ -432,11 +432,11 @@
       };
     }
     {
-      name = "_humanwhocodes_object_schema___object_schema_1.2.1.tgz";
+      name = "_humanwhocodes_object_schema___object_schema_2.0.0.tgz";
       path = fetchurl {
-        name = "_humanwhocodes_object_schema___object_schema_1.2.1.tgz";
-        url = "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz";
-        sha512 = "ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==";
+        name = "_humanwhocodes_object_schema___object_schema_2.0.0.tgz";
+        url = "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.0.tgz";
+        sha512 = "9S9QrXY2K0L4AGDcSgTi9vgiCcG8VcBv4Mp7/1hDPYoswIy6Z6KO5blYto82BT8M0MZNRWmCFLpCs3HlpYGGdw==";
       };
     }
     {
@@ -1192,11 +1192,11 @@
       };
     }
     {
-      name = "caniuse_lite___caniuse_lite_1.0.30001550.tgz";
+      name = "caniuse_lite___caniuse_lite_1.0.30001551.tgz";
       path = fetchurl {
-        name = "caniuse_lite___caniuse_lite_1.0.30001550.tgz";
-        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001550.tgz";
-        sha512 = "p82WjBYIypO0ukTsd/FG3Xxs+4tFeaY9pfT4amQL8KWtYH7H9nYwReGAbMTJ0hsmRO8IfDtsS6p3ZWj8+1c2RQ==";
+        name = "caniuse_lite___caniuse_lite_1.0.30001551.tgz";
+        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001551.tgz";
+        sha512 = "vtBAez47BoGMMzlbYhfXrMV1kvRF2WP/lqiMuDu1Sb4EE4LKEgjopFDSRtZfdVnslNRpOqV/woE+Xgrwj6VQlg==";
       };
     }
     {
@@ -1512,11 +1512,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.558.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.560.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.558.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.558.tgz";
-        sha512 = "j9IcGmfkyN5MBH/0Xzg45GDHasXsnwEJDM6Xnr9H7GlGUni+JH4q6xp6Nk7NV5LjTmoEFBqhILIqg1McJrv6uA==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.560.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.560.tgz";
+        sha512 = "HhJH/pWAxTaPZl7R3mJ6gCd8MfjQdil9RAWk84qHaLsmPTadydfAmq0a1x8kZtOGQ6pZrWhOYj5uZ8I0meZIgg==";
       };
     }
     {
@@ -2544,6 +2544,14 @@
       };
     }
     {
+      name = "local_pkg___local_pkg_0.5.0.tgz";
+      path = fetchurl {
+        name = "local_pkg___local_pkg_0.5.0.tgz";
+        url = "https://registry.yarnpkg.com/local-pkg/-/local-pkg-0.5.0.tgz";
+        sha512 = "ok6z3qlYyCDS4ZEU27HaU6x/xZa9Whf8jD4ptH5UZTQYZVYeb9bnZ3ojVhiJNLiXK1Hfc0GNbLXcmZ5plLDDBg==";
+      };
+    }
+    {
       name = "locate_path___locate_path_6.0.0.tgz";
       path = fetchurl {
         name = "locate_path___locate_path_6.0.0.tgz";
@@ -3544,11 +3552,11 @@
       };
     }
     {
-      name = "unplugin_icons___unplugin_icons_0.17.0.tgz";
+      name = "unplugin_icons___unplugin_icons_0.17.1.tgz";
       path = fetchurl {
-        name = "unplugin_icons___unplugin_icons_0.17.0.tgz";
-        url = "https://registry.yarnpkg.com/unplugin-icons/-/unplugin-icons-0.17.0.tgz";
-        sha512 = "gMv66eY/Hj64heM55XrfDH3LUCWI51mtkBVUPVl9VkpvLgAYhdVe9nRuzu6p+idmCLSQVq7xiPxQcD4aXCgW5A==";
+        name = "unplugin_icons___unplugin_icons_0.17.1.tgz";
+        url = "https://registry.yarnpkg.com/unplugin-icons/-/unplugin-icons-0.17.1.tgz";
+        sha512 = "KsWejBPCHokYCNDQUzGu6R3E3XDYH/YpewgQwrVBXgpl1iR0RdW1NEGNdjlbuapwVnZXVgA5eiDTfNaQCawSdg==";
       };
     }
     {
