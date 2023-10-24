@@ -6,6 +6,7 @@
   openssl,
   pkg-config,
   writeScript,
+  go_1_19
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   src = stdenv.mkDerivation {
@@ -74,4 +75,5 @@ in
       fi
     '';
     passthru.repoVersion = "13"; # Also update kubo-migrator when changing the repo version
+    go = go_1_19;
   }
