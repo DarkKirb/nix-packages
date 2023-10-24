@@ -12,12 +12,12 @@
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   libheif' = libheif.overrideAttrs (super: rec {
-    version = "1.16.2";
+    version = "1.17.1";
     src = fetchFromGitHub {
       owner = "strukturag";
       repo = "libheif";
       rev = "v${version}";
-      sha256 = "sha256-+6vWHkhsHSJDjOmNmdf18+IKavH/ysgfyxREMeTasLc=";
+      sha256 = "sha256-PI55VdNsJUpomdFlVOzD9ha1b+0MoxOPnM0KASRH2rI=";
     };
     nativeBuildInputs = [cmake pkg-config];
   });
