@@ -6,7 +6,7 @@
   openssl,
   pkg-config,
   writeScript,
-  go_1_19
+  go_1_19,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   src = stdenv.mkDerivation {

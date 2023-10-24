@@ -205,9 +205,6 @@ schema = 3
   [mod."github.com/klauspost/cpuid/v2"]
     version = "v2.2.5"
     hash = "sha256-/M8CHNah2/EPr0va44r1Sx+3H6E+jN8bGFi5jQkLBrM="
-  [mod."github.com/kr/fs"]
-    version = "v0.1.0"
-    hash = "sha256-+Cjz0rGmdNIV1QL4z8h7JAjHATa5pKndwSnD1M0J74c="
   [mod."github.com/leodido/go-urn"]
     version = "v1.2.4"
     hash = "sha256-N2HO7ChScxI79KGvXI9LxoIlr+lkBNdDZP9OPGwPRK0="
@@ -232,9 +229,6 @@ schema = 3
   [mod."github.com/matttproud/golang_protobuf_extensions"]
     version = "v1.0.4"
     hash = "sha256-uovu7OycdeZ2oYQ7FhVxLey5ZX3T0FzShaRldndyGvc="
-  [mod."github.com/melbahja/goph"]
-    version = "v1.4.0"
-    hash = "sha256-YIrRwgacGIcBCAnIW0XwMzTBwNmrOXCpAwbqNaqx2vA="
   [mod."github.com/mholt/acmez"]
     version = "v1.2.0"
     hash = "sha256-zfj14WFQr1/AO64gYsbFk4a4T0dsMEs+W3uIa9968/M="
@@ -274,9 +268,6 @@ schema = 3
   [mod."github.com/pkg/errors"]
     version = "v0.9.1"
     hash = "sha256-mNfQtcrQmu3sNg/7IwiieKWOgFQOVVe2yXgKBpe/wZw="
-  [mod."github.com/pkg/sftp"]
-    version = "v1.13.5"
-    hash = "sha256-z5AbvM8kGlpF1LQy0pQpij7KMR5bE+1HppvamBRt8F4="
   [mod."github.com/pmezard/go-difflib"]
     version = "v1.0.0"
     hash = "sha256-/FtmHnaGjdvEIKAJtrUfEhV7EVo5A/eYrtdnUkuxLDA="
