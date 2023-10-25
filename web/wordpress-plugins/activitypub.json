@@ -1,7 +1,7 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.10",
   "pname": "activitypub",
   "description": "ActivityPub",
-  "url": "https://downloads.wordpress.org/plugin/activitypub.1.0.7.zip",
-  "sha256": "7756acdce1c91284ced83162ae98d1bd9c82692ec94cce35c3c1ecaed0113660"
+  "url": "https://downloads.wordpress.org/plugin/activitypub.1.0.10.zip",
+  "sha256": "c19825829d91471f4fd5f7c15cfc5ffd0658328b89e9a9543b79ae9bcf5b1de2"
 }
