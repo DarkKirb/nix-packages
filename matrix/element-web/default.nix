@@ -59,9 +59,9 @@ in
       runHook preBuild
 
       export VERSION=${version}
-      yarn build:res --offline
-      yarn build:module_system --offline
-      yarn build:bundle --offline
+      yarn build:res
+      yarn build:module_system
+      yarn build:bundle
 
       runHook postBuild
     '';
