@@ -83,8 +83,8 @@ schema = 3
     version = "v2.8.3+incompatible"
     hash = "sha256-XhRURCGNpJC83QZTtgCxHHFL76HaxIxjt70HwUa847E="
   [mod."github.com/docker/docker"]
-    version = "v24.0.6+incompatible"
-    hash = "sha256-bCEAXrxDfMgcEoMDZfq5ka+pI4kSIrIhfKrrq5f0g9g="
+    version = "v24.0.7+incompatible"
+    hash = "sha256-fgLsKDI2q2KNu40T/iFMHa6A0JWt2clExwDW3WHPNYI="
   [mod."github.com/docker/go-connections"]
     version = "v0.4.0"
     hash = "sha256-GHNIjOuuNp5lFQ308+nDNwQPGESCVV7bCUxSW5ZxZlc="
