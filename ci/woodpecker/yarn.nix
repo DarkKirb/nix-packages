@@ -440,11 +440,11 @@
       };
     }
     {
-      name = "_iconify_json___json_2.2.136.tgz";
+      name = "_iconify_json___json_2.2.137.tgz";
       path = fetchurl {
-        name = "_iconify_json___json_2.2.136.tgz";
-        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.136.tgz";
-        sha512 = "ZQS66Pr5yrvX97kBDtxQI0tk7C32a84mFLalcrird8nDXZCayVDeAFpDPP2Cj6+D3qSJ6pfrL/Sgx42qWLGUag==";
+        name = "_iconify_json___json_2.2.137.tgz";
+        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.137.tgz";
+        sha512 = "3FGpECgBVywCUoYwGP192fo50QiNynUnVEKRiiIFTtMyY6bCFAJP/ra/uJeiqwXQm4qBDIuUqKBDe5odFCSUfg==";
       };
     }
     {
@@ -1520,11 +1520,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.574.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.576.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.574.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.574.tgz";
-        sha512 = "bg1m8L0n02xRzx4LsTTMbBPiUd9yIR+74iPtS/Ao65CuXvhVZHP0ym1kSdDG3yHFDXqHQQBKujlN1AQ8qZnyFg==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.576.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.576.tgz";
+        sha512 = "yXsZyXJfAqzWk1WKryr0Wl0MN2D47xodPvEEwlVePBnhU5E7raevLQR+E6b9JAD3GfL/7MbAL9ZtWQQPcLx7wA==";
       };
     }
     {
@@ -3816,11 +3816,11 @@
       };
     }
     {
-      name = "yaml___yaml_2.3.3.tgz";
+      name = "yaml___yaml_2.3.4.tgz";
       path = fetchurl {
-        name = "yaml___yaml_2.3.3.tgz";
-        url = "https://registry.yarnpkg.com/yaml/-/yaml-2.3.3.tgz";
-        sha512 = "zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==";
+        name = "yaml___yaml_2.3.4.tgz";
+        url = "https://registry.yarnpkg.com/yaml/-/yaml-2.3.4.tgz";
+        sha512 = "8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==";
       };
     }
     {

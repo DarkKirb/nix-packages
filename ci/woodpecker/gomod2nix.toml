@@ -28,6 +28,9 @@ schema = 3
   [mod."github.com/antonmedv/expr"]
     version = "v1.15.3"
     hash = "sha256-j6ZvAK4MgiyDnXw4TxnfjBYgxrde4P6kEYROzj10qxc="
+  [mod."github.com/aymanbagabas/go-osc52/v2"]
+    version = "v2.0.1"
+    hash = "sha256-6Bp0jBZ6npvsYcKZGHHIUSVSTAMEyieweAX2YAKDjjg="
   [mod."github.com/beorn7/perks"]
     version = "v1.0.1"
     hash = "sha256-h75GUqfwJKngCJQVE5Ao5wnO3cfKD9lSIteoLp/3xJ4="
@@ -214,6 +217,9 @@ schema = 3
   [mod."github.com/libdns/libdns"]
     version = "v0.2.1"
     hash = "sha256-bxEY0wYu4Um0t7sakLyMwMPDXfv2x07gjckKSyAypsc="
+  [mod."github.com/lucasb-eyer/go-colorful"]
+    version = "v1.2.0"
+    hash = "sha256-Gg9dDJFCTaHrKHRR1SrJgZ8fWieJkybljybkI9x0gyE="
   [mod."github.com/mailru/easyjson"]
     version = "v0.7.7"
     hash = "sha256-NVCz8MURpxgOjHXqxOZExqV4bnpHggpeAOyZDArjcy4="
@@ -223,6 +229,9 @@ schema = 3
   [mod."github.com/mattn/go-isatty"]
     version = "v0.0.19"
     hash = "sha256-wYQqGxeqV3Elkmn26Md8mKZ/viw598R4Ych3vtt72YE="
+  [mod."github.com/mattn/go-runewidth"]
+    version = "v0.0.14"
+    hash = "sha256-O3QdxqAcJgQ+HL1v8oBA4iKBwJ2AlDN+F464027hWMU="
   [mod."github.com/mattn/go-sqlite3"]
     version = "v1.14.17"
     hash = "sha256-ictf2uCW2AnQbykhI0kKPXwzHQlbHHZflZgvpqGFquY="
@@ -250,6 +259,9 @@ schema = 3
   [mod."github.com/morikuni/aec"]
     version = "v1.0.0"
     hash = "sha256-5zYgLeGr3K+uhGKlN3xv0PO67V+2Zw+cezjzNCmAWOE="
+  [mod."github.com/muesli/termenv"]
+    version = "v0.15.2"
+    hash = "sha256-Eum/SpyytcNIchANPkG4bYGBgcezLgej7j/+6IhqoMU="
   [mod."github.com/munnerz/goautoneg"]
     version = "v0.0.0-20191010083416-a7dc8b61c822"
     hash = "sha256-79URDDFenmGc9JZu+5AXHToMrtTREHb3BC84b/gym9Q="
@@ -283,6 +295,9 @@ schema = 3
   [mod."github.com/prometheus/procfs"]
     version = "v0.11.1"
     hash = "sha256-yphZ7NZtYC/tb0HVag2T58SuN64Ial9sBo/TdCEQx6Q="
+  [mod."github.com/rivo/uniseg"]
+    version = "v0.2.0"
+    hash = "sha256-GLj0jiGrT03Ept4V6FXCN1yeZ/b6PpS3MEXK6rYQ8Eg="
   [mod."github.com/robfig/cron"]
     version = "v1.2.0"
     hash = "sha256-au+MD6DEjpVRAjXWmmJbZRB5IdFfcIqGm6kBkkYNY1s="
