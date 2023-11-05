@@ -35,6 +35,7 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnsupportedSystem = true;
+          config.contentAddressedByDefault = true;
           overlays = [
             self.overlays.${system}.default
           ];

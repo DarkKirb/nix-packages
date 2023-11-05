@@ -8,6 +8,7 @@
     config = {
       allowUnfree = true;
       allowUnsupportedSystem = true;
+      contentAddressedByDefault = true;
     };
   };
   ci = import nix-packages {inherit pkgs;};
