@@ -1,8 +1,8 @@
 self: super: {
     ruby = super.ruby.overrideAttrs (_: {
-        disallowedReferences = [];
+        disallowedRequisites = [];
     });
     neovim = super.neovim.overrideAttrs (_: {
-        disallowedRequisites = [];
+        disallowedReferences = [];
     });
 }
