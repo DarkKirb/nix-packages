@@ -440,11 +440,11 @@
       };
     }
     {
-      name = "_iconify_json___json_2.2.138.tgz";
+      name = "_iconify_json___json_2.2.139.tgz";
       path = fetchurl {
-        name = "_iconify_json___json_2.2.138.tgz";
-        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.138.tgz";
-        sha512 = "Xadn4xiIiaF02VLbJwviPSNqB2pNH2NQ+mxgtM5SuYQ/U/D9Sa+hr2Jwc/YlcOWgeqIp+hIVR2YzJDtSiL3fPA==";
+        name = "_iconify_json___json_2.2.139.tgz";
+        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.139.tgz";
+        sha512 = "RQrUtjDN7qzGP+75I4lqH4XO2/PjOA7g9yQEoVB/DQf3S1ND7qLxlgbMa5vZV7oFMydl0ifmeIzBtgKL78B11Q==";
       };
     }
     {
@@ -680,11 +680,11 @@
       };
     }
     {
-      name = "_types_semver___semver_7.5.4.tgz";
+      name = "_types_semver___semver_7.5.5.tgz";
       path = fetchurl {
-        name = "_types_semver___semver_7.5.4.tgz";
-        url = "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.4.tgz";
-        sha512 = "MMzuxN3GdFwskAnb6fz0orFvhfqi752yjaXylr0Rp4oDg5H0Zn1IuyRhDVvYOwAXoJirx2xuS16I3WjxnAIHiQ==";
+        name = "_types_semver___semver_7.5.5.tgz";
+        url = "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.5.tgz";
+        sha512 = "+d+WYC1BxJ6yVOgUgzK8gWvp5qF8ssV5r4nsDcZWKRWcDQLQ619tvWAxJQYGgBrO1MnLJC7a5GtiYsAoQ47dJg==";
       };
     }
     {
@@ -768,11 +768,11 @@
       };
     }
     {
-      name = "_vitejs_plugin_vue___plugin_vue_4.4.0.tgz";
+      name = "_vitejs_plugin_vue___plugin_vue_4.4.1.tgz";
       path = fetchurl {
-        name = "_vitejs_plugin_vue___plugin_vue_4.4.0.tgz";
-        url = "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-4.4.0.tgz";
-        sha512 = "xdguqb+VUwiRpSg+nsc2HtbAUSGak25DXYvpQQi4RVU1Xq1uworyoH/md9Rfd8zMmPR/pSghr309QNcftUVseg==";
+        name = "_vitejs_plugin_vue___plugin_vue_4.4.1.tgz";
+        url = "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-4.4.1.tgz";
+        sha512 = "HCQG8VDFDM7YDAdcj5QI5DvUi+r6xvo9LgvYdk7LSkUNwdpempdB5horkMSZsbdey9Ywsf5aaU8kEPw9M5kREA==";
       };
     }
     {
