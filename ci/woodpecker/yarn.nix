@@ -440,11 +440,11 @@
       };
     }
     {
-      name = "_iconify_json___json_2.2.139.tgz";
+      name = "_iconify_json___json_2.2.140.tgz";
       path = fetchurl {
-        name = "_iconify_json___json_2.2.139.tgz";
-        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.139.tgz";
-        sha512 = "RQrUtjDN7qzGP+75I4lqH4XO2/PjOA7g9yQEoVB/DQf3S1ND7qLxlgbMa5vZV7oFMydl0ifmeIzBtgKL78B11Q==";
+        name = "_iconify_json___json_2.2.140.tgz";
+        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.140.tgz";
+        sha512 = "pEDLyUe39vZy15C0LT3UrnTzAWq1xkZ+F8+u9XfcHzqC7W9IwsocVMzWBGtXUn+pCmLpksfwHlzVycbbz7eMvw==";
       };
     }
     {
@@ -1512,11 +1512,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.580.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.581.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.580.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.580.tgz";
-        sha512 = "T5q3pjQon853xxxHUq3ZP68ZpvJHuSMY2+BZaW3QzjS4HvNuvsMmZ/+lU+nCrftre1jFZ+OSlExynXWBihnXzw==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.581.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.581.tgz";
+        sha512 = "6uhqWBIapTJUxgPTCHH9sqdbxIMPt7oXl0VcAL1kOtlU6aECdcMncCrX5Z7sHQ/invtrC9jUQUef7+HhO8vVFw==";
       };
     }
     {
@@ -2144,11 +2144,11 @@
       };
     }
     {
-      name = "humanize_duration___humanize_duration_3.30.0.tgz";
+      name = "humanize_duration___humanize_duration_3.31.0.tgz";
       path = fetchurl {
-        name = "humanize_duration___humanize_duration_3.30.0.tgz";
-        url = "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.30.0.tgz";
-        sha512 = "NxpT0fhQTFuMTLnuu1Xp+ozNpYirQnbV3NlOjEKBYlE3uvMRu3LDuq8EPc3gVXxVYnchQfqVM4/+T9iwHPLLeA==";
+        name = "humanize_duration___humanize_duration_3.31.0.tgz";
+        url = "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.31.0.tgz";
+        sha512 = "fRrehgBG26NNZysRlTq1S+HPtDpp3u+Jzdc/d5A4cEzOD86YLAkDaJyJg8krSdCi7CJ+s7ht3fwRj8Dl+Btd0w==";
       };
     }
     {
