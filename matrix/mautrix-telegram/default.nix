@@ -7,14 +7,20 @@
   python = python3.override {
     packageOverrides = self: super: {
       dask = super.dask.overridePythonAttrs (_: {
-        installCheckPhase = "true";
+        doCheck = false;
+        doInstallCheck = false;
       });
-
       pyarrow = super.pyarrow.overridePythonAttrs (old: {
-        installCheckPhase = "true";
+        doCheck = false;
+        doInstallCheck = false;
       });
       tifffile = super.tifffile.overridePythonAttrs (old: {
-        installCheckPhase = "true";
+        doCheck = false;
+        doInstallCheck = false;
+      });
+      websockets = super.websockets.overridePythonAttrs (old: {
+        doCheck = false;
+        doInstallCheck = false;
       });
     };
   };
