@@ -1,7 +1,7 @@
 {
-  "version": "3.2.6",
+  "version": "3.2.7",
   "pname": "webfinger",
   "description": "WebFinger",
-  "url": "https://downloads.wordpress.org/plugin/webfinger.3.2.6.zip",
-  "sha256": "6852b1c4d6b4ffbf122eb0ee07abd1e2f0a487544ba9064069da9a63988d6118"
+  "url": "https://downloads.wordpress.org/plugin/webfinger.3.2.7.zip",
+  "sha256": "4fae9616af222d8197b35171eaece20deeef98521ea00f4dd38db3b6ac03d309"
 }

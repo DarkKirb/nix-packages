@@ -27,7 +27,7 @@ jobs:
       - name: run update script
         run: yes "" | ./update.sh
       - name: run nix fmt
-        run: nix fmt
+        run: nix run github:nixos/nixpkgs#alejandra -- .
       - name: Commit and push
         uses: peter-evans/create-pull-request@v5
         with:
