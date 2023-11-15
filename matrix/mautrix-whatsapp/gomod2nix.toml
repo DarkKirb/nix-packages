@@ -77,14 +77,14 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-hSZQkw/0eV5Y0pj1N+idYuKb/jtiw/qTfaOGdYCXmn0="
   [mod."go.mau.fi/util"]
-    version = "v0.2.0"
-    hash = "sha256-Jh15c8OTtUQ2lPIZyJrY1380iYS4x4XZClGPcaZ3S2I="
+    version = "v0.2.1-0.20231114144345-a692409c548f"
+    hash = "sha256-a/zBpPaPLwg9/3qPUTuBNeZP/tt3RLoaqyM0uCGj2Nk="
   [mod."go.mau.fi/webp"]
     version = "v0.1.0"
     hash = "sha256-KIP/Onw0t/o10oBuvmRQDff7GF8G5lsMaDXpe0fjvNg="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20231112141858-68b25b3f6fe9"
-    hash = "sha256-Eft3WJOuXSWQLEZy3iDuuwv4f1LUgkJkIJMcvD/fVSY="
+    version = "v0.0.0-20231114143452-e8fa5b64d278"
+    hash = "sha256-kCVJA+W17qdA67uJEFcG8NWRn8ME1dSqKqIWpqvispE="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
@@ -122,5 +122,5 @@ schema = 3
     version = "v2.4.1"
     hash = "sha256-OstOCC7Bib6mbcUG2X3YafEBikFhPQ8lN6jPK5c/Ah8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.16.2-0.20231112104921-da5a51a279a7"
-    hash = "sha256-+7Z1pMJFX3LZ3uR8+S1B0rU3GcWM/vJAfzfl2oYmKwk="
+    version = "v0.16.2-0.20231114144505-09daa655758e"
+    hash = "sha256-rEdmbrkEkIUiY9jPQbqVjE7/9Nj8yNnUiY9dOp8uKqs="

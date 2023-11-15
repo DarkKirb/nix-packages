@@ -440,11 +440,11 @@
       };
     }
     {
-      name = "_iconify_json___json_2.2.141.tgz";
+      name = "_iconify_json___json_2.2.142.tgz";
       path = fetchurl {
-        name = "_iconify_json___json_2.2.141.tgz";
-        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.141.tgz";
-        sha512 = "EmHsjVngGE7K9ykKkkGczXTW5552h/dDp7SicHT3SaQD1Krb/GvIVCff9jRgBDFu9QxhcqVdVk+kDHfbzJXT8Q==";
+        name = "_iconify_json___json_2.2.142.tgz";
+        url = "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.142.tgz";
+        sha512 = "EfQv1GMGxOySdwaGR3+Diqudkwk4W299cNtcQhg7QAlH9x6FW9851raiYvdOsMZp0ya+Ye+evTTqxyZ4vEh5cw==";
       };
     }
     {
@@ -1184,11 +1184,11 @@
       };
     }
     {
-      name = "caniuse_lite___caniuse_lite_1.0.30001561.tgz";
+      name = "caniuse_lite___caniuse_lite_1.0.30001562.tgz";
       path = fetchurl {
-        name = "caniuse_lite___caniuse_lite_1.0.30001561.tgz";
-        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001561.tgz";
-        sha512 = "NTt0DNoKe958Q0BE0j0c1V9jbUzhBxHIEJy7asmGrpE0yG63KTV7PLHPnK2E1O9RsQrQ081I3NLuXGS6zht3cw==";
+        name = "caniuse_lite___caniuse_lite_1.0.30001562.tgz";
+        url = "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001562.tgz";
+        sha512 = "kfte3Hym//51EdX4239i+Rmp20EsLIYGdPkERegTgU19hQWCRhsRFGKHTliUlsry53tv17K7n077Kqa0WJU4ng==";
       };
     }
     {
@@ -1512,11 +1512,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.582.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.584.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.582.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.582.tgz";
-        sha512 = "89o0MGoocwYbzqUUjc+VNpeOFSOK9nIdC5wY4N+PVUarUK0MtjyTjks75AZS2bW4Kl8MdewdFsWaH0jLy+JNoA==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.584.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.584.tgz";
+        sha512 = "rXCtDiXCBtfTfEegkthruCvyWZnr1/FCrUGY/nYQiF+lSZDmwQBDxp0rivZxV8trXb6cbgojhcSTW5xsDcHQ8g==";
       };
     }
     {
@@ -3544,11 +3544,11 @@
       };
     }
     {
-      name = "ufo___ufo_1.3.1.tgz";
+      name = "ufo___ufo_1.3.2.tgz";
       path = fetchurl {
-        name = "ufo___ufo_1.3.1.tgz";
-        url = "https://registry.yarnpkg.com/ufo/-/ufo-1.3.1.tgz";
-        sha512 = "uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==";
+        name = "ufo___ufo_1.3.2.tgz";
+        url = "https://registry.yarnpkg.com/ufo/-/ufo-1.3.2.tgz";
+        sha512 = "o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==";
       };
     }
     {
