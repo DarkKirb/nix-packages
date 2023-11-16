@@ -6,39 +6,26 @@
   openssl,
   pkg-config,
   writeScript,
-  go_1_19,
+  callPackage
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
-  src = stdenv.mkDerivation {
-    pname = "kubo-source";
-    version = source.date;
+  s3-ds-plugin = callPackage ../go-ds-s3 {};
+in
+  buildGoApplication rec {
+    pname = "kubo";
+    inherit (s3-ds-plugin) version go;
     src = fetchFromGitHub {
       owner = "ipfs";
       repo = "kubo";
       inherit (source) rev sha256;
     };
-    buildPhase = "";
-    installPhase = ''
-      cp -r $src $out
-      chmod -R +w $out
-      cd $out
-      cp ${./go.mod} go.mod
-      cp ${./go.sum} go.sum
-      echo -e "\nstorjds storj.io/ipfs-go-ds-storj/plugin 0" >> plugin/loader/preload_list
-      patchShebangs .
-    '';
-  };
-in
-  buildGoApplication rec {
-    pname = "kubo";
-    version = source.date;
-    inherit src;
     modules = ./gomod2nix.toml;
     buildInputs = [openssl];
     nativeBuildInputs = [gnumake pkg-config];
     subPackages = ["cmd/ipfs"];
     tags = ["openssl"];
     postPatch = ''
+      patchShebangs .
       substituteInPlace 'misc/systemd/ipfs.service' \
       --replace '/usr/bin/ipfs' "$out/bin/ipfs"
       substituteInPlace 'misc/systemd/ipfs-hardened.service' \
@@ -67,13 +54,12 @@ in
           cp -v --remove-destination -f `readlink $f` $f
       done
     '';
-    passthru.updateScript' = writeScript "update-matrix-media-repo" ''
-      ${../../scripts/update-git.sh} "https://github.com/ipfs/kubo" ipfs/kubo/source.json
+    passthru.updateScript = writeScript "update-matrix-media-repo" ''
+      ${../../scripts/update-git.sh} "https://github.com/ipfs/kubo" ipfs/kubo/source.json "--rev v${s3-ds-plugin.version}"
       if [ "$(git diff -- ipfs/kubo/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
-        ${../../scripts/add-go-module.sh} $SRC_PATH ipfs/kubo "storj.io/ipfs-go-ds-storj/plugin@latest"
+        ${../../scripts/update-go.sh} $SRC_PATH ipfs/kubo
       fi
     '';
-    passthru.repoVersion = "13"; # Also update kubo-migrator when changing the repo version
-    go = go_1_19;
+    passthru.repoVersion = "15"; # Also update kubo-migrator when changing the repo version
   }
