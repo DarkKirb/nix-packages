@@ -79,6 +79,7 @@ in
       asar-asm
       bsnes-plus
       sliding-sync
+      go-ds-s3
       ;
   }
   // (
