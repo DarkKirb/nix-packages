@@ -103,7 +103,6 @@ system: self: super: let
       miifox-net = self.python3Packages.callPackage ./web/miifox-net.nix {};
       old-homepage = self.callPackage ./web/old-homepage.nix {};
       python-instagram = self.python3Packages.callPackage ./python/instagram.nix {};
-      element-web = self.callPackage ./matrix/element-web {};
       mautrix-cleanup = flake.inputs.mautrix-cleanup.packages.${system}.default;
       woodpecker-agent = self.callPackage ./ci/woodpecker/agent.nix {};
       woodpecker-cli = self.callPackage ./ci/woodpecker/cli.nix {};
