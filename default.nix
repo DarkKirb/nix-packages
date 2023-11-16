@@ -62,7 +62,6 @@ in
       miifox-net
       old-homepage
       python-instagram
-      element-web
       mautrix-cleanup
       woodpecker-agent
       woodpecker-cli
