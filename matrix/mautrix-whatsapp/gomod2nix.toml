@@ -17,11 +17,11 @@ schema = 3
     version = "v1.5.3"
     hash = "sha256-svogITcP4orUIsJFjMtp+Uv1+fKJv2Q5Zwf2dMqnpOQ="
   [mod."github.com/gorilla/mux"]
-    version = "v1.8.1"
-    hash = "sha256-nDABvAhlYgxUW2N/brrep7NkQXoSGcHhA+XI4+tK0F0="
+    version = "v1.8.0"
+    hash = "sha256-s905hpzMH9bOLue09E2JmzPXfIS4HhAlgT7g13HCwKE="
   [mod."github.com/gorilla/websocket"]
-    version = "v1.5.1"
-    hash = "sha256-eHZ/U+eeE5tSgWc1jEDuBwtTRbXKP9fqP9zfW4Zw8T0="
+    version = "v1.5.0"
+    hash = "sha256-EYVgkSEMo4HaVrsWKqnsYRp8SSS8gNf7t+Elva02Ofc="
   [mod."github.com/kr/text"]
     version = "v0.2.0"
     hash = "sha256-fadcWxZOORv44oak3jTxm6YcITcFxdGt4bpn869HxUE="
@@ -77,14 +77,14 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-hSZQkw/0eV5Y0pj1N+idYuKb/jtiw/qTfaOGdYCXmn0="
   [mod."go.mau.fi/util"]
-    version = "v0.2.1-0.20231114144345-a692409c548f"
-    hash = "sha256-a/zBpPaPLwg9/3qPUTuBNeZP/tt3RLoaqyM0uCGj2Nk="
+    version = "v0.2.1"
+    hash = "sha256-ueWv/RjYieBavfIFJsDR6KoGn/6K5RI7X2m9YU8U14E="
   [mod."go.mau.fi/webp"]
     version = "v0.1.0"
     hash = "sha256-KIP/Onw0t/o10oBuvmRQDff7GF8G5lsMaDXpe0fjvNg="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20231114143452-e8fa5b64d278"
-    hash = "sha256-kCVJA+W17qdA67uJEFcG8NWRn8ME1dSqKqIWpqvispE="
+    version = "v0.0.0-20231116213319-217e0c985fd6"
+    hash = "sha256-c/LloEsV+7fct3H9VJBomn2xAtNi7CrnJPRGwY7ejBQ="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
@@ -122,5 +122,5 @@ schema = 3
     version = "v2.4.1"
     hash = "sha256-OstOCC7Bib6mbcUG2X3YafEBikFhPQ8lN6jPK5c/Ah8="
   [mod."maunium.net/go/mautrix"]
-    version = "v0.16.2-0.20231114144505-09daa655758e"
-    hash = "sha256-rEdmbrkEkIUiY9jPQbqVjE7/9Nj8yNnUiY9dOp8uKqs="
+    version = "v0.16.2"
+    hash = "sha256-HGBfVuD8R2WdLLczjR+pMI/A3w23Ji00n3q7GQQQ/d8="

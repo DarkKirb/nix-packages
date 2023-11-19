@@ -6,7 +6,7 @@
   openssl,
   pkg-config,
   writeScript,
-  callPackage
+  callPackage,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
   s3-ds-plugin = callPackage ../go-ds-s3 {};
