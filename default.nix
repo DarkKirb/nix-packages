@@ -17,9 +17,6 @@ in
   // {
     inherit
       (pkgsWithOverlay)
-      akkoma
-      akkoma-fe
-      admin-fe
       emoji-lotte
       emoji-volpeon-blobfox
       emoji-volpeon-blobfox-flip
