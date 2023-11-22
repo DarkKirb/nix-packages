@@ -26,8 +26,8 @@ schema = 3
     version = "v1.4.2"
     hash = "sha256-TOlNouGwNdaCddRwABb1qXp0HTMt6+G4uatzfAg3XFc="
   [mod."github.com/antonmedv/expr"]
-    version = "v1.15.3"
-    hash = "sha256-j6ZvAK4MgiyDnXw4TxnfjBYgxrde4P6kEYROzj10qxc="
+    version = "v1.15.4"
+    hash = "sha256-NLhKOXvtcO10ZbDA4+Z4wvZ+dea0YXIrTKMdhUzF/TM="
   [mod."github.com/aymanbagabas/go-osc52/v2"]
     version = "v2.0.1"
     hash = "sha256-6Bp0jBZ6npvsYcKZGHHIUSVSTAMEyieweAX2YAKDjjg="
@@ -344,8 +344,8 @@ schema = 3
     version = "v2.25.7"
     hash = "sha256-/OPbU0DE+xsY6Erz0a3kmzjJPRAXH75FuevmvsaQtw8="
   [mod."github.com/xanzy/go-gitlab"]
-    version = "v0.93.2"
-    hash = "sha256-wjjfvxIXnIISPibpy5VdYQeAxD2Tn82k0qa9LOjnxyY="
+    version = "v0.94.0"
+    hash = "sha256-POzBFo5FWh5HbCAQHPVOYD6xvDDC1cfN3kG2Qnm8lVM="
   [mod."github.com/xeipuuv/gojsonpointer"]
     version = "v0.0.0-20180127040702-4e3ac2762d5f"
     hash = "sha256-OEW9nOR3EeMzvqvqpdAgowpZlbXPLWM0JT+5bwWOxo8="
@@ -428,14 +428,14 @@ schema = 3
     version = "v3.4.0"
     hash = "sha256-mohKBcuKT29Illk/Gm7Bu5E8QxhRYr6sEGPn/oux65k="
   [mod."k8s.io/api"]
-    version = "v0.28.3"
-    hash = "sha256-mP/JBnHm7kY7aSN/WoRV+TGmJFGc50cINa1F6VovSP4="
+    version = "v0.28.4"
+    hash = "sha256-JErtAtdt52ppZMlt2MxmCFWDJgQu5l3urWMkSfnwWTM="
   [mod."k8s.io/apimachinery"]
-    version = "v0.28.3"
-    hash = "sha256-PY7Cdn45fasKFBt+JhIWpBUXPgARCz6aOzfIt5XWK/o="
+    version = "v0.28.4"
+    hash = "sha256-BPpMeP1vhLhi4s+nIKwiuuOgJRzxpoB4lchWXTsbq7I="
   [mod."k8s.io/client-go"]
-    version = "v0.28.3"
-    hash = "sha256-TeX6fsW4Y7EhaxOYkQyStZ2Ib+gSxa5eCaFXzxHjXrw="
+    version = "v0.28.4"
+    hash = "sha256-Jl0JhT20DjjlP93RHNp+Wlzexl0dvY7YPaahLoOPnMs="
   [mod."k8s.io/klog/v2"]
     version = "v2.100.1"
     hash = "sha256-0pf6/CrK6R6FjlKYjy9ybL3+KaAMNEaWUf0mUs6F5+c="
