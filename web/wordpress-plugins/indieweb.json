@@ -1,7 +1,7 @@
 {
-  "version": "4.0.1",
+  "version": "4.0.2",
   "pname": "indieweb",
   "description": "IndieWeb",
-  "url": "https://downloads.wordpress.org/plugin/indieweb.4.0.1.zip",
-  "sha256": "88a0cedc04321620f7b41d3693ae750de6bb3288aaf7d3f12bfc94db2edae295"
+  "url": "https://downloads.wordpress.org/plugin/indieweb.4.0.2.zip",
+  "sha256": "fb8874d20d8ba4c1ef422023ec6d7779e80705113b2d52689bbe6dcb00006926"
 }

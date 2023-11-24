@@ -365,8 +365,8 @@ schema = 3
     version = "v1.17.3"
     hash = "sha256-R8jTdQ5ylgKRaTjjqzowNIFQ9mXjc4e/2mp4xa7+RAk="
   [mod."github.com/t2bot/go-singleflight-streams"]
-    version = "v0.0.8"
-    hash = "sha256-YG78j81YNvsqS1hrJScmaz4kNF+O3TAnFsGgVzDKna4="
+    version = "v1.0.0"
+    hash = "sha256-JJk0EpBHQZ8wYI66grgP745woDtoYwOBAqgV5WBmcgk="
   [mod."github.com/t2bot/go-typed-singleflight"]
     version = "v0.0.3"
     hash = "sha256-gDeRUn27fWmdPmBaVR8aly2rRmreVxmWeUM/P7N4PZI="
