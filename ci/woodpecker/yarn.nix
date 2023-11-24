@@ -1608,11 +1608,11 @@
       };
     }
     {
-      name = "electron_to_chromium___electron_to_chromium_1.4.591.tgz";
+      name = "electron_to_chromium___electron_to_chromium_1.4.593.tgz";
       path = fetchurl {
-        name = "electron_to_chromium___electron_to_chromium_1.4.591.tgz";
-        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.591.tgz";
-        sha512 = "vLv/P7wwAPKQoY+CVMyyI6rsTp+A14KGtPXx92oz1FY41AAqa9l6Wkizcixg0LDuJgyeo8xgNN9+9hsnGp66UA==";
+        name = "electron_to_chromium___electron_to_chromium_1.4.593.tgz";
+        url = "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.593.tgz";
+        sha512 = "c7+Hhj87zWmdpmjDONbvNKNo24tvmD4mjal1+qqTYTrlF0/sNpAcDlU0Ki84ftA/5yj3BF2QhSGEC0Rky6larg==";
       };
     }
     {
