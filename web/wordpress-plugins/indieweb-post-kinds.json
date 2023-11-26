@@ -1,7 +1,7 @@
 {
-  "version": "3.6.5",
+  "version": "3.7.0",
   "pname": "indieweb-post-kinds",
   "description": "Post Kinds",
-  "url": "https://downloads.wordpress.org/plugin/indieweb-post-kinds.3.6.5.zip",
-  "sha256": "1d7ccc7a426187b4e631345b3251acd85d113555e5a2733e1c23d965455a501d"
+  "url": "https://downloads.wordpress.org/plugin/indieweb-post-kinds.3.7.0.zip",
+  "sha256": "54968a5bfcf4f18dafd204603661f3efd41a6900ac5774d02364122f719a4a85"
 }
