@@ -200,8 +200,8 @@ schema = 3
     version = "v1.8.1"
     hash = "sha256-UkqSInxYyKDqayvRbtd20GwYRZGCxHoiFGCznoXCMI8="
   [mod."github.com/ipfs/kubo"]
-    version = "v0.24.0-rc2"
-    hash = "sha256-veig9bNw6BEILMSaboeUmezoQhx1UJZh4PQ2XnzSwUs="
+    version = "v0.24.0"
+    hash = "sha256-yj2TPCA0BYOkLzRDpnyMVKO9vZZYOJrjSq5cYS00B+I="
   [mod."github.com/ipld/go-car/v2"]
     version = "v2.10.2-0.20230622090957-499d0c909d33"
     hash = "sha256-206npyODQ3zx9nz/QcCD2VJ+SF+JzBqaDzUjeG3dgq0="
@@ -245,8 +245,8 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-0AhjqJHOawVHURHguVLyhnYHbzsBSllBbF9Yljcyy48="
   [mod."github.com/libp2p/go-libp2p"]
-    version = "v0.32.0"
-    hash = "sha256-9HKlyYUFIbT63REzPFoaKwtM/qmVlMmSAnogPH8MmKY="
+    version = "v0.32.1"
+    hash = "sha256-MNLlu2zeWA2FSR9cUSmP7dBORBkh39ds2NaqoSb3/MQ="
   [mod."github.com/libp2p/go-libp2p-asn-util"]
     version = "v0.3.0"
     hash = "sha256-oN7SWvEHzpVO0xnH5uXy9h3aiOrQmwMrlt8CiNYPGds="
