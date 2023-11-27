@@ -10,12 +10,12 @@
 }:
 buildGoApplication rec {
   pname = "go-ds-s3";
-  version = "0.24.0-rc2";
+  version = "0.24.0";
   src = fetchFromGitHub {
     owner = "ipfs";
     repo = pname;
     rev = "${pname}-plugin/v${version}";
-    sha256 = "sha256-OTg4MYtdSJ1qWivChpdQ9Zmz0B7L318pIFzpfKtNhQQ=";
+    sha256 = "030fp5c88qhb7w41x9cy69bmva8g3km294ld2cjwjyz6ljxhlisa";
   };
   modules = ./gomod2nix.toml;
   buildInputs = [openssl];
