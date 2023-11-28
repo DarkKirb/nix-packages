@@ -454,6 +454,9 @@ schema = 3
   [mod."sigs.k8s.io/yaml"]
     version = "v1.3.0"
     hash = "sha256-RVp8vca2wxg8pcBDYospG7Z1dujoH7zXNu2rgZ1kky0="
+  [mod."src.techknowlogick.com/xormigrate"]
+    version = "v1.7.1"
+    hash = "sha256-VDo0DEGfk/lmtpT5FUFj9nljQzYzaM8REaQBMOloRRk="
   [mod."xorm.io/builder"]
     version = "v0.3.13"
     hash = "sha256-nsZZc36EmrjugMWwuw5G3lVvooi50YumFr4OmysrFs4="
