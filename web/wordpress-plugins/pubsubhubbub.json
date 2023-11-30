@@ -1,7 +1,7 @@
 {
-  "version": "3.1.3",
+  "version": "3.1.4",
   "pname": "pubsubhubbub",
   "description": "WebSub (FKA. PubSubHubbub)",
-  "url": "https://downloads.wordpress.org/plugin/pubsubhubbub.3.1.3.zip",
-  "sha256": "c8fe11b6e194ae08c978bdbda8aec92d80dd98c4102d956b387137ac40ca5663"
+  "url": "https://downloads.wordpress.org/plugin/pubsubhubbub.3.1.4.zip",
+  "sha256": "b633474f13109b538d90e7bcf8fac7ad4664b7f51adc5d4e380764ef3674dbaa"
 }
