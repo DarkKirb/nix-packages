@@ -4,7 +4,7 @@
 }: let
   pkgs = import nixpkgs {};
   prs = builtins.fromJSON (builtins.readFile prsJSON);
-  systems = ["x86_64-linux" "aarch64-linux"];
+  systems = ["x86_64-linux" "aarch64-linux" "riscv64-linux"];
   nixpkgs_version = ["master"];
   mkJobsets = system: version:
     (builtins.listToAttrs (
@@ -34,6 +34,13 @@
                 emailresponsible = false;
               };
               system = {
+                type = "string";
+                value =
+                  if system == "riscv64-linux"
+                  then "x86_64-linux"
+                  else system;
+              };
+              crossSystem = {
                 type = "string";
                 value = system;
               };
@@ -79,6 +86,13 @@
             emailresponsible = false;
           };
           system = {
+            type = "string";
+            value =
+              if system == "riscv64-linux"
+              then "x86_64-linux"
+              else system;
+          };
+          crossSystem = {
             type = "string";
             value = system;
           };
