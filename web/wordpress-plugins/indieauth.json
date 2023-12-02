@@ -1,7 +1,7 @@
 {
-  "version": "4.3.0",
+  "version": "4.4.0",
   "pname": "indieauth",
   "description": "IndieAuth",
-  "url": "https://downloads.wordpress.org/plugin/indieauth.4.3.0.zip",
-  "sha256": "64dec45b662edfa220fb311316df94db6cf0b7571ea9a9efd05c31effc027aa5"
+  "url": "https://downloads.wordpress.org/plugin/indieauth.4.4.0.zip",
+  "sha256": "078edd2d0fb17b3ae08b84193508b686176067d692d1022b9f66854f170ed812"
 }
