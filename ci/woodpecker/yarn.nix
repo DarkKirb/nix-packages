@@ -768,11 +768,11 @@
       };
     }
     {
-      name = "_types_node___node_20.10.2.tgz";
+      name = "_types_node___node_20.10.3.tgz";
       path = fetchurl {
-        name = "_types_node___node_20.10.2.tgz";
-        url = "https://registry.yarnpkg.com/@types/node/-/node-20.10.2.tgz";
-        sha512 = "37MXfxkb0vuIlRKHNxwCkb60PNBpR94u4efQuN4JgIAm66zfCDXGSAFCef9XUWFovX2R1ok6Z7MHhtdVXXkkIw==";
+        name = "_types_node___node_20.10.3.tgz";
+        url = "https://registry.yarnpkg.com/@types/node/-/node-20.10.3.tgz";
+        sha512 = "XJavIpZqiXID5Yxnxv3RUDKTN5b81ddNC3ecsA0SoFXz/QU8OGBwZGMomiq0zw+uuqbL/krztv/DINAQ/EV4gg==";
       };
     }
     {
@@ -1256,11 +1256,11 @@
       };
     }
     {
-      name = "browserslist___browserslist_4.22.1.tgz";
+      name = "browserslist___browserslist_4.22.2.tgz";
       path = fetchurl {
-        name = "browserslist___browserslist_4.22.1.tgz";
-        url = "https://registry.yarnpkg.com/browserslist/-/browserslist-4.22.1.tgz";
-        sha512 = "FEVc202+2iuClEhZhrWy6ZiAcRLvNMyYcxZ8raemul1DYVOVdFsbqckWLdsixQZCpJlwe77Z3UTalE7jsjnKfQ==";
+        name = "browserslist___browserslist_4.22.2.tgz";
+        url = "https://registry.yarnpkg.com/browserslist/-/browserslist-4.22.2.tgz";
+        sha512 = "0UgcrvQmBDvZHFGdYUehrCNIazki7/lUP3kkoi/r3YB2amZbFM9J43ZRkJTXBUZK4gmx56+Sqk9+Vs9mwZx9+A==";
       };
     }
     {
@@ -3712,11 +3712,11 @@
       };
     }
     {
-      name = "unplugin_icons___unplugin_icons_0.18.0.tgz";
+      name = "unplugin_icons___unplugin_icons_0.18.1.tgz";
       path = fetchurl {
-        name = "unplugin_icons___unplugin_icons_0.18.0.tgz";
-        url = "https://registry.yarnpkg.com/unplugin-icons/-/unplugin-icons-0.18.0.tgz";
-        sha512 = "/HEkomWitqf8QLY8FgUqNNjuM24kw+FS7YRGxHa5XyamboW+HnbvLU5ztIBOYY5rtBO1+cHPntzBsln2nX3f+A==";
+        name = "unplugin_icons___unplugin_icons_0.18.1.tgz";
+        url = "https://registry.yarnpkg.com/unplugin-icons/-/unplugin-icons-0.18.1.tgz";
+        sha512 = "WzKu/eoq74YC7vyEAGsFebkRzsZrRkR4FUzLU6gbpfa7WRaVVpQS2n7LSxE1iRUN0scKL5b9bq+i0wucR+ttFQ==";
       };
     }
     {
