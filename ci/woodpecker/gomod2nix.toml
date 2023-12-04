@@ -2,8 +2,8 @@ schema = 3
 
 [mod]
   [mod."code.gitea.io/sdk/gitea"]
-    version = "v0.16.0"
-    hash = "sha256-KU+2V5zGARWR4GakAmXkl8JYPrtxXkjOKmAELePrcFI="
+    version = "v0.17.0"
+    hash = "sha256-AyzuldnTuO6Z2ORNrMEMyd9EKJzIVe9G/wU7kkTBiFU="
   [mod."codeberg.org/6543/go-yaml2json"]
     version = "v1.0.0"
     hash = "sha256-R+N/ZOXbolCZiChdNytEgQEyurLYXVzwpd/MQc9OJno="
@@ -25,9 +25,6 @@ schema = 3
   [mod."github.com/alessio/shellescape"]
     version = "v1.4.2"
     hash = "sha256-TOlNouGwNdaCddRwABb1qXp0HTMt6+G4uatzfAg3XFc="
-  [mod."github.com/antonmedv/expr"]
-    version = "v1.15.5"
-    hash = "sha256-gyXTB42nlaPyzhZW1YvBsEbmL5NqGblb93WjbAOG9O4="
   [mod."github.com/aymanbagabas/go-osc52/v2"]
     version = "v2.0.1"
     hash = "sha256-6Bp0jBZ6npvsYcKZGHHIUSVSTAMEyieweAX2YAKDjjg="
@@ -88,6 +85,9 @@ schema = 3
   [mod."github.com/emicklei/go-restful/v3"]
     version = "v3.9.0"
     hash = "sha256-qt0M3tryKAzQS4JbmTr/N5+47Ue63U0dpbWov2Me5Os="
+  [mod."github.com/expr-lang/expr"]
+    version = "v1.15.6"
+    hash = "sha256-MgOF3zgdxLUSRj5f4r0n/W5uFpsxYKdSIZ6PspLnS+Y="
   [mod."github.com/fatih/color"]
     version = "v1.13.0"
     hash = "sha256-Xo0zFKLm/9NuChdHDhHoUFo8Oa7Mkb3ezZCu23SfOAk="
@@ -146,8 +146,8 @@ schema = 3
     version = "v1.3.2"
     hash = "sha256-pogILFrrk+cAtb0ulqn9+gRZJ7sGnnLLdtqITvxvG6c="
   [mod."github.com/golang-jwt/jwt/v5"]
-    version = "v5.1.0"
-    hash = "sha256-aKcn8muzB9ANNIRsPy+IG2g/m0FHDLWd8XOJh69VDHs="
+    version = "v5.2.0"
+    hash = "sha256-KlZoiRRn4ER2z8r8CBmJ9dKoWTYjZEZ/kRL/2uAXoV8="
   [mod."github.com/golang/protobuf"]
     version = "v1.5.3"
     hash = "sha256-svogITcP4orUIsJFjMtp+Uv1+fKJv2Q5Zwf2dMqnpOQ="
@@ -341,8 +341,8 @@ schema = 3
     version = "v1.2.11"
     hash = "sha256-hfcj+YsznH6MeERSdIPjSrsM7gbDcIzH/TbgHzYbPww="
   [mod."github.com/urfave/cli/v2"]
-    version = "v2.25.7"
-    hash = "sha256-/OPbU0DE+xsY6Erz0a3kmzjJPRAXH75FuevmvsaQtw8="
+    version = "v2.26.0"
+    hash = "sha256-9edKaHD8iYoeg69kSKKuMkn6WuIaswO6OkyrZZuOVjg="
   [mod."github.com/xanzy/go-gitlab"]
     version = "v0.94.0"
     hash = "sha256-POzBFo5FWh5HbCAQHPVOYD6xvDDC1cfN3kG2Qnm8lVM="
