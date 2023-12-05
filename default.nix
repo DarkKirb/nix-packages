@@ -60,10 +60,6 @@ in
       old-homepage
       python-instagram
       mautrix-cleanup
-      woodpecker-agent
-      woodpecker-cli
-      woodpecker-frontend
-      woodpecker-server
       hydra
       hydra-unstable
       wordpress-plugins
