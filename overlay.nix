@@ -101,10 +101,6 @@ system: self: super: let
       old-homepage = self.callPackage ./web/old-homepage.nix {};
       python-instagram = self.python3Packages.callPackage ./python/instagram.nix {};
       mautrix-cleanup = flake.inputs.mautrix-cleanup.packages.${system}.default;
-      woodpecker-agent = self.callPackage ./ci/woodpecker/agent.nix {};
-      woodpecker-cli = self.callPackage ./ci/woodpecker/cli.nix {};
-      woodpecker-frontend = self.callPackage ./ci/woodpecker/frontend.nix {};
-      woodpecker-server = self.callPackage ./ci/woodpecker/server.nix {};
       hydra = (getFlake "hydra").outputs.packages.${system}.hydra.overrideAttrs (super: {
         doCheck = false;
         patches =

@@ -99,10 +99,6 @@
               old-homepage
               python-instagram
               mautrix-cleanup
-              woodpecker-agent
-              woodpecker-cli
-              woodpecker-frontend
-              woodpecker-server
               wordpress-plugins
               wordpress-themes
               kubo
