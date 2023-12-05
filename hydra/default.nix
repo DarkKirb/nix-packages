@@ -2,9 +2,10 @@
   nix-packages,
   nixpkgs,
   system,
+  crossSystem ? system,
 }: let
   pkgs = import nixpkgs {
-    inherit system;
+    inherit system crossSystem;
     config = {
       allowUnfree = true;
       allowUnsupportedSystem = true;
