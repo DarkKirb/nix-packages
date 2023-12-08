@@ -118,13 +118,6 @@
               inherit (pkgs) vf2Kernel valgrind;
             }
             else {}
-          )
-          // (
-            if system == "x86_64-linux"
-            then {
-              inherit (pkgs) linux-bcachefs bcachefs-tools;
-            }
-            else {}
           );
 
         modules = import ./modules;
