@@ -115,8 +115,6 @@ system: self: super: let
       wordpress-plugins = self.callPackage ./web/wordpress-plugins {};
       wordpress-themes = self.callPackage ./web/wordpress-themes {};
       kubo = self.callPackage ./ipfs/kubo {};
-      linux-bcachefs = self.callPackage ./linux/bcachefs {kernelPatches = [];};
-      bcachefs-tools = self.callPackage ./linux/bcachefs-tools {};
       asar-asm = self.callPackage ./compiler/asar {};
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
       sliding-sync = self.callPackage ./matrix/sliding-sync {};

@@ -81,10 +81,3 @@ in
     }
     else {}
   )
-  // (
-    if pkgs.system == "x86_64-linux"
-    then {
-      inherit (pkgsWithOverlay) linux-bcachefs bcachefs-tools;
-    }
-    else {}
-  )
