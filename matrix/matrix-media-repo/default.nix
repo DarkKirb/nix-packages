@@ -26,7 +26,7 @@ in
     pname = "matrix-media-repo";
     version = source.date;
     src = fetchFromGitHub {
-      owner = "turt2live";
+      owner = "darkkirb";
       repo = "matrix-media-repo";
       inherit (source) rev sha256;
     };
@@ -64,7 +64,7 @@ in
       done
     '';
     passthru.updateScript = writeScript "update-matrix-media-repo" ''
-      ${../../scripts/update-git.sh} "https://github.com/turt2live/matrix-media-repo" matrix/matrix-media-repo/source.json
+      ${../../scripts/update-git.sh} "https://github.com/DarkKirb/matrix-media-repo" matrix/matrix-media-repo/source.json "--rev refs/heads/fix-oembed"
       if [ "$(git diff -- matrix/matrix-media-repo/source.json)" ]; then
         SRC_PATH=$(nix-build -E '(import ./. {}).${pname}.src')
         ${../../scripts/update-go.sh} $SRC_PATH matrix/matrix-media-repo/
