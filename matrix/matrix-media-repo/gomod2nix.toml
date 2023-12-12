@@ -50,8 +50,8 @@ schema = 3
     version = "v2.2.0"
     hash = "sha256-nPufwYQfTkyrEkbBrpqM3C2vnMxfIz6tAaBmiUP7vd4="
   [mod."github.com/containerd/containerd"]
-    version = "v1.7.10"
-    hash = "sha256-ipILGS4bOyxNGVRNm8O4YE7lIqS1gzkLVtv/iJik/Fs="
+    version = "v1.7.11"
+    hash = "sha256-WfJSwHJ7PuZpEzJPzWNKwixSwPT+8HUyMz0q+g8rvPI="
   [mod."github.com/containerd/log"]
     version = "v0.1.0"
     hash = "sha256-vuE6Mie2gSxiN3jTKTZovjcbdBd1YEExb7IBe3GM+9s="
@@ -170,8 +170,8 @@ schema = 3
     version = "v1.1.0"
     hash = "sha256-6lwuMQOfBq+McrViN3maJTIeh4f8jbEqvLy2c9FvvFw="
   [mod."github.com/hashicorp/go-hclog"]
-    version = "v1.5.0"
-    hash = "sha256-u3Jqg7Qex11IZ7vbk4hRGgLy6e0cF70CCx7ERF0GUHo="
+    version = "v1.6.1"
+    hash = "sha256-Qt17yIiActa30Mhf6JIC9d5kf3/pxy62xNETGe1e+mQ="
   [mod."github.com/hashicorp/go-multierror"]
     version = "v1.1.1"
     hash = "sha256-ANzPEUJIZIlToxR89Mn7Db73d9LGI51ssy7eNnUgmlA="
@@ -209,8 +209,8 @@ schema = 3
     version = "v0.0.0-20220823221153-ff692776a607"
     hash = "sha256-VuxcQDPJsmSpueFu9ECqG/EIr29eDALA1iRpl2pquzI="
   [mod."github.com/klauspost/compress"]
-    version = "v1.17.3"
-    hash = "sha256-qB+Js8Ydc/ldSAV4BsKsqWzfI7H3E4PFD5eYPgDewk8="
+    version = "v1.17.4"
+    hash = "sha256-5E7dDtDKfL3jy7zJxHBMV57WlHZrP/OoEX5e6cOPba0="
   [mod."github.com/klauspost/cpuid/v2"]
     version = "v2.2.6"
     hash = "sha256-SlMBrOvotgIvGI7GsUmNxs++KpgzNCk1jOBAl8Oq8c8="
@@ -254,8 +254,8 @@ schema = 3
     version = "v1.1.2"
     hash = "sha256-vykcXvy2VBBAXnJott/XsGTT0gk2UL36JzZKfJ1KAUY="
   [mod."github.com/minio/minio-go/v7"]
-    version = "v7.0.64"
-    hash = "sha256-ZWXiJ+sqQXNltlHZbhP9zT4cCW4PHllYh+/D8dhz7bA="
+    version = "v7.0.65"
+    hash = "sha256-f5+08+w0Plhs6yT4YSLp9INFcgYO7WGjkqCtyO4wzHc="
   [mod."github.com/minio/sha256-simd"]
     version = "v1.0.1"
     hash = "sha256-4hfGDIQaWq8fvtGzHDhoK9v2IocXnJY7OAL6saMJbmA="
@@ -386,11 +386,11 @@ schema = 3
     version = "v0.26.0"
     hash = "sha256-K+dbXx/1ULRM4u8i8GA4RL/sDq12/wakscZLaJ87Nas="
   [mod."github.com/tklauser/go-sysconf"]
-    version = "v0.3.12"
-    hash = "sha256-91VBZNb3L2TZkEETF1AE4wnraLoGxKeofUbC5ZiWVHk="
+    version = "v0.3.13"
+    hash = "sha256-qU5jDtQWJO4icuDs7KVR/CUuYEolEW3ASQhWy2yNcx8="
   [mod."github.com/tklauser/numcpus"]
-    version = "v0.6.1"
-    hash = "sha256-8eFcw4YI0w6+GPhU5xMMQjiio94q/O5PpNO3QsvXve0="
+    version = "v0.7.0"
+    hash = "sha256-yLlJ1flprZ1FrsQEUXnNIeAN/bKpNTz3Fweb/AWZnPU="
   [mod."github.com/yusufpapurcu/wmi"]
     version = "v1.2.3"
     hash = "sha256-HOLI8i58AMWeTotvYtdZessgrLwUG2aiS37eeHgsneY="
@@ -398,8 +398,8 @@ schema = 3
     version = "v0.16.0"
     hash = "sha256-DgSVOnXRK8GF01p5rLtq4qPBcglwEoOk8qhW2EGfJfA="
   [mod."golang.org/x/exp"]
-    version = "v0.0.0-20231127185646-65229373498e"
-    hash = "sha256-GmQxMsgz6rZ/O7d4uFif6A/BpDfCqM7WpciDggDSv8I="
+    version = "v0.0.0-20231206192017-f3f8817b8deb"
+    hash = "sha256-K35MT3O16IlvqhDZBVBF4lJZIM7T/15PxOmeyGYv01A="
   [mod."golang.org/x/image"]
     version = "v0.14.0"
     hash = "sha256-DcyH0LkgWvrSGB2XK3V0Ufu2pgYI2ULIunxWL6V1rs4="

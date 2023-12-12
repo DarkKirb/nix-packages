@@ -1,7 +1,7 @@
 {
-  "version": "6.3.1",
+  "version": "6.3.2",
   "pname": "shortcoder",
   "description": "Shortcoder — Create Shortcodes for Anything",
-  "url": "https://downloads.wordpress.org/plugin/shortcoder.6.3.1.zip",
-  "sha256": "e61483e3c797f74f8310e281e00d6c9cf282957a2cfbf00570aa610170b78fe3"
+  "url": "https://downloads.wordpress.org/plugin/shortcoder.6.3.2.zip",
+  "sha256": "0e6998ff08fe2543f8978c7231ce275feba15bcf81161e28f5a9d7e3be15b684"
 }
