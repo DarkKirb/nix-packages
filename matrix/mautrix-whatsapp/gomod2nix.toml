@@ -35,8 +35,8 @@ schema = 3
     version = "v0.0.19"
     hash = "sha256-wYQqGxeqV3Elkmn26Md8mKZ/viw598R4Ych3vtt72YE="
   [mod."github.com/mattn/go-sqlite3"]
-    version = "v1.14.19"
-    hash = "sha256-mP4cW7TGoe2ERgVZhHxrjYesjEENLYnY60V0xOrync4="
+    version = "v1.14.18"
+    hash = "sha256-9k12CRyFt7kzVUaZnlGmttOG/egc91nggUuMfmfrt78="
   [mod."github.com/matttproud/golang_protobuf_extensions"]
     version = "v1.0.4"
     hash = "sha256-uovu7OycdeZ2oYQ7FhVxLey5ZX3T0FzShaRldndyGvc="
@@ -83,8 +83,8 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-KIP/Onw0t/o10oBuvmRQDff7GF8G5lsMaDXpe0fjvNg="
   [mod."go.mau.fi/whatsmeow"]
-    version = "v0.0.0-20231216213200-9d803dd92735"
-    hash = "sha256-darBYPFbYD/nJPzrHsIXrv9mGI76p6aX3ixmp/40k4M="
+    version = "v0.0.0-20231213182926-f17761e0fe8d"
+    hash = "sha256-kZUCfF2x6X0OfOFdtbQMKa6tRj4KpucUlCm3T39XXIM="
   [mod."go.mau.fi/zeroconfig"]
     version = "v0.1.2"
     hash = "sha256-xf4p2Z5Pl9In3ne9BVmy7YvtooSRBzqxP4Pl2jdVN8w="
@@ -92,8 +92,8 @@ schema = 3
     version = "v0.16.0"
     hash = "sha256-DgSVOnXRK8GF01p5rLtq4qPBcglwEoOk8qhW2EGfJfA="
   [mod."golang.org/x/exp"]
-    version = "v0.0.0-20231214170342-aacd6d4b4611"
-    hash = "sha256-K35MT3O16IlvqhDZBVBF4lJZIM7T/15PxOmeyGYv01A="
+    version = "v0.0.0-20231110203233-9a3e6036ecaa"
+    hash = "sha256-m1T4KePBRCJpAjnuq4BnDYXebOHiVI6h2489XD5R9BA="
   [mod."golang.org/x/image"]
     version = "v0.14.0"
     hash = "sha256-DcyH0LkgWvrSGB2XK3V0Ufu2pgYI2ULIunxWL6V1rs4="
