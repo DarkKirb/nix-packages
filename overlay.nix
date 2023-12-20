@@ -78,7 +78,6 @@ system: self: super: let
       matrix-media-repo = self.callPackage ./matrix/matrix-media-repo {};
       mautrix-discord = self.callPackage ./matrix/mautrix-discord {};
       mautrix-whatsapp = self.callPackage ./matrix/mautrix-whatsapp {};
-      mautrix-signal = self.callPackage ./matrix/mautrix-signal {};
       mautrix-telegram = self.callPackage ./matrix/mautrix-telegram {};
       python-mautrix = self.python3Packages.callPackage ./python/mautrix.nix {};
       python-tulir-telethon = self.python3Packages.callPackage ./python/tulir-telethon.nix {};

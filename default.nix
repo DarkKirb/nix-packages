@@ -40,7 +40,6 @@ in
       matrix-media-repo
       mautrix-discord
       mautrix-whatsapp
-      mautrix-signal
       mautrix-telegram
       python-mautrix
       python-tulir-telethon
