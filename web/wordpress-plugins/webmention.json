@@ -1,7 +1,7 @@
 {
-  "version": "5.1.9",
+  "version": "5.2.0",
   "pname": "webmention",
   "description": "Webmention",
-  "url": "https://downloads.wordpress.org/plugin/webmention.5.1.9.zip",
-  "sha256": "3ab437a3dc9dd53f9fcbe22e4b442ec2663f880c054a07547bed6de4ffcafb82"
+  "url": "https://downloads.wordpress.org/plugin/webmention.5.2.0.zip",
+  "sha256": "faa5d34b7893b55865da2fca750898b29621d7ee79a878444a078785575bfcb6"
 }
