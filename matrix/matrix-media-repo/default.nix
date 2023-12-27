@@ -30,9 +30,6 @@ in
       repo = "matrix-media-repo";
       inherit (source) rev sha256;
     };
-    patches = [
-      ./0001-Make-using-MD5-hashing-a-config-option-on-the-datast.patch
-    ];
     modules = ./gomod2nix.toml;
     go = go_1_20;
     nativeBuildInputs = [
@@ -59,7 +56,7 @@ in
     };
     postConfigure = ''
       chmod -R +w vendor/
-      for f in vendor/golang.org/x/net/publicsuffix/data/*; do
+      for f in vendor/golang.org/x/net/publicsuffix/data/* vendor/google.golang.org/protobuf/reflect/protodesc/editions_defaults.binpb; do
           cp -v --remove-destination -f `readlink $f` $f
       done
     '';
