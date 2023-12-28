@@ -61,8 +61,6 @@ in
       mautrix-cleanup
       hydra
       hydra-unstable
-      wordpress-plugins
-      wordpress-themes
       kubo
       plover-plugin-python-dictionary
       plover-plugin-stenotype-extended
