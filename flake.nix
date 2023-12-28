@@ -98,8 +98,6 @@
               old-homepage
               python-instagram
               mautrix-cleanup
-              wordpress-plugins
-              wordpress-themes
               kubo
               hydra
               hydra-unstable

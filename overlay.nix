@@ -111,8 +111,6 @@ system: self: super: let
           ];
       });
       hydra-unstable = self.hydra;
-      wordpress-plugins = self.callPackage ./web/wordpress-plugins {};
-      wordpress-themes = self.callPackage ./web/wordpress-themes {};
       kubo = self.callPackage ./ipfs/kubo {};
       asar-asm = self.callPackage ./compiler/asar {};
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
