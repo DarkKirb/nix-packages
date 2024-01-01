@@ -8,11 +8,6 @@
       url = "github:edolstra/flake-compat/4f910c9827911b1ec2bf26b5a062cd09f8d89f85";
       flake = false;
     };
-    mautrix-cleanup = {
-      url = "github:DarkKirb/mautrix-cleanup";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     gomod2nix = {
       url = "github:DarkKirb/gomod2nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -98,7 +93,6 @@
               miifox-net
               old-homepage
               python-instagram
-              mautrix-cleanup
               kubo
               hydra
               hydra-unstable

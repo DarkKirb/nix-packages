@@ -58,7 +58,6 @@ in
       miifox-net
       old-homepage
       python-instagram
-      mautrix-cleanup
       hydra
       hydra-unstable
       kubo

@@ -99,7 +99,6 @@ system: self: super: let
       miifox-net = self.python3Packages.callPackage ./web/miifox-net.nix {};
       old-homepage = self.callPackage ./web/old-homepage.nix {};
       python-instagram = self.python3Packages.callPackage ./python/instagram.nix {};
-      mautrix-cleanup = flake.inputs.mautrix-cleanup.packages.${system}.default;
       hydra = (getFlake "hydra").outputs.packages.${system}.hydra.overrideAttrs (super: {
         doCheck = false;
         patches =
