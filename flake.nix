@@ -33,6 +33,7 @@
           config.contentAddressedByDefault = true;
           overlays = [
             self.overlays.${system}.default
+            (import ./overlays/ca-derivations.nix)
           ];
         };
       in rec {
