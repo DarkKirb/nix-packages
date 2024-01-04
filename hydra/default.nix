@@ -10,8 +10,8 @@
       allowUnfree = true;
       allowUnsupportedSystem = true;
       contentAddressedByDefault = true;
-      overlays = [(import ../overlays/ca-derivations.nix)];
     };
+    overlays = [(import ../overlays/ca-derivations.nix)];
   };
   ci = import nix-packages {inherit pkgs;};
   isReserved = n: n == "lib" || n == "overlays" || n == "modules";
