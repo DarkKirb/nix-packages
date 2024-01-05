@@ -94,29 +94,6 @@
         "type": "github"
       }
     },
-    "mautrix-cleanup": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1678395415,
-        "narHash": "sha256-l7upZ8y8SobYtv+RYD7DodRU74DGvDRjvaKfj8VmAow=",
-        "owner": "DarkKirb",
-        "repo": "mautrix-cleanup",
-        "rev": "5f5f51ce8b7560d18ddae1824bc253a9e896ab0b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DarkKirb",
-        "repo": "mautrix-cleanup",
-        "type": "github"
-      }
-    },
     "nix": {
       "inputs": {
         "lowdown-src": "lowdown-src",
@@ -185,14 +162,30 @@
         "type": "github"
       }
     },
+    "nixtoo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704464048,
+        "narHash": "sha256-ZJySuNQpvURl7c2OpAHVs7AUeRRjDTpjK4Gf6yDsRKM=",
+        "owner": "DarkKirb",
+        "repo": "nixtoo",
+        "rev": "b61d1a9b163813e27998484ff5bc4d018e3cdced",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DarkKirb",
+        "repo": "nixtoo",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "gomod2nix": "gomod2nix",
         "hydra": "hydra",
-        "mautrix-cleanup": "mautrix-cleanup",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nixtoo": "nixtoo"
       }
     }
   },
