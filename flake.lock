@@ -162,13 +162,30 @@
         "type": "github"
       }
     },
+    "nixtoo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704464048,
+        "narHash": "sha256-ZJySuNQpvURl7c2OpAHVs7AUeRRjDTpjK4Gf6yDsRKM=",
+        "owner": "DarkKirb",
+        "repo": "nixtoo",
+        "rev": "b61d1a9b163813e27998484ff5bc4d018e3cdced",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DarkKirb",
+        "repo": "nixtoo",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "gomod2nix": "gomod2nix",
         "hydra": "hydra",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nixtoo": "nixtoo"
       }
     }
   },

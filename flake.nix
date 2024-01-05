@@ -16,12 +16,17 @@
     hydra = {
       url = "git+https://git.chir.rs/darkkirb/hydra";
     };
+    nixtoo = {
+        url = "github:DarkKirb/nixtoo";
+        flake = false;
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     flake-utils,
+    nixtoo,
     ...
   }:
     flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux" "riscv64-linux"] (
@@ -33,7 +38,7 @@
           config.contentAddressedByDefault = true;
           overlays = [
             self.overlays.${system}.default
-            (import ./overlays/ca-derivations.nix)
+            (import "${nixtoo}/overlay.nix")
           ];
         };
       in rec {
