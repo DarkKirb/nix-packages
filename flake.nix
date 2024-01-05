@@ -17,8 +17,8 @@
       url = "git+https://git.chir.rs/darkkirb/hydra";
     };
     nixtoo = {
-        url = "github:DarkKirb/nixtoo";
-        flake = false;
+      url = "github:DarkKirb/nixtoo";
+      flake = false;
     };
   };
 
