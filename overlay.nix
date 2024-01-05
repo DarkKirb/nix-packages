@@ -109,11 +109,9 @@ system: self: super: let
           ];
       });
       hydra-unstable = self.hydra;
-      kubo = self.callPackage ./ipfs/kubo {};
       asar-asm = self.callPackage ./compiler/asar {};
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
       sliding-sync = self.callPackage ./matrix/sliding-sync {};
-      go-ds-s3 = self.callPackage ./ipfs/go-ds-s3 {};
     })
     riscv-overlay
   ];

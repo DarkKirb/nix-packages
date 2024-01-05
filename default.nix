@@ -59,14 +59,12 @@ in
       old-homepage
       hydra
       hydra-unstable
-      kubo
       plover-plugin-python-dictionary
       plover-plugin-stenotype-extended
       plover-plugin-dotool-output
       asar-asm
       bsnes-plus
       sliding-sync
-      go-ds-s3
       ;
   }
   // (

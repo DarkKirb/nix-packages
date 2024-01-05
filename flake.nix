@@ -93,7 +93,6 @@
               plover-dict-didoesdigital
               miifox-net
               old-homepage
-              kubo
               hydra
               hydra-unstable
               plover-plugin-python-dictionary
@@ -101,7 +100,6 @@
               asar-asm
               bsnes-plus
               sliding-sync
-              go-ds-s3
               ;
           }
           // (
