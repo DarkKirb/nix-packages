@@ -57,7 +57,6 @@ in
       plover-dict-didoesdigital
       miifox-net
       old-homepage
-      python-instagram
       hydra
       hydra-unstable
       kubo

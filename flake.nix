@@ -93,7 +93,6 @@
               plover-dict-didoesdigital
               miifox-net
               old-homepage
-              python-instagram
               kubo
               hydra
               hydra-unstable

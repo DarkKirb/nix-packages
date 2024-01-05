@@ -98,7 +98,6 @@ system: self: super: let
       plover-dict-didoesdigital = self.callPackage ./plover/didoesdigital-dictionary.nix {};
       miifox-net = self.python3Packages.callPackage ./web/miifox-net.nix {};
       old-homepage = self.callPackage ./web/old-homepage.nix {};
-      python-instagram = self.python3Packages.callPackage ./python/instagram.nix {};
       hydra = (getFlake "hydra").outputs.packages.${system}.hydra.overrideAttrs (super: {
         doCheck = false;
         patches =
