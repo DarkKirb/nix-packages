@@ -57,8 +57,6 @@ in
       plover-dict-didoesdigital
       miifox-net
       old-homepage
-      hydra
-      hydra-unstable
       plover-plugin-python-dictionary
       plover-plugin-stenotype-extended
       plover-plugin-dotool-output

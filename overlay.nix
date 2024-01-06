@@ -98,17 +98,6 @@ system: self: super: let
       plover-dict-didoesdigital = self.callPackage ./plover/didoesdigital-dictionary.nix {};
       miifox-net = self.python3Packages.callPackage ./web/miifox-net.nix {};
       old-homepage = self.callPackage ./web/old-homepage.nix {};
-      hydra = (getFlake "hydra").outputs.packages.${system}.hydra.overrideAttrs (super: {
-        doCheck = false;
-        patches =
-          (super.patches or [])
-          ++ [
-            ./ci/hydra/add-gitea-push-hook.patch
-            ./ci/hydra/jobset-inputs-for-flakes.patch
-            ./ci/hydra/remove-hydra-size-limit.patch
-          ];
-      });
-      hydra-unstable = self.hydra;
       asar-asm = self.callPackage ./compiler/asar {};
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
       sliding-sync = self.callPackage ./matrix/sliding-sync {};

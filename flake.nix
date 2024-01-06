@@ -13,12 +13,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "flake-utils";
     };
-    hydra = {
-      url = "git+https://git.chir.rs/darkkirb/hydra";
-    };
     nixtoo = {
-        url = "github:DarkKirb/nixtoo";
-        flake = false;
+      url = "github:DarkKirb/nixtoo";
+      flake = false;
     };
   };
 
@@ -32,7 +29,8 @@
     flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux" "riscv64-linux"] (
       system: let
         pkgs = import nixpkgs {
-          inherit system;
+          system = if system != "riscv64-linux" then system else "x86_64-linux";
+          crossSystem = system;
           config.allowUnfree = true;
           config.allowUnsupportedSystem = true;
           config.contentAddressedByDefault = true;
@@ -98,8 +96,6 @@
               plover-dict-didoesdigital
               miifox-net
               old-homepage
-              hydra
-              hydra-unstable
               plover-plugin-python-dictionary
               plover-plugin-stenotype-extended
               asar-asm
