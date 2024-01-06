@@ -13,9 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "flake-utils";
     };
-    hydra = {
-      url = "git+https://git.chir.rs/darkkirb/hydra";
-    };
     nixtoo = {
       url = "github:DarkKirb/nixtoo";
       flake = false;
@@ -98,8 +95,6 @@
               plover-dict-didoesdigital
               miifox-net
               old-homepage
-              hydra
-              hydra-unstable
               plover-plugin-python-dictionary
               plover-plugin-stenotype-extended
               asar-asm
