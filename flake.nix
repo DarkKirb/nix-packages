@@ -29,7 +29,8 @@
     flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux" "riscv64-linux"] (
       system: let
         pkgs = import nixpkgs {
-          inherit system;
+          system = if system != "riscv64-linux" then system else "x86_64-linux";
+          crossSystem = system;
           config.allowUnfree = true;
           config.allowUnsupportedSystem = true;
           config.contentAddressedByDefault = true;
