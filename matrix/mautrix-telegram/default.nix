@@ -4,25 +4,11 @@
   fetchFromGitHub,
 }: let
   source = builtins.fromJSON (builtins.readFile ./source.json);
-  python = python3.override {
-    packageOverrides = self: super: {
-      dask = super.dask.overridePythonAttrs (_: {
-        installCheckPhase = "true";
-      });
-
-      pyarrow = super.pyarrow.overridePythonAttrs (old: {
-        installCheckPhase = "true";
-      });
-      tifffile = super.tifffile.overridePythonAttrs (old: {
-        installCheckPhase = "true";
-      });
-    };
-  };
 in
-  python.pkgs.buildPythonPackage rec {
+  python3.pkgs.buildPythonPackage rec {
     pname = "mautrix-telegram";
     version = source.date;
-    disabled = python.pythonOlder "3.8";
+    disabled = python3.pythonOlder "3.8";
 
     src = fetchFromGitHub {
       owner = "mautrix";
@@ -37,7 +23,7 @@ in
         --replace "asyncpg>=0.20,<0.27" "asyncpg>=0.20"
     '';
 
-    propagatedBuildInputs = with python.pkgs; [
+    propagatedBuildInputs = with python3.pkgs; [
       ruamel-yaml
       python-magic
       CommonMark
