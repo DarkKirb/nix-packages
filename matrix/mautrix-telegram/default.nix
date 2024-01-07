@@ -29,8 +29,8 @@ in
       CommonMark
       aiohttp
       yarl
-      (python.pkgs.callPackage ../../python/mautrix.nix {})
-      (python.pkgs.callPackage ../../python/tulir-telethon.nix {})
+      (python3.pkgs.callPackage ../../python/mautrix.nix {})
+      (python3.pkgs.callPackage ../../python/tulir-telethon.nix {})
       asyncpg
       Mako
       # optional
@@ -58,7 +58,7 @@ in
       description = "A Matrix-Telegram hybrid puppeting/relaybot bridge";
       license = licenses.agpl3Plus;
       platforms = platforms.linux;
-      broken = !(python.pkgs ? cryptg);
+      broken = !(python3.pkgs ? cryptg);
     };
     passthru.updateScript = [
       ../../scripts/update-git.sh
