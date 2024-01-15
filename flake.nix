@@ -8,14 +8,15 @@
       url = "github:edolstra/flake-compat/4f910c9827911b1ec2bf26b5a062cd09f8d89f85";
       flake = false;
     };
+    mautrix-cleanup = {
+      url = "github:DarkKirb/mautrix-cleanup";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     gomod2nix = {
       url = "github:DarkKirb/gomod2nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "flake-utils";
-    };
-    nixtoo = {
-      url = "github:DarkKirb/nixtoo";
-      flake = false;
     };
   };
 
@@ -23,10 +24,9 @@
     self,
     nixpkgs,
     flake-utils,
-    nixtoo,
     ...
   }:
-    flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux" "riscv64-linux"] (
+    flake-utils.lib.eachSystem ["aarch64-linux" "x86_64-linux"] (
       system: let
         pkgs = import nixpkgs {
           system =
@@ -36,10 +36,8 @@
           crossSystem = system;
           config.allowUnfree = true;
           config.allowUnsupportedSystem = true;
-          config.contentAddressedByDefault = true;
           overlays = [
             self.overlays.${system}.default
-            (import "${nixtoo}/overlay.nix")
           ];
         };
       in rec {
