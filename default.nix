@@ -63,6 +63,7 @@ in
       asar-asm
       bsnes-plus
       sliding-sync
+      yiffstash
       ;
   }
   // (
