@@ -101,6 +101,7 @@ system: self: super: let
       asar-asm = self.callPackage ./compiler/asar {};
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
       sliding-sync = self.callPackage ./matrix/sliding-sync {};
+      yiffstash = self.python3Packages.callPackage ./python/yiffstash.nix {};
     })
     riscv-overlay
   ];
