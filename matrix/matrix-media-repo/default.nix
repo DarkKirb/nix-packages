@@ -1,5 +1,4 @@
 {
-  go_1_20,
   buildGoApplication,
   git,
   fetchFromGitHub,
@@ -31,7 +30,6 @@ in
       inherit (source) rev sha256;
     };
     modules = ./gomod2nix.toml;
-    go = go_1_20;
     nativeBuildInputs = [
       git
       pkg-config
@@ -56,7 +54,7 @@ in
     };
     postConfigure = ''
       chmod -R +w vendor/
-      for f in vendor/golang.org/x/net/publicsuffix/data/* vendor/google.golang.org/protobuf/reflect/protodesc/editions_defaults.binpb; do
+      for f in vendor/golang.org/x/net/publicsuffix/data/* vendor/google.golang.org/protobuf/internal/editiondefaults/editions_defaults.binpb; do
           cp -v --remove-destination -f `readlink $f` $f
       done
     '';
