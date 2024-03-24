@@ -23,7 +23,6 @@ in
     CGO_ENABLED = "1";
     meta = {
       description = "Discord-Matrix double-puppeting bridge";
-      license = lib.licenses.agpl3;
       broken = builtins.compareVersions go.version "1.18" < 0;
     };
     postConfigure = ''
