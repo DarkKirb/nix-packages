@@ -102,6 +102,7 @@ system: self: super: let
       bsnes-plus = self.libsForQt5.callPackage ./emulator/bsnes-plus {};
       sliding-sync = self.callPackage ./matrix/sliding-sync {};
       yiffstash = self.python3Packages.callPackage ./python/yiffstash.nix {};
+      rosaflags = self.callPackage ./art/emoji/rosaflags.nix {};
     })
     riscv-overlay
   ];

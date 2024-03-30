@@ -64,6 +64,7 @@ in
       bsnes-plus
       sliding-sync
       yiffstash
+      rosaflags
       ;
   }
   // (
