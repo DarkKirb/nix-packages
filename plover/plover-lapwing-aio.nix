@@ -20,6 +20,10 @@ in
       sha256 = "sha256-gUDVq6dFW4uOEJjxXygr3NpH4M3peQocbTD2T5RsAMU=";
     };
 
+    postPatch = ''
+      substituteInPlace setup.cfg --replace dev11 dev10
+    '';
+
     doCheck = false;
 
     disabled = pythonOlder "3.6";
