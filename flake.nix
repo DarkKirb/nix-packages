@@ -104,6 +104,11 @@
               sliding-sync
               yiffstash
               rosaflags
+              plover-plugin-dict-commands
+              plover-plugin-last-translation
+              plover-plugin-modal-dictionary
+              plover-plugin-stitching
+              plover-plugin-lapwing-aio
               ;
           }
           // (

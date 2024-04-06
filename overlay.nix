@@ -95,6 +95,11 @@ system: self: super: let
       plover-plugin-machine-hid = self.python3Packages.callPackage ./plover/plover-machine-hid.nix {};
       plover-plugin-rkb1-hid = self.python3Packages.callPackage ./plover/plover-rkb1-hid.nix {};
       plover-plugin-dotool-output = self.python3Packages.callPackage ./plover/plover-dotool-output.nix {};
+      plover-plugin-dict-commands = self.python3Packages.callPackage ./plover/plover-dict-commands.nix {};
+      plover-plugin-last-translation = self.python3Packages.callPackage ./plover/plover-last-translation.nix {};
+      plover-plugin-modal-dictionary = self.python3Packages.callPackage ./plover/plover-modal-dictionary.nix {};
+      plover-plugin-stitching = self.python3Packages.callPackage ./plover/plover-stitching.nix {};
+      plover-plugin-lapwing-aio = self.python3Packages.callPackage ./plover/plover-lapwing-aio.nix {};
       plover-dict-didoesdigital = self.callPackage ./plover/didoesdigital-dictionary.nix {};
       miifox-net = self.python3Packages.callPackage ./web/miifox-net.nix {};
       old-homepage = self.callPackage ./web/old-homepage.nix {};
