@@ -13,11 +13,11 @@
   plover-stitching = callPackage ./plover-stitching.nix {};
 in
   buildPythonPackage rec {
-    pname = "plover-lapwing-aio";
-    version = "1.1.9";
+    pname = "plover_lapwing_aio";
+    version = "1.1.10";
     src = fetchPypi {
       inherit pname version;
-      sha256 = "sha256-gUDVq6dFW4uOEJjxXygr3NpH4M3peQocbTD2T5RsAMU=";
+      sha256 = "sha256-BbjrY4kDH17LudaunJzVvPyEiGxzLJdSRP3vEbSgqyU=";
     };
 
     postPatch = ''
